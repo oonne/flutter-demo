@@ -15,7 +15,6 @@ dependencies:
   shared_preferences: ^2.5.2
   flutter_svg: ^2.0.17
   mobile_scanner: ^6.0.7
-  audioplayers: ^6.4.0
 
 dev_dependencies:
   flutter_test:
