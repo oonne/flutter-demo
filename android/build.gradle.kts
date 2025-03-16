@@ -1,7 +1,11 @@
 allprojects {
     repositories {
-        google()
+        // google()
+        maven { url = uri("https://mirrors.tencent.com/nexus/repository/maven-public/") }
         mavenCentral()
+        // maven { url 'https://maven.aliyun.com/repository/google' }
+        // maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        // maven { url 'https://maven.aliyun.com/repository/public' }
     }
 }
 

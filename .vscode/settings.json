@@ -1,0 +1,12 @@
+{
+  "editor.tabSize": 2,
+  // 控制相关文件嵌套展示
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.env": "$(capture).env.*",
+  },
+  "terminal.integrated.scrollback": 10000,
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.updateBuildConfiguration": "interactive",
+}
