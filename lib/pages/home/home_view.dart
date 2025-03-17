@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_demo/routes.dart';
 
 import 'home_view_model.dart';
 
+
+/* 
+ * 首页
+ */
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
@@ -30,6 +35,13 @@ class HomeView extends StatelessWidget {
                       viewModel.updateTitle('标题已更新');
                     },
                     child: const Text('更新标题'),
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, demoRoute);
+                    },
+                    child: const Text('跳转DEMO'),
                   ),
                 ],
               ),

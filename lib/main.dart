@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:flutter_demo/utils/log.dart';
-import 'package:flutter_demo/pages/home/home_view.dart';
+import 'package:flutter_demo/routes.dart';
 
 /* 
  * 主函数
@@ -38,9 +38,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
+      routes: routes,
+      initialRoute: homeRoute,
     );
   }
 }
