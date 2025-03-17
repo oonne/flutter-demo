@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
+import 'home_model.dart';
+
 class HomeViewModel extends ChangeNotifier {
-  String _title = '首页';
-  String get title => _title;
+  final HomeModel model = HomeModel();
+  
+  String get title => model.title;
 
   void updateTitle(String newTitle) {
-    _title = newTitle;
+    model.title = newTitle;
     notifyListeners();
   }
 } 
