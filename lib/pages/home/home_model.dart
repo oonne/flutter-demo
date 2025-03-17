@@ -1,6 +1,9 @@
-import 'package:flutter/material.dart';
+class HomeModel {
+  final String title;
+  final DateTime lastUpdated;
 
-class HomeModel extends ChangeNotifier {
-  String title = '首页';
-  String description = '这是一个 MVC 模式的示例页面';
+  HomeModel({
+    required this.title,
+    required this.lastUpdated,
+  });
 }
