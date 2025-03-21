@@ -47,8 +47,8 @@ class HomeView extends StatelessWidget {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      context.pushNamed('demo', queryParameters: {
-                        'num': viewModel.number.toString(),
+                      context.pushNamed('demo', extra: {
+                        'num': viewModel.number,
                       });
                     },
                     child: const Text('跳转DEMO'),

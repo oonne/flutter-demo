@@ -14,6 +14,9 @@ class DemoView extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) {
         final viewModel = DemoViewModel();
+        // 获取路由参数
+        final queryParameters = GoRouterState.of(context).extra as Map<String, dynamic>?;
+        viewModel.init(queryParameters);
         return viewModel;
       },
       child: Consumer<DemoViewModel>(
