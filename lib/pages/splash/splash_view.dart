@@ -19,6 +19,9 @@ class SplashView extends StatelessWidget {
       },
       child: Consumer<SplashViewModel>(
         builder: (context, viewModel, child) {
+          /* 
+           * 页面
+           */
           return Scaffold(
             appBar: AppBar(title: Text('Splash页面')),
             body: Center(

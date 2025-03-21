@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_demo/global/state.dart';
 
 import 'demo_model.dart';
 
@@ -11,10 +11,22 @@ class DemoViewModel extends ChangeNotifier {
    */
   init(Map<String, dynamic>? extra) {
     model.number = extra?['num'] ?? 0;
+
+    model.globalNum = GlobalState().globalNum;
   }
 
   /* 
-   * 数字控制
+   * 全局数字
+   */
+  int get globalNum => model.globalNum;
+
+  void setGlobalNum(int num) {
+    model.globalNum = num;
+    notifyListeners();
+  }
+
+  /* 
+   * 页面数字
    */
   int get number => model.number;
 

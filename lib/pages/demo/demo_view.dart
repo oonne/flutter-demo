@@ -21,6 +21,9 @@ class DemoView extends StatelessWidget {
       },
       child: Consumer<DemoViewModel>(
         builder: (context, viewModel, child) {
+          /* 
+           * 页面
+           */
           return Scaffold(
             appBar: AppBar(title: Text('DEMO页面')),
             body: Center(
@@ -28,9 +31,9 @@ class DemoView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   /* 
-                   *数字
+                   * 页面数字
                    */
-                  Text(viewModel.number.toString()),
+                  Text('页面数字：${viewModel.number}'),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -42,6 +45,30 @@ class DemoView extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: viewModel.sub,
+                        child: const Text('-'),
+                      ),
+                    ],
+                  ),
+
+                  /* 
+                   * 全局数字
+                   */
+                  Text('全局数字：${viewModel.globalNum}'),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    spacing: 8,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          viewModel.setGlobalNum(viewModel.globalNum + 1);
+                        },
+                        child: const Text('+'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          viewModel.setGlobalNum(viewModel.globalNum - 1);
+                        },
                         child: const Text('-'),
                       ),
                     ],
