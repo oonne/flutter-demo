@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/routes.dart';
 
@@ -41,6 +42,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: router,
       debugShowCheckedModeBanner: false,
+      theme: getGlobalThemeData(),
     );
   }
 }
