@@ -4,3 +4,5 @@
 class GlobalState {
   int globalNum = 100;
 }
+
+final GlobalState globalState = GlobalState();

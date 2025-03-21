@@ -12,7 +12,7 @@ class DemoViewModel extends ChangeNotifier {
   init(Map<String, dynamic>? extra) {
     model.number = extra?['num'] ?? 0;
 
-    model.globalNum = GlobalState().globalNum;
+    model.globalNum = globalState.globalNum;
   }
 
   /* 
@@ -22,6 +22,7 @@ class DemoViewModel extends ChangeNotifier {
 
   void setGlobalNum(int num) {
     model.globalNum = num;
+    globalState.globalNum = num;
     notifyListeners();
   }
 

@@ -10,7 +10,7 @@ class HomeViewModel extends ChangeNotifier {
    * 初始化
    */
   init() {
-    model.globalNum = GlobalState().globalNum;
+    model.globalNum = globalState.globalNum;
   }
 
   /* 
@@ -20,7 +20,7 @@ class HomeViewModel extends ChangeNotifier {
 
   void setGlobalNum(int num) {
     model.globalNum = num;
-    GlobalState().globalNum = num;
+    globalState.globalNum = num;
     notifyListeners();
   }
   
