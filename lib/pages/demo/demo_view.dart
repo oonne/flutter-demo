@@ -16,23 +16,26 @@ class DemoView extends StatelessWidget {
       child: Consumer<DemoViewModel>(
         builder: (context, viewModel, child) {
           return Scaffold(
-            appBar: AppBar(
-              title: Text(viewModel.title),
-            ),
+            appBar: AppBar(title: Text('DEMO页面')),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    viewModel.title,
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
+                  Text(viewModel.number.toString()),
                   const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      viewModel.updateTitle('标题已更新');
-                    },
-                    child: const Text('更新标题'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    spacing: 8,
+                    children: [
+                      ElevatedButton(
+                        onPressed: viewModel.add,
+                        child: const Text('+'),
+                      ),
+                      ElevatedButton(
+                        onPressed: viewModel.sub,
+                        child: const Text('-'),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -42,4 +45,4 @@ class DemoView extends StatelessWidget {
       ),
     );
   }
-} 
+}

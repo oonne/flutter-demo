@@ -5,10 +5,15 @@ import 'home_model.dart';
 class HomeViewModel extends ChangeNotifier {
   final HomeModel model = HomeModel();
   
-  String get title => model.title;
+  int get number => model.number;
 
-  void updateTitle(String newTitle) {
-    model.title = newTitle;
+  void add() {
+    model.number++;
+    notifyListeners();
+  }
+
+  void sub() {
+    model.number--;
     notifyListeners();
   }
 } 

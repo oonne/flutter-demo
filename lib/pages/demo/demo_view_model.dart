@@ -5,10 +5,15 @@ import 'demo_model.dart';
 class DemoViewModel extends ChangeNotifier {
   final DemoModel model = DemoModel();
   
-  String get title => model.title;
+  int get number => model.number;
 
-  void updateTitle(String newTitle) {
-    model.title = newTitle;
+  void add() {
+    model.number++;
+    notifyListeners();
+  }
+
+  void sub() {
+    model.number--;
     notifyListeners();
   }
 } 

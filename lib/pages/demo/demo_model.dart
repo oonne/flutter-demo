@@ -1,3 +1,3 @@
 class DemoModel {
-  String title = 'Demo';
+  int number = 0;
 } 

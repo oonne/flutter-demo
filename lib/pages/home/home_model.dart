@@ -1,3 +1,3 @@
 class HomeModel {
-  String title = '首页';
+  int number = 0;
 }

@@ -4,7 +4,6 @@ import 'package:flutter_demo/routes.dart';
 
 import 'home_view_model.dart';
 
-
 /* 
  * 首页
  */
@@ -18,24 +17,30 @@ class HomeView extends StatelessWidget {
       child: Consumer<HomeViewModel>(
         builder: (context, viewModel, child) {
           return Scaffold(
-            appBar: AppBar(
-              title: Text(viewModel.title),
-            ),
+            appBar: AppBar(title: Text('首页测试')),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    viewModel.title,
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
+                  /* 显示数字 */
+                  Text(viewModel.number.toString()),
                   const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      viewModel.updateTitle('标题已更新');
-                    },
-                    child: const Text('更新标题'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    spacing: 8,
+                    children: [
+                      ElevatedButton(
+                        onPressed: viewModel.add,
+                        child: const Text('+'),
+                      ),
+                      ElevatedButton(
+                        onPressed: viewModel.sub,
+                        child: const Text('-'),
+                      ),
+                    ],
                   ),
+
+                  /* 跳转DEMO页面 */
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
@@ -51,4 +56,4 @@ class HomeView extends StatelessWidget {
       ),
     );
   }
-} 
+}
