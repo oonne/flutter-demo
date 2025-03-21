@@ -13,7 +13,7 @@ class DemoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final globalState = Provider.of<GlobalState>(context, listen: false);
+    final globalState = Provider.of<GlobalState>(context, listen: true);
 
     return ChangeNotifierProvider(
       create: (_) {
