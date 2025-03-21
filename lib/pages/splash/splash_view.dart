@@ -28,7 +28,7 @@ class SplashView extends StatelessWidget {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      context.go('/home');
+                      context.goNamed('home');
                     },
                     child: const Text('跳转首页'),
                   ),

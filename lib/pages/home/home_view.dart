@@ -44,7 +44,7 @@ class HomeView extends StatelessWidget {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      context.go('/demo');
+                      context.pushNamed('demo');
                     },
                     child: const Text('跳转DEMO'),
                   ),
