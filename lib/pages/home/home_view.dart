@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_demo/routes.dart';
+import 'package:go_router/go_router.dart'; 
 
 import 'home_view_model.dart';
 
@@ -44,7 +44,7 @@ class HomeView extends StatelessWidget {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, demoRoute);
+                      context.go('/demo');
                     },
                     child: const Text('跳转DEMO'),
                   ),

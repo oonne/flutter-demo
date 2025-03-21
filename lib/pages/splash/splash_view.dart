@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:go_router/go_router.dart'; 
 
 import 'splash_view_model.dart';
 
@@ -21,21 +22,15 @@ class SplashView extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(viewModel.number.toString()),
+                  Text('LOGO'),
                   const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    spacing: 8,
-                    children: [
-                      ElevatedButton(
-                        onPressed: viewModel.add,
-                        child: const Text('+'),
-                      ),
-                      ElevatedButton(
-                        onPressed: viewModel.sub,
-                        child: const Text('-'),
-                      ),
-                    ],
+                  CircularProgressIndicator(),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      context.go('/home');
+                    },
+                    child: const Text('跳转首页'),
                   ),
                 ],
               ),
@@ -45,4 +40,4 @@ class SplashView extends StatelessWidget {
       ),
     );
   }
-} 
+}
