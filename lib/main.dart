@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:provider/provider.dart';
 
+import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/routes.dart';
@@ -39,10 +41,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: router,
-      debugShowCheckedModeBanner: false,
-      theme: getGlobalThemeData(),
+    return ChangeNotifierProvider(
+      create: (_) => GlobalState(),
+      child: MaterialApp.router(
+        routerConfig: router,
+        debugShowCheckedModeBanner: false,
+        theme: getGlobalThemeData(),
+      ),
     );
   }
 }

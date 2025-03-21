@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart'; 
+import 'package:flutter_demo/global/state.dart';
 
 import 'home_view_model.dart';
 
@@ -12,6 +13,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+
     return ChangeNotifierProvider(
       create: (_) {
         final viewModel = HomeViewModel();
@@ -52,7 +55,7 @@ class HomeView extends StatelessWidget {
                   /* 
                    * 全局数字
                    */
-                  Text('全局数字：${viewModel.globalNum}'),
+                  Text('全局数字：${globalState.globalNum}'),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -60,13 +63,13 @@ class HomeView extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          viewModel.setGlobalNum(viewModel.globalNum + 1);
+                          globalState.setGlobalNum(globalState.globalNum + 1);
                         },
                         child: const Text('+'),
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          viewModel.setGlobalNum(viewModel.globalNum - 1);
+                          globalState.setGlobalNum(globalState.globalNum - 1);
                         },
                         child: const Text('-'),
                       ),

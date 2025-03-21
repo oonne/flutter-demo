@@ -11,19 +11,6 @@ class DemoViewModel extends ChangeNotifier {
    */
   init(Map<String, dynamic>? extra) {
     model.number = extra?['num'] ?? 0;
-
-    model.globalNum = globalState.globalNum;
-  }
-
-  /* 
-   * 全局数字
-   */
-  int get globalNum => model.globalNum;
-
-  void setGlobalNum(int num) {
-    model.globalNum = num;
-    globalState.globalNum = num;
-    notifyListeners();
   }
 
   /* 
