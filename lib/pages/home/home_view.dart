@@ -13,7 +13,10 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => HomeViewModel(),
+      create: (_) {
+        final viewModel = HomeViewModel();
+        return viewModel;
+      },
       child: Consumer<HomeViewModel>(
         builder: (context, viewModel, child) {
           return Scaffold(
@@ -44,7 +47,9 @@ class HomeView extends StatelessWidget {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      context.pushNamed('demo');
+                      context.pushNamed('demo', queryParameters: {
+                        'num': viewModel.number.toString(),
+                      });
                     },
                     child: const Text('跳转DEMO'),
                   ),

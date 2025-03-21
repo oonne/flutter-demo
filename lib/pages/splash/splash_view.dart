@@ -13,7 +13,10 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => SplashViewModel(),
+      create: (_) {
+        final viewModel = SplashViewModel();
+        return viewModel;
+      },
       child: Consumer<SplashViewModel>(
         builder: (context, viewModel, child) {
           return Scaffold(

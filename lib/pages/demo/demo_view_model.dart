@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
+
 import 'demo_model.dart';
 
 class DemoViewModel extends ChangeNotifier {
   final DemoModel model = DemoModel();
-  
+
+  /* 
+   * 数字控制
+   */
   int get number => model.number;
 
   void add() {
@@ -16,4 +20,4 @@ class DemoViewModel extends ChangeNotifier {
     model.number--;
     notifyListeners();
   }
-} 
+}

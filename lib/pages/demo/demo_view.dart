@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:go_router/go_router.dart';
 import 'demo_view_model.dart';
 
 /* 
@@ -12,7 +12,10 @@ class DemoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => DemoViewModel(),
+      create: (_) {
+        final viewModel = DemoViewModel();
+        return viewModel;
+      },
       child: Consumer<DemoViewModel>(
         builder: (context, viewModel, child) {
           return Scaffold(
@@ -21,6 +24,9 @@ class DemoView extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  /* 
+                   *数字
+                   */
                   Text(viewModel.number.toString()),
                   const SizedBox(height: 20),
                   Row(
@@ -36,6 +42,14 @@ class DemoView extends StatelessWidget {
                         child: const Text('-'),
                       ),
                     ],
+                  ),
+
+                  /* 
+                   * 跳转
+                   */
+                  ElevatedButton(
+                    onPressed: () => context.pop(),
+                    child: const Text('返回'),
                   ),
                 ],
               ),
