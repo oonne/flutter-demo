@@ -1,10 +1,17 @@
 import 'package:go_router/go_router.dart';
 
+/* 全局 */
 import 'package:flutter_demo/layout/bottom_nav_bar.dart';
 import 'package:flutter_demo/pages/splash/splash_view.dart';
-import 'package:flutter_demo/pages/home/home_view.dart';
-import 'package:flutter_demo/pages/me/me_view.dart';
-import 'package:flutter_demo/pages/demo/demo_view.dart';
+
+/* 首页 */
+import 'package:flutter_demo/pages/home/home/home_view.dart';
+
+/* 我的 */
+import 'package:flutter_demo/pages/me/me/me_view.dart';
+
+/* Demo */
+import 'package:flutter_demo/pages/demo/mvvm/demo_view.dart';
 
 /*
  * 路由表
