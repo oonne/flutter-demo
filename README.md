@@ -16,6 +16,7 @@ flutter 基础项目
 * toast
 * 网络请求
 * 二维码扫描
+* 国际化
 
 # 安卓打包
 运行 flutter build apk

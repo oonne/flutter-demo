@@ -8,7 +8,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 class ScaffoldWithNavBar extends StatelessWidget {
   const ScaffoldWithNavBar({super.key, required this.child});
 
+  // 页面组件
   final Widget child;
+  // 底导航Icon大小
+  final double iconSize = 24;
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +23,14 @@ class ScaffoldWithNavBar extends StatelessWidget {
             icon: SvgPicture.asset(
               'assets/icon/home.svg',
               colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+              width: iconSize,
+              height: iconSize,
             ),
             activeIcon: SvgPicture.asset(
               'assets/icon/home-fill.svg',
               colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+              width: iconSize,
+              height: iconSize,
             ),
             label: '首页',
           ),
@@ -31,10 +38,14 @@ class ScaffoldWithNavBar extends StatelessWidget {
             icon: SvgPicture.asset(
               'assets/icon/customer.svg',
               colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+              width: iconSize,
+              height: iconSize,
             ),
             activeIcon: SvgPicture.asset(
               'assets/icon/customer-fill.svg',
               colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+              width: iconSize,
+              height: iconSize,
             ),
             label: '我的',
           ),
@@ -50,7 +61,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
     if (location.startsWith('/home')) {
       return 0;
     }
-    if (location.startsWith('/demo')) {
+    if (location.startsWith('/me')) {
       return 1;
     }
     return 0;
@@ -62,7 +73,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
         GoRouter.of(context).pushReplacement('/home');
         break;
       case 1:
-        GoRouter.of(context).pushReplacement('/demo');
+        GoRouter.of(context).pushReplacement('/me');
         break;
     }
   }

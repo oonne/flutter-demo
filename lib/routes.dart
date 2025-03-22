@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_demo/layout/bottom_nav_bar.dart';
 import 'package:flutter_demo/pages/splash/splash_view.dart';
 import 'package:flutter_demo/pages/home/home_view.dart';
+import 'package:flutter_demo/pages/me/me_view.dart';
 import 'package:flutter_demo/pages/demo/demo_view.dart';
 
 /*
@@ -11,10 +12,7 @@ import 'package:flutter_demo/pages/demo/demo_view.dart';
 final router = GoRouter(
   routes: <RouteBase>[
     /* 启动页 */
-    GoRoute(
-      path: '/',
-      redirect: (context, state) => '/splash',
-    ),
+    GoRoute(path: '/', redirect: (context, state) => '/splash'),
 
     /* 闪屏 */
     GoRoute(
@@ -23,7 +21,7 @@ final router = GoRouter(
       builder: (context, state) => const SplashView(),
     ),
 
-    /* 底导航页面 */
+    /* 底导航 */
     ShellRoute(
       builder: (context, state, child) {
         return ScaffoldWithNavBar(child: child);
@@ -37,27 +35,44 @@ final router = GoRouter(
             return CustomTransitionPage(
               key: state.pageKey,
               child: const HomeView(),
-              transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              transitionsBuilder: (
+                context,
+                animation,
+                secondaryAnimation,
+                child,
+              ) {
                 return child;
               },
             );
           },
         ),
-        /* 测试 */
+        /* 我的 */
         GoRoute(
-          name: 'demo',
-          path: '/demo',
+          name: 'me',
+          path: '/me',
           pageBuilder: (context, state) {
             return CustomTransitionPage(
               key: state.pageKey,
-              child: const DemoView(),
-              transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              child: const MeView(),
+              transitionsBuilder: (
+                context,
+                animation,
+                secondaryAnimation,
+                child,
+              ) {
                 return child;
               },
             );
           },
         ),
       ],
+    ),
+
+    /* 测试 */
+    GoRoute(
+      name: 'demo',
+      path: '/demo',
+      builder: (context, state) => const DemoView(),
     ),
   ],
 );
