@@ -40,7 +40,7 @@ sed -i '' "s/version: $VERSION+$BUILD_NUMBER/version: $NEW_VERSION+$NEW_BUILD_NU
 echo "版本号: $NEW_VERSION ($NEW_BUILD_NUMBER)"
 
 # 打包ipa
-flutter build ipa
+flutter build ipa --obfuscate --split-debug-info=scripts/symbols
 # 判断 打包后的 ipa 文件是否存在
 if [ -f "build/ios/ipa/$PACKAGE_NAME.ipa" ]; then
     echo "ipa 打包成功"
@@ -48,13 +48,13 @@ else
     echo "ipa 打包失败"
     exit 1
 fi
-# 复制 ipa 文件到scripts/app/
-cp "build/ios/ipa/$PACKAGE_NAME.ipa" "$SCRIPT_DIR/app/"
+# 复制 ipa 文件到scripts/app/ 并重命名为 package_name.ipa
+cp "build/ios/ipa/$PACKAGE_NAME.ipa" "$SCRIPT_DIR/app/$PACKAGE_NAME-$NEW_VERSION.ipa"
 # 删除 打包后的 ipa 文件
 rm -f "build/ios/ipa/$PACKAGE_NAME.ipa"
 
 # 打包apk
-flutter build apk
+flutter build apk --obfuscate --split-debug-info=scripts/symbols
 # 判断 打包后的 apk 文件是否存在
 if [ -f "build/app/outputs/flutter-apk/app-release.apk" ]; then
     echo "apk 打包成功"
