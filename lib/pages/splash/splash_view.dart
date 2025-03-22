@@ -20,7 +20,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     _viewModel = SplashViewModel();
-    
+
     // 执行进入逻辑
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _viewModel.enter(context);
@@ -37,12 +37,11 @@ class _SplashViewState extends State<SplashView> {
            * 页面
            */
           return Scaffold(
-            appBar: AppBar(title: Text('Splash页面')),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('LOGO'),
+                  Image.asset('assets/img/logo.png', width: 100, height: 100),
                 ],
               ),
             ),

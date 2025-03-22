@@ -32,7 +32,7 @@ class _IndexViewState extends State<IndexView> {
             body: Column(
               children: [
                 /* Mvvm示例 */
-                const SizedBox(height: 20),
+                const SizedBox(height: 20, width: double.infinity),
                 ElevatedButton(
                   onPressed: () {
                     context.pushNamed('demo/mvvm', extra: {'num': 123});

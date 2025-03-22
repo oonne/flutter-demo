@@ -25,11 +25,15 @@ class _HomeViewState extends State<HomeView> {
            */
           return Scaffold(
             appBar: AppBar(title: Text('首页测试')),
-            body: Column(
+            body: SingleChildScrollView(
+              child: Column(
                 children: [
-                  Text('首页'),
+                  Center(
+                    child: Text('首页'),
+                  ),
                 ],
               ),
+            ),
           );
         },
       ),

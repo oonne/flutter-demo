@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:go_router/go_router.dart'; 
+import 'package:go_router/go_router.dart';
 
 import 'me_view_model.dart';
 
@@ -26,18 +26,20 @@ class _MeViewState extends State<MeView> {
            */
           return Scaffold(
             appBar: AppBar(title: Text('个人中心')),
-            body: Column(
-              children: [
-                Text('个人中心'),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Center(child: Text('个人中心')),
 
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    GoRouter.of(context).pushNamed('demo');
-                  },
-                  child: const Text('Demo'),
-                ),
-              ],
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      GoRouter.of(context).pushNamed('demo');
+                    },
+                    child: const Text('Demo'),
+                  ),
+                ],
+              ),
             ),
           );
         },

@@ -32,3 +32,4 @@ flutter:
     - .env.dev
     - assets/audio/
     - assets/icon/
+    - assets/img/
