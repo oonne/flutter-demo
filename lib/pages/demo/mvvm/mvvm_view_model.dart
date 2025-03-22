@@ -10,6 +10,7 @@ class MvvmViewModel extends ChangeNotifier {
    */
   init(Map<String, dynamic>? extra) {
     model.number = extra?['num'] ?? 0;
+    notifyListeners();
   }
 
   /* 

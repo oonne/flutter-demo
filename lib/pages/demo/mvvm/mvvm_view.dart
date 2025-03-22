@@ -16,18 +16,26 @@ class MvvmView extends StatefulWidget {
 }
 
 class _MvvmViewState extends State<MvvmView> {
+  late final MvvmViewModel viewModel;
+
+  @override
+  void initState() {
+    super.initState();
+    viewModel = MvvmViewModel();
+    
+    // 在下一帧初始化 viewModel
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final queryParameters = GoRouterState.of(context).extra as Map<String, dynamic>?;
+      viewModel.init(queryParameters);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final globalState = Provider.of<GlobalState>(context, listen: true);
 
-    return ChangeNotifierProvider(
-      create: (_) {
-        final viewModel = MvvmViewModel();
-        // 获取路由参数
-        final queryParameters = GoRouterState.of(context).extra as Map<String, dynamic>?;
-        viewModel.init(queryParameters);
-        return viewModel;
-      },
+    return ChangeNotifierProvider.value(
+      value: viewModel,
       child: Consumer<MvvmViewModel>(
         builder: (context, viewModel, child) {
           /* 
