@@ -1,3 +1,3 @@
-class DemoModel {
+class MvvmModel {
   int number = 0;
 } 

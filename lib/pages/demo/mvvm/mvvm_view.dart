@@ -3,13 +3,13 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_demo/global/state.dart';
 
-import 'demo_view_model.dart';
+import 'mvvm_view_model.dart';
 
 /* 
- * DEMO页面
+ * MVVM页面
  */
-class DemoView extends StatelessWidget {
-  const DemoView({super.key});
+class MvvmView extends StatelessWidget {
+  const MvvmView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +17,19 @@ class DemoView extends StatelessWidget {
 
     return ChangeNotifierProvider(
       create: (_) {
-        final viewModel = DemoViewModel();
+        final viewModel = MvvmViewModel();
         // 获取路由参数
         final queryParameters = GoRouterState.of(context).extra as Map<String, dynamic>?;
         viewModel.init(queryParameters);
         return viewModel;
       },
-      child: Consumer<DemoViewModel>(
+      child: Consumer<MvvmViewModel>(
         builder: (context, viewModel, child) {
           /* 
            * 页面
            */
           return Scaffold(
-            appBar: AppBar(title: Text('DEMO页面')),
+            appBar: AppBar(title: Text('MVVM页面')),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

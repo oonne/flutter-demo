@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'demo_model.dart';
+import 'mvvm_model.dart';
 
-class DemoViewModel extends ChangeNotifier {
-  final DemoModel model = DemoModel();
+class MvvmViewModel extends ChangeNotifier {
+  final MvvmModel model = MvvmModel();
 
   /* 
    * 初始化

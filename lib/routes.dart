@@ -11,7 +11,7 @@ import 'package:flutter_demo/pages/home/home/home_view.dart';
 import 'package:flutter_demo/pages/me/me/me_view.dart';
 
 /* Demo */
-import 'package:flutter_demo/pages/demo/mvvm/demo_view.dart';
+import 'package:flutter_demo/pages/demo/mvvm/mvvm_view.dart';
 
 /*
  * 路由表
@@ -75,11 +75,11 @@ final router = GoRouter(
       ],
     ),
 
-    /* 测试 */
+    /* Demo */
     GoRoute(
-      name: 'demo',
-      path: '/demo',
-      builder: (context, state) => const DemoView(),
+      name: 'demo-mvvm',
+      path: '/demo/mvvm',
+      builder: (context, state) => const MvvmView(),
     ),
   ],
 );
