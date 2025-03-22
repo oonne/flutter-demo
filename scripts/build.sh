@@ -1,3 +1,6 @@
+# 记录开始时间
+START_TIME=$(date +%s)
+
 # 获取当前路径
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 cd "$SCRIPT_DIR"
@@ -53,16 +56,19 @@ rm -f "build/ios/ipa/$PACKAGE_NAME.ipa"
 # 打包apk
 flutter build apk
 # 判断 打包后的 apk 文件是否存在
-if [ -f "build/app/outputs/flutter-apk/app.apk" ]; then
+if [ -f "build/app/outputs/flutter-apk/app-release.apk" ]; then
     echo "apk 打包成功"
 else
     echo "apk 打包失败"
     exit 1
 fi
 # 复制 apk 文件到scripts/app/ 并重命名为 package_name.apk
-cp "build/app/outputs/flutter-apk/app.apk" "$SCRIPT_DIR/app/$PACKAGE_NAME-$NEW_VERSION.apk"
+cp "build/app/outputs/flutter-apk/app-release.apk" "$SCRIPT_DIR/app/$PACKAGE_NAME-$NEW_VERSION.apk"
 # 删除 打包后的 apk 文件
-rm -f "build/app/outputs/flutter-apk/app.apk"
+rm -f "build/app/outputs/flutter-apk/app-release.apk"
 
 # 全部打包完成
+END_TIME=$(date +%s)
+TOTAL_TIME=$((END_TIME - START_TIME))
 echo "全部打包完成"
+echo "总耗时: $((TOTAL_TIME / 60))分$((TOTAL_TIME % 60))秒"
