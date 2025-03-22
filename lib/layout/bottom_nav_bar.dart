@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-/// 带底部导航栏的脚手架组件
+/* 
+ * 底导航
+ */
 class ScaffoldWithNavBar extends StatelessWidget {
   const ScaffoldWithNavBar({
+    super.key,
     required this.child,
-    Key? key,
-  }) : super(key: key);
+  });
 
   final Widget child;
 

@@ -5,17 +5,16 @@ flutter 基础项目
 * 环境变量
 * 日志
 * MVVM页面示例
-* 全局变量
+* 全局数据(provider)
 * 路由(go_router)
-
+* svg图标(flutter_svg)
 * 底导航
+
 * 全局样式
 * 深浅主题切换
 * 混淆dart
-
 * toast
 * 网络请求
-* svg-icon
 * 二维码扫描
 
 # 安卓打包

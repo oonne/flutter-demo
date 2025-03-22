@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/global/state.dart';
 
 import 'demo_model.dart';
 
