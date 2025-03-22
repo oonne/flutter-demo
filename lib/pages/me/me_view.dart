@@ -16,11 +16,7 @@ class MeView extends StatelessWidget {
     final globalState = Provider.of<GlobalState>(context, listen: true);
 
     return ChangeNotifierProvider(
-      create: (_) {
-        final viewModel = MeViewModel();
-        viewModel.init();
-        return viewModel;
-      },
+      create: (_) => MeViewModel(),
       child: Consumer<MeViewModel>(
         builder: (context, viewModel, child) {
           /* 

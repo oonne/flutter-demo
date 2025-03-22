@@ -16,11 +16,7 @@ class HomeView extends StatelessWidget {
     final globalState = Provider.of<GlobalState>(context, listen: true);
 
     return ChangeNotifierProvider(
-      create: (_) {
-        final viewModel = HomeViewModel();
-        viewModel.init();
-        return viewModel;
-      },
+      create: (_) => HomeViewModel(),
       child: Consumer<HomeViewModel>(
         builder: (context, viewModel, child) {
           /* 

@@ -4,12 +4,6 @@ import 'me_model.dart';
 
 class MeViewModel extends ChangeNotifier {
   final MeModel model = MeModel();
-
-  /* 
-   * 初始化
-   */
-  init() {
-  }
   
   /* 
    * 页面数字

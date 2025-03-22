@@ -6,12 +6,6 @@ class HomeViewModel extends ChangeNotifier {
   final HomeModel model = HomeModel();
 
   /* 
-   * 初始化
-   */
-  init() {
-  }
-  
-  /* 
    * 页面数字
    */
   int get number => model.number;

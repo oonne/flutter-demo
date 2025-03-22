@@ -1,22 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:go_router/go_router.dart'; 
 
 import 'splash_view_model.dart';
 
 /* 
  * Splash页面
  */
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
 
   @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  late final SplashViewModel _viewModel;
+
+  @override
+  void initState() {
+    super.initState();
+    _viewModel = SplashViewModel();
+    
+    // 执行进入逻辑
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _viewModel.enter(context);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) {
-        final viewModel = SplashViewModel();
-        return viewModel;
-      },
+    return ChangeNotifierProvider.value(
+      value: _viewModel,
       child: Consumer<SplashViewModel>(
         builder: (context, viewModel, child) {
           /* 
@@ -29,15 +43,6 @@ class SplashView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('LOGO'),
-                  const SizedBox(height: 20),
-                  CircularProgressIndicator(),
-                  const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      context.goNamed('home');
-                    },
-                    child: const Text('跳转首页'),
-                  ),
                 ],
               ),
             ),
