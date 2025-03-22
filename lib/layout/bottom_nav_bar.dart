@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 /* 
  * 底导航
  */
 class ScaffoldWithNavBar extends StatelessWidget {
-  const ScaffoldWithNavBar({
-    super.key,
-    required this.child,
-  });
+  const ScaffoldWithNavBar({super.key, required this.child});
 
   final Widget child;
 
@@ -17,9 +15,29 @@ class ScaffoldWithNavBar extends StatelessWidget {
     return Scaffold(
       body: child,
       bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: '首页'),
-          BottomNavigationBarItem(icon: Icon(Icons.business), label: '测试'),
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icon/home.svg',
+              colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/icon/home-fill.svg',
+              colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+            ),
+            label: '首页',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icon/customer.svg',
+              colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/icon/customer-fill.svg',
+              colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+            ),
+            label: '我的',
+          ),
         ],
         currentIndex: _calculateSelectedIndex(context),
         onTap: (int idx) => _onItemTapped(idx, context),
@@ -48,4 +66,4 @@ class ScaffoldWithNavBar extends StatelessWidget {
         break;
     }
   }
-} 
+}
