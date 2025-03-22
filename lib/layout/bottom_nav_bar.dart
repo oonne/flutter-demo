@@ -2,79 +2,94 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+
+
+/* 
+ * 底导航Item
+ */
+class NavItem {
+  final String icon;
+  final String activeIcon;
+  final String label;
+  final String path;
+
+  const NavItem({
+    required this.icon,
+    required this.activeIcon,
+    required this.label,
+    required this.path,
+  });
+}
+
 /* 
  * 底导航
  */
 class ScaffoldWithNavBar extends StatelessWidget {
-  const ScaffoldWithNavBar({super.key, required this.child});
+  ScaffoldWithNavBar({super.key, required this.child});
 
   // 页面组件
   final Widget child;
   // 底导航Icon大小
   final double iconSize = 24;
 
+  // 底导航配置
+  final List<NavItem> _navItems = [
+    NavItem(
+      icon: 'assets/icon/home.svg',
+      activeIcon: 'assets/icon/home-fill.svg',
+      label: '首页',
+      path: '/home',
+    ),
+    NavItem(
+      icon: 'assets/icon/customer.svg',
+      activeIcon: 'assets/icon/customer-fill.svg',
+      label: '我的',
+      path: '/me',
+    ),
+  ];
+
+  /* 
+   * 计算选中的索引
+   */
+  int _calculateSelectedIndex(BuildContext context) {
+    final String location = GoRouterState.of(context).uri.path;
+    return _navItems.indexWhere((item) => location.startsWith(item.path));
+  }
+
+  /* 
+   * 点击事件
+   */
+  void _onItemTapped(int index, BuildContext context) {
+    if (index >= 0 && index < _navItems.length) {
+      GoRouter.of(context).pushReplacement(_navItems[index].path);
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: child,
       bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icon/home.svg',
-              colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
-              width: iconSize,
-              height: iconSize,
-            ),
-            activeIcon: SvgPicture.asset(
-              'assets/icon/home-fill.svg',
-              colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
-              width: iconSize,
-              height: iconSize,
-            ),
-            label: '首页',
+        items: _navItems.map((item) => BottomNavigationBarItem(
+          icon: SvgPicture.asset(
+            item.icon,
+            colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+            width: iconSize,
+            height: iconSize,
           ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icon/customer.svg',
-              colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
-              width: iconSize,
-              height: iconSize,
-            ),
-            activeIcon: SvgPicture.asset(
-              'assets/icon/customer-fill.svg',
-              colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
-              width: iconSize,
-              height: iconSize,
-            ),
-            label: '我的',
+          activeIcon: SvgPicture.asset(
+            item.activeIcon,
+            colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+            width: iconSize,
+            height: iconSize,
           ),
-        ],
+          label: item.label,
+        )).toList(),
         currentIndex: _calculateSelectedIndex(context),
         onTap: (int idx) => _onItemTapped(idx, context),
       ),
     );
   }
-
-  int _calculateSelectedIndex(BuildContext context) {
-    final String location = GoRouterState.of(context).uri.path;
-    if (location.startsWith('/home')) {
-      return 0;
-    }
-    if (location.startsWith('/me')) {
-      return 1;
-    }
-    return 0;
-  }
-
-  void _onItemTapped(int index, BuildContext context) {
-    switch (index) {
-      case 0:
-        GoRouter.of(context).pushReplacement('/home');
-        break;
-      case 1:
-        GoRouter.of(context).pushReplacement('/me');
-        break;
-    }
-  }
 }
+

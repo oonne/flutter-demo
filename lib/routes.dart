@@ -18,17 +18,19 @@ import 'package:flutter_demo/pages/demo/mvvm/mvvm_view.dart';
  */
 final router = GoRouter(
   routes: <RouteBase>[
-    /* 启动页 */
+    /*
+     * 启动页
+     */
     GoRoute(path: '/', redirect: (context, state) => '/splash'),
-
-    /* 闪屏 */
     GoRoute(
       name: 'splash',
       path: '/splash',
       builder: (context, state) => const SplashView(),
     ),
 
-    /* 底导航 */
+    /* 
+     * 底导航
+     */
     ShellRoute(
       builder: (context, state, child) {
         return ScaffoldWithNavBar(child: child);
