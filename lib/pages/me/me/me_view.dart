@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:go_router/go_router.dart';
-import 'package:flutter_demo/global/state.dart';
 
 import 'me_view_model.dart';
 
@@ -13,8 +11,6 @@ class MeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final globalState = Provider.of<GlobalState>(context, listen: true);
-
     return ChangeNotifierProvider(
       create: (_) => MeViewModel(),
       child: Consumer<MeViewModel>(

@@ -11,8 +11,8 @@ import 'package:flutter_demo/pages/home/home/home_view.dart';
 import 'package:flutter_demo/pages/me/me/me_view.dart';
 
 /* Demo */
+import 'package:flutter_demo/pages/demo/index/index_view.dart';
 import 'package:flutter_demo/pages/demo/mvvm/mvvm_view.dart';
-
 /*
  * 路由表
  */
@@ -78,6 +78,11 @@ final router = GoRouter(
     ),
 
     /* Demo */
+    GoRoute(
+      name: 'demo-index',
+      path: '/demo/index',
+      builder: (context, state) => const IndexView(),
+    ),
     GoRoute(
       name: 'demo-mvvm',
       path: '/demo/mvvm',

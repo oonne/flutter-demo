@@ -1,35 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:go_router/go_router.dart';
+import 'package:go_router/go_router.dart'; 
 import 'package:flutter_demo/global/state.dart';
 
-import 'mvvm_view_model.dart';
+import 'index_view_model.dart';
 
 /* 
- * MVVM页面
+ * Demo
  */
-class MvvmView extends StatelessWidget {
-  const MvvmView({super.key});
+class IndexView extends StatelessWidget {
+  const IndexView({super.key});
 
   @override
   Widget build(BuildContext context) {
     final globalState = Provider.of<GlobalState>(context, listen: true);
 
     return ChangeNotifierProvider(
-      create: (_) {
-        final viewModel = MvvmViewModel();
-        // 获取路由参数
-        final queryParameters = GoRouterState.of(context).extra as Map<String, dynamic>?;
-        viewModel.init(queryParameters);
-        return viewModel;
-      },
-      child: Consumer<MvvmViewModel>(
+      create: (_) => IndexViewModel(),
+      child: Consumer<IndexViewModel>(
         builder: (context, viewModel, child) {
           /* 
            * 页面
            */
           return Scaffold(
-            appBar: AppBar(title: Text('MVVM示例')),
+            appBar: AppBar(title: Text('Demo')),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -78,12 +72,15 @@ class MvvmView extends StatelessWidget {
                     ],
                   ),
 
-                  /* 
-                   * 跳转
-                   */
+                  /* 跳转DEMO页面 */
+                  const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () => context.pop(),
-                    child: const Text('返回'),
+                    onPressed: () {
+                      context.pushNamed('demo', extra: {
+                        'num': viewModel.number,
+                      });
+                    },
+                    child: const Text('跳转DEMO'),
                   ),
                 ],
               ),
