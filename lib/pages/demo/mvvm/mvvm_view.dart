@@ -8,9 +8,14 @@ import 'mvvm_view_model.dart';
 /* 
  * MVVM页面
  */
-class MvvmView extends StatelessWidget {
+class MvvmView extends StatefulWidget {
   const MvvmView({super.key});
 
+  @override
+  State<MvvmView> createState() => _MvvmViewState();
+}
+
+class _MvvmViewState extends State<MvvmView> {
   @override
   Widget build(BuildContext context) {
     final globalState = Provider.of<GlobalState>(context, listen: true);

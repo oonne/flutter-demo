@@ -79,12 +79,12 @@ final router = GoRouter(
 
     /* Demo */
     GoRoute(
-      name: 'demo-index',
-      path: '/demo/index',
+      name: 'demo',
+      path: '/demo',
       builder: (context, state) => const IndexView(),
     ),
     GoRoute(
-      name: 'demo-mvvm',
+      name: 'demo/mvvm',
       path: '/demo/mvvm',
       builder: (context, state) => const MvvmView(),
     ),

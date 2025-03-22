@@ -8,9 +8,14 @@ import 'index_view_model.dart';
 /* 
  * Demo
  */
-class IndexView extends StatelessWidget {
+class IndexView extends StatefulWidget {
   const IndexView({super.key});
 
+  @override
+  State<IndexView> createState() => _IndexViewState();
+}
+
+class _IndexViewState extends State<IndexView> {
   @override
   Widget build(BuildContext context) {
     final globalState = Provider.of<GlobalState>(context, listen: true);
