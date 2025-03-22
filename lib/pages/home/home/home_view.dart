@@ -26,7 +26,6 @@ class _HomeViewState extends State<HomeView> {
           return Scaffold(
             appBar: AppBar(title: Text('首页测试')),
             body: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('首页'),
                 ],
