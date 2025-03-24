@@ -8,7 +8,7 @@ import 'panel_item.dart';
  * 面板
  */
 class Panel extends StatelessWidget {
-  final List<Widget> children;
+  final List<PanelItem> children;
 
   const Panel({super.key, required this.children});
 
@@ -24,15 +24,9 @@ class Panel extends StatelessWidget {
         borderRadius: BorderRadius.circular(themeVars.radius),
       ),
       child: Column(
-        children: children.asMap().entries.map((entry) {
-          final isLast = entry.key == children.length - 1;
-          return PanelItem(
-            key: ValueKey(entry.key),
-            isLast: isLast,
-            child: entry.value,
-          );
-        }).toList(),
+        children: children,
       ),
     );
   }
 }
+

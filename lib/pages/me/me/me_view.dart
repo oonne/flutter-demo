@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter_demo/widget/panel/panel.dart';
+import 'package:flutter_demo/widget/panel/panel_item.dart';
 
 import 'me_view_model.dart';
 
@@ -35,27 +35,17 @@ class _MeViewState extends State<MeView> {
                   /* 标准卡片 */
                   Panel(
                     children: [
-                      InkWell(
+                      PanelItem(
+                        label: 'DEMO哈哈愤怒额风格w欧回复飞牛网广佛我刚好耿耿个',
+                        value: '哈哈',
+                        showArrow: true,
                         onTap: () {
                           GoRouter.of(context).pushNamed('demo');
                         },
-                        child: Row(
-                          children: [
-                            Text('DEMO'),
-                            SvgPicture.asset(
-                              'assets/icon/right.svg',
-                              colorFilter: ColorFilter.mode(
-                                Color(0xFF343c49),
-                                BlendMode.srcIn,
-                              ),
-                              width: 16,
-                              height: 16,
-                            ),
-                          ],
-                        ),
                       ),
-                      const Text('设置'),
-                      const Text('关于'),
+
+                      // const Text('设置'),
+                      // const Text('关于'),
                     ],
                   ),
                 ],
