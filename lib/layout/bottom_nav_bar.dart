@@ -91,6 +91,8 @@ class ScaffoldWithNavBar extends StatelessWidget {
         )).toList(),
         currentIndex: _calculateSelectedIndex(context),
         onTap: (int idx) => _onItemTapped(idx, context),
+        selectedItemColor: colorScheme.primary,
+        unselectedItemColor: themeVars.textColor,
       ),
     );
   }

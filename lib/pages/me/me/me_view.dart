@@ -43,7 +43,7 @@ class _MeViewState extends State<MeView> {
                           children: [
                             Text('DEMO'),
                             SvgPicture.asset(
-                              'assets/icon/arrow_right.svg',
+                              'assets/icon/right.svg',
                               colorFilter: ColorFilter.mode(
                                 Color(0xFF343c49),
                                 BlendMode.srcIn,
