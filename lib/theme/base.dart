@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
  */
 class ThemeVars {
   final double radius;
-  final double cardMargin;
+  final double panelMargin;
   final Color scaffoldBackground;
-  final Color cardColor;
+  final Color contentBackground;
 
   const ThemeVars({
     this.radius = 4, // 圆角大小
-    this.cardMargin = 10, // 卡片margin
-    required this.scaffoldBackground, // 背景色
-    required this.cardColor, // 卡片色
+    this.panelMargin = 10, // 卡片margin
+    required this.scaffoldBackground, // 页面背景色
+    required this.contentBackground, // 内容背景色
   });
 }
 
@@ -28,7 +28,7 @@ ThemeData createBaseTheme({
     useMaterial3: true,
     colorScheme: colorScheme,
     scaffoldBackgroundColor: vars.scaffoldBackground,
-    
+
     /* 
      * AppBar
      */

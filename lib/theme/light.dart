@@ -5,8 +5,8 @@ import 'package:flutter_demo/theme/base.dart';
  * 浅色主题变量
  */
 final ThemeVars lightThemeVars = ThemeVars(
-  scaffoldBackground: const Color.fromRGBO(255, 255, 255, 1),
-  cardColor: Colors.white,
+  scaffoldBackground: const Color.fromRGBO(248, 248, 248, 1),
+  contentBackground: const Color.fromRGBO(255, 255, 255, 1),
 );
 
 /* 
@@ -33,12 +33,5 @@ ThemeData getLightThemeData() {
     colorScheme: colorScheme,
     vars: lightThemeVars,
   ).copyWith(
-    // 浅色主题特有的设置可以在这里添加
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        foregroundColor: colorScheme.onPrimary,
-        backgroundColor: colorScheme.primary,
-      ),
-    ),
   );
 } 

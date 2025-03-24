@@ -6,7 +6,7 @@ import 'package:flutter_demo/theme/base.dart';
  */
 final ThemeVars darkThemeVars = ThemeVars(
   scaffoldBackground: const Color.fromRGBO(30, 30, 30, 1),
-  cardColor: const Color.fromRGBO(45, 45, 45, 1),
+  contentBackground: const Color.fromRGBO(45, 45, 45, 1),
 );
 
 /* 
@@ -33,13 +33,6 @@ ThemeData getDarkThemeData() {
     colorScheme: colorScheme,
     vars: darkThemeVars,
   ).copyWith(
-    // 深色主题特有的设置可以在这里添加
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        foregroundColor: colorScheme.onPrimary,
-        backgroundColor: colorScheme.primary,
-      ),
-    ),
     textTheme: const TextTheme(
       bodyMedium: TextStyle(color: Color.fromRGBO(220, 220, 220, 1)),
     ),

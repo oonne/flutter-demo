@@ -34,10 +34,11 @@ class _MeViewState extends State<MeView> {
             body: SingleChildScrollView(
               child: Column(
                 children: [
+                  /* 标准卡片 */
                   Container(
-                    margin: EdgeInsets.all(themeVars.cardMargin),
+                    margin: EdgeInsets.all(themeVars.panelMargin),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: themeVars.contentBackground,
                       borderRadius: BorderRadius.circular(themeVars.radius),
                     ),
                   ),
