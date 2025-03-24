@@ -8,12 +8,13 @@ class ThemeVars {
   final double panelMargin;
   final Color scaffoldBackground;
   final Color contentBackground;
-
+  final Color textColor;
   const ThemeVars({
     this.radius = 8, // 圆角大小
     this.panelMargin = 10, // 卡片margin
     required this.scaffoldBackground, // 页面背景色
     required this.contentBackground, // 内容背景色
+    required this.textColor, // 文字颜色
   });
 }
 

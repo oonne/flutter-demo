@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter_demo/widget/panel/panel.dart';
 
@@ -41,7 +42,15 @@ class _MeViewState extends State<MeView> {
                         child: Row(
                           children: [
                             Text('DEMO'),
-                            Icon(Icons.arrow_forward_ios),
+                            SvgPicture.asset(
+                              'assets/icon/arrow_right.svg',
+                              colorFilter: ColorFilter.mode(
+                                Color(0xFF343c49),
+                                BlendMode.srcIn,
+                              ),
+                              width: 16,
+                              height: 16,
+                            ),
                           ],
                         ),
                       ),

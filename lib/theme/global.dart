@@ -12,17 +12,25 @@ export 'package:flutter_demo/theme/dark.dart';
 export 'package:flutter_demo/theme/base.dart';
 
 /* 
- * 获取当前主题的变量
- * 根据当前主题状态返回对应的主题变量
+ * 判断当前是否是深色模式
  */
-ThemeVars getCurrentThemeVars(BuildContext context) {
+bool isDarkMode(BuildContext context) {
   final globalState = Provider.of<GlobalState>(context);
-  
-  // 判断当前是否是深色模式
-  final bool isDarkMode = globalState.themeMode == ThemeMode.dark || 
+  return globalState.themeMode == ThemeMode.dark || 
     (globalState.themeMode == ThemeMode.system && 
      MediaQuery.of(context).platformBrightness == Brightness.dark);
-  
-  // 返回对应的主题变量
-  return isDarkMode ? darkThemeVars : lightThemeVars;
+}
+
+/* 
+ * 获取当前主题颜色
+ */
+ColorScheme getCurrentThemeColorScheme(BuildContext context) {
+  return isDarkMode(context) ? getDarkColorScheme() : getLightColorScheme();
+}
+
+/* 
+ * 获取当前主题的变量
+ */
+ThemeVars getCurrentThemeVars(BuildContext context) {
+  return isDarkMode(context) ? darkThemeVars : lightThemeVars;
 }

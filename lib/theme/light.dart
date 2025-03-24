@@ -7,6 +7,7 @@ import 'package:flutter_demo/theme/base.dart';
 final ThemeVars lightThemeVars = ThemeVars(
   scaffoldBackground: const Color.fromRGBO(240, 240, 240, 1),
   contentBackground: const Color.fromRGBO(255, 255, 255, 1),
+  textColor: const Color.fromRGBO(30, 30, 30, 1),
 );
 
 /* 

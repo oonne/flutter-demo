@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
+import 'package:flutter_demo/theme/global.dart';
 
 /* 
  * 底导航Item
@@ -68,19 +68,22 @@ class ScaffoldWithNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = getCurrentThemeColorScheme(context);
+    final themeVars = getCurrentThemeVars(context);
+
     return Scaffold(
       body: child,
       bottomNavigationBar: BottomNavigationBar(
         items: _navItems.map((item) => BottomNavigationBarItem(
           icon: SvgPicture.asset(
             item.icon,
-            colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(themeVars.textColor, BlendMode.srcIn),
             width: iconSize,
             height: iconSize,
           ),
           activeIcon: SvgPicture.asset(
             item.activeIcon,
-            colorFilter: ColorFilter.mode(Color(0xFF343c49), BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(colorScheme.primary, BlendMode.srcIn),
             width: iconSize,
             height: iconSize,
           ),
