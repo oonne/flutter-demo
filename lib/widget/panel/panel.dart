@@ -6,9 +6,9 @@ import 'package:flutter_demo/theme/global.dart';
  * 面板
  */
 class Panel extends StatelessWidget {
-  final Widget child;
+  final List<Widget> children;
 
-  const Panel({super.key, required this.child});
+  const Panel({super.key, required this.children});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,9 @@ class Panel extends StatelessWidget {
         color: themeVars.contentBackground,
         borderRadius: BorderRadius.circular(themeVars.radius),
       ),
-      child: child,
+      child: Column(
+        children: children,
+      ),
     );
   }
 }

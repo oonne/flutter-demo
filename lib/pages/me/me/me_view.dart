@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:flutter_demo/theme/global.dart';
+import 'package:flutter_demo/widget/panel/panel.dart';
+import 'package:flutter_demo/widget/panel/panel_item.dart';
 
 import 'me_view_model.dart';
 
@@ -19,9 +20,6 @@ class MeView extends StatefulWidget {
 class _MeViewState extends State<MeView> {
   @override
   Widget build(BuildContext context) {
-    // 获取当前主题变量
-    final themeVars = getCurrentThemeVars(context);
-
     return ChangeNotifierProvider(
       create: (_) => MeViewModel(),
       child: Consumer<MeViewModel>(
@@ -35,14 +33,13 @@ class _MeViewState extends State<MeView> {
               child: Column(
                 children: [
                   /* 标准卡片 */
-                  Container(
-                    margin: EdgeInsets.all(themeVars.panelMargin),
-                    decoration: BoxDecoration(
-                      color: themeVars.contentBackground,
-                      borderRadius: BorderRadius.circular(themeVars.radius),
-                    ),
+                  Panel(
+                    children: [
+                      PanelItem(child: Text('DEMO')),
+                      PanelItem(child: Text('设置')),
+                      PanelItem(child: Text('关于')),
+                    ],
                   ),
-                  Center(child: Text('个人中心')),
 
                   const SizedBox(height: 20),
                   ElevatedButton(
