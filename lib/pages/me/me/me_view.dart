@@ -29,6 +29,12 @@ class _MeViewState extends State<MeView> {
             body: SingleChildScrollView(
               child: Column(
                 children: [
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                    ),
+                  ),
                   Center(child: Text('个人中心')),
 
                   const SizedBox(height: 20),

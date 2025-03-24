@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
  */
 // 圆角大小
 const double radius = 4;
+// 卡片margin
+const double cardMargin = 10;
 
 /* 
  * 主题色
