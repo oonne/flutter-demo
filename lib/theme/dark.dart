@@ -8,6 +8,7 @@ final ThemeVars darkThemeVars = ThemeVars(
   scaffoldBackground: const Color.fromRGBO(30, 30, 30, 1),
   contentBackground: const Color.fromRGBO(45, 45, 45, 1),
   textColor: const Color.fromRGBO(220, 220, 220, 1),
+  secondaryTextColor: const Color.fromRGBO(180, 180, 180, 1),
 );
 
 /* 
@@ -34,8 +35,10 @@ ThemeData getDarkThemeData() {
     colorScheme: colorScheme,
     vars: darkThemeVars,
   ).copyWith(
-    textTheme: const TextTheme(
-      bodyMedium: TextStyle(color: Color.fromRGBO(220, 220, 220, 1)),
+    textTheme: TextTheme(
+      bodyMedium: TextStyle(
+        color: darkThemeVars.textColor,
+      ),
     ),
   );
 } 

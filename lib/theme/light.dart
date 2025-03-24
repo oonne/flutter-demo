@@ -8,6 +8,7 @@ final ThemeVars lightThemeVars = ThemeVars(
   scaffoldBackground: const Color.fromRGBO(240, 240, 240, 1),
   contentBackground: const Color.fromRGBO(255, 255, 255, 1),
   textColor: const Color.fromRGBO(30, 30, 30, 1),
+  secondaryTextColor: const Color.fromRGBO(100, 100, 100, 1),
 );
 
 /* 
@@ -34,5 +35,10 @@ ThemeData getLightThemeData() {
     colorScheme: colorScheme,
     vars: lightThemeVars,
   ).copyWith(
+    textTheme: TextTheme(
+      bodyMedium: TextStyle(
+        color: lightThemeVars.textColor,
+      ),
+    ),
   );
 } 

@@ -36,16 +36,20 @@ class _MeViewState extends State<MeView> {
                   Panel(
                     children: [
                       PanelItem(
-                        label: 'DEMO哈哈愤怒额风格w欧回复飞牛网广佛我刚好耿耿个',
-                        value: '哈哈',
+                        label: 'DEMO',
                         showArrow: true,
                         onTap: () {
                           GoRouter.of(context).pushNamed('demo');
                         },
                       ),
-
-                      // const Text('设置'),
-                      // const Text('关于'),
+                      PanelItem(
+                        label: '设置',
+                        showArrow: true,
+                      ),
+                      PanelItem(
+                        label: '关于',
+                        showArrow: true,
+                      ),
                     ],
                   ),
                 ],

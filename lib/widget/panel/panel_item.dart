@@ -13,7 +13,7 @@ class PanelItem extends StatelessWidget {
   final String? value;
   final bool showArrow;
   final VoidCallback? onTap;
-  
+
   const PanelItem({
     super.key,
     this.isLast = false,
@@ -30,84 +30,67 @@ class PanelItem extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        return Container(
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-          width: constraints.maxWidth,
-          decoration: !isLast
-              ? BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(color: themeVars.scaffoldBackground, width: 1),
-                  ),
-                )
-              : null,
-          child: InkWell(
-            onTap: onTap,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // 左侧区域：图标（可选）
-                if (icon != null) ...[
-                  icon!,
-                  const SizedBox(width: 8),
-                ],
-                
-                // 内容区域
-                Expanded(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      // 标签文字
-                      Expanded(
-                        flex: 3,
-                        child: Text(
-                          label,
-                          textAlign: TextAlign.left,
-                          style: Theme.of(context).textTheme.bodyMedium,
-                          softWrap: true,
-                          overflow: TextOverflow.visible,
+        return InkWell(
+          onTap: onTap,
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+            width: constraints.maxWidth,
+            decoration:
+                !isLast
+                    ? BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: themeVars.scaffoldBackground,
+                          width: 1,
                         ),
                       ),
-                      
-                      // 右侧区域：值和箭头
-                      if (value != null || showArrow) ...[
-                        const SizedBox(width: 8),
-                        Expanded(
-                          flex: 2,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              if (value != null)
-                                Flexible(
-                                  child: Text(
-                                    value!,
-                                    textAlign: TextAlign.right,
-                                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                      color: Theme.of(context).colorScheme.onSurfaceVariant,
-                                    ),
-                                    softWrap: true,
-                                    overflow: TextOverflow.visible,
-                                  ),
-                                ),
-                              if (showArrow) ...[
-                                if (value != null) const SizedBox(width: 4),
-                                SvgPicture.asset(
-                                  'assets/icon/right.svg',
-                                  colorFilter: ColorFilter.mode(
-                                    Color(0xFF343c49),
-                                    BlendMode.srcIn,
-                                  ),
-                                  width: 16,
-                                  height: 16,
-                                ),
-                              ],
-                            ],
-                          ),
-                        ),
-                      ],
-                    ],
+                    )
+                    : null,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              spacing: 4,
+              children: [
+                // 左侧区域：图标（可选）
+                if (icon != null) ...[icon!],
+
+                // 标签文字
+                Expanded(
+                  flex: 3,
+                  child: Text(
+                    label,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(color: themeVars.textColor),
+                    softWrap: true,
+                    overflow: TextOverflow.visible,
                   ),
                 ),
+
+                // 右侧区域：值
+                if (value != null) ...[
+                  Expanded(
+                    flex: 2,
+                    child: Text(
+                      value!,
+                      textAlign: TextAlign.right,
+                      style: TextStyle(color: themeVars.secondaryTextColor),
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
+                    ),
+                  ),
+                ],
+
+                // 右侧区域：箭头
+                if (showArrow) ...[
+                  SvgPicture.asset(
+                    'assets/icon/right.svg',
+                    colorFilter: ColorFilter.mode(
+                      themeVars.textColor,
+                      BlendMode.srcIn,
+                    ),
+                    width: 16,
+                    height: 16,
+                  ),
+                ],
               ],
             ),
           ),
