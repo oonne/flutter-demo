@@ -24,7 +24,19 @@ class Panel extends StatelessWidget {
         borderRadius: BorderRadius.circular(themeVars.radius),
       ),
       child: Column(
-        children: children,
+        children: children.asMap().entries.map((entry) {
+          final index = entry.key;
+          final item = entry.value;
+          return PanelItem(
+            key: item.key,
+            isLast: index == children.length - 1,
+            icon: item.icon,
+            label: item.label,
+            value: item.value,
+            showArrow: item.showArrow,
+            onTap: item.onTap,
+          );
+        }).toList(),
       ),
     );
   }

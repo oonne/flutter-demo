@@ -16,7 +16,7 @@ class PanelItem extends StatelessWidget {
 
   const PanelItem({
     super.key,
-    this.isLast = false,
+    this.isLast = true,
     this.icon,
     required this.label,
     this.value,

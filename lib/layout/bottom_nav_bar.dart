@@ -77,7 +77,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
         items: _navItems.map((item) => BottomNavigationBarItem(
           icon: SvgPicture.asset(
             item.icon,
-            colorFilter: ColorFilter.mode(themeVars.textColor, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(themeVars.secondaryTextColor, BlendMode.srcIn),
             width: iconSize,
             height: iconSize,
           ),
@@ -92,7 +92,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
         currentIndex: _calculateSelectedIndex(context),
         onTap: (int idx) => _onItemTapped(idx, context),
         selectedItemColor: colorScheme.primary,
-        unselectedItemColor: themeVars.textColor,
+        unselectedItemColor: themeVars.secondaryTextColor,
       ),
     );
   }
