@@ -1,36 +1,36 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_demo/theme/global.dart';
+
 /* 
  * 面板项
  */
 class PanelItem extends StatelessWidget {
+  final bool isLast;
   final Widget child;
-
-  const PanelItem({super.key, required this.child});
+  
+  const PanelItem({
+    super.key,
+    this.isLast = false,
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final themeVars = getCurrentThemeVars(context);
+
     return LayoutBuilder(
       builder: (context, constraints) {
-        // 检查是否是最后一个元素
-        final isLastItem =
-            (context.findAncestorWidgetOfExactType<Column>() != null ||
-                context
-                        .findAncestorWidgetOfExactType<Column>()!
-                        .children
-                        .last ==
-                    child);
-
         return Container(
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-          decoration:
-              !isLastItem
-                  ? BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(color: Colors.black, width: 1),
-                    ),
-                  )
-                  : null,
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+          width: constraints.maxWidth,
+          decoration: !isLast
+              ? BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(color: themeVars.scaffoldBackground, width: 1),
+                  ),
+                )
+              : null,
           child: child,
         );
       },

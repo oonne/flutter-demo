@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/widget/panel/panel.dart';
-import 'package:flutter_demo/widget/panel/panel_item.dart';
 
 import 'me_view_model.dart';
 
@@ -35,18 +34,20 @@ class _MeViewState extends State<MeView> {
                   /* 标准卡片 */
                   Panel(
                     children: [
-                      PanelItem(child: Text('DEMO')),
-                      PanelItem(child: Text('设置')),
-                      PanelItem(child: Text('关于')),
+                      InkWell(
+                        onTap: () {
+                          GoRouter.of(context).pushNamed('demo');
+                        },
+                        child: Row(
+                          children: [
+                            Text('DEMO'),
+                            Icon(Icons.arrow_forward_ios),
+                          ],
+                        ),
+                      ),
+                      const Text('设置'),
+                      const Text('关于'),
                     ],
-                  ),
-
-                  const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      GoRouter.of(context).pushNamed('demo');
-                    },
-                    child: const Text('Demo'),
                   ),
                 ],
               ),

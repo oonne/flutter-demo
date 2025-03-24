@@ -10,7 +10,7 @@ class ThemeVars {
   final Color contentBackground;
 
   const ThemeVars({
-    this.radius = 4, // 圆角大小
+    this.radius = 8, // 圆角大小
     this.panelMargin = 10, // 卡片margin
     required this.scaffoldBackground, // 页面背景色
     required this.contentBackground, // 内容背景色
