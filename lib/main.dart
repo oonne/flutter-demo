@@ -28,25 +28,37 @@ Future<void> main() async {
   }
   String envName = dotenv.env['ENV_NAME'] ?? '';
   log.info("准备启动 环境: $envName");
+  
+  // 初始化全局状态
+  final globalState = GlobalState();
+  await globalState.loadThemeMode();
 
   // 启动应用
-  runApp(const MainApp());
+  runApp(MainApp(globalState: globalState));
 }
 
 /* 
  * 主应用
  */
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  final GlobalState globalState;
+  
+  const MainApp({super.key, required this.globalState});
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => GlobalState(),
-      child: MaterialApp.router(
-        routerConfig: router,
-        debugShowCheckedModeBanner: false,
-        theme: getGlobalThemeData(),
+    return ChangeNotifierProvider.value(
+      value: globalState,
+      child: Consumer<GlobalState>(
+        builder: (context, state, _) {
+          return MaterialApp.router(
+            routerConfig: router,
+            debugShowCheckedModeBanner: false,
+            themeMode: state.themeMode,
+            theme: getLightThemeData(),
+            darkTheme: getDarkThemeData(),
+          );
+        },
       ),
     );
   }
