@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
-import 'me_view_model.dart';
 import 'package:flutter_demo/components/theme_toggle_button.dart';
-import 'package:flutter_demo/components/themed_card.dart';
 import 'package:flutter_demo/theme/global.dart';
+
+import 'me_view_model.dart';
 
 /* 
  * 个人中心
@@ -50,48 +50,6 @@ class _MeViewState extends State<MeView> {
                   ),
                   Center(child: Text('个人中心')),
                   
-                  const SizedBox(height: 20),
-                  // 使用主题卡片组件
-                  ThemedCard(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '主题设置',
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        const SizedBox(height: 12),
-                        Row(
-                          children: [
-                            const Text('切换主题:'),
-                            const Spacer(),
-                            const ThemeToggleButton(),
-                          ],
-                        ),
-                        const SizedBox(height: 12),
-                        Text('当前卡片圆角: ${themeVars.radius}'),
-                        Text('当前卡片边距: ${themeVars.cardMargin}'),
-                      ],
-                    ),
-                  ),
-
-                  const SizedBox(height: 20),
-                  // 自定义卡片属性示例
-                  ThemedCard(
-                    customRadius: 16,
-                    customPadding: const EdgeInsets.all(24),
-                    child: Column(
-                      children: [
-                        Text(
-                          '自定义主题卡片',
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                        const SizedBox(height: 12),
-                        Text('这是一个自定义圆角和内边距的卡片'),
-                      ],
-                    ),
-                  ),
-
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {

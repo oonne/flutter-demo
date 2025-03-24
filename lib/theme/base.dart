@@ -10,10 +10,10 @@ class ThemeVars {
   final Color cardColor;
 
   const ThemeVars({
-    this.radius = 4,
-    this.cardMargin = 10,
-    required this.scaffoldBackground,
-    required this.cardColor,
+    this.radius = 4, // 圆角大小
+    this.cardMargin = 10, // 卡片margin
+    required this.scaffoldBackground, // 背景色
+    required this.cardColor, // 卡片色
   });
 }
 
@@ -28,19 +28,7 @@ ThemeData createBaseTheme({
     useMaterial3: true,
     colorScheme: colorScheme,
     scaffoldBackgroundColor: vars.scaffoldBackground,
-
-    /* 
-     * 卡片主题
-     */
-    cardTheme: CardTheme(
-      color: vars.cardColor,
-      elevation: 1,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(vars.radius),
-      ),
-      margin: EdgeInsets.all(vars.cardMargin),
-    ),
-
+    
     /* 
      * AppBar
      */
