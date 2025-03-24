@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:flutter_demo/components/theme_toggle_button.dart';
 import 'package:flutter_demo/theme/global.dart';
 
 import 'me_view_model.dart';
@@ -22,7 +21,7 @@ class _MeViewState extends State<MeView> {
   Widget build(BuildContext context) {
     // 获取当前主题变量
     final themeVars = getCurrentThemeVars(context);
-    
+
     return ChangeNotifierProvider(
       create: (_) => MeViewModel(),
       child: Consumer<MeViewModel>(
@@ -31,25 +30,19 @@ class _MeViewState extends State<MeView> {
            * 页面
            */
           return Scaffold(
-            appBar: AppBar(
-              title: Text('个人中心'),
-              actions: [
-                // 主题切换按钮
-                const ThemeToggleButton(),
-                const SizedBox(width: 12),
-              ],
-            ),
+            appBar: AppBar(title: Text('个人中心')),
             body: SingleChildScrollView(
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(themeVars.cardMargin),
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.primary,
+                      borderRadius: BorderRadius.circular(themeVars.radius),
                     ),
                   ),
                   Center(child: Text('个人中心')),
-                  
+
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {

@@ -19,7 +19,7 @@ ThemeVars getCurrentThemeVars(BuildContext context) {
   final globalState = Provider.of<GlobalState>(context);
   
   // 判断当前是否是深色模式
-  final bool isDarkMode = globalState.isDarkMode || 
+  final bool isDarkMode = globalState.themeMode == ThemeMode.dark || 
     (globalState.themeMode == ThemeMode.system && 
      MediaQuery.of(context).platformBrightness == Brightness.dark);
   
