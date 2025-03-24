@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 /* 
  * 全局变量
  */
-const double radius = 4; // 圆角大小
+// 圆角大小
+const double radius = 4;
 
 /* 
  * 主题色
@@ -32,24 +33,6 @@ ThemeData getGlobalThemeData() {
      */
     appBarTheme: const AppBarTheme(
       centerTitle: true,
-    ),
-
-    /* 
-     * 按钮
-     */
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(radius),
-        ),
-      ),
-    ),
-    outlinedButtonTheme: OutlinedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(radius),
-        ),
-      ),
     ),
 
     /* 
