@@ -26,12 +26,20 @@ class _EventbusViewState extends State<EventbusView> {
   void initState() {
     super.initState();
     viewModel = EventbusViewModel();
-    
+
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final queryParameters = GoRouterState.of(context).extra as Map<String, dynamic>?;
-      viewModel.init(queryParameters);
+      viewModel.init();
     });
+  }
+
+  /* 
+   * 离开页面
+   */
+  @override
+  void dispose() {
+    viewModel.cleanup();
+    super.dispose();
   }
 
   /* 
@@ -52,24 +60,9 @@ class _EventbusViewState extends State<EventbusView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  /* 
-                   * 页面数字
-                   */
-                  Text('页面数字：${viewModel.number}'),
-                  const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    spacing: 8,
-                    children: [
-                      ElevatedButton(
-                        onPressed: viewModel.add,
-                        child: const Text('+'),
-                      ),
-                      ElevatedButton(
-                        onPressed: viewModel.sub,
-                        child: const Text('-'),
-                      ),
-                    ],
+                  ElevatedButton(
+                    onPressed: viewModel.sendEvent,
+                    child: const Text('发送事件'),
                   ),
                 ],
               ),
