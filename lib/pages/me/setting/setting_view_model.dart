@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/global/state.dart';
+import 'package:flutter_demo/widget/bottom_sheet/selection_bottom_sheet.dart';
 
 import 'setting_model.dart';
 
@@ -30,9 +31,9 @@ class SettingViewModel extends ChangeNotifier {
 
   // 主题模式映射
   final List<Map<String, dynamic>> themeModeOptions = [
+    {'mode': ThemeMode.system, 'text': '跟随系统'},
     {'mode': ThemeMode.light, 'text': '浅色'},
     {'mode': ThemeMode.dark, 'text': '深色'},
-    {'mode': ThemeMode.system, 'text': '跟随系统'},
   ];
 
   // 获取主题模式文案
@@ -45,10 +46,29 @@ class SettingViewModel extends ChangeNotifier {
   }
 
   // 切换主题模式
-  Future<void> changeThemeMode(BuildContext context, ThemeMode newMode) async {
+  Future<void> changeThemeMode(BuildContext context) async {
     final globalState = Provider.of<GlobalState>(context, listen: false);
-    await globalState.setThemeMode(newMode);
-    model.themeMode = newMode;
+
+    // 使用 SelectionBottomSheet 组件
+    final result = await SelectionBottomSheet.show<ThemeMode>(
+      context: context,
+      title: '选择主题模式',
+      options: themeModeOptions.map((option) {
+        return {
+          'value': option['mode'],
+          'text': option['text'],
+        };
+      }).toList(),
+      selectedValue: themeMode,
+    );
+
+    // 如果用户选择了一个选项
+    if (result == null) {
+      return;
+    }
+
+    await globalState.setThemeMode(result);
+    model.themeMode = result;
     notifyListeners();
   }
 } 

@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
-import 'package:flutter_demo/widget/bottom_sheet/selection_bottom_sheet.dart';
 
 import 'setting_view_model.dart';
 
@@ -51,7 +50,6 @@ class _SettingViewState extends State<SettingView> {
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  /* 标准卡片 */
                   Panel(
                     children: [
                       PanelItem(
@@ -59,7 +57,7 @@ class _SettingViewState extends State<SettingView> {
                         value: viewModel.themeModeText,
                         showArrow: true,
                         onTap: () {
-                          _showThemeModeSelector(context, viewModel);
+                          viewModel.changeThemeMode(context);
                         },
                       ),
                     ],
@@ -71,28 +69,5 @@ class _SettingViewState extends State<SettingView> {
         },
       ),
     );
-  }
-
-  /* 
-   * 显示主题模式选择器
-   */
-  Future<void> _showThemeModeSelector(BuildContext context, SettingViewModel viewModel) async {
-    // 使用 SelectionBottomSheet 组件
-    final result = await SelectionBottomSheet.show<ThemeMode>(
-      context: context,
-      title: '选择主题模式',
-      options: viewModel.themeModeOptions.map((option) {
-        return {
-          'value': option['mode'],
-          'text': option['text'],
-        };
-      }).toList(),
-      selectedValue: viewModel.themeMode,
-    );
-    
-    // 如果用户选择了一个选项
-    if (result != null) {
-      await viewModel.changeThemeMode(context, result);
-    }
   }
 } 
