@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider/provider.dart';
 
-import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
 
@@ -28,6 +26,11 @@ class _SettingViewState extends State<SettingView> {
   void initState() {
     super.initState();
     viewModel = SettingViewModel();
+    
+    // 在下一帧初始化 viewModel
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      viewModel.init(context);
+    });
   }
 
   /* 
@@ -35,8 +38,6 @@ class _SettingViewState extends State<SettingView> {
    */
   @override
   Widget build(BuildContext context) {
-    final globalState = Provider.of<GlobalState>(context, listen: true);
-
     return ChangeNotifierProvider.value(
       value: viewModel,
       child: Consumer<SettingViewModel>(
@@ -54,6 +55,11 @@ class _SettingViewState extends State<SettingView> {
                     children: [
                       PanelItem(
                         label: '主题',
+                        value: viewModel.themeModeText,
+                        showArrow: true,
+                        onTap: () {
+                          viewModel.toggleThemeMode(context);
+                        },
                       ),
                     ],
                   ),
