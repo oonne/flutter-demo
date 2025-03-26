@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'mvvm_model.dart';
+import 'eventbus_model.dart';
 
-class MvvmViewModel extends ChangeNotifier {
-  final MvvmModel model = MvvmModel();
+class EventbusViewModel extends ChangeNotifier {
+  final EventbusModel model = EventbusModel();
 
   /* 
    * 初始化

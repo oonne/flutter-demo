@@ -15,13 +15,14 @@ flutter 基础项目
 * AppBar
 * 底部弹框 BottomSheet
 
+* 国际化
+* 时间日期选择器
 * 自定义字体
+* 事件总线
 * 网络请求
 * 二维码扫描
 * toast
-* 时间日期选择器
 * 模态弹框组件
-* 国际化
 
 # 安卓打包
 运行 flutter build apk

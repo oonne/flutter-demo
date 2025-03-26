@@ -4,20 +4,20 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 
-import 'mvvm_view_model.dart';
+import 'eventbus_view_model.dart';
 
 /* 
- * MVVM页面
+ * EventBus页面
  */
-class MvvmView extends StatefulWidget {
-  const MvvmView({super.key});
+class EventbusView extends StatefulWidget {
+  const EventbusView({super.key});
 
   @override
-  State<MvvmView> createState() => _MvvmViewState();
+  State<EventbusView> createState() => _EventbusViewState();
 }
 
-class _MvvmViewState extends State<MvvmView> {
-  late final MvvmViewModel viewModel;
+class _EventbusViewState extends State<EventbusView> {
+  late final EventbusViewModel viewModel;
 
   /* 
    * 初始化
@@ -25,7 +25,7 @@ class _MvvmViewState extends State<MvvmView> {
   @override
   void initState() {
     super.initState();
-    viewModel = MvvmViewModel();
+    viewModel = EventbusViewModel();
     
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -41,13 +41,13 @@ class _MvvmViewState extends State<MvvmView> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: viewModel,
-      child: Consumer<MvvmViewModel>(
+      child: Consumer<EventbusViewModel>(
         builder: (context, viewModel, child) {
           /* 
            * 页面
            */
           return Scaffold(
-            appBar: CustomAppBar(title: const Text('MVVM示例')),
+            appBar: CustomAppBar(title: const Text('事件总线')),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -70,14 +70,6 @@ class _MvvmViewState extends State<MvvmView> {
                         child: const Text('-'),
                       ),
                     ],
-                  ),
-
-                  /* 
-                   * 跳转
-                   */
-                  ElevatedButton(
-                    onPressed: () => context.pop(),
-                    child: const Text('返回'),
                   ),
                 ],
               ),

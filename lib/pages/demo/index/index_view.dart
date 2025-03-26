@@ -57,6 +57,13 @@ class _IndexViewState extends State<IndexView> {
                           context.pushNamed('demo/mvvm', extra: {'num': 123});
                         },
                       ),
+                      PanelItem(
+                        label: '事件总线',
+                        showArrow: true,
+                        onTap: () {
+                          context.pushNamed('demo/eventbus');
+                        },
+                      ),
                     ],
                   ),
                 ],

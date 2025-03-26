@@ -15,7 +15,7 @@ import 'package:flutter_demo/pages/me/about/about_view.dart';
 /* Demo */
 import 'package:flutter_demo/pages/demo/index/index_view.dart';
 import 'package:flutter_demo/pages/demo/mvvm/mvvm_view.dart';
-
+import 'package:flutter_demo/pages/demo/eventbus/eventbus_view.dart';
 /*
  * 路由表
  */
@@ -109,6 +109,12 @@ final router = GoRouter(
       name: 'demo/mvvm',
       path: '/demo/mvvm',
       builder: (context, state) => const MvvmView(),
+    ),
+    /* 事件总线 */
+    GoRoute(
+      name: 'demo/eventbus',
+      path: '/demo/eventbus',
+      builder: (context, state) => const EventbusView(),
     ),
   ],
 );
