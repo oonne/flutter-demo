@@ -1,3 +1,2 @@
 class SettingModel {
-  String version = '-';
 } 
