@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:flutter_demo/layout/custom_app_bar.dart';
+
 import 'index_view_model.dart';
 
 /* 
@@ -39,7 +41,9 @@ class _IndexViewState extends State<IndexView> {
            * 页面
            */
           return Scaffold(
-            appBar: AppBar(title: Text('Demo')),
+            appBar: CustomAppBar(
+              title: const Text('Demo'),
+            ),
             body: Column(
               children: [
                 /* Mvvm示例 */

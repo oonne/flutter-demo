@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
 
@@ -46,7 +47,7 @@ class _AboutViewState extends State<AboutView> {
            * 页面
            */
           return Scaffold(
-            appBar: AppBar(title: Text('关于')),
+            appBar: CustomAppBar(title: const Text('关于')),
             body: SingleChildScrollView(
               child: Column(
                 children: [

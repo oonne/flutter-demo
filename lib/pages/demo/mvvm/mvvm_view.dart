@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/global/state.dart';
+import 'package:flutter_demo/layout/custom_app_bar.dart';
 
 import 'mvvm_view_model.dart';
 
@@ -49,7 +50,7 @@ class _MvvmViewState extends State<MvvmView> {
            * 页面
            */
           return Scaffold(
-            appBar: AppBar(title: Text('MVVM示例')),
+            appBar: CustomAppBar(title: const Text('MVVM示例')),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
