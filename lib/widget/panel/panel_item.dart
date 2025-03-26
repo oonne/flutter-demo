@@ -30,10 +30,12 @@ class PanelItem extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        return InkWell(
-          onTap: onTap,
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        return Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: onTap,
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             width: constraints.maxWidth,
             decoration:
                 !isLast
@@ -46,53 +48,54 @@ class PanelItem extends StatelessWidget {
                       ),
                     )
                     : null,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              spacing: 4,
-              children: [
-                // 左侧区域：图标（可选）
-                if (icon != null) ...[icon!],
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            spacing: 4,
+            children: [
+              // 左侧区域：图标（可选）
+              if (icon != null) ...[icon!],
 
-                // 标签文字
+              // 标签文字
+              Expanded(
+                flex: 3,
+                child: Text(
+                  label,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(color: themeVars.textColor),
+                  softWrap: true,
+                  overflow: TextOverflow.visible,
+                ),
+              ),
+
+              // 右侧区域：值
+              if (value != null) ...[
                 Expanded(
-                  flex: 3,
+                  flex: 2,
                   child: Text(
-                    label,
-                    textAlign: TextAlign.left,
-                    style: TextStyle(color: themeVars.textColor),
+                    value!,
+                    textAlign: TextAlign.right,
+                    style: TextStyle(color: themeVars.secondaryTextColor),
                     softWrap: true,
                     overflow: TextOverflow.visible,
                   ),
                 ),
-
-                // 右侧区域：值
-                if (value != null) ...[
-                  Expanded(
-                    flex: 2,
-                    child: Text(
-                      value!,
-                      textAlign: TextAlign.right,
-                      style: TextStyle(color: themeVars.secondaryTextColor),
-                      softWrap: true,
-                      overflow: TextOverflow.visible,
-                    ),
-                  ),
-                ],
-
-                // 右侧区域：箭头
-                if (showArrow) ...[
-                  SvgPicture.asset(
-                    'assets/icon/right.svg',
-                    colorFilter: ColorFilter.mode(
-                      themeVars.textColor,
-                      BlendMode.srcIn,
-                    ),
-                    width: 16,
-                    height: 16,
-                  ),
-                ],
               ],
-            ),
+
+              // 右侧区域：箭头
+              if (showArrow) ...[
+                SvgPicture.asset(
+                  'assets/icon/right.svg',
+                  colorFilter: ColorFilter.mode(
+                    themeVars.textColor,
+                    BlendMode.srcIn,
+                  ),
+                  width: 16,
+                  height: 16,
+                ),
+              ],
+            ],
+          ),
+          ),
           ),
         );
       },
