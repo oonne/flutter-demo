@@ -27,13 +27,17 @@ ColorScheme getLightColorScheme() {
  */
 ThemeData getLightThemeData() {
   final colorScheme = getLightColorScheme();
-  
-  return createBaseTheme(
+  final baseTheme = createBaseTheme(
     colorScheme: colorScheme,
     vars: lightThemeVars,
-  ).copyWith(
-    textTheme: TextTheme(
-      bodyMedium: TextStyle(
+  );
+  
+  return baseTheme.copyWith(
+    /* 
+     * 文字
+     */
+    textTheme: baseTheme.textTheme.copyWith(
+      bodyMedium: baseTheme.textTheme.bodyMedium?.copyWith(
         color: lightThemeVars.textColor,
       ),
     ),

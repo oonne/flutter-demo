@@ -45,7 +45,7 @@ ThemeData createBaseTheme({
     /* 
      * AppBar
      */
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       centerTitle: true,
     ),
 

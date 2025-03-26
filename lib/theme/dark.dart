@@ -27,13 +27,17 @@ ColorScheme getDarkColorScheme() {
  */
 ThemeData getDarkThemeData() {
   final colorScheme = getDarkColorScheme();
-  
-  return createBaseTheme(
+  final baseTheme = createBaseTheme(
     colorScheme: colorScheme,
     vars: darkThemeVars,
-  ).copyWith(
-    textTheme: TextTheme(
-      bodyMedium: TextStyle(
+  );
+  
+  return baseTheme.copyWith(
+    /* 
+     * 文字
+     */
+    textTheme: baseTheme.textTheme.copyWith(
+      bodyMedium: baseTheme.textTheme.bodyMedium?.copyWith(
         color: darkThemeVars.textColor,
       ),
     ),
