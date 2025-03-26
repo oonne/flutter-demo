@@ -42,37 +42,38 @@ class _MeViewState extends State<MeView> {
            * 页面
            */
           return Scaffold(
-            appBar: AppBar(title: Text('个人中心')),
-            body: SingleChildScrollView(
-              child: Column(
-                children: [
-                  /* 标准卡片 */
-                  Panel(
-                    children: [
-                      PanelItem(
-                        label: 'DEMO',
-                        showArrow: true,
-                        onTap: () {
-                          GoRouter.of(context).pushNamed('demo');
-                        },
-                      ),
-                      PanelItem(
-                        label: '设置',
-                        showArrow: true,
-                        onTap: () {
-                          GoRouter.of(context).pushNamed('me/setting');
-                        },
-                      ),
-                      PanelItem(
-                        label: '关于',
-                        showArrow: true,
-                        onTap: () {
-                          GoRouter.of(context).pushNamed('me/about');
-                        },
-                      ),
-                    ],
-                  ),
-                ],
+            body: SafeArea(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    /* 标准卡片 */
+                    Panel(
+                      children: [
+                        PanelItem(
+                          label: 'DEMO',
+                          showArrow: true,
+                          onTap: () {
+                            GoRouter.of(context).pushNamed('demo');
+                          },
+                        ),
+                        PanelItem(
+                          label: '设置',
+                          showArrow: true,
+                          onTap: () {
+                            GoRouter.of(context).pushNamed('me/setting');
+                          },
+                        ),
+                        PanelItem(
+                          label: '关于',
+                          showArrow: true,
+                          onTap: () {
+                            GoRouter.of(context).pushNamed('me/about');
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           );

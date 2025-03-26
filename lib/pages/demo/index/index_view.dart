@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
+import 'package:flutter_demo/widget/panel/panel.dart';
+import 'package:flutter_demo/widget/panel/panel_item.dart';
 
 import 'index_view_model.dart';
 
@@ -41,20 +43,24 @@ class _IndexViewState extends State<IndexView> {
            * 页面
            */
           return Scaffold(
-            appBar: CustomAppBar(
-              title: const Text('Demo'),
-            ),
-            body: Column(
-              children: [
-                /* Mvvm示例 */
-                const SizedBox(height: 20, width: double.infinity),
-                ElevatedButton(
-                  onPressed: () {
-                    context.pushNamed('demo/mvvm', extra: {'num': 123});
-                  },
-                  child: const Text('Mvvm示例'),
-                ),
-              ],
+            appBar: CustomAppBar(title: const Text('Demo')),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  /* 标准卡片 */
+                  Panel(
+                    children: [
+                      PanelItem(
+                        label: 'Mvvm示例',
+                        showArrow: true,
+                        onTap: () {
+                          context.pushNamed('demo/mvvm', extra: {'num': 123});
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           );
         },
