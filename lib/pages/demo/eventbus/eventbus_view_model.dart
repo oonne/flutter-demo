@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_demo/global/event_bus.dart';
+import 'package:flutter_demo/utils/toast.dart';
 
 import 'eventbus_model.dart';
 
@@ -13,9 +14,8 @@ class EventbusViewModel extends ChangeNotifier {
    * 初始化
    */
   init() {
-    debugPrint('初始化');
     _subscription = eventBus.on<TestEvent>().listen((event) {
-      debugPrint('收到事件：${event.message}');
+      toast(event.message);
     });
   }
 
@@ -24,14 +24,12 @@ class EventbusViewModel extends ChangeNotifier {
    */
   cleanup() {
     _subscription?.cancel();
-    debugPrint('清理');
   }
 
   /* 
    * 发送事件
    */
   void sendEvent() {
-    debugPrint('发送事件');
     eventBus.fire(TestEvent('测试事件'));
   }
 }
