@@ -18,10 +18,24 @@ class MeView extends StatefulWidget {
 }
 
 class _MeViewState extends State<MeView> {
+  late final MeViewModel viewModel;
+
+  /* 
+   * 初始化
+   */
+  @override
+  void initState() {
+    super.initState();
+    viewModel = MeViewModel();
+  }
+
+  /* 
+   * 页面构建
+   */
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => MeViewModel(),
+    return ChangeNotifierProvider.value(
+      value: viewModel,
       child: Consumer<MeViewModel>(
         builder: (context, viewModel, child) {
           /* 

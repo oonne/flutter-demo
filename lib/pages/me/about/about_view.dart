@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
@@ -18,10 +17,29 @@ class AboutView extends StatefulWidget {
 }
 
 class _AboutViewState extends State<AboutView> {
+  late final AboutViewModel viewModel;
+
+  /* 
+   * 初始化
+   */
+  @override
+  void initState() {
+    super.initState();
+    viewModel = AboutViewModel();
+    
+    // 在下一帧初始化 viewModel
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      viewModel.init();
+    });
+  }
+
+  /* 
+   * 页面构建
+   */
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => AboutViewModel(),
+    return ChangeNotifierProvider.value(
+      value: viewModel,
       child: Consumer<AboutViewModel>(
         builder: (context, viewModel, child) {
           /* 
@@ -36,12 +54,8 @@ class _AboutViewState extends State<AboutView> {
                   Panel(
                     children: [
                       PanelItem(
-                        label: '设置',
-                        showArrow: true,
-                      ),
-                      PanelItem(
-                        label: '关于',
-                        showArrow: true,
+                        label: '版本号',
+                        value: viewModel.version,
                       ),
                     ],
                   ),

@@ -18,6 +18,9 @@ class MvvmView extends StatefulWidget {
 class _MvvmViewState extends State<MvvmView> {
   late final MvvmViewModel viewModel;
 
+  /* 
+   * 初始化
+   */
   @override
   void initState() {
     super.initState();
@@ -30,6 +33,9 @@ class _MvvmViewState extends State<MvvmView> {
     });
   }
 
+  /* 
+   * 页面构建
+   */
   @override
   Widget build(BuildContext context) {
     final globalState = Provider.of<GlobalState>(context, listen: true);

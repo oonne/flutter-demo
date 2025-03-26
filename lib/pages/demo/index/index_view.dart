@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_demo/global/state.dart';
 
 import 'index_view_model.dart';
 
@@ -16,12 +15,24 @@ class IndexView extends StatefulWidget {
 }
 
 class _IndexViewState extends State<IndexView> {
+  late final IndexViewModel viewModel;
+
+  /* 
+   * 初始化
+   */
+  @override
+  void initState() {
+    super.initState();
+    viewModel = IndexViewModel();
+  }
+
+  /* 
+   * 页面构建
+   */
   @override
   Widget build(BuildContext context) {
-    final globalState = Provider.of<GlobalState>(context, listen: true);
-
-    return ChangeNotifierProvider(
-      create: (_) => IndexViewModel(),
+    return ChangeNotifierProvider.value(
+      value: viewModel,
       child: Consumer<IndexViewModel>(
         builder: (context, viewModel, child) {
           /* 

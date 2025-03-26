@@ -16,6 +16,9 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   late final SplashViewModel _viewModel;
 
+  /* 
+   * 初始化
+   */
   @override
   void initState() {
     super.initState();
@@ -27,6 +30,9 @@ class _SplashViewState extends State<SplashView> {
     });
   }
 
+  /* 
+   * 页面构建
+   */
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(

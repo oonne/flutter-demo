@@ -14,10 +14,24 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  late final HomeViewModel viewModel;
+
+  /* 
+   * 初始化
+   */
+  @override
+  void initState() {
+    super.initState();
+    viewModel = HomeViewModel();
+  }
+
+  /* 
+   * 页面构建
+   */
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => HomeViewModel(),
+    return ChangeNotifierProvider.value(
+      value: viewModel,
       child: Consumer<HomeViewModel>(
         builder: (context, viewModel, child) {
           /* 
