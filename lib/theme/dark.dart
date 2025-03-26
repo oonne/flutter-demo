@@ -17,11 +17,8 @@ final ThemeVars darkThemeVars = ThemeVars(
 ColorScheme getDarkColorScheme() {
   return ColorScheme.fromSeed(
     brightness: Brightness.dark,
-    seedColor: const Color.fromRGBO(255, 92, 5, 1),
-    primary: const Color.fromRGBO(255, 92, 5, 1),
-    secondary: const Color.fromRGBO(255, 160, 120, 1),
-    surface: const Color.fromRGBO(50, 30, 20, 1),
-    onSurface: const Color.fromRGBO(255, 180, 140, 1),
+    seedColor: const Color.fromRGBO(0, 62, 204, 1),
+    primary: const Color.fromRGBO(0, 62, 204, 1),
   );
 }
 

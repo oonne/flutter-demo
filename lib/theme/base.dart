@@ -34,6 +34,15 @@ ThemeData createBaseTheme({
     scaffoldBackgroundColor: vars.scaffoldBackground,
 
     /* 
+     * 默认字体
+     */
+    textTheme: const TextTheme(
+      bodyMedium: TextStyle(
+        fontSize: 16,
+      ),
+    ),
+
+    /* 
      * AppBar
      */
     appBarTheme: const AppBarTheme(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_demo/theme/global.dart';
+
 /* 
  * 单选底部弹框组件
  * 用于展示一个带有标题和选项列表的底部弹框，用户可以从中选择一个选项
@@ -30,8 +32,18 @@ class SelectionBottomSheet extends StatelessWidget {
    */
   @override
   Widget build(BuildContext context) {
+    final colorScheme = getCurrentThemeColorScheme(context);
+    final themeVars = getCurrentThemeVars(context);
+
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
+      decoration: BoxDecoration(
+        color: themeVars.contentBackground,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(themeVars.radius),
+          topRight: Radius.circular(themeVars.radius),
+        ),
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -51,7 +63,7 @@ class SelectionBottomSheet extends StatelessWidget {
               title: Text(
                 option['text'],
                 style: TextStyle(
-                  color: isSelected ? Theme.of(context).primaryColor : null,
+                  color: isSelected ? colorScheme.primary : themeVars.textColor,
                   fontWeight: isSelected ? FontWeight.bold : null,
                 ),
               ),

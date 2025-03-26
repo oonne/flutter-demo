@@ -17,11 +17,8 @@ final ThemeVars lightThemeVars = ThemeVars(
 ColorScheme getLightColorScheme() {
   return ColorScheme.fromSeed(
     brightness: Brightness.light,
-    seedColor: const Color.fromRGBO(255, 92, 5, 1),
-    primary: const Color.fromRGBO(255, 92, 5, 1),
-    secondary: const Color.fromRGBO(255, 190, 155, 1),
-    surface: const Color.fromRGBO(255, 239, 230, 1),
-    onSurface: const Color.fromRGBO(255, 92, 5, 1),
+    seedColor: const Color.fromRGBO(0, 62, 204, 1),
+    primary: const Color.fromRGBO(0, 62, 204, 1),
   );
 }
 
