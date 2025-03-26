@@ -41,5 +41,12 @@ ThemeData getDarkThemeData() {
         color: darkThemeVars.textColor,
       ),
     ),
+    
+    /*
+     * AppBar
+     */
+    appBarTheme: baseTheme.appBarTheme.copyWith(
+      backgroundColor: darkThemeVars.contentBackground,
+    ),
   );
 } 
