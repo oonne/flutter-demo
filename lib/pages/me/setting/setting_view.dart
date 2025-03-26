@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
+import 'package:flutter_demo/widget/bottom_sheet/selection_bottom_sheet.dart';
 
 import 'setting_view_model.dart';
 
@@ -58,7 +59,7 @@ class _SettingViewState extends State<SettingView> {
                         value: viewModel.themeModeText,
                         showArrow: true,
                         onTap: () {
-                          _showThemeModeBottomSheet(context, viewModel);
+                          _showThemeModeSelector(context, viewModel);
                         },
                       ),
                     ],
@@ -73,45 +74,25 @@ class _SettingViewState extends State<SettingView> {
   }
 
   /* 
-   * 显示主题模式选择底部弹框
+   * 显示主题模式选择器
    */
-  void _showThemeModeBottomSheet(BuildContext context, SettingViewModel viewModel) {
-    showModalBottomSheet(
+  Future<void> _showThemeModeSelector(BuildContext context, SettingViewModel viewModel) async {
+    // 使用 SelectionBottomSheet 组件
+    final result = await SelectionBottomSheet.show<ThemeMode>(
       context: context,
-      builder: (BuildContext context) {
-        return Container(
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text(
-                '选择主题模式',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 16),
-              ...viewModel.themeModeOptions.map((option) {
-                final isSelected = option['mode'] == viewModel.themeMode;
-                return ListTile(
-                  title: Text(
-                    option['text'],
-                    style: TextStyle(
-                      color: isSelected ? Theme.of(context).primaryColor : null,
-                      fontWeight: isSelected ? FontWeight.bold : null,
-                    ),
-                  ),
-                  onTap: () async {
-                    Navigator.pop(context);
-                    await viewModel.changeThemeMode(context, option['mode']);
-                  },
-                );
-              }),
-            ],
-          ),
-        );
-      },
+      title: '选择主题模式',
+      options: viewModel.themeModeOptions.map((option) {
+        return {
+          'value': option['mode'],
+          'text': option['text'],
+        };
+      }).toList(),
+      selectedValue: viewModel.themeMode,
     );
+    
+    // 如果用户选择了一个选项
+    if (result != null) {
+      await viewModel.changeThemeMode(context, result);
+    }
   }
 } 
