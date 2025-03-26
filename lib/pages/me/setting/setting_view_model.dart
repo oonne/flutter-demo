@@ -21,18 +21,6 @@ class SettingViewModel extends ChangeNotifier {
   // 获取主题模式
   ThemeMode get themeMode => model.themeMode;
 
-  // 获取主题模式的中文描述
-  String get themeModeText {
-    switch (model.themeMode) {
-      case ThemeMode.light:
-        return '浅色';
-      case ThemeMode.dark:
-        return '深色';
-      case ThemeMode.system:
-        return '跟随系统';
-    }
-  }
-
   // 初始化主题模式
   void initThemeMode(BuildContext context) {
     final globalState = Provider.of<GlobalState>(context, listen: false);
@@ -40,23 +28,25 @@ class SettingViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  // 主题模式映射
+  final List<Map<String, dynamic>> themeModeOptions = [
+    {'mode': ThemeMode.light, 'text': '浅色'},
+    {'mode': ThemeMode.dark, 'text': '深色'},
+    {'mode': ThemeMode.system, 'text': '跟随系统'},
+  ];
+
+  // 获取主题模式文案
+  String get themeModeText {
+    final option = themeModeOptions.firstWhere(
+      (option) => option['mode'] == model.themeMode,
+      orElse: () => themeModeOptions[0],
+    );
+    return option['text'];
+  }
+
   // 切换主题模式
-  Future<void> toggleThemeMode(BuildContext context) async {
+  Future<void> changeThemeMode(BuildContext context, ThemeMode newMode) async {
     final globalState = Provider.of<GlobalState>(context, listen: false);
-    ThemeMode newMode;
-    
-    switch (model.themeMode) {
-      case ThemeMode.light:
-        newMode = ThemeMode.dark;
-        break;
-      case ThemeMode.dark:
-        newMode = ThemeMode.system;
-        break;
-      case ThemeMode.system:
-        newMode = ThemeMode.light;
-        break;
-    }
-    
     await globalState.setThemeMode(newMode);
     model.themeMode = newMode;
     notifyListeners();

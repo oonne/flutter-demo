@@ -58,7 +58,7 @@ class _SettingViewState extends State<SettingView> {
                         value: viewModel.themeModeText,
                         showArrow: true,
                         onTap: () {
-                          viewModel.toggleThemeMode(context);
+                          _showThemeModeBottomSheet(context, viewModel);
                         },
                       ),
                     ],
@@ -69,6 +69,49 @@ class _SettingViewState extends State<SettingView> {
           );
         },
       ),
+    );
+  }
+
+  /* 
+   * 显示主题模式选择底部弹框
+   */
+  void _showThemeModeBottomSheet(BuildContext context, SettingViewModel viewModel) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                '选择主题模式',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 16),
+              ...viewModel.themeModeOptions.map((option) {
+                final isSelected = option['mode'] == viewModel.themeMode;
+                return ListTile(
+                  title: Text(
+                    option['text'],
+                    style: TextStyle(
+                      color: isSelected ? Theme.of(context).primaryColor : null,
+                      fontWeight: isSelected ? FontWeight.bold : null,
+                    ),
+                  ),
+                  onTap: () async {
+                    Navigator.pop(context);
+                    await viewModel.changeThemeMode(context, option['mode']);
+                  },
+                );
+              }),
+            ],
+          ),
+        );
+      },
     );
   }
 } 
