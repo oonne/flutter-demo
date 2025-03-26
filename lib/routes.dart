@@ -9,6 +9,7 @@ import 'package:flutter_demo/pages/home/home/home_view.dart';
 
 /* 我的 */
 import 'package:flutter_demo/pages/me/me/me_view.dart';
+import 'package:flutter_demo/pages/me/setting/setting_view.dart';
 import 'package:flutter_demo/pages/me/about/about_view.dart';
 
 /* Demo */
@@ -79,19 +80,31 @@ final router = GoRouter(
       ],
     ),
 
-    /* 个人中心 */
+    /* 
+     * 个人中心
+     */
+    /* 设置 */
+    GoRoute(
+      name: 'me/setting',
+      path: '/me/setting',
+      builder: (context, state) => const SettingView(),
+    ),
+    /* 关于 */
     GoRoute(
       name: 'me/about',
       path: '/me/about',
       builder: (context, state) => const AboutView(),
     ),
 
-    /* Demo */
+    /* 
+     * Demo
+     */
     GoRoute(
       name: 'demo',
       path: '/demo',
       builder: (context, state) => const IndexView(),
     ),
+    /* MVVM */
     GoRoute(
       name: 'demo/mvvm',
       path: '/demo/mvvm',

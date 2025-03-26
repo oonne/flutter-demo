@@ -59,6 +59,9 @@ class _MeViewState extends State<MeView> {
                       PanelItem(
                         label: '设置',
                         showArrow: true,
+                        onTap: () {
+                          GoRouter.of(context).pushNamed('me/setting');
+                        },
                       ),
                       PanelItem(
                         label: '关于',
