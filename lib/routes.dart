@@ -9,10 +9,12 @@ import 'package:flutter_demo/pages/home/home/home_view.dart';
 
 /* 我的 */
 import 'package:flutter_demo/pages/me/me/me_view.dart';
+import 'package:flutter_demo/pages/me/about/about_view.dart';
 
 /* Demo */
 import 'package:flutter_demo/pages/demo/index/index_view.dart';
 import 'package:flutter_demo/pages/demo/mvvm/mvvm_view.dart';
+
 /*
  * 路由表
  */
@@ -75,6 +77,13 @@ final router = GoRouter(
           },
         ),
       ],
+    ),
+
+    /* 个人中心 */
+    GoRoute(
+      name: 'me/about',
+      path: '/me/about',
+      builder: (context, state) => const AboutView(),
     ),
 
     /* Demo */

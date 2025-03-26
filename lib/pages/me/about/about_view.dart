@@ -5,30 +5,30 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
 
-import 'me_view_model.dart';
+import 'about_view_model.dart';
 
 /* 
- * 个人中心
+ * 关于页面
  */
-class MeView extends StatefulWidget {
-  const MeView({super.key});
+class AboutView extends StatefulWidget {
+  const AboutView({super.key});
 
   @override
-  State<MeView> createState() => _MeViewState();
+  State<AboutView> createState() => _AboutViewState();
 }
 
-class _MeViewState extends State<MeView> {
+class _AboutViewState extends State<AboutView> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => MeViewModel(),
-      child: Consumer<MeViewModel>(
+      create: (_) => AboutViewModel(),
+      child: Consumer<AboutViewModel>(
         builder: (context, viewModel, child) {
           /* 
            * 页面
            */
           return Scaffold(
-            appBar: AppBar(title: Text('个人中心')),
+            appBar: AppBar(title: Text('关于')),
             body: SingleChildScrollView(
               child: Column(
                 children: [
@@ -36,22 +36,12 @@ class _MeViewState extends State<MeView> {
                   Panel(
                     children: [
                       PanelItem(
-                        label: 'DEMO',
-                        showArrow: true,
-                        onTap: () {
-                          GoRouter.of(context).pushNamed('demo');
-                        },
-                      ),
-                      PanelItem(
                         label: '设置',
                         showArrow: true,
                       ),
                       PanelItem(
                         label: '关于',
                         showArrow: true,
-                        onTap: () {
-                          GoRouter.of(context).pushNamed('me/about');
-                        },
                       ),
                     ],
                   ),
@@ -63,4 +53,4 @@ class _MeViewState extends State<MeView> {
       ),
     );
   }
-}
+} 
