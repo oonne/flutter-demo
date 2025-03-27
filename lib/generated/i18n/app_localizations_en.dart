@@ -1,0 +1,130 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for English (`en`).
+class AppLocalizationsEn extends AppLocalizations {
+  AppLocalizationsEn([String locale = 'en']) : super(locale);
+
+  @override
+  String get lang_name => 'English';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get language_setting => 'Language Setting';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get theme_follow_system => 'Follow System';
+
+  @override
+  String get theme_light => 'Light';
+
+  @override
+  String get theme_dark => 'Dark';
+
+  @override
+  String get user_agreement => '《User Agreement》';
+
+  @override
+  String get privacy_policy => '《Privacy Policy》';
+
+  @override
+  String get and => 'and';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get yesterday => 'Yesterday';
+
+  @override
+  String get this_month => 'This Month';
+
+  @override
+  String get this_quarter => 'This Quarter';
+
+  @override
+  String get btn_login => 'Login';
+
+  @override
+  String get btn_logout => 'Logout';
+
+  @override
+  String get title_home => 'Home';
+
+  @override
+  String get title_me => 'Me';
+
+  @override
+  String get title_setting => 'Setting';
+
+  @override
+  String get title_about => 'About';
+
+  @override
+  String get title_version => 'Version';
+
+  @override
+  String get info_have_read_and_agree => 'Have read and agreed';
+
+  @override
+  String get info_pull_down_refresh => 'Pull down to refresh';
+
+  @override
+  String get info_release_refresh => 'Release to refresh';
+
+  @override
+  String get info_start_refresh => 'Start refreshing...';
+
+  @override
+  String get info_refreshing => 'Refreshing';
+
+  @override
+  String get info_refresh_complete => 'Refresh complete';
+
+  @override
+  String get info_refresh_failed => 'Refresh failed';
+
+  @override
+  String get info_pull_up_load => 'Pull up to load more';
+
+  @override
+  String get info_release_load => 'Release to load more';
+
+  @override
+  String get info_start_load => 'Start loading';
+
+  @override
+  String get info_loading => 'Loading';
+
+  @override
+  String get info_load_complete => 'Load complete';
+
+  @override
+  String get info_load_failed => 'Load failed';
+
+  @override
+  String get info_no_more_data => 'No more data';
+
+  @override
+  String get info_last_updated => 'Last updated at %T';
+
+  @override
+  String get msg_read_agreement => 'Please read the agreement first';
+
+  @override
+  String get msg_query_failed => 'Query failed';
+
+  @override
+  String get msg_operation_failed => 'Operation failed';
+
+  @override
+  String get msg_login_failed => 'Login Failed';
+}
