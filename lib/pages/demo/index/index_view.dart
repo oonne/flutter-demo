@@ -65,10 +65,10 @@ class _IndexViewState extends State<IndexView> {
                         },
                       ),
                       PanelItem(
-                        label: '国际化',
+                        label: '自定义字体',
                         showArrow: true,
                         onTap: () {
-                          context.pushNamed('demo/l18n');
+                          context.pushNamed('demo/custom_font');
                         },
                       ),
                     ],

@@ -3,20 +3,20 @@ import 'package:provider/provider.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'l18n_demo_view_model.dart';
+import 'custom_font_view_model.dart';
 
 /* 
- * L18nDemo页面
+ * CustomFont页面
  */
-class L18nDemoView extends StatefulWidget {
-  const L18nDemoView({super.key});
+class CustomFontView extends StatefulWidget {
+  const CustomFontView({super.key});
 
   @override
-  State<L18nDemoView> createState() => _L18nDemoViewState();
+  State<CustomFontView> createState() => _CustomFontViewState();
 }
 
-class _L18nDemoViewState extends State<L18nDemoView> {
-  late final L18nDemoViewModel viewModel;
+class _CustomFontViewState extends State<CustomFontView> {
+  late final CustomFontViewModel viewModel;
 
   /* 
    * 初始化
@@ -24,7 +24,7 @@ class _L18nDemoViewState extends State<L18nDemoView> {
   @override
   void initState() {
     super.initState();
-    viewModel = L18nDemoViewModel();
+    viewModel = CustomFontViewModel();
   }
 
   /* 
@@ -34,13 +34,13 @@ class _L18nDemoViewState extends State<L18nDemoView> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: viewModel,
-      child: Consumer<L18nDemoViewModel>(
+      child: Consumer<CustomFontViewModel>(
         builder: (context, viewModel, child) {
           /* 
            * 页面
            */
           return Scaffold(
-            appBar: CustomAppBar(title: const Text('国际化')),
+            appBar: CustomAppBar(title: const Text('自定义字体')),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -54,4 +54,4 @@ class _L18nDemoViewState extends State<L18nDemoView> {
       ),
     );
   }
-}
+} 
