@@ -11,15 +11,14 @@ class SelectionBottomSheet extends StatelessWidget {
   final String? title;
   // 当前选中的值
   final dynamic selectedValue;
-  
+
   /* 
    * 选项列表，每个选项需要包含 'value' 和 'text' 两个键
    * value: 选项的值，可以是任意类型
    * text: 选项的显示文本
    */
   final List<Map<String, dynamic>> options;
-  
-  
+
   const SelectionBottomSheet({
     super.key,
     this.title,
@@ -50,29 +49,38 @@ class SelectionBottomSheet extends StatelessWidget {
           if (title != null) ...[
             Text(
               title!,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
           ],
-          ...options.map((option) {
-            final isSelected = option['value'] == selectedValue;
-            return ListTile(
-              title: Text(
-                option['text'],
-                style: TextStyle(
-                  color: isSelected ? colorScheme.primary : themeVars.textColor,
-                  fontWeight: isSelected ? FontWeight.bold : null,
-                ),
+
+          Flexible(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ...options.map((option) {
+                    final isSelected = option['value'] == selectedValue;
+                    return ListTile(
+                      title: Text(
+                        option['text'],
+                        style: TextStyle(
+                          color:
+                              isSelected
+                                  ? colorScheme.primary
+                                  : themeVars.textColor,
+                          fontWeight: isSelected ? FontWeight.bold : null,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.pop(context, option['value']);
+                      },
+                    );
+                  }),
+                ],
               ),
-              onTap: () {
-                // 选中后，返回选择的值
-                Navigator.pop(context, option['value']);
-              },
-            );
-          }),
+            ),
+          ),
         ],
       ),
     );
@@ -97,6 +105,11 @@ class SelectionBottomSheet extends StatelessWidget {
   }) {
     return showModalBottomSheet<T>(
       context: context,
+      useSafeArea: true,
+      isScrollControlled: true,
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height * 0.7,
+      ),
       builder: (BuildContext context) {
         return SelectionBottomSheet(
           title: title,
@@ -106,4 +119,4 @@ class SelectionBottomSheet extends StatelessWidget {
       },
     );
   }
-} 
+}
