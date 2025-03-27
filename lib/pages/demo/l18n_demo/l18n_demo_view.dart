@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'l18n_demo_view_model.dart';
 
@@ -24,20 +25,6 @@ class _L18nDemoViewState extends State<L18nDemoView> {
   void initState() {
     super.initState();
     viewModel = L18nDemoViewModel();
-
-    // 在下一帧初始化 viewModel
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      viewModel.init(context);
-    });
-  }
-
-  /* 
-   * 离开页面
-   */
-  @override
-  void dispose() {
-    viewModel.cleanup();
-    super.dispose();
   }
 
   /* 
@@ -58,12 +45,7 @@ class _L18nDemoViewState extends State<L18nDemoView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      viewModel.sendEvent();
-                    },
-                    child: const Text('发送事件'),
-                  ),
+                  Text(AppLocalizations.of(context)!.and),
                 ],
               ),
             ),

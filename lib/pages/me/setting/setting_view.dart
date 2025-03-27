@@ -61,6 +61,14 @@ class _SettingViewState extends State<SettingView> {
                           viewModel.changeThemeMode(context);
                         },
                       ),
+                      PanelItem(
+                        label: '语言',
+                        value: viewModel.localeText,
+                        showArrow: true,
+                        onTap: () {
+                          viewModel.changeLocale(context);
+                        }
+                      ),
                     ],
                   ),
                 ],

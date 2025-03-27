@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package:flutter_demo/config/lang_list.dart';
 import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/widget/bottom_sheet/selection_bottom_sheet.dart';
 
@@ -14,6 +15,7 @@ class SettingViewModel extends ChangeNotifier {
    */
   void init(BuildContext context) {
     initThemeMode(context);
+    initLocale(context);
   }
 
   /* 
@@ -69,6 +71,54 @@ class SettingViewModel extends ChangeNotifier {
 
     await globalState.setThemeMode(result);
     model.themeMode = result;
+    notifyListeners();
+  }
+
+  /* 
+   * 语言
+   */
+  // 语言选项
+  final List<Map<String, dynamic>> localeOptions = langList.map((option) {
+    return {
+      'value': option['code'],
+      'text': option['text'],
+    };
+  }).toList();
+
+  // 获取语言
+  String get localeText {
+    final option = langList.firstWhere(
+      (option) => option['code'] == model.localeCode,
+      orElse: () => langList[0],
+    );
+    return option['text'];
+  }
+
+  // 初始化语言
+  void initLocale(BuildContext context) {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+    model.localeCode = globalState.locale.languageCode;
+    notifyListeners();
+  }
+
+  // 切换语言
+  Future<void> changeLocale(BuildContext context) async {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+
+    // 使用 SelectionBottomSheet 组件
+    final result = await SelectionBottomSheet.show<String>(
+      context: context,
+      title: '选择语言',
+      options: localeOptions,
+    );
+
+    // 如果用户选择了一个选项
+    if (result == null) {
+      return;
+    }
+
+    await globalState.changeLocale(result);
+    model.localeCode = result;
     notifyListeners();
   }
 } 
