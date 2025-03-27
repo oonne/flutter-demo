@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 
-import 'eventbus_view_model.dart';
+import 'l18n_demo_view_model.dart';
 
 /* 
- * EventBus页面
+ * L18nDemo页面
  */
-class EventbusView extends StatefulWidget {
-  const EventbusView({super.key});
+class L18nDemoView extends StatefulWidget {
+  const L18nDemoView({super.key});
 
   @override
-  State<EventbusView> createState() => _EventbusViewState();
+  State<L18nDemoView> createState() => _L18nDemoViewState();
 }
 
-class _EventbusViewState extends State<EventbusView> {
-  late final EventbusViewModel viewModel;
+class _L18nDemoViewState extends State<L18nDemoView> {
+  late final L18nDemoViewModel viewModel;
 
   /* 
    * 初始化
@@ -23,7 +23,7 @@ class _EventbusViewState extends State<EventbusView> {
   @override
   void initState() {
     super.initState();
-    viewModel = EventbusViewModel();
+    viewModel = L18nDemoViewModel();
 
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -47,7 +47,7 @@ class _EventbusViewState extends State<EventbusView> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: viewModel,
-      child: Consumer<EventbusViewModel>(
+      child: Consumer<L18nDemoViewModel>(
         builder: (context, viewModel, child) {
           /* 
            * 页面

@@ -16,6 +16,8 @@ import 'package:flutter_demo/pages/me/about/about_view.dart';
 import 'package:flutter_demo/pages/demo/index/index_view.dart';
 import 'package:flutter_demo/pages/demo/mvvm/mvvm_view.dart';
 import 'package:flutter_demo/pages/demo/eventbus/eventbus_view.dart';
+import 'package:flutter_demo/pages/demo/l18n_demo/l18n_demo_view.dart';
+
 /*
  * 路由表
  */
@@ -115,6 +117,12 @@ final router = GoRouter(
       name: 'demo/eventbus',
       path: '/demo/eventbus',
       builder: (context, state) => const EventbusView(),
+    ),
+    /* 国际化 */
+    GoRoute(
+      name: 'demo/l18n',
+      path: '/demo/l18n',
+      builder: (context, state) => const L18nDemoView(),
     ),
   ],
 );
