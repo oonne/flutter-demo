@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
+import 'package:flutter_demo/widget/modal/modal_dialog.dart';
 
 import 'mvvm_view_model.dart';
 
@@ -26,10 +27,11 @@ class _MvvmViewState extends State<MvvmView> {
   void initState() {
     super.initState();
     viewModel = MvvmViewModel();
-    
+
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final queryParameters = GoRouterState.of(context).extra as Map<String, dynamic>?;
+      final queryParameters =
+          GoRouterState.of(context).extra as Map<String, dynamic>?;
       viewModel.init(queryParameters);
     });
   }
@@ -70,6 +72,24 @@ class _MvvmViewState extends State<MvvmView> {
                         child: const Text('-'),
                       ),
                     ],
+                  ),
+
+                  /* 
+                   * 模态弹框
+                   */
+                  ElevatedButton(
+                    onPressed: () {
+                      showModal(
+                        context: context,
+                        showCancelButton: true,
+                        barrierDismissible: true,
+                        onConfirm: () {
+                          debugPrint('点击了确定按钮');
+                        },
+                        child: const Text('模态弹框'),
+                      );
+                    },
+                    child: const Text('模态弹框'),
                   ),
 
                   /* 
