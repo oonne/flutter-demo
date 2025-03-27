@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter_demo/theme/global.dart';
 
@@ -64,20 +65,42 @@ class SelectionBottomSheet extends StatelessWidget {
                 children: [
                   ...options.map((option) {
                     final isSelected = option['value'] == selectedValue;
-                    return ListTile(
-                      title: Text(
-                        option['text'],
-                        style: TextStyle(
-                          color:
-                              isSelected
-                                  ? colorScheme.primary
-                                  : themeVars.textColor,
-                          fontWeight: isSelected ? FontWeight.bold : null,
-                        ),
-                      ),
+                    return InkWell(
                       onTap: () {
                         Navigator.pop(context, option['value']);
                       },
+                      child: Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(16),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                option['text'],
+                                style: TextStyle(
+                                  color:
+                                      isSelected
+                                          ? colorScheme.primary
+                                          : themeVars.textColor,
+                                  fontWeight:
+                                      isSelected ? FontWeight.bold : null,
+                                ),
+                              ),
+                            ),
+                            if (isSelected) ...[
+                              SvgPicture.asset(
+                                'assets/icon/selected.svg',
+                                width: 24,
+                                height: 24,
+                                colorFilter: ColorFilter.mode(
+                                  colorScheme.primary,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
                     );
                   }),
                 ],
