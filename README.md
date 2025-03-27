@@ -17,11 +17,11 @@ flutter 基础项目
 * 按钮
 * 底导航
 * AppBar
+* 模态弹框
 * 底部弹框 BottomSheet
 * 提示 SnackBar
 * 时间日期选择器(board_datetime_picker)
 
-* 模态弹框组件
 * 网络请求
 * 二维码扫描
 
