@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:flutter_demo/config/lang_list.dart';
+import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/utils/utils.dart';
 
 /*
@@ -31,6 +33,7 @@ class GlobalState extends ChangeNotifier {
 
   // 获取UUID
   Future<void> initUUID() async {
+    await initDeviceInfo();
     final prefs = await SharedPreferences.getInstance();
 
     // iOS 不获取广告id，因为广告id需要用户授权，影响体验
@@ -81,12 +84,58 @@ class GlobalState extends ChangeNotifier {
     }
   }
 
+
+  /*
+   * 语言
+   */
+  Locale locale = Locale.fromSubtags(languageCode: 'zh');
+  String lang = 'zh';
+
+  // 更改语言
+  Future<void> changeLocale(String code) async {
+    final prefs = await SharedPreferences.getInstance();
+    var res = getLanguageCode(code);
+
+    // 设置语言
+    lang = res['code'];
+    locale = Locale.fromSubtags(
+        languageCode: res['languageCode'], scriptCode: res['scriptCode']);
+    notifyListeners();
+
+    // 保存语言
+    await prefs.setString('LANG', res['code']);
+    log.config("设置语言: lang $locale");
+  }
+
+  // 初始化语言
+  Future<void> initLocale() async {
+    final prefs = await SharedPreferences.getInstance();
+    var prefsLang = prefs.getString('LANG');
+
+    // 如果没有设置过语言，则使用系统语言
+    if (prefsLang == null) {
+      var languageCode = locale.languageCode;
+      var scriptCode = locale.scriptCode;
+      var countryCode = locale.countryCode;
+      prefsLang = languageCode;
+      if (languageCode == 'zh' &&
+          (scriptCode == 'Hant' ||
+              countryCode == 'HK' ||
+              countryCode == 'TW')) {
+        prefsLang = 'zh_TW';
+      }
+    }
+    changeLocale(prefsLang);
+  }
+
   /* 
    * 全局初始化
    */
   Future<void> init() async {
-    await initThemeMode();
-    await initDeviceInfo();
-    await initUUID();
+    await Future.wait([
+      initUUID(),
+      initThemeMode(),
+      initLocale(),
+    ]);
   }
 }
