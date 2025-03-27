@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
@@ -40,6 +41,7 @@ class _AboutViewState extends State<AboutView> {
    */
   @override
   Widget build(BuildContext context) {
+    final globalState = Provider.of<GlobalState>(context, listen: true);
     return ChangeNotifierProvider.value(
       value: viewModel,
       child: Consumer<AboutViewModel>(
@@ -63,11 +65,13 @@ class _AboutViewState extends State<AboutView> {
                       ),
 
                       // 环境
-                      PanelItem(
-                        label: '环境',
-                        value: viewModel.getEnvText(context),
-                        onTap: () => viewModel.changeEnv(context),
-                      ),
+                      if (!globalState.isRelease) ...[
+                        PanelItem(
+                          label: '环境',
+                          value: viewModel.getEnvText(context),
+                          onTap: () => viewModel.changeEnv(context),
+                        ),
+                      ],
                     ],
                   ),
                 ],

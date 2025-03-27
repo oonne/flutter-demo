@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -132,11 +133,13 @@ class GlobalState extends ChangeNotifier {
   /* 
    * 环境
    */
-  String env = 'prod';
+  String env = 'prod'; // 当前环境
+  bool isRelease = true; // 是否为release模式
 
   // 初始化环境
   Future<void> initEnv() async {
     env = dotenv.env['ENV_NAME'] ?? '';
+    isRelease = kReleaseMode;
   }
 
   // 切换环境
