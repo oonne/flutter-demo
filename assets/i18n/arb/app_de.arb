@@ -8,6 +8,18 @@
   "language_setting": "Spracheinstellungen",
   "@language_setting": {},
 
+  "theme": "Thema",
+  "@theme": {},
+
+  "theme_follow_system": "Folgen Sie dem System",
+  "@theme_follow_system": {},
+
+  "theme_light": "Hell",
+  "@theme_light": {},
+
+  "theme_dark": "Dunkel",
+  "@theme_dark": {},
+
   "user_agreement": "《Benutzervereinbarung》",
   "@user_agreement": {},
 

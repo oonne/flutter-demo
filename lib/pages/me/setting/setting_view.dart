@@ -55,7 +55,7 @@ class _SettingViewState extends State<SettingView> {
                   Panel(
                     children: [
                       PanelItem(
-                        label: '主题',
+                        label: AppLocalizations.of(context)!.theme,
                         value: viewModel.themeModeText,
                         showArrow: true,
                         onTap: () {
@@ -63,7 +63,7 @@ class _SettingViewState extends State<SettingView> {
                         },
                       ),
                       PanelItem(
-                        label: '语言',
+                        label: AppLocalizations.of(context)!.language,
                         value: viewModel.localeText,
                         showArrow: true,
                         onTap: () {

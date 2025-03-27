@@ -8,6 +8,18 @@
   "language_setting": "语言设置",
   "@language_setting": {},
 
+  "theme": "主题",
+  "@theme": {},
+
+  "theme_follow_system": "跟随系统",
+  "@theme_follow_system": {},
+
+  "theme_light": "浅色",
+  "@theme_light": {},
+
+  "theme_dark": "深色",
+  "@theme_dark": {},
+
   "user_agreement": "《用户协议》",
   "@user_agreement": {},
 

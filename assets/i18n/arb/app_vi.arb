@@ -8,6 +8,18 @@
   "language_setting": "Cài đặt ngôn ngữ",
   "@language_setting": {},
 
+  "theme": "Chủ đề",
+  "@theme": {},
+
+  "theme_follow_system": "Theo hệ thống",
+  "@theme_follow_system": {},
+
+  "theme_light": "Sáng",
+  "@theme_light": {},
+
+  "theme_dark": "Tối",
+  "@theme_dark": {},
+
   "user_agreement": "《Thỏa thuận người dùng》",
   "@user_agreement": {},
 

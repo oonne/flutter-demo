@@ -56,12 +56,10 @@ class SettingViewModel extends ChangeNotifier {
     final result = await SelectionBottomSheet.show<ThemeMode>(
       context: context,
       title: '选择主题模式',
-      options: themeModeOptions.map((option) {
-        return {
-          'value': option['mode'],
-          'text': option['text'],
-        };
-      }).toList(),
+      options:
+          themeModeOptions.map((option) {
+            return {'value': option['mode'], 'text': option['text']};
+          }).toList(),
       selectedValue: themeMode,
     );
 
@@ -78,14 +76,6 @@ class SettingViewModel extends ChangeNotifier {
   /* 
    * 语言
    */
-  // 语言选项
-  final List<Map<String, dynamic>> localeOptions = langList.map((option) {
-    return {
-      'value': option['code'],
-      'text': option['name'],
-    };
-  }).toList();
-
   // 获取语言
   String get localeText {
     final option = langList.firstWhere(
@@ -98,7 +88,7 @@ class SettingViewModel extends ChangeNotifier {
   // 初始化语言
   void initLocale(BuildContext context) {
     final globalState = Provider.of<GlobalState>(context, listen: false);
-    model.localeCode = globalState.locale.languageCode;
+    model.localeCode = globalState.lang;
     notifyListeners();
   }
 
@@ -110,7 +100,11 @@ class SettingViewModel extends ChangeNotifier {
     final result = await SelectionBottomSheet.show<String>(
       context: context,
       title: AppLocalizations.of(context)!.language_setting,
-      options: localeOptions,
+      options:
+          langList.map((option) {
+            return {'value': option['code'], 'text': option['name']};
+          }).toList(),
+      selectedValue: model.localeCode,
     );
 
     // 如果用户选择了一个选项
@@ -122,4 +116,4 @@ class SettingViewModel extends ChangeNotifier {
     model.localeCode = result;
     notifyListeners();
   }
-} 
+}
