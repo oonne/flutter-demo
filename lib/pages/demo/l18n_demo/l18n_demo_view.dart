@@ -40,12 +40,12 @@ class _L18nDemoViewState extends State<L18nDemoView> {
            * 页面
            */
           return Scaffold(
-            appBar: CustomAppBar(title: const Text('事件总线')),
+            appBar: CustomAppBar(title: const Text('国际化')),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(AppLocalizations.of(context)!.and),
+                  Text(AppLocalizations.of(context)!.lang_name),
                 ],
               ),
             ),

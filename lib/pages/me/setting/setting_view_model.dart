@@ -81,7 +81,7 @@ class SettingViewModel extends ChangeNotifier {
   final List<Map<String, dynamic>> localeOptions = langList.map((option) {
     return {
       'value': option['code'],
-      'text': option['text'],
+      'text': option['name'],
     };
   }).toList();
 
@@ -91,7 +91,7 @@ class SettingViewModel extends ChangeNotifier {
       (option) => option['code'] == model.localeCode,
       orElse: () => langList[0],
     );
-    return option['text'];
+    return option['name'];
   }
 
   // 初始化语言
