@@ -33,17 +33,20 @@ class SettingViewModel extends ChangeNotifier {
   }
 
   // 主题模式映射
-  final List<Map<String, dynamic>> themeModeOptions = [
-    {'mode': ThemeMode.system, 'text': '跟随系统'},
-    {'mode': ThemeMode.light, 'text': '浅色'},
-    {'mode': ThemeMode.dark, 'text': '深色'},
-  ];
+  List<Map<String, dynamic>> getThemeModeOptions(BuildContext context) {
+    return [
+      {'mode': ThemeMode.system, 'text': AppLocalizations.of(context)!.theme_follow_system},
+      {'mode': ThemeMode.light, 'text': AppLocalizations.of(context)!.theme_light},
+      {'mode': ThemeMode.dark, 'text': AppLocalizations.of(context)!.theme_dark},
+    ];
+  }
 
   // 获取主题模式文案
-  String get themeModeText {
-    final option = themeModeOptions.firstWhere(
+  String getThemeModeText(BuildContext context) {
+    final options = getThemeModeOptions(context);
+    final option = options.firstWhere(
       (option) => option['mode'] == model.themeMode,
-      orElse: () => themeModeOptions[0],
+      orElse: () => options[0],
     );
     return option['text'];
   }
@@ -51,6 +54,7 @@ class SettingViewModel extends ChangeNotifier {
   // 切换主题模式
   Future<void> changeThemeMode(BuildContext context) async {
     final globalState = Provider.of<GlobalState>(context, listen: false);
+    final themeModeOptions = getThemeModeOptions(context);
 
     // 使用 SelectionBottomSheet 组件
     final result = await SelectionBottomSheet.show<ThemeMode>(

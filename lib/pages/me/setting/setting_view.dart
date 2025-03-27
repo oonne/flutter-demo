@@ -56,7 +56,7 @@ class _SettingViewState extends State<SettingView> {
                     children: [
                       PanelItem(
                         label: AppLocalizations.of(context)!.theme,
-                        value: viewModel.themeModeText,
+                        value: viewModel.getThemeModeText(context),
                         showArrow: true,
                         onTap: () {
                           viewModel.changeThemeMode(context);
