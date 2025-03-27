@@ -31,7 +31,7 @@ Future<void> main() async {
   
   // 初始化全局状态
   final globalState = GlobalState();
-  await globalState.initThemeMode();
+  await globalState.init();
 
   // 启动应用
   runApp(MainApp(globalState: globalState));

@@ -15,9 +15,8 @@ flutter 基础项目
 * 底导航
 * AppBar
 * 底部弹框 BottomSheet
-* SnackBar
+* 提示 SnackBar
 
-* toast(fluttertoast)
 * 自定义字体
 * 国际化
 * 时间日期选择器
