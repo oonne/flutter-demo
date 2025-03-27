@@ -48,8 +48,8 @@ class _MeViewState extends State<MeView> {
                 child: Column(
                   children: [
                     Panel(
-                      // Demo
                       children: [
+                        // Demo
                         PanelItem(
                           label: 'DEMO',
                           showArrow: true,
@@ -57,7 +57,7 @@ class _MeViewState extends State<MeView> {
                             GoRouter.of(context).pushNamed('demo');
                           },
                         ),
-                        
+
                         // 设置
                         PanelItem(
                           label: AppLocalizations.of(context)!.title_setting,

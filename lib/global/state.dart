@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:flutter_demo/config/lang_list.dart';
 import 'package:flutter_demo/utils/log.dart';
@@ -56,7 +57,7 @@ class GlobalState extends ChangeNotifier {
   }
   
   /* 
-   * 主题管理 （深色/浅色切换
+   * 主题管理 （深色/浅色）
    */
   ThemeMode themeMode = ThemeMode.system;
   
@@ -129,6 +130,31 @@ class GlobalState extends ChangeNotifier {
   }
 
   /* 
+   * 环境
+   */
+  String env = 'prod';
+
+  // 初始化环境
+  Future<void> initEnv() async {
+    env = dotenv.env['ENV_NAME'] ?? '';
+  }
+
+  // 切换环境
+  Future<void> changeEnv(String newEnv) async {
+    if (newEnv == 'prod') {
+      await dotenv.load(fileName: ".env");
+    } else {
+      await dotenv.load(fileName: ".env.$newEnv");
+    }
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('ENV', newEnv);
+
+    env = newEnv;
+    notifyListeners();
+  }
+
+  /* 
    * 全局初始化
    */
   Future<void> init() async {
@@ -136,6 +162,7 @@ class GlobalState extends ChangeNotifier {
       initUUID(),
       initThemeMode(),
       initLocale(),
+      initEnv(),
     ]);
   }
 }

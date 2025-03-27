@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 
+import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/utils/toast.dart';
 import 'package:flutter_demo/widget/bottom_sheet/selection_bottom_sheet.dart';
@@ -15,9 +16,9 @@ class AboutViewModel extends ChangeNotifier {
   /* 
    * 初始化
    */
-  void init() {
+  void init(BuildContext context) {
     getVersion();
-    initEnvironment();
+    initEnvironment(context);
   }
 
   /* 
@@ -42,11 +43,10 @@ class AboutViewModel extends ChangeNotifier {
   /* 
    * 环境
    */
-  String get environment => model.environment;
-
   // 初始化环境
-  Future<void> initEnvironment() async {
-    model.environment = dotenv.env['ENV_NAME'] ?? '';
+  Future<void> initEnvironment(context) async {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+    model.environment = globalState.env;
   }
 
   // 环境列表
@@ -56,14 +56,15 @@ class AboutViewModel extends ChangeNotifier {
   ];
 
   // 获取当前环境文案
-  String get environmentText =>
-      environmentList.firstWhere(
-        (item) => item['name'] == environment,
-        orElse: () => environmentList[0],
-      )['text'];
+  String getEnvText(BuildContext context) {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+    return environmentList.firstWhere((item) => item['name'] == globalState.env)['text'];
+  }
 
   // 切换环境
   Future<void> changeEnv(BuildContext context) async {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+
     // 使用 SelectionBottomSheet 组件
     final result = await SelectionBottomSheet.show<String>(
       context: context,
@@ -72,7 +73,7 @@ class AboutViewModel extends ChangeNotifier {
           environmentList
               .map((item) => {'value': item['name'], 'text': item['text']})
               .toList(),
-      selectedValue: environment,
+      selectedValue: globalState.env,
     );
 
     // 如果用户选择了一个选项
@@ -81,13 +82,7 @@ class AboutViewModel extends ChangeNotifier {
     }
 
     // 更新环境
-    if (result == 'prod') {
-      await dotenv.load(fileName: ".env");
-    } else {
-      await dotenv.load(fileName: ".env.$result");
-    }
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('ENV', result);
+    await globalState.changeEnv(result);
     model.environment = result;
     notifyListeners();
 

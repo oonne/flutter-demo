@@ -31,7 +31,7 @@ class _AboutViewState extends State<AboutView> {
 
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      viewModel.init();
+      viewModel.init(context);
     });
   }
 
@@ -61,14 +61,13 @@ class _AboutViewState extends State<AboutView> {
                         label: AppLocalizations.of(context)!.title_version,
                         value: viewModel.version,
                       ),
+
                       // 环境
-                      if (viewModel.environment != 'prod') ...[
-                        PanelItem(
-                          label: '环境',
-                          value: viewModel.environmentText,
-                          onTap: () => viewModel.changeEnv(context),
-                        ),
-                      ],
+                      PanelItem(
+                        label: '环境',
+                        value: viewModel.getEnvText(context),
+                        onTap: () => viewModel.changeEnv(context),
+                      ),
                     ],
                   ),
                 ],
