@@ -1,0 +1,99 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:dio/dio.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+
+import 'package:flutter_demo/config/config.dart';
+import 'package:flutter_demo/utils/log.dart';
+import 'package:flutter_demo/utils/utils.dart';
+
+/*
+ * 生成请求id
+ * 格式： 毫秒时间戳 - UUID末4位 - 4位随机数
+ */
+Future<String> getRequestId() async {
+  final prefs = await SharedPreferences.getInstance();
+  final timestamp = DateTime.now().millisecondsSinceEpoch;
+  final uuid = prefs.getString('UUID') ?? '000000000000';
+  final random = randomString(4);
+  return '$timestamp-${uuid.substring(uuid.length - 4)}-$random';
+}
+
+/*
+ * 请求
+ */
+Dio getDioInstance() {
+  final dio = Dio(
+    BaseOptions(
+      baseUrl: dotenv.env['API_URL'] ?? '',
+      connectTimeout: const Duration(seconds: apiTimeOut),
+    ),
+  );
+
+  /*
+  * 拦截器
+  */
+  dio.interceptors.add(InterceptorsWrapper(
+    onRequest: (options, handler) async {
+      final prefs = await SharedPreferences.getInstance();
+      PackageInfo packageInfo = await PackageInfo.fromPlatform();
+
+      options.headers['Authorization'] = 'Bearer ${prefs.getString('TOKEN')}';
+      options.headers['x-version'] = packageInfo.version;
+      options.headers['x-uuid'] = prefs.getString('UUID');
+      options.headers['x-lang'] = prefs.getString('LANG');
+      options.headers['x-reqid'] = await getRequestId();
+
+      return handler.next(options);
+    },
+  ));
+
+  return dio;
+}
+
+/*
+ * 异步封装
+ */
+Future<List<dynamic>> req({String method = 'POST', required String url, Map<String, dynamic>? data, Object? formData}) async {
+  Dio dio = getDioInstance();
+  dynamic err;
+  dynamic res;
+
+  log.finest('🚀发起请求', {'baseUrl': dio.options.baseUrl, 'url': url, '请求数据': data});
+
+  try {
+    Response response;
+    switch (method.toUpperCase()) {
+      case 'GET':
+        response = await dio.get(url, queryParameters: data);
+        break;
+      case 'POST':
+        response = await dio.post(url, data: formData ?? data);
+        break;
+      case 'PUT':
+        response = await dio.put(url, data: data);
+        break;
+      case 'DELETE':
+        response = await dio.delete(url);
+        break;
+      default:
+        throw ArgumentError('Unsupported HTTP method: $method');
+    }
+    res = response.data;
+    log.finest('🎉请求成功', {'url': url, '接口返回': res});
+  } catch (e) {
+    err = e;
+    log.warning('💥请求错误', {'url': url, '错误信息': e});
+  }
+
+  // Token过期处理
+  // TODO
+
+  // 当Code不为0时，抛出异常
+  if (res != null && res['code'] != 0) {
+    return [res, null];
+  }
+
+  // 正常返回
+  return [err, res];
+}
