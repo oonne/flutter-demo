@@ -24,6 +24,7 @@ flutter 基础项目
 
 * 网络请求
 * 二维码扫描
+* 列表上拉加载和下拉刷新
 
 # 打包
 运行 sh scripts/build.sh 

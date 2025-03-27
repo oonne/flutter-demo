@@ -78,6 +78,13 @@ class _IndexViewState extends State<IndexView> {
                           context.pushNamed('demo/date_picker');
                         },
                       ),
+                      PanelItem(
+                        label: '网络请求',
+                        showArrow: true,
+                        onTap: () {
+                          context.pushNamed('demo/req');
+                        },
+                      ),
                     ],
                   ),
                 ],
