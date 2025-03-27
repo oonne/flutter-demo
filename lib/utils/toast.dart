@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 /* 
- * Toast
+ * 纯文本SnackBar
  */
-Future<void> toast(String msg) async {
-  Fluttertoast.showToast(
-    msg: msg,
-    backgroundColor: Colors.black45,
-    textColor: Colors.white,
-    fontSize: 14.0,
+void showTextSnackBar(
+  BuildContext context, {
+  required String msg,
+  Duration? duration,
+  bool showClose = false,
+}) {
+  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(msg),
+      duration: duration ?? const Duration(seconds: 2),
+      action: showClose ? SnackBarAction(label: '关闭', onPressed: () {}) : null,
+    ),
   );
 }

@@ -29,7 +29,7 @@ class _EventbusViewState extends State<EventbusView> {
 
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      viewModel.init();
+      viewModel.init(context);
     });
   }
 
@@ -61,7 +61,9 @@ class _EventbusViewState extends State<EventbusView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: viewModel.sendEvent,
+                    onPressed: () {
+                      viewModel.sendEvent();
+                    },
                     child: const Text('发送事件'),
                   ),
                 ],

@@ -13,9 +13,11 @@ class EventbusViewModel extends ChangeNotifier {
   /* 
    * 初始化
    */
-  init() {
+  init(BuildContext context) {
     _subscription = eventBus.on<TestEvent>().listen((event) {
-      toast(event.message);
+      if (context.mounted) {
+        showTextSnackBar(context, msg: event.message);
+      }
     });
   }
 
