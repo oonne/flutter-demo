@@ -22,9 +22,6 @@ class SettingViewModel extends ChangeNotifier {
   /* 
    * 主题
    */
-  // 获取主题模式
-  ThemeMode get themeMode => model.themeMode;
-
   // 初始化主题模式
   void initThemeMode(BuildContext context) {
     final globalState = Provider.of<GlobalState>(context, listen: false);
@@ -64,7 +61,7 @@ class SettingViewModel extends ChangeNotifier {
           themeModeOptions.map((option) {
             return {'value': option['mode'], 'text': option['text']};
           }).toList(),
-      selectedValue: themeMode,
+      selectedValue: model.themeMode,
     );
 
     // 如果用户选择了一个选项

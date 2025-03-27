@@ -35,7 +35,7 @@ class PanelItem extends StatelessWidget {
           child: InkWell(
             onTap: onTap,
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+              padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
             width: constraints.maxWidth,
             decoration:
                 !isLast
