@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_demo/utils/log.dart';
 
 import 'about_model.dart';
@@ -13,6 +13,7 @@ class AboutViewModel extends ChangeNotifier {
    */
   void init() {
     getVersion();
+    initEnvironment();
   }
 
   /* 
@@ -32,5 +33,15 @@ class AboutViewModel extends ChangeNotifier {
 
     log.severe('版本号: ${model.version}');
     notifyListeners();
+  }
+
+  /* 
+   * 环境
+   */
+  String get environment => model.environment;
+
+  // 初始化环境
+  Future<void> initEnvironment() async {
+    model.environment = dotenv.env['ENV_NAME'] ?? '';
   }
 } 
