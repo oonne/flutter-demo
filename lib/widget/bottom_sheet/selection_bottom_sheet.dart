@@ -35,7 +35,10 @@ class SelectionBottomSheet extends StatelessWidget {
     final themeVars = getCurrentThemeVars(context);
 
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      padding: EdgeInsets.only(
+        top: 16,
+        bottom: MediaQuery.of(context).padding.bottom + 8,
+      ),
       decoration: BoxDecoration(
         color: themeVars.contentBackground,
         borderRadius: BorderRadius.only(
@@ -105,7 +108,6 @@ class SelectionBottomSheet extends StatelessWidget {
   }) {
     return showModalBottomSheet<T>(
       context: context,
-      useSafeArea: true,
       isScrollControlled: true,
       constraints: BoxConstraints(
         maxHeight: MediaQuery.of(context).size.height * 0.7,
