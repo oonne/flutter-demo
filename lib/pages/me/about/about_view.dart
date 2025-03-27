@@ -28,7 +28,7 @@ class _AboutViewState extends State<AboutView> {
   void initState() {
     super.initState();
     viewModel = AboutViewModel();
-    
+
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
       viewModel.init();
@@ -48,7 +48,9 @@ class _AboutViewState extends State<AboutView> {
            * 页面
            */
           return Scaffold(
-            appBar: CustomAppBar(title: Text(AppLocalizations.of(context)!.title_about)),
+            appBar: CustomAppBar(
+              title: Text(AppLocalizations.of(context)!.title_about),
+            ),
             body: SingleChildScrollView(
               child: Column(
                 children: [
@@ -60,11 +62,13 @@ class _AboutViewState extends State<AboutView> {
                         value: viewModel.version,
                       ),
                       // 环境
-                      PanelItem(
-                        label: '环境',
-                        value: viewModel.environmentText,
-                        onTap: () => viewModel.changeEnv(context),
-                      ),
+                      if (viewModel.environment != 'prod') ...[
+                        PanelItem(
+                          label: '环境',
+                          value: viewModel.environmentText,
+                          onTap: () => viewModel.changeEnv(context),
+                        ),
+                      ],
                     ],
                   ),
                 ],
@@ -75,4 +79,4 @@ class _AboutViewState extends State<AboutView> {
       ),
     );
   }
-} 
+}
