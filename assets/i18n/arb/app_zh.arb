@@ -2,17 +2,20 @@
   "lang_name": "中文（简体）",
   "@lang_name": {},
 
+  "language": "语言",
+  "@language": {},
+
   "language_setting": "语言设置",
   "@language_setting": {},
-
-  "and": "和",
-  "@and": {},
 
   "user_agreement": "《用户协议》",
   "@user_agreement": {},
 
   "privacy_policy": "《隐私政策》",
   "@privacy_policy": {},
+
+  "and": "和",
+  "@and": {},
 
   "today": "今天",
   "@today": {},

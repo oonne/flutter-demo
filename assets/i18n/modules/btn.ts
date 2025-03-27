@@ -4,7 +4,9 @@ import type { ILangMsgs } from "../type";
  * 按钮 btn_
  */
 const msg: ILangMsgs = {
-  // 登录
+  /* 
+   * 登录
+   */
   btn_login: {
     zh_CN: "登录",
     zh_TW: "登入",
@@ -19,6 +21,7 @@ const msg: ILangMsgs = {
     ko_KR: "로그인",
     vi_VN: "Đăng nhập",
   },
+  // 退出登录
   btn_logout: {
     zh_CN: "退出登录",
     zh_TW: "退出登入",

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter_demo/config/lang_list.dart';
 import 'package:flutter_demo/global/state.dart';
@@ -108,7 +109,7 @@ class SettingViewModel extends ChangeNotifier {
     // 使用 SelectionBottomSheet 组件
     final result = await SelectionBottomSheet.show<String>(
       context: context,
-      title: '选择语言',
+      title: AppLocalizations.of(context)!.language_setting,
       options: localeOptions,
     );
 

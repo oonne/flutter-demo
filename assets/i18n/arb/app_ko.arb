@@ -2,17 +2,20 @@
   "lang_name": "한국어",
   "@lang_name": {},
 
+  "language": "언어",
+  "@language": {},
+
   "language_setting": "언어 설정",
   "@language_setting": {},
-
-  "and": "와",
-  "@and": {},
 
   "user_agreement": "《사용자 계약》",
   "@user_agreement": {},
 
   "privacy_policy": "《개인정보 정책》",
   "@privacy_policy": {},
+
+  "and": "와",
+  "@and": {},
 
   "today": "오늘",
   "@today": {},

@@ -2,17 +2,20 @@
   "lang_name": "Español",
   "@lang_name": {},
 
+  "language": "Idioma",
+  "@language": {},
+
   "language_setting": "Configuración de idioma",
   "@language_setting": {},
-
-  "and": "y",
-  "@and": {},
 
   "user_agreement": "《Acuerdo de Usuario》",
   "@user_agreement": {},
 
   "privacy_policy": "《Política de privacidad》",
   "@privacy_policy": {},
+
+  "and": "y",
+  "@and": {},
 
   "today": "Hoy",
   "@today": {},

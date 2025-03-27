@@ -19,7 +19,10 @@ const msg: ILangMsgs = {
     ko_KR: "읽고 약속",
     vi_VN: "Đã đọcvà đồng ý",
   },
-  /* 下拉刷新 */
+  
+  /* 
+   * 下拉刷新
+   */
   // 下拉刷新
   info_pull_down_refresh: {
     zh_CN: "下拉刷新",

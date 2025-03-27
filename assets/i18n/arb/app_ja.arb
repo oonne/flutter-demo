@@ -2,17 +2,20 @@
   "lang_name": "日本語",
   "@lang_name": {},
 
+  "language": "言語",
+  "@language": {},
+
   "language_setting": "言語設定",
   "@language_setting": {},
-
-  "and": "と",
-  "@and": {},
 
   "user_agreement": "《ユーザー契約》",
   "@user_agreement": {},
 
   "privacy_policy": "《プライバシーポリシー》",
   "@privacy_policy": {},
+
+  "and": "と",
+  "@and": {},
 
   "today": "今日",
   "@today": {},

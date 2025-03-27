@@ -2,17 +2,20 @@
   "lang_name": "Tiếng Việt",
   "@lang_name": {},
 
+  "language": "Ngôn ngữ",
+  "@language": {},
+
   "language_setting": "Cài đặt ngôn ngữ",
   "@language_setting": {},
-
-  "and": "và",
-  "@and": {},
 
   "user_agreement": "《Thỏa thuận người dùng》",
   "@user_agreement": {},
 
   "privacy_policy": "《Chính sách bảo mật》",
   "@privacy_policy": {},
+
+  "and": "và",
+  "@and": {},
 
   "today": "Hôm nay",
   "@today": {},

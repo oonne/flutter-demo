@@ -2,17 +2,20 @@
   "lang_name": "Русский",
   "@lang_name": {},
 
+  "language": "Язык",
+  "@language": {},
+
   "language_setting": "Настройки языка",
   "@language_setting": {},
-
-  "and": "и",
-  "@and": {},
 
   "user_agreement": "《Пользовательское соглашение》",
   "@user_agreement": {},
 
   "privacy_policy": "《Политика конфиденциальности》",
   "@privacy_policy": {},
+
+  "and": "и",
+  "@and": {},
 
   "today": "Сегодня",
   "@today": {},

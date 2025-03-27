@@ -2,17 +2,20 @@
   "lang_name": "Français",
   "@lang_name": {},
 
+  "language": "Langue",
+  "@language": {},
+
   "language_setting": "Paramètres linguistiques",
   "@language_setting": {},
-
-  "and": "et",
-  "@and": {},
 
   "user_agreement": "《Les conditions d'utilisation》",
   "@user_agreement": {},
 
   "privacy_policy": "《Politique de confidentialité》",
   "@privacy_policy": {},
+
+  "and": "et",
+  "@and": {},
 
   "today": "Aujourd'hui",
   "@today": {},

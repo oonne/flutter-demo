@@ -18,6 +18,21 @@ const msg: ILangMsgs = {
     ko_KR: "한국어",
     vi_VN: "Tiếng Việt",
   },
+  // 语言
+  language: {
+    zh_CN: "语言",
+    zh_TW: "語言",
+    en_US: "Language",
+    ru_RU: "Язык",
+    fr_FR: "Langue",
+    es_ES: "Idioma",
+    it_IT: "Lingua",
+    pt_PT: "Idioma",
+    de_DE: "Sprache",
+    ja_JP: "言語",
+    ko_KR: "언어",
+    vi_VN: "Ngôn ngữ",
+  },
   // 语言设置
   language_setting: {
     zh_CN: "语言设置",
@@ -33,22 +48,9 @@ const msg: ILangMsgs = {
     ko_KR: "언어 설정",
     vi_VN: "Cài đặt ngôn ngữ",
   },
-  // 和
-  and: {
-    zh_CN: "和",
-    zh_TW: "和",
-    en_US: "and",
-    ru_RU: "и",
-    fr_FR: "et",
-    es_ES: "y",
-    it_IT: "e",
-    pt_PT: "e",
-    de_DE: "und",
-    ja_JP: "と",
-    ko_KR: "와",
-    vi_VN: "và",
-  },
-  /* 协议 */
+  /*
+   * 用户协议
+   */
   user_agreement: {
     zh_CN: "《用户协议》",
     zh_TW: "《用戶協議》",
@@ -77,7 +79,25 @@ const msg: ILangMsgs = {
     ko_KR: "《개인정보 정책》",
     vi_VN: "《Chính sách bảo mật》",
   },
-  /* 时间筛选 */
+  // 和
+  and: {
+    zh_CN: "和",
+    zh_TW: "和",
+    en_US: "and",
+    ru_RU: "и",
+    fr_FR: "et",
+    es_ES: "y",
+    it_IT: "e",
+    pt_PT: "e",
+    de_DE: "und",
+    ja_JP: "と",
+    ko_KR: "와",
+    vi_VN: "và",
+  },
+  
+  /*
+   * 时间筛选
+   */
   // 今天
   today: {
     zh_CN: "今天",
