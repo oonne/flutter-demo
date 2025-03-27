@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
 
@@ -36,8 +35,6 @@ class _MeViewState extends State<MeView> {
    */
   @override
   Widget build(BuildContext context) {
-    final globalState = Provider.of<GlobalState>(context, listen: true);
-
     return ChangeNotifierProvider.value(
       value: viewModel,
       child: Consumer<MeViewModel>(
@@ -52,17 +49,6 @@ class _MeViewState extends State<MeView> {
                   children: [
                     Panel(
                       children: [
-                        // Demo
-                        if (globalState.env != 'prod') ...[
-                          PanelItem(
-                            label: 'DEMO',
-                            showArrow: true,
-                            onTap: () {
-                              GoRouter.of(context).pushNamed('demo');
-                            },
-                          ),
-                        ],
-
                         // 设置
                         PanelItem(
                           label: AppLocalizations.of(context)!.title_setting,

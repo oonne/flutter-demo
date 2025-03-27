@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter_demo/global/state.dart';
@@ -42,6 +43,7 @@ class _AboutViewState extends State<AboutView> {
   @override
   Widget build(BuildContext context) {
     final globalState = Provider.of<GlobalState>(context, listen: true);
+    
     return ChangeNotifierProvider.value(
       value: viewModel,
       child: Consumer<AboutViewModel>(
@@ -70,6 +72,17 @@ class _AboutViewState extends State<AboutView> {
                           label: '环境',
                           value: viewModel.getEnvText(context),
                           onTap: () => viewModel.changeEnv(context),
+                        ),
+                      ],
+
+                      // Demo
+                      if (globalState.env != 'prod') ...[
+                        PanelItem(
+                          label: 'DEMO',
+                          showArrow: true,
+                          onTap: () {
+                            GoRouter.of(context).pushNamed('demo');
+                          },
                         ),
                       ],
                     ],

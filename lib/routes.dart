@@ -17,6 +17,7 @@ import 'package:flutter_demo/pages/demo/index/index_view.dart';
 import 'package:flutter_demo/pages/demo/mvvm/mvvm_view.dart';
 import 'package:flutter_demo/pages/demo/eventbus/eventbus_view.dart';
 import 'package:flutter_demo/pages/demo/custom_font/custom_font_view.dart';
+import 'package:flutter_demo/pages/demo/date_picker/date_picker_view.dart';
 
 /*
  * 路由表
@@ -123,6 +124,12 @@ final router = GoRouter(
       name: 'demo/custom_font',
       path: '/demo/custom_font',
       builder: (context, state) => const CustomFontView(),
+    ),
+    /* 日期选择器 */
+    GoRoute(
+      name: 'demo/date_picker',
+      path: '/demo/date_picker',
+      builder: (context, state) => const DatePickerView(),
     ),
   ],
 );
