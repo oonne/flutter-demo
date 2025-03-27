@@ -18,8 +18,8 @@ flutter 基础项目
 * AppBar
 * 底部弹框 BottomSheet
 * 提示 SnackBar
+* 时间日期选择器(board_datetime_picker)
 
-* 时间日期选择器
 * 按钮
 * 网络请求
 * 模态弹框组件
