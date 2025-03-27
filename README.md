@@ -14,15 +14,15 @@ flutter 基础项目
 * MVVM页面示例
 * 深浅主题切换
 * 全局样式
+* 按钮
 * 底导航
 * AppBar
 * 底部弹框 BottomSheet
 * 提示 SnackBar
 * 时间日期选择器(board_datetime_picker)
 
-* 按钮
-* 网络请求
 * 模态弹框组件
+* 网络请求
 * 二维码扫描
 
 # 打包

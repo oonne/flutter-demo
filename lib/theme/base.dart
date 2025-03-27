@@ -50,6 +50,19 @@ ThemeData createBaseTheme({
     ),
 
     /* 
+     * 按钮
+     */
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: colorScheme.primary,
+        foregroundColor: const Color.fromRGBO(220, 220, 220, 1),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(vars.radius),
+        ),
+      ),
+    ),
+
+    /* 
      * 页面转场动画
      * 所有平台统一使用 iOS 风格的转场动画
      */
