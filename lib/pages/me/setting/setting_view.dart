@@ -48,12 +48,13 @@ class _SettingViewState extends State<SettingView> {
            * 页面
            */
           return Scaffold(
-            appBar: CustomAppBar(title: const Text('设置')),
+            appBar: CustomAppBar(title: Text(AppLocalizations.of(context)!.title_setting)),
             body: SingleChildScrollView(
               child: Column(
                 children: [
                   Panel(
                     children: [
+                      /* 主题 */
                       PanelItem(
                         label: AppLocalizations.of(context)!.theme,
                         value: viewModel.getThemeModeText(context),
@@ -62,6 +63,7 @@ class _SettingViewState extends State<SettingView> {
                           viewModel.changeThemeMode(context);
                         },
                       ),
+                      /* 语言 */
                       PanelItem(
                         label: AppLocalizations.of(context)!.language,
                         value: viewModel.localeText,

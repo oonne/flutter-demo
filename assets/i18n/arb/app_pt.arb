@@ -47,6 +47,21 @@
   "btn_logout": "Sair",
   "@btn_logout": {},
 
+  "title_home": "Início",
+  "@title_home": {},
+
+  "title_me": "Meu",
+  "@title_me": {},
+
+  "title_setting": "Configuração",
+  "@title_setting": {},
+
+  "title_about": "Sobre",
+  "@title_about": {},
+
+  "title_version": "Versão",
+  "@title_version": {},
+
   "info_have_read_and_agree": "Lido e aceito",
   "@info_have_read_and_agree": {},
 

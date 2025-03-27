@@ -47,6 +47,21 @@
   "btn_logout": "Déconnexion",
   "@btn_logout": {},
 
+  "title_home": "Accueil",
+  "@title_home": {},
+
+  "title_me": "Mon",
+  "@title_me": {},
+
+  "title_setting": "Paramètres",
+  "@title_setting": {},
+
+  "title_about": "À propos",
+  "@title_about": {},
+
+  "title_version": "Version",
+  "@title_version": {},
+
   "info_have_read_and_agree": "Lu et accepté",
   "@info_have_read_and_agree": {},
 

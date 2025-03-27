@@ -40,7 +40,11 @@ class _HomeViewState extends State<HomeView> {
           return Scaffold(
             body: SafeArea(
               child: SingleChildScrollView(
-                child: Column(children: [Center(child: Text('首页'))]),
+                child: Column(children: [
+                  Placeholder(),
+                  const SizedBox(height: 20),
+                  Text('首页TODO'),
+                ]),
               ),
             ),
           );

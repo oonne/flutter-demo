@@ -47,6 +47,21 @@
   "btn_logout": "Выйти",
   "@btn_logout": {},
 
+  "title_home": "Главная",
+  "@title_home": {},
+
+  "title_me": "Мой",
+  "@title_me": {},
+
+  "title_setting": "Настройки",
+  "@title_setting": {},
+
+  "title_about": "О программе",
+  "@title_about": {},
+
+  "title_version": "Версия",
+  "@title_version": {},
+
   "info_have_read_and_agree": "Прочитано и согласен",
   "@info_have_read_and_agree": {},
 

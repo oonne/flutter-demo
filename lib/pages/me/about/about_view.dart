@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
@@ -47,15 +47,15 @@ class _AboutViewState extends State<AboutView> {
            * 页面
            */
           return Scaffold(
-            appBar: CustomAppBar(title: const Text('关于')),
+            appBar: CustomAppBar(title: Text(AppLocalizations.of(context)!.title_about)),
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  /* 标准卡片 */
                   Panel(
                     children: [
+                      // 版本号
                       PanelItem(
-                        label: '版本号',
+                        label: AppLocalizations.of(context)!.title_version,
                         value: viewModel.version,
                       ),
                     ],

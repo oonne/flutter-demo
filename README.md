@@ -9,6 +9,7 @@ flutter 基础项目
 * 路由(go_router)
 * svg图标(flutter_svg)
 * 事件总线(event_bus)
+* 国际化
 * MVVM页面示例
 * 深浅主题切换
 * 全局样式
@@ -17,7 +18,6 @@ flutter 基础项目
 * 底部弹框 BottomSheet
 * 提示 SnackBar
 
-* 国际化
 * 时间日期选择器
 * 自定义字体
 * 按钮

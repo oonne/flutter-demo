@@ -47,6 +47,21 @@
   "btn_logout": "Đăng xuất",
   "@btn_logout": {},
 
+  "title_home": "Trang chủ",
+  "@title_home": {},
+
+  "title_me": "Của tôi",
+  "@title_me": {},
+
+  "title_setting": "Cài đặt",
+  "@title_setting": {},
+
+  "title_about": "Về",
+  "@title_about": {},
+
+  "title_version": "Phiên bản",
+  "@title_version": {},
+
   "info_have_read_and_agree": "Đã đọcvà đồng ý",
   "@info_have_read_and_agree": {},
 

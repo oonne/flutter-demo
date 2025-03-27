@@ -47,6 +47,21 @@
   "btn_logout": "Cerrar sesión",
   "@btn_logout": {},
 
+  "title_home": "Inicio",
+  "@title_home": {},
+
+  "title_me": "Mi",
+  "@title_me": {},
+
+  "title_setting": "Configuración",
+  "@title_setting": {},
+
+  "title_about": "Acerca de",
+  "@title_about": {},
+
+  "title_version": "Versión",
+  "@title_version": {},
+
   "info_have_read_and_agree": "Leído y aceptado",
   "@info_have_read_and_agree": {},
 

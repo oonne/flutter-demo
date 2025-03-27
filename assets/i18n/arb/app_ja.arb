@@ -47,6 +47,21 @@
   "btn_logout": "ログアウト",
   "@btn_logout": {},
 
+  "title_home": "ホーム",
+  "@title_home": {},
+
+  "title_me": "私の",
+  "@title_me": {},
+
+  "title_setting": "設定",
+  "@title_setting": {},
+
+  "title_about": "について",
+  "@title_about": {},
+
+  "title_version": "バージョン",
+  "@title_version": {},
+
   "info_have_read_and_agree": "既読と同意",
   "@info_have_read_and_agree": {},
 

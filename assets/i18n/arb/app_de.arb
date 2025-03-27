@@ -47,6 +47,21 @@
   "btn_logout": "Abmelden",
   "@btn_logout": {},
 
+  "title_home": "Startseite",
+  "@title_home": {},
+
+  "title_me": "Mein",
+  "@title_me": {},
+
+  "title_setting": "Einstellungen",
+  "@title_setting": {},
+
+  "title_about": "Über",
+  "@title_about": {},
+
+  "title_version": "Version",
+  "@title_version": {},
+
   "info_have_read_and_agree": "Gelesen und akzeptiert",
   "@info_have_read_and_agree": {},
 

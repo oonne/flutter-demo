@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter_demo/theme/global.dart';
 
@@ -25,56 +26,67 @@ class NavItem {
  * 底导航
  */
 class ScaffoldWithNavBar extends StatelessWidget {
-  ScaffoldWithNavBar({super.key, required this.child});
+  const ScaffoldWithNavBar({super.key, required this.child});
 
   // 页面组件
   final Widget child;
   // 底导航Icon大小
   final double iconSize = 24;
 
-  // 底导航配置
-  final List<NavItem> _navItems = [
-    NavItem(
-      icon: 'assets/icon/home.svg',
-      activeIcon: 'assets/icon/home-fill.svg',
-      label: '首页',
-      path: '/home',
-    ),
-    NavItem(
-      icon: 'assets/icon/customer.svg',
-      activeIcon: 'assets/icon/customer-fill.svg',
-      label: '我的',
-      path: '/me',
-    ),
-  ];
+  /* 
+   * 底导航配置
+   */
+  List<NavItem> _getNavItems(BuildContext context) {
+    return [
+      // 首页
+      NavItem(
+        icon: 'assets/icon/home.svg',
+        activeIcon: 'assets/icon/home-fill.svg',
+        label: AppLocalizations.of(context)!.title_home,
+        path: '/home',
+      ),
+      // 我的
+      NavItem(
+        icon: 'assets/icon/customer.svg',
+        activeIcon: 'assets/icon/customer-fill.svg',
+        label: AppLocalizations.of(context)!.title_me,
+        path: '/me',
+      ),
+    ];
+  }
 
   /* 
    * 计算选中的索引
    */
   int _calculateSelectedIndex(BuildContext context) {
     final String location = GoRouterState.of(context).uri.path;
-    return _navItems.indexWhere((item) => location.startsWith(item.path));
+    final navItems = _getNavItems(context);
+    return navItems.indexWhere((item) => location.startsWith(item.path));
   }
 
   /* 
    * 点击事件
    */
   void _onItemTapped(int index, BuildContext context) {
-    if (index >= 0 && index < _navItems.length) {
-      GoRouter.of(context).pushReplacement(_navItems[index].path);
+    final navItems = _getNavItems(context);
+    if (index >= 0 && index < navItems.length) {
+      GoRouter.of(context).pushReplacement(navItems[index].path);
     }
   }
 
-
+  /* 
+   * 构建组件
+   */
   @override
   Widget build(BuildContext context) {
     final colorScheme = getCurrentThemeColorScheme(context);
     final themeVars = getCurrentThemeVars(context);
+    final navItems = _getNavItems(context);
 
     return Scaffold(
       body: child,
       bottomNavigationBar: BottomNavigationBar(
-        items: _navItems.map((item) => BottomNavigationBarItem(
+        items: navItems.map((item) => BottomNavigationBarItem(
           icon: SvgPicture.asset(
             item.icon,
             colorFilter: ColorFilter.mode(themeVars.secondaryTextColor, BlendMode.srcIn),

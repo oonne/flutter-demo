@@ -47,6 +47,21 @@
   "btn_logout": "로그아웃",
   "@btn_logout": {},
 
+  "title_home": "홈",
+  "@title_home": {},
+
+  "title_me": "내",
+  "@title_me": {},
+
+  "title_setting": "설정",
+  "@title_setting": {},
+
+  "title_about": "에 대해",
+  "@title_about": {},
+
+  "title_version": "버전",
+  "@title_version": {},
+
   "info_have_read_and_agree": "읽고 약속",
   "@info_have_read_and_agree": {},
 

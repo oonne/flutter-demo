@@ -47,6 +47,21 @@
   "btn_logout": "退出登录",
   "@btn_logout": {},
 
+  "title_home": "首页",
+  "@title_home": {},
+
+  "title_me": "我的",
+  "@title_me": {},
+
+  "title_setting": "设置",
+  "@title_setting": {},
+
+  "title_about": "关于",
+  "@title_about": {},
+
+  "title_version": "版本号",
+  "@title_version": {},
+
   "info_have_read_and_agree": "已阅读并同意",
   "@info_have_read_and_agree": {},
 
