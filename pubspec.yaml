@@ -40,3 +40,13 @@ flutter:
     - assets/audio/
     - assets/icon/
     - assets/img/
+  fonts:
+    - family: Futura-Heavy
+      fonts:
+        - asset: assets/font/Futura-Heavy.ttf
+    - family: Futura-Medium
+      fonts:
+        - asset: assets/font/Futura-Medium.ttf
+    - family: Futura-Light
+      fonts:
+        - asset: assets/font/Futura-Light.ttf

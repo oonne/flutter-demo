@@ -7,8 +7,9 @@ flutter 基础项目
 * 日志(logger)
 * 全局数据(provider)
 * 路由(go_router)
-* svg图标(flutter_svg)
 * 事件总线(event_bus)
+* 自定义svg图标(flutter_svg)
+* 自定义字体
 * 国际化
 * MVVM页面示例
 * 深浅主题切换
@@ -19,11 +20,10 @@ flutter 基础项目
 * 提示 SnackBar
 
 * 时间日期选择器
-* 自定义字体
 * 按钮
 * 网络请求
-* 二维码扫描
 * 模态弹框组件
+* 二维码扫描
 
 # 打包
 运行 sh scripts/build.sh 
