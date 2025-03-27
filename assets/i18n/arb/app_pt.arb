@@ -1,0 +1,91 @@
+{
+  "lang_name": "Português",
+  "@lang_name": {},
+
+  "language_setting": "Configuração de idioma",
+  "@language_setting": {},
+
+  "and": "e",
+  "@and": {},
+
+  "user_agreement": "《Termos de Uso》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《Política de Privacidade》",
+  "@privacy_policy": {},
+
+  "today": "Hoje",
+  "@today": {},
+
+  "yesterday": "Ontem",
+  "@yesterday": {},
+
+  "this_month": "Este mês",
+  "@this_month": {},
+
+  "this_quarter": "Este trimestre",
+  "@this_quarter": {},
+
+  "btn_login": "Entrar",
+  "@btn_login": {},
+
+  "btn_logout": "Sair",
+  "@btn_logout": {},
+
+  "info_have_read_and_agree": "Lido e aceito",
+  "@info_have_read_and_agree": {},
+
+  "info_pull_down_refresh": "Arraste para baixo para atualizar",
+  "@info_pull_down_refresh": {},
+
+  "info_release_refresh": "Soltar para atualizar",
+  "@info_release_refresh": {},
+
+  "info_start_refresh": "Iniciar atualização...",
+  "@info_start_refresh": {},
+
+  "info_refreshing": "Atualização",
+  "@info_refreshing": {},
+
+  "info_refresh_complete": "Atualização completa",
+  "@info_refresh_complete": {},
+
+  "info_refresh_failed": "A atualização falhou",
+  "@info_refresh_failed": {},
+
+  "info_pull_up_load": "Arraste para cima para carregar mais",
+  "@info_pull_up_load": {},
+
+  "info_release_load": "Soltar para carregar mais",
+  "@info_release_load": {},
+
+  "info_start_load": "Iniciar carregamento",
+  "@info_start_load": {},
+
+  "info_loading": "Carregando",
+  "@info_loading": {},
+
+  "info_load_complete": "Carregamento completo",
+  "@info_load_complete": {},
+
+  "info_load_failed": "A carga falhou",
+  "@info_load_failed": {},
+
+  "info_no_more_data": "Sem mais dados",
+  "@info_no_more_data": {},
+
+  "info_last_updated": "Atualizado pela última vez às %T",
+  "@info_last_updated": {},
+
+  "msg_read_agreement": "Leia primeiro o acordo",
+  "@msg_read_agreement": {},
+
+  "msg_query_failed": "A consulta falhou",
+  "@msg_query_failed": {},
+
+  "msg_operation_failed": "A operação falhou",
+  "@msg_operation_failed": {},
+
+  "msg_login_failed": "A conexão falhou",
+  "@msg_login_failed": {}
+}

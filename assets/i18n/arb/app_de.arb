@@ -1,0 +1,91 @@
+{
+  "lang_name": "Deutsch",
+  "@lang_name": {},
+
+  "language_setting": "Spracheinstellungen",
+  "@language_setting": {},
+
+  "and": "und",
+  "@and": {},
+
+  "user_agreement": "《Benutzervereinbarung》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《Datenschutzrichtlinie》",
+  "@privacy_policy": {},
+
+  "today": "Heute",
+  "@today": {},
+
+  "yesterday": "Gestern",
+  "@yesterday": {},
+
+  "this_month": "Dieser Monat",
+  "@this_month": {},
+
+  "this_quarter": "Dieses Quartal",
+  "@this_quarter": {},
+
+  "btn_login": "Anmelden",
+  "@btn_login": {},
+
+  "btn_logout": "Abmelden",
+  "@btn_logout": {},
+
+  "info_have_read_and_agree": "Gelesen und akzeptiert",
+  "@info_have_read_and_agree": {},
+
+  "info_pull_down_refresh": "Ziehen Sie nach unten, um zu aktualisieren",
+  "@info_pull_down_refresh": {},
+
+  "info_release_refresh": "Loslassen, um zu aktualisieren",
+  "@info_release_refresh": {},
+
+  "info_start_refresh": "Starten Sie die Aktualisierung...",
+  "@info_start_refresh": {},
+
+  "info_refreshing": "Aktualisierung",
+  "@info_refreshing": {},
+
+  "info_refresh_complete": "Aktualisierung abgeschlossen",
+  "@info_refresh_complete": {},
+
+  "info_refresh_failed": "Aktualisierung fehlgeschlagen",
+  "@info_refresh_failed": {},
+
+  "info_pull_up_load": "Ziehen Sie nach oben, um mehr zu laden",
+  "@info_pull_up_load": {},
+
+  "info_release_load": "Loslassen, um mehr zu laden",
+  "@info_release_load": {},
+
+  "info_start_load": "Starten Sie die Ladeung",
+  "@info_start_load": {},
+
+  "info_loading": "Ladeung",
+  "@info_loading": {},
+
+  "info_load_complete": "Ladeung abgeschlossen",
+  "@info_load_complete": {},
+
+  "info_load_failed": "Ladeung fehlgeschlagen",
+  "@info_load_failed": {},
+
+  "info_no_more_data": "Keine weitere Daten",
+  "@info_no_more_data": {},
+
+  "info_last_updated": "Zuletzt aktualisiert um %T",
+  "@info_last_updated": {},
+
+  "msg_read_agreement": "Bitte lesen Sie zuerst die Vereinbarung",
+  "@msg_read_agreement": {},
+
+  "msg_query_failed": "Die Abfrage ist fehlgeschlagen",
+  "@msg_query_failed": {},
+
+  "msg_operation_failed": "Die Operation ist fehlgeschlagen",
+  "@msg_operation_failed": {},
+
+  "msg_login_failed": "Die Anmeldung ist fehlgeschlagen",
+  "@msg_login_failed": {}
+}

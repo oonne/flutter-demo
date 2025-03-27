@@ -1,0 +1,91 @@
+{
+  "lang_name": "한국어",
+  "@lang_name": {},
+
+  "language_setting": "언어 설정",
+  "@language_setting": {},
+
+  "and": "와",
+  "@and": {},
+
+  "user_agreement": "《사용자 계약》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《개인정보 정책》",
+  "@privacy_policy": {},
+
+  "today": "오늘",
+  "@today": {},
+
+  "yesterday": "어제",
+  "@yesterday": {},
+
+  "this_month": "이번 달",
+  "@this_month": {},
+
+  "this_quarter": "이번 분기",
+  "@this_quarter": {},
+
+  "btn_login": "로그인",
+  "@btn_login": {},
+
+  "btn_logout": "로그아웃",
+  "@btn_logout": {},
+
+  "info_have_read_and_agree": "읽고 약속",
+  "@info_have_read_and_agree": {},
+
+  "info_pull_down_refresh": "새로고침 하려면 아래로 밀어",
+  "@info_pull_down_refresh": {},
+
+  "info_release_refresh": "새로고침하려면  vrijlaten",
+  "@info_release_refresh": {},
+
+  "info_start_refresh": "새로고침 시작...",
+  "@info_start_refresh": {},
+
+  "info_refreshing": "새로고침",
+  "@info_refreshing": {},
+
+  "info_refresh_complete": "새로고침 완료",
+  "@info_refresh_complete": {},
+
+  "info_refresh_failed": "새로고침에 실패했습니다",
+  "@info_refresh_failed": {},
+
+  "info_pull_up_load": "더 많은 데이터를 로드하려면 아래로 밀어",
+  "@info_pull_up_load": {},
+
+  "info_release_load": "더 많은 데이터를 로드하려면  vrij",
+  "@info_release_load": {},
+
+  "info_start_load": "로드 시작",
+  "@info_start_load": {},
+
+  "info_loading": "로드 중",
+  "@info_loading": {},
+
+  "info_load_complete": "로드 완료",
+  "@info_load_complete": {},
+
+  "info_load_failed": "로드에 실패했습니다",
+  "@info_load_failed": {},
+
+  "info_no_more_data": "더 이상 데이터가 없습니다",
+  "@info_no_more_data": {},
+
+  "info_last_updated": "마지막 업데이트 %T",
+  "@info_last_updated": {},
+
+  "msg_read_agreement": "먼저 계약을 읽으십시오",
+  "@msg_read_agreement": {},
+
+  "msg_query_failed": "쿼리에 실패했습니다",
+  "@msg_query_failed": {},
+
+  "msg_operation_failed": "작업에 실패했습니다",
+  "@msg_operation_failed": {},
+
+  "msg_login_failed": "로그인에 실패했습니다",
+  "@msg_login_failed": {}
+}

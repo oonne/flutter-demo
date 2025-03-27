@@ -25,9 +25,15 @@ flutter 基础项目
 * 二维码扫描
 * 模态弹框组件
 
-# 安卓打包
-运行 flutter build apk
+# 打包
+运行 sh scripts/build.sh 
 
-# iOS打包
-直接打ipa包，运行 flutter build ipa
-打包后，需要使用 Transporter 上传。
+可打包出ipa包和apk包。
+ipa需要使用 Transporter 上传。
+
+# 开发
+## 国际化
+由于arb文件难以维护，所以使用ts文件来管理国际化语言。  
+本地安装Node.js环境，然后运行 npm install -g tsx 全局安装 tsx 依赖。
+每次由ts文件生成arb文件，须运行: 
+tsx ./scripts/generate_arb.ts 

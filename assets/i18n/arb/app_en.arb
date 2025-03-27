@@ -1,0 +1,91 @@
+{
+  "lang_name": "English",
+  "@lang_name": {},
+
+  "language_setting": "Language Setting",
+  "@language_setting": {},
+
+  "and": "and",
+  "@and": {},
+
+  "user_agreement": "《User Agreement》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《Privacy Policy》",
+  "@privacy_policy": {},
+
+  "today": "Today",
+  "@today": {},
+
+  "yesterday": "Yesterday",
+  "@yesterday": {},
+
+  "this_month": "This Month",
+  "@this_month": {},
+
+  "this_quarter": "This Quarter",
+  "@this_quarter": {},
+
+  "btn_login": "Login",
+  "@btn_login": {},
+
+  "btn_logout": "Logout",
+  "@btn_logout": {},
+
+  "info_have_read_and_agree": "Have read and agreed",
+  "@info_have_read_and_agree": {},
+
+  "info_pull_down_refresh": "Pull down to refresh",
+  "@info_pull_down_refresh": {},
+
+  "info_release_refresh": "Release to refresh",
+  "@info_release_refresh": {},
+
+  "info_start_refresh": "Start refreshing...",
+  "@info_start_refresh": {},
+
+  "info_refreshing": "Refreshing",
+  "@info_refreshing": {},
+
+  "info_refresh_complete": "Refresh complete",
+  "@info_refresh_complete": {},
+
+  "info_refresh_failed": "Refresh failed",
+  "@info_refresh_failed": {},
+
+  "info_pull_up_load": "Pull up to load more",
+  "@info_pull_up_load": {},
+
+  "info_release_load": "Release to load more",
+  "@info_release_load": {},
+
+  "info_start_load": "Start loading",
+  "@info_start_load": {},
+
+  "info_loading": "Loading",
+  "@info_loading": {},
+
+  "info_load_complete": "Load complete",
+  "@info_load_complete": {},
+
+  "info_load_failed": "Load failed",
+  "@info_load_failed": {},
+
+  "info_no_more_data": "No more data",
+  "@info_no_more_data": {},
+
+  "info_last_updated": "Last updated at %T",
+  "@info_last_updated": {},
+
+  "msg_read_agreement": "Please read the agreement first",
+  "@msg_read_agreement": {},
+
+  "msg_query_failed": "Query failed",
+  "@msg_query_failed": {},
+
+  "msg_operation_failed": "Operation failed",
+  "@msg_operation_failed": {},
+
+  "msg_login_failed": "Login Failed",
+  "@msg_login_failed": {}
+}

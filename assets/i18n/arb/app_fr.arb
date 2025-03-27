@@ -1,0 +1,91 @@
+{
+  "lang_name": "Français",
+  "@lang_name": {},
+
+  "language_setting": "Paramètres linguistiques",
+  "@language_setting": {},
+
+  "and": "et",
+  "@and": {},
+
+  "user_agreement": "《Les conditions d'utilisation》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《Politique de confidentialité》",
+  "@privacy_policy": {},
+
+  "today": "Aujourd'hui",
+  "@today": {},
+
+  "yesterday": "Hier",
+  "@yesterday": {},
+
+  "this_month": "Ce mois-ci",
+  "@this_month": {},
+
+  "this_quarter": "Ce trimestre",
+  "@this_quarter": {},
+
+  "btn_login": "Connexion",
+  "@btn_login": {},
+
+  "btn_logout": "Déconnexion",
+  "@btn_logout": {},
+
+  "info_have_read_and_agree": "Lu et accepté",
+  "@info_have_read_and_agree": {},
+
+  "info_pull_down_refresh": "Tirez vers le bas pour rafraîchir",
+  "@info_pull_down_refresh": {},
+
+  "info_release_refresh": "Relâchez pour rafraîchir",
+  "@info_release_refresh": {},
+
+  "info_start_refresh": "Démarrer la mise à jour...",
+  "@info_start_refresh": {},
+
+  "info_refreshing": "Rafraîchissement",
+  "@info_refreshing": {},
+
+  "info_refresh_complete": "Rafraîchissement terminé",
+  "@info_refresh_complete": {},
+
+  "info_refresh_failed": "Échec de la mise à jour",
+  "@info_refresh_failed": {},
+
+  "info_pull_up_load": "Tirez vers le haut pour charger plus",
+  "@info_pull_up_load": {},
+
+  "info_release_load": "Relâchez pour charger plus",
+  "@info_release_load": {},
+
+  "info_start_load": "Démarrer le chargement",
+  "@info_start_load": {},
+
+  "info_loading": "Chargement",
+  "@info_loading": {},
+
+  "info_load_complete": "Chargement terminé",
+  "@info_load_complete": {},
+
+  "info_load_failed": "Échec du chargement",
+  "@info_load_failed": {},
+
+  "info_no_more_data": "Pas plus de données",
+  "@info_no_more_data": {},
+
+  "info_last_updated": "Dernière mise à jour à %T",
+  "@info_last_updated": {},
+
+  "msg_read_agreement": "Veuillez d'abord lire l'accord",
+  "@msg_read_agreement": {},
+
+  "msg_query_failed": "La requête a échoué",
+  "@msg_query_failed": {},
+
+  "msg_operation_failed": "L'opération a échoué",
+  "@msg_operation_failed": {},
+
+  "msg_login_failed": "La connexion a échoué",
+  "@msg_login_failed": {}
+}

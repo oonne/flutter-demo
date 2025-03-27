@@ -1,0 +1,91 @@
+{
+  "lang_name": "中文（简体）",
+  "@lang_name": {},
+
+  "language_setting": "语言设置",
+  "@language_setting": {},
+
+  "and": "和",
+  "@and": {},
+
+  "user_agreement": "《用户协议》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《隐私政策》",
+  "@privacy_policy": {},
+
+  "today": "今天",
+  "@today": {},
+
+  "yesterday": "昨天",
+  "@yesterday": {},
+
+  "this_month": "本月",
+  "@this_month": {},
+
+  "this_quarter": "本季",
+  "@this_quarter": {},
+
+  "btn_login": "登录",
+  "@btn_login": {},
+
+  "btn_logout": "退出登录",
+  "@btn_logout": {},
+
+  "info_have_read_and_agree": "已阅读并同意",
+  "@info_have_read_and_agree": {},
+
+  "info_pull_down_refresh": "下拉刷新",
+  "@info_pull_down_refresh": {},
+
+  "info_release_refresh": "松开刷新",
+  "@info_release_refresh": {},
+
+  "info_start_refresh": "开始刷新...",
+  "@info_start_refresh": {},
+
+  "info_refreshing": "正在刷新",
+  "@info_refreshing": {},
+
+  "info_refresh_complete": "刷新完成",
+  "@info_refresh_complete": {},
+
+  "info_refresh_failed": "刷新失败",
+  "@info_refresh_failed": {},
+
+  "info_pull_up_load": "上拉加载",
+  "@info_pull_up_load": {},
+
+  "info_release_load": "松开加载",
+  "@info_release_load": {},
+
+  "info_start_load": "开始加载",
+  "@info_start_load": {},
+
+  "info_loading": "正在加载",
+  "@info_loading": {},
+
+  "info_load_complete": "加载完成",
+  "@info_load_complete": {},
+
+  "info_load_failed": "加载失败",
+  "@info_load_failed": {},
+
+  "info_no_more_data": "没有更多数据",
+  "@info_no_more_data": {},
+
+  "info_last_updated": "最后更新于  %T",
+  "@info_last_updated": {},
+
+  "msg_read_agreement": "请先阅读协议",
+  "@msg_read_agreement": {},
+
+  "msg_query_failed": "查询失败",
+  "@msg_query_failed": {},
+
+  "msg_operation_failed": "操作失败",
+  "@msg_operation_failed": {},
+
+  "msg_login_failed": "登录失败",
+  "@msg_login_failed": {}
+}

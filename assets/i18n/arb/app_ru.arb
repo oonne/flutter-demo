@@ -1,0 +1,91 @@
+{
+  "lang_name": "Русский",
+  "@lang_name": {},
+
+  "language_setting": "Настройки языка",
+  "@language_setting": {},
+
+  "and": "и",
+  "@and": {},
+
+  "user_agreement": "《Пользовательское соглашение》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《Политика конфиденциальности》",
+  "@privacy_policy": {},
+
+  "today": "Сегодня",
+  "@today": {},
+
+  "yesterday": "Вчера",
+  "@yesterday": {},
+
+  "this_month": "Этот месяц",
+  "@this_month": {},
+
+  "this_quarter": "Этот квартал",
+  "@this_quarter": {},
+
+  "btn_login": "Войти",
+  "@btn_login": {},
+
+  "btn_logout": "Выйти",
+  "@btn_logout": {},
+
+  "info_have_read_and_agree": "Прочитано и согласен",
+  "@info_have_read_and_agree": {},
+
+  "info_pull_down_refresh": "Потяните, чтобы обновить",
+  "@info_pull_down_refresh": {},
+
+  "info_release_refresh": "Отпустите, чтобы обновить",
+  "@info_release_refresh": {},
+
+  "info_start_refresh": "Начать обновление...",
+  "@info_start_refresh": {},
+
+  "info_refreshing": "Обновление",
+  "@info_refreshing": {},
+
+  "info_refresh_complete": "Обновление завершено",
+  "@info_refresh_complete": {},
+
+  "info_refresh_failed": "Не удалось обновить",
+  "@info_refresh_failed": {},
+
+  "info_pull_up_load": "Потяните, чтобы загрузить больше",
+  "@info_pull_up_load": {},
+
+  "info_release_load": "Отпустите, чтобы загрузить больше",
+  "@info_release_load": {},
+
+  "info_start_load": "Начать загрузку",
+  "@info_start_load": {},
+
+  "info_loading": "Загрузка",
+  "@info_loading": {},
+
+  "info_load_complete": "Загрузка завершена",
+  "@info_load_complete": {},
+
+  "info_load_failed": "Не удалось загрузить",
+  "@info_load_failed": {},
+
+  "info_no_more_data": "Нет больше данных",
+  "@info_no_more_data": {},
+
+  "info_last_updated": "Последнее обновление в %T",
+  "@info_last_updated": {},
+
+  "msg_read_agreement": "Пожалуйста, прочитайте соглашение",
+  "@msg_read_agreement": {},
+
+  "msg_query_failed": "Не удалось выполнить запрос",
+  "@msg_query_failed": {},
+
+  "msg_operation_failed": "Операция не удалась",
+  "@msg_operation_failed": {},
+
+  "msg_login_failed": "Вход не выполнен",
+  "@msg_login_failed": {}
+}

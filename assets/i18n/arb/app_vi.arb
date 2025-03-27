@@ -1,0 +1,91 @@
+{
+  "lang_name": "Tiếng Việt",
+  "@lang_name": {},
+
+  "language_setting": "Cài đặt ngôn ngữ",
+  "@language_setting": {},
+
+  "and": "và",
+  "@and": {},
+
+  "user_agreement": "《Thỏa thuận người dùng》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《Chính sách bảo mật》",
+  "@privacy_policy": {},
+
+  "today": "Hôm nay",
+  "@today": {},
+
+  "yesterday": "Hôm qua",
+  "@yesterday": {},
+
+  "this_month": "Tháng này",
+  "@this_month": {},
+
+  "this_quarter": "Quý này",
+  "@this_quarter": {},
+
+  "btn_login": "Đăng nhập",
+  "@btn_login": {},
+
+  "btn_logout": "Đăng xuất",
+  "@btn_logout": {},
+
+  "info_have_read_and_agree": "Đã đọcvà đồng ý",
+  "@info_have_read_and_agree": {},
+
+  "info_pull_down_refresh": "Kéo xuống để làm mới",
+  "@info_pull_down_refresh": {},
+
+  "info_release_refresh": "Thả ra để làm mới",
+  "@info_release_refresh": {},
+
+  "info_start_refresh": "Bắt đầu làm mới...",
+  "@info_start_refresh": {},
+
+  "info_refreshing": "Làm mới",
+  "@info_refreshing": {},
+
+  "info_refresh_complete": "Làm mới hoàn thành",
+  "@info_refresh_complete": {},
+
+  "info_refresh_failed": "Làm mới không thành công",
+  "@info_refresh_failed": {},
+
+  "info_pull_up_load": "Kéo lên để tải thêm",
+  "@info_pull_up_load": {},
+
+  "info_release_load": "Thả ra để tải thêm",
+  "@info_release_load": {},
+
+  "info_start_load": "Bắt đầu tải",
+  "@info_start_load": {},
+
+  "info_loading": "Đang tải",
+  "@info_loading": {},
+
+  "info_load_complete": "Tải hoàn thành",
+  "@info_load_complete": {},
+
+  "info_load_failed": "Tải không thành công",
+  "@info_load_failed": {},
+
+  "info_no_more_data": "Không có dữ liệu nào",
+  "@info_no_more_data": {},
+
+  "info_last_updated": "Cập nhật cuối cùng vào %T",
+  "@info_last_updated": {},
+
+  "msg_read_agreement": "Vui lòng đọc thỏa thuận trước",
+  "@msg_read_agreement": {},
+
+  "msg_query_failed": "Truy vấn không thành công",
+  "@msg_query_failed": {},
+
+  "msg_operation_failed": "Hoạt động không thành công",
+  "@msg_operation_failed": {},
+
+  "msg_login_failed": "Đăng nhập không thành công",
+  "@msg_login_failed": {}
+}
