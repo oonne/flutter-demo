@@ -76,7 +76,7 @@ class _AboutViewState extends State<AboutView> {
                       ],
 
                       // Demo
-                      if (globalState.env != 'prod') ...[
+                      // if (globalState.env != 'prod') ...[
                         PanelItem(
                           label: 'DEMO',
                           showArrow: true,
@@ -84,7 +84,7 @@ class _AboutViewState extends State<AboutView> {
                             GoRouter.of(context).pushNamed('demo');
                           },
                         ),
-                      ],
+                      // ],
                     ],
                   ),
                 ],

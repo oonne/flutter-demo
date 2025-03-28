@@ -47,21 +47,23 @@ class _ReqViewState extends State<ReqView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   /* 
-                   * 模态弹框
+                   * 请求
                    */
+                  Text('请求结果: ${viewModel.result}'),
+                  Text('请求错误: ${viewModel.error}'),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      showModal(
-                        context: context,
-                        showCancelButton: true,
-                        barrierDismissible: true,
-                        onConfirm: () {
-                          debugPrint('点击了确定按钮');
-                        },
-                        child: const Text('模态弹框'),
-                      );
+                      viewModel.request();
                     },
-                    child: const Text('模态弹框'),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (viewModel.isLoading)
+                          const CircularProgressIndicator(),
+                        const Text('请求'),
+                      ],
+                    ),
                   ),
                 ],
               ),
