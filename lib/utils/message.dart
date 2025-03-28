@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
+import 'package:flutter_demo/generated/error_code.dart';
 
 /* 
  * 纯文本SnackBar
@@ -36,16 +38,10 @@ String getErrorMessage(BuildContext context, Map<String, dynamic> err) {
     return errorMessage;
   }
 
-  try {
-    // 使用Map获取本地化字符串
-    final Map<String, String> localizedMap = {
-      'status_400': localizations.status_400,
-      'status_401': localizations.status_401,
-      'status_403': localizations.status_403,
-      'status_500': localizations.status_500,
-    };
-    return localizedMap[errorCode] ?? errorMessage;
-  } catch (e) {
+  final formattedErrorCode = formatErrorCode(localizations, errorCode);
+  if (formattedErrorCode == '') {
     return errorMessage;
   }
+
+  return formattedErrorCode;
 }
