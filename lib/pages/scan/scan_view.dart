@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
@@ -7,7 +8,7 @@ import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'scan_view_model.dart';
 
 /* 
- * 扫描页面
+ * 扫码页面
  */
 class ScanView extends StatefulWidget {
   const ScanView({super.key});
@@ -18,6 +19,7 @@ class ScanView extends StatefulWidget {
 
 class _ScanViewState extends State<ScanView> {
   late final ScanViewModel viewModel;
+  final player = AudioPlayer();
 
   /* 
    * 初始化
@@ -26,6 +28,15 @@ class _ScanViewState extends State<ScanView> {
   void initState() {
     super.initState();
     viewModel = ScanViewModel();
+  }
+
+
+  /* 
+   * 播放声音
+   */
+  Future<void> playSound() async {
+    await player.setSource(AssetSource('audio/di.mp3'));
+    await player.resume();
   }
 
   /* 
@@ -47,9 +58,12 @@ class _ScanViewState extends State<ScanView> {
             body: SafeArea(
               child: SingleChildScrollView(
                 child: Column(children: [
-                  Placeholder(),
-                  const SizedBox(height: 20),
-                  Text('扫描页面TODO'),
+                  ElevatedButton(
+                    onPressed: () {
+                      playSound();
+                    },
+                    child: Text('播放声音'),
+                  ),
                 ]),
               ),
             ),

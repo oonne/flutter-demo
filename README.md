@@ -9,9 +9,10 @@ flutter 基础项目
 * 路由(go_router)
 * 事件总线(event_bus)
 * 自定义svg图标(flutter_svg)
-* 自定义字体
+* 时间日期选择器(board_datetime_picker)
+* 网络请求(dio)
 * 国际化
-* MVVM页面示例
+* 自定义字体
 * 深浅主题切换
 * 全局样式
 * 按钮
@@ -20,11 +21,10 @@ flutter 基础项目
 * 模态弹框
 * 底部弹框 BottomSheet
 * 提示 SnackBar
-* 时间日期选择器(board_datetime_picker)
-* 网络请求
-
-* 二维码扫描
-* 列表上拉加载和下拉刷新
+* MVVM页面示例
+* TODO 二维码扫描(mobile_scanner)
+* TODO 本地图片选择
+* TODO 列表上拉加载和下拉刷新(easy_refresh)
 
 # 打包
 运行 sh scripts/build.sh 
