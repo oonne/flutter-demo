@@ -120,13 +120,22 @@ class AppLocalizationsDe extends AppLocalizations {
   String get info_last_updated => 'Zuletzt aktualisiert um %T';
 
   @override
-  String get msg_read_agreement => 'Bitte lesen Sie zuerst die Vereinbarung';
-
-  @override
   String get msg_query_failed => 'Die Abfrage ist fehlgeschlagen';
 
   @override
   String get msg_operation_failed => 'Die Operation ist fehlgeschlagen';
+
+  @override
+  String get msg_scan_permission_denied => 'Scannen-Berechtigung wurde abgelehnt';
+
+  @override
+  String get msg_device_scan_unsupported => 'Scannen ist auf diesem Gerät nicht möglich';
+
+  @override
+  String get msg_scan_failed => 'Der Scan ist fehlgeschlagen';
+
+  @override
+  String get msg_read_agreement => 'Bitte lesen Sie zuerst die Vereinbarung';
 
   @override
   String get msg_login_failed => 'Die Anmeldung ist fehlgeschlagen';

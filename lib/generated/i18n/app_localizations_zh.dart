@@ -120,13 +120,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String get info_last_updated => '最后更新于  %T';
 
   @override
-  String get msg_read_agreement => '请先阅读协议';
-
-  @override
   String get msg_query_failed => '查询失败';
 
   @override
   String get msg_operation_failed => '操作失败';
+
+  @override
+  String get msg_scan_permission_denied => '申请扫码权限被拒绝';
+
+  @override
+  String get msg_device_scan_unsupported => '当前设备不支持扫码';
+
+  @override
+  String get msg_scan_failed => '扫码失败';
+
+  @override
+  String get msg_read_agreement => '请先阅读协议';
 
   @override
   String get msg_login_failed => '登录失败';
@@ -266,13 +275,22 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get info_last_updated => '最後更新於  %T';
 
   @override
-  String get msg_read_agreement => '請先閱讀協議';
-
-  @override
   String get msg_query_failed => '查詢失敗';
 
   @override
   String get msg_operation_failed => '操作失敗';
+
+  @override
+  String get msg_scan_permission_denied => '申請掃碼權限被拒絕';
+
+  @override
+  String get msg_device_scan_unsupported => '當前設備不支持掃碼';
+
+  @override
+  String get msg_scan_failed => '掃碼失敗';
+
+  @override
+  String get msg_read_agreement => '請先閱讀協議';
 
   @override
   String get msg_login_failed => '登入失敗';

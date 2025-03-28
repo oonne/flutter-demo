@@ -110,14 +110,23 @@
   "info_last_updated": "最終更新 %T",
   "@info_last_updated": {},
 
-  "msg_read_agreement": "最初に契約を読み",
-  "@msg_read_agreement": {},
-
   "msg_query_failed": "クエリに失敗しました",
   "@msg_query_failed": {},
 
   "msg_operation_failed": "操作に失敗しました",
   "@msg_operation_failed": {},
+
+  "msg_scan_permission_denied": "スキャン許可が拒否されました",
+  "@msg_scan_permission_denied": {},
+
+  "msg_device_scan_unsupported": "このデバイスではスキャンできません",
+  "@msg_device_scan_unsupported": {},
+
+  "msg_scan_failed": "スキャンに失敗しました",
+  "@msg_scan_failed": {},
+
+  "msg_read_agreement": "最初に契約を読み",
+  "@msg_read_agreement": {},
 
   "msg_login_failed": "ログインに失敗しました",
   "@msg_login_failed": {},

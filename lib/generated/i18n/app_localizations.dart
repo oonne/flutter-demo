@@ -336,12 +336,6 @@ abstract class AppLocalizations {
   /// **'Last updated at %T'**
   String get info_last_updated;
 
-  /// No description provided for @msg_read_agreement.
-  ///
-  /// In en, this message translates to:
-  /// **'Please read the agreement first'**
-  String get msg_read_agreement;
-
   /// No description provided for @msg_query_failed.
   ///
   /// In en, this message translates to:
@@ -353,6 +347,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Operation failed'**
   String get msg_operation_failed;
+
+  /// No description provided for @msg_scan_permission_denied.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan permission denied'**
+  String get msg_scan_permission_denied;
+
+  /// No description provided for @msg_device_scan_unsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'Scanning is unsupported on this device'**
+  String get msg_device_scan_unsupported;
+
+  /// No description provided for @msg_scan_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan failed'**
+  String get msg_scan_failed;
+
+  /// No description provided for @msg_read_agreement.
+  ///
+  /// In en, this message translates to:
+  /// **'Please read the agreement first'**
+  String get msg_read_agreement;
 
   /// No description provided for @msg_login_failed.
   ///

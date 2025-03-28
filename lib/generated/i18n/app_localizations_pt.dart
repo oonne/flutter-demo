@@ -120,13 +120,22 @@ class AppLocalizationsPt extends AppLocalizations {
   String get info_last_updated => 'Atualizado pela última vez às %T';
 
   @override
-  String get msg_read_agreement => 'Leia primeiro o acordo';
-
-  @override
   String get msg_query_failed => 'A consulta falhou';
 
   @override
   String get msg_operation_failed => 'A operação falhou';
+
+  @override
+  String get msg_scan_permission_denied => 'Permissão de escaneamento negada';
+
+  @override
+  String get msg_device_scan_unsupported => 'O escaneamento não é compatível com este dispositivo';
+
+  @override
+  String get msg_scan_failed => 'O escaneamento falhou';
+
+  @override
+  String get msg_read_agreement => 'Leia primeiro o acordo';
 
   @override
   String get msg_login_failed => 'A conexão falhou';

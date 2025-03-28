@@ -110,14 +110,23 @@
   "info_last_updated": "Última actualización a las %T",
   "@info_last_updated": {},
 
-  "msg_read_agreement": "Por favor lea el acuerdo primero",
-  "@msg_read_agreement": {},
-
   "msg_query_failed": "La consulta falló",
   "@msg_query_failed": {},
 
   "msg_operation_failed": "La operación falló",
   "@msg_operation_failed": {},
+
+  "msg_scan_permission_denied": "Permiso de escaneo denegado",
+  "@msg_scan_permission_denied": {},
+
+  "msg_device_scan_unsupported": "El escaneo no es compatible con este dispositivo",
+  "@msg_device_scan_unsupported": {},
+
+  "msg_scan_failed": "El escaneo falló",
+  "@msg_scan_failed": {},
+
+  "msg_read_agreement": "Por favor lea el acuerdo primero",
+  "@msg_read_agreement": {},
 
   "msg_login_failed": "La conexión falló",
   "@msg_login_failed": {},

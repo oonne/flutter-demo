@@ -120,13 +120,22 @@ class AppLocalizationsRu extends AppLocalizations {
   String get info_last_updated => 'Последнее обновление в %T';
 
   @override
-  String get msg_read_agreement => 'Пожалуйста, прочитайте соглашение';
-
-  @override
   String get msg_query_failed => 'Не удалось выполнить запрос';
 
   @override
   String get msg_operation_failed => 'Операция не удалась';
+
+  @override
+  String get msg_scan_permission_denied => 'Разрешение сканирования отклонено';
+
+  @override
+  String get msg_device_scan_unsupported => 'Сканирование не поддерживается на этом устройстве';
+
+  @override
+  String get msg_scan_failed => 'Сканирование не удалось';
+
+  @override
+  String get msg_read_agreement => 'Пожалуйста, прочитайте соглашение';
 
   @override
   String get msg_login_failed => 'Вход не выполнен';

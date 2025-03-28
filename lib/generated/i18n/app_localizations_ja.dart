@@ -120,13 +120,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String get info_last_updated => '最終更新 %T';
 
   @override
-  String get msg_read_agreement => '最初に契約を読み';
-
-  @override
   String get msg_query_failed => 'クエリに失敗しました';
 
   @override
   String get msg_operation_failed => '操作に失敗しました';
+
+  @override
+  String get msg_scan_permission_denied => 'スキャン許可が拒否されました';
+
+  @override
+  String get msg_device_scan_unsupported => 'このデバイスではスキャンできません';
+
+  @override
+  String get msg_scan_failed => 'スキャンに失敗しました';
+
+  @override
+  String get msg_read_agreement => '最初に契約を読み';
 
   @override
   String get msg_login_failed => 'ログインに失敗しました';

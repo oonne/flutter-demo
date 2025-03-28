@@ -110,14 +110,23 @@
   "info_last_updated": "Последнее обновление в %T",
   "@info_last_updated": {},
 
-  "msg_read_agreement": "Пожалуйста, прочитайте соглашение",
-  "@msg_read_agreement": {},
-
   "msg_query_failed": "Не удалось выполнить запрос",
   "@msg_query_failed": {},
 
   "msg_operation_failed": "Операция не удалась",
   "@msg_operation_failed": {},
+
+  "msg_scan_permission_denied": "Разрешение сканирования отклонено",
+  "@msg_scan_permission_denied": {},
+
+  "msg_device_scan_unsupported": "Сканирование не поддерживается на этом устройстве",
+  "@msg_device_scan_unsupported": {},
+
+  "msg_scan_failed": "Сканирование не удалось",
+  "@msg_scan_failed": {},
+
+  "msg_read_agreement": "Пожалуйста, прочитайте соглашение",
+  "@msg_read_agreement": {},
 
   "msg_login_failed": "Вход не выполнен",
   "@msg_login_failed": {},

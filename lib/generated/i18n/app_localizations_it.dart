@@ -120,13 +120,22 @@ class AppLocalizationsIt extends AppLocalizations {
   String get info_last_updated => 'Ultimo aggiornamento alle %T';
 
   @override
-  String get msg_read_agreement => 'Leggi prima l\'accordo';
-
-  @override
   String get msg_query_failed => 'La query non è riuscita';
 
   @override
   String get msg_operation_failed => 'L\'operazione non è riuscita';
+
+  @override
+  String get msg_scan_permission_denied => 'Permesso di scansione negato';
+
+  @override
+  String get msg_device_scan_unsupported => 'Lo scan non è compatibile con questo dispositivo';
+
+  @override
+  String get msg_scan_failed => 'Lo scan non è riuscito';
+
+  @override
+  String get msg_read_agreement => 'Leggi prima l\'accordo';
 
   @override
   String get msg_login_failed => 'L\'accesso non è riuscito';

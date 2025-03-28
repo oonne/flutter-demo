@@ -120,13 +120,22 @@ class AppLocalizationsVi extends AppLocalizations {
   String get info_last_updated => 'Cập nhật cuối cùng vào %T';
 
   @override
-  String get msg_read_agreement => 'Vui lòng đọc thỏa thuận trước';
-
-  @override
   String get msg_query_failed => 'Truy vấn không thành công';
 
   @override
   String get msg_operation_failed => 'Hoạt động không thành công';
+
+  @override
+  String get msg_scan_permission_denied => 'Quyền truy cập quét đã bị từ chối';
+
+  @override
+  String get msg_device_scan_unsupported => 'Quét không thành công trên thiết bị này';
+
+  @override
+  String get msg_scan_failed => 'Quét không thành công';
+
+  @override
+  String get msg_read_agreement => 'Vui lòng đọc thỏa thuận trước';
 
   @override
   String get msg_login_failed => 'Đăng nhập không thành công';

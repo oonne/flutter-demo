@@ -110,14 +110,23 @@
   "info_last_updated": "Atualizado pela última vez às %T",
   "@info_last_updated": {},
 
-  "msg_read_agreement": "Leia primeiro o acordo",
-  "@msg_read_agreement": {},
-
   "msg_query_failed": "A consulta falhou",
   "@msg_query_failed": {},
 
   "msg_operation_failed": "A operação falhou",
   "@msg_operation_failed": {},
+
+  "msg_scan_permission_denied": "Permissão de escaneamento negada",
+  "@msg_scan_permission_denied": {},
+
+  "msg_device_scan_unsupported": "O escaneamento não é compatível com este dispositivo",
+  "@msg_device_scan_unsupported": {},
+
+  "msg_scan_failed": "O escaneamento falhou",
+  "@msg_scan_failed": {},
+
+  "msg_read_agreement": "Leia primeiro o acordo",
+  "@msg_read_agreement": {},
 
   "msg_login_failed": "A conexão falhou",
   "@msg_login_failed": {},

@@ -110,14 +110,23 @@
   "info_last_updated": "Cập nhật cuối cùng vào %T",
   "@info_last_updated": {},
 
-  "msg_read_agreement": "Vui lòng đọc thỏa thuận trước",
-  "@msg_read_agreement": {},
-
   "msg_query_failed": "Truy vấn không thành công",
   "@msg_query_failed": {},
 
   "msg_operation_failed": "Hoạt động không thành công",
   "@msg_operation_failed": {},
+
+  "msg_scan_permission_denied": "Quyền truy cập quét đã bị từ chối",
+  "@msg_scan_permission_denied": {},
+
+  "msg_device_scan_unsupported": "Quét không thành công trên thiết bị này",
+  "@msg_device_scan_unsupported": {},
+
+  "msg_scan_failed": "Quét không thành công",
+  "@msg_scan_failed": {},
+
+  "msg_read_agreement": "Vui lòng đọc thỏa thuận trước",
+  "@msg_read_agreement": {},
 
   "msg_login_failed": "Đăng nhập không thành công",
   "@msg_login_failed": {},

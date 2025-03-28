@@ -110,14 +110,23 @@
   "info_last_updated": "Ultimo aggiornamento alle %T",
   "@info_last_updated": {},
 
-  "msg_read_agreement": "Leggi prima l'accordo",
-  "@msg_read_agreement": {},
-
   "msg_query_failed": "La query non è riuscita",
   "@msg_query_failed": {},
 
   "msg_operation_failed": "L'operazione non è riuscita",
   "@msg_operation_failed": {},
+
+  "msg_scan_permission_denied": "Permesso di scansione negato",
+  "@msg_scan_permission_denied": {},
+
+  "msg_device_scan_unsupported": "Lo scan non è compatibile con questo dispositivo",
+  "@msg_device_scan_unsupported": {},
+
+  "msg_scan_failed": "Lo scan non è riuscito",
+  "@msg_scan_failed": {},
+
+  "msg_read_agreement": "Leggi prima l'accordo",
+  "@msg_read_agreement": {},
 
   "msg_login_failed": "L'accesso non è riuscito",
   "@msg_login_failed": {},

@@ -120,13 +120,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get info_last_updated => '마지막 업데이트 %T';
 
   @override
-  String get msg_read_agreement => '먼저 계약을 읽으십시오';
-
-  @override
   String get msg_query_failed => '쿼리에 실패했습니다';
 
   @override
   String get msg_operation_failed => '작업에 실패했습니다';
+
+  @override
+  String get msg_scan_permission_denied => '스캔 권한이 거부되었습니다';
+
+  @override
+  String get msg_device_scan_unsupported => '이 기기에서는 스캔할 수 없습니다';
+
+  @override
+  String get msg_scan_failed => '스캔에 실패했습니다';
+
+  @override
+  String get msg_read_agreement => '먼저 계약을 읽으십시오';
 
   @override
   String get msg_login_failed => '로그인에 실패했습니다';

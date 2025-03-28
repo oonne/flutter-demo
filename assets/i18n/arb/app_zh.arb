@@ -110,14 +110,23 @@
   "info_last_updated": "最后更新于  %T",
   "@info_last_updated": {},
 
-  "msg_read_agreement": "请先阅读协议",
-  "@msg_read_agreement": {},
-
   "msg_query_failed": "查询失败",
   "@msg_query_failed": {},
 
   "msg_operation_failed": "操作失败",
   "@msg_operation_failed": {},
+
+  "msg_scan_permission_denied": "申请扫码权限被拒绝",
+  "@msg_scan_permission_denied": {},
+
+  "msg_device_scan_unsupported": "当前设备不支持扫码",
+  "@msg_device_scan_unsupported": {},
+
+  "msg_scan_failed": "扫码失败",
+  "@msg_scan_failed": {},
+
+  "msg_read_agreement": "请先阅读协议",
+  "@msg_read_agreement": {},
 
   "msg_login_failed": "登录失败",
   "@msg_login_failed": {},

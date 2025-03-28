@@ -110,14 +110,23 @@
   "info_last_updated": "Zuletzt aktualisiert um %T",
   "@info_last_updated": {},
 
-  "msg_read_agreement": "Bitte lesen Sie zuerst die Vereinbarung",
-  "@msg_read_agreement": {},
-
   "msg_query_failed": "Die Abfrage ist fehlgeschlagen",
   "@msg_query_failed": {},
 
   "msg_operation_failed": "Die Operation ist fehlgeschlagen",
   "@msg_operation_failed": {},
+
+  "msg_scan_permission_denied": "Scannen-Berechtigung wurde abgelehnt",
+  "@msg_scan_permission_denied": {},
+
+  "msg_device_scan_unsupported": "Scannen ist auf diesem Gerät nicht möglich",
+  "@msg_device_scan_unsupported": {},
+
+  "msg_scan_failed": "Der Scan ist fehlgeschlagen",
+  "@msg_scan_failed": {},
+
+  "msg_read_agreement": "Bitte lesen Sie zuerst die Vereinbarung",
+  "@msg_read_agreement": {},
 
   "msg_login_failed": "Die Anmeldung ist fehlgeschlagen",
   "@msg_login_failed": {},

@@ -120,13 +120,22 @@ class AppLocalizationsEs extends AppLocalizations {
   String get info_last_updated => 'Última actualización a las %T';
 
   @override
-  String get msg_read_agreement => 'Por favor lea el acuerdo primero';
-
-  @override
   String get msg_query_failed => 'La consulta falló';
 
   @override
   String get msg_operation_failed => 'La operación falló';
+
+  @override
+  String get msg_scan_permission_denied => 'Permiso de escaneo denegado';
+
+  @override
+  String get msg_device_scan_unsupported => 'El escaneo no es compatible con este dispositivo';
+
+  @override
+  String get msg_scan_failed => 'El escaneo falló';
+
+  @override
+  String get msg_read_agreement => 'Por favor lea el acuerdo primero';
 
   @override
   String get msg_login_failed => 'La conexión falló';

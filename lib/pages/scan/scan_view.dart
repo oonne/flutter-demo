@@ -7,7 +7,7 @@ import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 
 import 'scan_view_model.dart';
-
+import 'widget/scanner_error_widget.dart';
 /* 
  * 扫码页面
  */
@@ -45,6 +45,13 @@ class _ScanViewState extends State<ScanView> {
    */
   @override
   Widget build(BuildContext context) {
+    // 定义扫描窗口区域
+    // late final scanWindow = Rect.fromCenter(
+    //   center: MediaQuery.sizeOf(context).center(const Offset(0, -150)),
+    //   width: 300,
+    //   height: 300,
+    // );
+
     return ChangeNotifierProvider.value(
       value: viewModel,
       child: Consumer<ScanViewModel>(
@@ -65,6 +72,7 @@ class _ScanViewState extends State<ScanView> {
                     },
                     child: Text('播放声音'),
                   ),
+                  ScannerErrorWidget(error: MobileScannerException(errorCode: MobileScannerErrorCode.permissionDenied)),
                 ]),
               ),
             ),
