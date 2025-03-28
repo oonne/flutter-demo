@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
