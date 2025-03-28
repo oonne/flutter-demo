@@ -72,6 +72,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get title_version => 'Phiên bản';
 
   @override
+  String get title_scan => 'Quét';
+
+  @override
   String get info_have_read_and_agree => 'Đã đọcvà đồng ý';
 
   @override

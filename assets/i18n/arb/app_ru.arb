@@ -62,6 +62,9 @@
   "title_version": "Версия",
   "@title_version": {},
 
+  "title_scan": "Сканирование",
+  "@title_scan": {},
+
   "info_have_read_and_agree": "Прочитано и согласен",
   "@info_have_read_and_agree": {},
 

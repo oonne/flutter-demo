@@ -62,6 +62,9 @@
   "title_version": "Version",
   "@title_version": {},
 
+  "title_scan": "Scannen",
+  "@title_scan": {},
+
   "info_have_read_and_agree": "Gelesen und akzeptiert",
   "@info_have_read_and_agree": {},
 

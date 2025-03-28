@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:go_router/go_router.dart';
 
 import 'home_view_model.dart';
 
@@ -43,7 +44,7 @@ class _HomeViewState extends State<HomeView> {
                 child: Column(children: [
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, 'scan');
+                      GoRouter.of(context).pushNamed('scan');
                     },
                     child: const Text('扫码'),
                   ),

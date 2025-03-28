@@ -72,6 +72,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get title_version => 'Versão';
 
   @override
+  String get title_scan => 'Escaneamento';
+
+  @override
   String get info_have_read_and_agree => 'Lido e aceito';
 
   @override

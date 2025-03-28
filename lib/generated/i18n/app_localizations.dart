@@ -240,6 +240,12 @@ abstract class AppLocalizations {
   /// **'Version'**
   String get title_version;
 
+  /// No description provided for @title_scan.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan'**
+  String get title_scan;
+
   /// No description provided for @info_have_read_and_agree.
   ///
   /// In en, this message translates to:

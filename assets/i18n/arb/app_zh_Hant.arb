@@ -62,6 +62,9 @@
   "title_version": "版本號",
   "@title_version": {},
 
+  "title_scan": "掃碼",
+  "@title_scan": {},
+
   "info_have_read_and_agree": "已閱讀並同意",
   "@info_have_read_and_agree": {},
 

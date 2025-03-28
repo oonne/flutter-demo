@@ -62,6 +62,9 @@
   "title_version": "버전",
   "@title_version": {},
 
+  "title_scan": "스캔",
+  "@title_scan": {},
+
   "info_have_read_and_agree": "읽고 약속",
   "@info_have_read_and_agree": {},
 

@@ -72,6 +72,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get title_version => 'Versione';
 
   @override
+  String get title_scan => 'Scansione';
+
+  @override
   String get info_have_read_and_agree => 'Legato e accettato';
 
   @override

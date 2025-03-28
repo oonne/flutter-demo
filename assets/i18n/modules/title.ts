@@ -86,6 +86,25 @@ const msg: ILangMsgs = {
     ko_KR: "버전",
     vi_VN: "Phiên bản",
   },
+
+  /* 
+   * 扫码
+   */
+  // 扫码
+  title_scan: {
+    zh_CN: "扫码",
+    zh_TW: "掃碼",
+    en_US: "Scan",
+    ru_RU: "Сканирование",
+    fr_FR: "Scannez",
+    es_ES: "Escaneo",
+    it_IT: "Scansione",
+    pt_PT: "Escaneamento",
+    de_DE: "Scannen",
+    ja_JP: "スキャン",
+    ko_KR: "스캔",
+    vi_VN: "Quét",
+  },
 };
 
 export default msg;
