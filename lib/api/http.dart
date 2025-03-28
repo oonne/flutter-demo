@@ -59,7 +59,7 @@ Future<List<dynamic>> req({String method = 'POST', required String url, Map<Stri
   dynamic err;
   dynamic res;
 
-  log.finest('🚀发起请求', {'baseUrl': dio.options.baseUrl, 'url': url, '请求数据': data});
+  log.finest('🚀发起请求', {'url': '${dio.options.baseUrl}$url', '请求数据': data});
 
   try {
     Response response;
@@ -82,7 +82,17 @@ Future<List<dynamic>> req({String method = 'POST', required String url, Map<Stri
     res = response.data;
     log.finest('🎉请求成功', {'url': url, '接口返回': res});
   } catch (e) {
-    err = e;
+    if (e is DioException) {
+      err = {
+        "code": 500,
+        "messgae": e.message,
+      };
+    } else {
+      err = {
+        "code": 'request_error',
+        "messgae": '请求错误',
+      };
+    }
     log.warning('💥请求错误', {'url': url, '错误信息': e});
   }
 
