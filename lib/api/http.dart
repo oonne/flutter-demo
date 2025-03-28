@@ -86,12 +86,12 @@ Future<List<dynamic>> req({String method = 'POST', required String url, Map<Stri
     if (e is DioException && e.type == DioExceptionType.badResponse) {
       err = {
         "code": (e.response?.statusCode ?? 500).toString(),
-        "messgae": e.response?.data['message'],
+        "message": e.response?.data['message'],
       };
     } else {
       err = {
         "code": 'request_error',
-        "messgae": '请求错误',
+        "message": '请求错误',
       };
     }
     log.warning('💥请求错误', {'url': url, '错误信息': e});

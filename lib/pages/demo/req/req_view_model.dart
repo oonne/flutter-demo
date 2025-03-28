@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/api/modules/auth.dart';
 import 'package:flutter_demo/utils/log.dart';
+import 'package:flutter_demo/utils/toast.dart';
 
 import 'req_model.dart';
 
@@ -21,7 +23,7 @@ class ReqViewModel extends ChangeNotifier {
   String get error => model.error;
 
   // 请求
-  Future<void> request() async {
+  Future<void> request(BuildContext context) async {
     if (model.isLoading) {
       return;
     }
@@ -35,7 +37,8 @@ class ReqViewModel extends ChangeNotifier {
 
     if (err != null) {
       // model.error = err;
-      log.finest(err);
+      log.finest(err['message']);
+      // showTextSnackBar(context, msg: AppLocalizations.of(context)![err['code']] ?? err['message']);
       return;
     }
     
