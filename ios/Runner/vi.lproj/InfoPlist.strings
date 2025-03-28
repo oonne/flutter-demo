@@ -1,2 +1,6 @@
 // 应用名称
 CFBundleDisplayName = "FlutterDemo";
+
+// 权限
+NSCameraUsageDescription = "Ứng dụng này cần quyền truy cập camera để quét mã QR hoặc mã vạch";
+NSPhotoLibraryUsageDescription = "Ứng dụng này cần quyền truy cập thư viện hình ảnh để lấy mã QR/mã vạch hoặc hình ảnh từ thư viện hình ảnh";

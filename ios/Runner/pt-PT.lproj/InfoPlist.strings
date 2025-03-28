@@ -2,4 +2,5 @@
 CFBundleDisplayName = "FlutterDemo";
 
 // 权限
-NSCameraUsageDescription = "Utilize a câmera para escanear códigos de barras e códigos QR";
+NSCameraUsageDescription = "Esta aplicação necessita de acesso à câmera para escanear códigos QR ou códigos de barras";
+NSPhotoLibraryUsageDescription = "Esta aplicação necessita de acesso à biblioteca de fotos para obter um código QR/código de barras ou uma imagem da biblioteca de fotos";

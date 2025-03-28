@@ -2,4 +2,5 @@
 CFBundleDisplayName = "FlutterDemo";
 
 // 权限
-NSCameraUsageDescription = "调用摄像头用于扫描条码和二维码";
+NSCameraUsageDescription = "需要相机权限来扫描二维码或条形码";
+NSPhotoLibraryUsageDescription = "需要相册权限来获取二维码、条形码 或 图片";

@@ -2,4 +2,5 @@
 CFBundleDisplayName = "FlutterDemo";
 
 // 权限
-NSCameraUsageDescription = "カメラを使用してバーコードとQRコードをスキャンします";
+NSCameraUsageDescription = "このアプリはカメラアクセスが必要です。QRコードやバーコードをスキャンするために使用されます。";
+NSPhotoLibraryUsageDescription = "このアプリは写真ライブラリアクセスが必要です。写真ライブラリからQRコード/バーコード/画像を取得するために使用されます。";
