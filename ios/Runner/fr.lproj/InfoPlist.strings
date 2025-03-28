@@ -1,3 +1,5 @@
 // 应用名称
 CFBundleDisplayName = "FlutterDemo";
 
+// 权限
+NSCameraUsageDescription = "Utilisez la caméra pour scanner les codes-barres et les codes QR";

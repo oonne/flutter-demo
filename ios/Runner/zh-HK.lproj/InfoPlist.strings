@@ -1,3 +1,5 @@
 // 应用名称
 CFBundleDisplayName = "FlutterDemo";
 
+// 权限
+NSCameraUsageDescription = "使用相機掃描條碼和二維碼";

@@ -61,6 +61,9 @@
 		6922B4F72D96A78D0003668D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6922B4F82D96A78E0003668D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6922B4F92D96A78F0003668D /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6922B4FA2D96AC300003668D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		6922B4FB2D96AC300003668D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6922B4FC2D96AC300003668D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6924EF4A2D9509CD00016B2F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6924EF4B2D9509CD00016B2F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6924EF4C2D9509DD00016B2F /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -281,6 +284,7 @@
 				ja,
 				ko,
 				vi,
+				en,
 			);
 			mainGroup = 97C146E51CF9000F007C117D;
 			productRefGroup = 97C146EF1CF9000F007C117D /* Products */;
@@ -470,6 +474,7 @@
 				6922B4F72D96A78D0003668D /* ru */,
 				6922B4F82D96A78E0003668D /* es */,
 				6922B4F92D96A78F0003668D /* vi */,
+				6922B4FC2D96AC300003668D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				6924EF5A2D950B4E00016B2F /* ja */,
 				6924EF5C2D950B5C00016B2F /* ko */,
 				6924EF5E2D950B6100016B2F /* vi */,
+				6922B4FA2D96AC300003668D /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -508,6 +514,7 @@
 				6924EF5B2D950B4E00016B2F /* ja */,
 				6924EF5D2D950B5C00016B2F /* ko */,
 				6924EF5F2D950B6100016B2F /* vi */,
+				6922B4FB2D96AC300003668D /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
