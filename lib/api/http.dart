@@ -82,10 +82,11 @@ Future<List<dynamic>> req({String method = 'POST', required String url, Map<Stri
     res = response.data;
     log.finest('🎉请求成功', {'url': url, '接口返回': res});
   } catch (e) {
-    if (e is DioException) {
+    /* 错误拦截 */
+    if (e is DioException && e.type == DioExceptionType.badResponse) {
       err = {
-        "code": 500,
-        "messgae": e.message,
+        "code": (e.response?.statusCode ?? 500).toString(),
+        "messgae": e.response?.data['message'],
       };
     } else {
       err = {
