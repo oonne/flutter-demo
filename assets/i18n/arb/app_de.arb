@@ -65,6 +65,9 @@
   "title_scan": "Scannen",
   "@title_scan": {},
 
+  "title_scan_result": "Scan-Ergebnis",
+  "@title_scan_result": {},
+
   "info_have_read_and_agree": "Gelesen und akzeptiert",
   "@info_have_read_and_agree": {},
 

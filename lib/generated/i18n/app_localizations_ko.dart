@@ -75,6 +75,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get title_scan => '스캔';
 
   @override
+  String get title_scan_result => '스캔 결과';
+
+  @override
   String get info_have_read_and_agree => '읽고 약속';
 
   @override

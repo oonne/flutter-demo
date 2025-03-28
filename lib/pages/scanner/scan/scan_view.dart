@@ -8,6 +8,7 @@ import 'package:flutter_demo/layout/custom_app_bar.dart';
 
 import 'scan_view_model.dart';
 import 'widget/scanner_error_widget.dart';
+
 /* 
  * 扫码页面
  */

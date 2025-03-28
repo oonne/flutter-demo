@@ -105,6 +105,21 @@ const msg: ILangMsgs = {
     ko_KR: "스캔",
     vi_VN: "Quét",
   },
+  // 扫码结果
+  title_scan_result: {
+    zh_CN: "扫码结果",
+    zh_TW: "掃碼結果",
+    en_US: "Scan Result",
+    ru_RU: "Результат сканирования",
+    fr_FR: "Résultat du scan",
+    es_ES: "Resultado del escaneo",
+    it_IT: "Risultato dello scan",
+    pt_PT: "Resultado do escaneamento",
+    de_DE: "Scan-Ergebnis",
+    ja_JP: "スキャン結果",
+    ko_KR: "스캔 결과",
+    vi_VN: "Kết quả quét",
+  },
 };
 
 export default msg;

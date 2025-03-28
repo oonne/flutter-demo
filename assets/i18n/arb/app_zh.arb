@@ -65,6 +65,9 @@
   "title_scan": "扫码",
   "@title_scan": {},
 
+  "title_scan_result": "扫码结果",
+  "@title_scan_result": {},
+
   "info_have_read_and_agree": "已阅读并同意",
   "@info_have_read_and_agree": {},
 

@@ -75,6 +75,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get title_scan => 'Сканирование';
 
   @override
+  String get title_scan_result => 'Результат сканирования';
+
+  @override
   String get info_have_read_and_agree => 'Прочитано и согласен';
 
   @override

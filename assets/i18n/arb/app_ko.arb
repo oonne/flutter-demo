@@ -65,6 +65,9 @@
   "title_scan": "스캔",
   "@title_scan": {},
 
+  "title_scan_result": "스캔 결과",
+  "@title_scan_result": {},
+
   "info_have_read_and_agree": "읽고 약속",
   "@info_have_read_and_agree": {},
 

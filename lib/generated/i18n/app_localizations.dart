@@ -246,6 +246,12 @@ abstract class AppLocalizations {
   /// **'Scan'**
   String get title_scan;
 
+  /// No description provided for @title_scan_result.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan Result'**
+  String get title_scan_result;
+
   /// No description provided for @info_have_read_and_agree.
   ///
   /// In en, this message translates to:

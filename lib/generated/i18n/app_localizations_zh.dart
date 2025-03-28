@@ -75,6 +75,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get title_scan => '扫码';
 
   @override
+  String get title_scan_result => '扫码结果';
+
+  @override
   String get info_have_read_and_agree => '已阅读并同意';
 
   @override
@@ -228,6 +231,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get title_scan => '掃碼';
+
+  @override
+  String get title_scan_result => '掃碼結果';
 
   @override
   String get info_have_read_and_agree => '已閱讀並同意';

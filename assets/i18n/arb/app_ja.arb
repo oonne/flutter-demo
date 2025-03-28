@@ -65,6 +65,9 @@
   "title_scan": "スキャン",
   "@title_scan": {},
 
+  "title_scan_result": "スキャン結果",
+  "@title_scan_result": {},
+
   "info_have_read_and_agree": "既読と同意",
   "@info_have_read_and_agree": {},
 

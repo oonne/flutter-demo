@@ -65,6 +65,9 @@
   "title_scan": "Сканирование",
   "@title_scan": {},
 
+  "title_scan_result": "Результат сканирования",
+  "@title_scan_result": {},
+
   "info_have_read_and_agree": "Прочитано и согласен",
   "@info_have_read_and_agree": {},
 

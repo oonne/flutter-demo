@@ -75,6 +75,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get title_scan => 'Scansione';
 
   @override
+  String get title_scan_result => 'Risultato dello scan';
+
+  @override
   String get info_have_read_and_agree => 'Legato e accettato';
 
   @override

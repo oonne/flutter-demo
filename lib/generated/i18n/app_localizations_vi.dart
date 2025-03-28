@@ -75,6 +75,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get title_scan => 'Quét';
 
   @override
+  String get title_scan_result => 'Kết quả quét';
+
+  @override
   String get info_have_read_and_agree => 'Đã đọcvà đồng ý';
 
   @override
