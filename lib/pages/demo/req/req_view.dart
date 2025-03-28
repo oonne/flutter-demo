@@ -51,17 +51,30 @@ class _ReqViewState extends State<ReqView> {
                   Text('请求结果: ${viewModel.result}'),
                   Text('请求错误: ${viewModel.error}'),
                   const SizedBox(height: 20),
+
                   ElevatedButton(
                     onPressed: () {
                       viewModel.request(context);
                     },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        if (viewModel.isLoading)
-                          const CircularProgressIndicator(),
-                        const Text('请求'),
-                      ],
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (viewModel.isLoading) ...[
+                            const SizedBox(
+                              width: 16,
+                              height: 16,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                          ],
+                          const Text('请求'),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -72,4 +85,4 @@ class _ReqViewState extends State<ReqView> {
       ),
     );
   }
-} 
+}
