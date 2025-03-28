@@ -6,6 +6,8 @@ import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 String formatErrorCode(AppLocalizations localizations, String errorCode) {
   try {
     final Map<String, String> localizedMap = {
+      'unknown_error': localizations.unknown_error,
+      'request_error': localizations.request_error,
       'status_400': localizations.status_400,
       'status_401': localizations.status_401,
       'status_403': localizations.status_403,
