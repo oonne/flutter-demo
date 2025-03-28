@@ -31,7 +31,9 @@ class ReqViewModel extends ChangeNotifier {
     model.isLoading = true;
     notifyListeners();
 
-    var [err, res] = await AuthApi.getLoginPow({});
+    var [err, res] = await AuthApi.getLoginPow({
+      'name': 'admin',
+    });
     model.isLoading = false;
     notifyListeners();
 
@@ -41,6 +43,8 @@ class ReqViewModel extends ChangeNotifier {
       return;
     }
     
-    log.finest(res);
+    var resData = res['data'];
+    model.result = resData['salt'];
+    notifyListeners();
   }
 } 
