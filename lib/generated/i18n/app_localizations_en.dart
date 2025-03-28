@@ -127,4 +127,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get msg_login_failed => 'Login Failed';
+
+  @override
+  String get unknown_error => 'Unknown error';
+
+  @override
+  String get request_error => 'Request error';
+
+  @override
+  String get status_400 => 'Request parameters are incorrect';
+
+  @override
+  String get status_401 => 'Account not logged in';
+
+  @override
+  String get status_403 => 'No operation permission';
+
+  @override
+  String get status_500 => 'System busy, please try again later';
 }

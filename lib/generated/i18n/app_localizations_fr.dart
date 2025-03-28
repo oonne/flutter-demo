@@ -127,4 +127,22 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get msg_login_failed => 'La connexion a échoué';
+
+  @override
+  String get unknown_error => 'Erreur inconnue';
+
+  @override
+  String get request_error => 'Erreur de requête';
+
+  @override
+  String get status_400 => 'Les paramètres de la requête sont incorrects';
+
+  @override
+  String get status_401 => 'Pas de permission d\'opération';
+
+  @override
+  String get status_403 => 'Pas de permission d\'opération';
+
+  @override
+  String get status_500 => 'Le système est occupé, veuillez réessayer plus tard';
 }

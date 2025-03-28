@@ -127,4 +127,22 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get msg_login_failed => 'ログインに失敗しました';
+
+  @override
+  String get unknown_error => '未知のエラー';
+
+  @override
+  String get request_error => 'リクエストエラー';
+
+  @override
+  String get status_400 => 'リクエストパラメータが正しくありません';
+
+  @override
+  String get status_401 => '操作権限がありません';
+
+  @override
+  String get status_403 => '操作権限がありません';
+
+  @override
+  String get status_500 => 'システムが忙しいため、後で再試行してください';
 }

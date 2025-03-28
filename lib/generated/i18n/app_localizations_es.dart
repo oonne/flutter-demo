@@ -127,4 +127,22 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get msg_login_failed => 'La conexión falló';
+
+  @override
+  String get unknown_error => 'Error desconocido';
+
+  @override
+  String get request_error => 'Error de solicitud';
+
+  @override
+  String get status_400 => 'Parámetros de solicitud incorrectos';
+
+  @override
+  String get status_401 => 'Sin permiso de operación';
+
+  @override
+  String get status_403 => 'Sin permiso de operación';
+
+  @override
+  String get status_500 => 'El sistema está ocupado, inténtelo de nuevo más tarde';
 }

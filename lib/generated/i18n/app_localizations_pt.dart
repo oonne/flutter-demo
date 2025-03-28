@@ -127,4 +127,22 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get msg_login_failed => 'A conexão falhou';
+
+  @override
+  String get unknown_error => 'Erro desconhecido';
+
+  @override
+  String get request_error => 'Erro de solicitação';
+
+  @override
+  String get status_400 => 'Os parâmetros da solicitação são incorretos';
+
+  @override
+  String get status_401 => 'Sem permissão de operação';
+
+  @override
+  String get status_403 => 'Sem permissão de operação';
+
+  @override
+  String get status_500 => 'O sistema está ocupado, tente novamente mais tarde';
 }

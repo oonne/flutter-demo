@@ -117,5 +117,23 @@
   "@msg_operation_failed": {},
 
   "msg_login_failed": "Die Anmeldung ist fehlgeschlagen",
-  "@msg_login_failed": {}
+  "@msg_login_failed": {},
+
+  "unknown_error": "Unbekannter Fehler",
+  "@unknown_error": {},
+
+  "request_error": "Anfragefehler",
+  "@request_error": {},
+
+  "status_400": "Die Anforderungsparameter sind falsch",
+  "@status_400": {},
+
+  "status_401": "Keine Berechtigung für die Operation",
+  "@status_401": {},
+
+  "status_403": "Keine Berechtigung für die Operation",
+  "@status_403": {},
+
+  "status_500": "System ist beschäftigt, bitte versuchen Sie es später erneut",
+  "@status_500": {}
 }

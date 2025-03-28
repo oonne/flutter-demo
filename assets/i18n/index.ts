@@ -3,6 +3,7 @@ import btn from "./modules/btn";
 import title from "./modules/title";
 import info from "./modules/info";
 import msg from "./modules/msg";
+import errorCodeMsg from "./modules/error-code-msg";
 
 export default {
   ...basic,
@@ -10,4 +11,5 @@ export default {
   ...title,
   ...info,
   ...msg,
+  ...errorCodeMsg,
 };

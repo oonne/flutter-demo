@@ -127,6 +127,24 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get msg_login_failed => '登录失败';
+
+  @override
+  String get unknown_error => '未知错误';
+
+  @override
+  String get request_error => '请求错误';
+
+  @override
+  String get status_400 => '请求参数不正确';
+
+  @override
+  String get status_401 => '账号未登录';
+
+  @override
+  String get status_403 => '没有该操作权限';
+
+  @override
+  String get status_500 => '系统繁忙，请稍后重试';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -252,4 +270,22 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get msg_login_failed => '登入失敗';
+
+  @override
+  String get unknown_error => '未知錯誤';
+
+  @override
+  String get request_error => '請求錯誤';
+
+  @override
+  String get status_400 => '請求參數不正確';
+
+  @override
+  String get status_401 => '賬號未登錄';
+
+  @override
+  String get status_403 => '沒有該操作權限';
+
+  @override
+  String get status_500 => '系統繁忙，請稍後重試';
 }

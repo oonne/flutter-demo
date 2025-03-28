@@ -353,6 +353,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Login Failed'**
   String get msg_login_failed;
+
+  /// No description provided for @unknown_error.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown error'**
+  String get unknown_error;
+
+  /// No description provided for @request_error.
+  ///
+  /// In en, this message translates to:
+  /// **'Request error'**
+  String get request_error;
+
+  /// No description provided for @status_400.
+  ///
+  /// In en, this message translates to:
+  /// **'Request parameters are incorrect'**
+  String get status_400;
+
+  /// No description provided for @status_401.
+  ///
+  /// In en, this message translates to:
+  /// **'Account not logged in'**
+  String get status_401;
+
+  /// No description provided for @status_403.
+  ///
+  /// In en, this message translates to:
+  /// **'No operation permission'**
+  String get status_403;
+
+  /// No description provided for @status_500.
+  ///
+  /// In en, this message translates to:
+  /// **'System busy, please try again later'**
+  String get status_500;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

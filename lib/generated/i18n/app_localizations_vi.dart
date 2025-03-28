@@ -127,4 +127,22 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get msg_login_failed => 'Đăng nhập không thành công';
+
+  @override
+  String get unknown_error => 'Lỗi không xác định';
+
+  @override
+  String get request_error => 'Lỗi yêu cầu';
+
+  @override
+  String get status_400 => 'Tài khoản chưa đăng nhập';
+
+  @override
+  String get status_401 => 'Tài khoản chưa đăng nhập';
+
+  @override
+  String get status_403 => 'Tài khoản chưa đăng nhập';
+
+  @override
+  String get status_500 => 'Hệ thống đang bận, vui lòng thử lại sau';
 }

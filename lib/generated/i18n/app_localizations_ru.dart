@@ -127,4 +127,22 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get msg_login_failed => 'Вход не выполнен';
+
+  @override
+  String get unknown_error => 'Неизвестная ошибка';
+
+  @override
+  String get request_error => 'Ошибка запроса';
+
+  @override
+  String get status_400 => 'Параметры запроса неверны';
+
+  @override
+  String get status_401 => 'Нет прав на выполнение операции';
+
+  @override
+  String get status_403 => 'Нет прав на выполнение операции';
+
+  @override
+  String get status_500 => 'Система занята, попробуйте позже';
 }

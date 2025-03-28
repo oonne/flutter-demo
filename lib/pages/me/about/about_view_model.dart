@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/utils/log.dart';
-import 'package:flutter_demo/utils/toast.dart';
+import 'package:flutter_demo/utils/message.dart';
 import 'package:flutter_demo/widget/bottom_sheet/selection_bottom_sheet.dart';
 
 import 'about_model.dart';

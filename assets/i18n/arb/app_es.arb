@@ -117,5 +117,23 @@
   "@msg_operation_failed": {},
 
   "msg_login_failed": "La conexión falló",
-  "@msg_login_failed": {}
+  "@msg_login_failed": {},
+
+  "unknown_error": "Error desconocido",
+  "@unknown_error": {},
+
+  "request_error": "Error de solicitud",
+  "@request_error": {},
+
+  "status_400": "Parámetros de solicitud incorrectos",
+  "@status_400": {},
+
+  "status_401": "Sin permiso de operación",
+  "@status_401": {},
+
+  "status_403": "Sin permiso de operación",
+  "@status_403": {},
+
+  "status_500": "El sistema está ocupado, inténtelo de nuevo más tarde",
+  "@status_500": {}
 }

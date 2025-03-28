@@ -117,5 +117,23 @@
   "@msg_operation_failed": {},
 
   "msg_login_failed": "登录失败",
-  "@msg_login_failed": {}
+  "@msg_login_failed": {},
+
+  "unknown_error": "未知错误",
+  "@unknown_error": {},
+
+  "request_error": "请求错误",
+  "@request_error": {},
+
+  "status_400": "请求参数不正确",
+  "@status_400": {},
+
+  "status_401": "账号未登录",
+  "@status_401": {},
+
+  "status_403": "没有该操作权限",
+  "@status_403": {},
+
+  "status_500": "系统繁忙，请稍后重试",
+  "@status_500": {}
 }

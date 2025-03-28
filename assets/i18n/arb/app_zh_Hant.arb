@@ -117,5 +117,23 @@
   "@msg_operation_failed": {},
 
   "msg_login_failed": "登入失敗",
-  "@msg_login_failed": {}
+  "@msg_login_failed": {},
+
+  "unknown_error": "未知錯誤",
+  "@unknown_error": {},
+
+  "request_error": "請求錯誤",
+  "@request_error": {},
+
+  "status_400": "請求參數不正確",
+  "@status_400": {},
+
+  "status_401": "賬號未登錄",
+  "@status_401": {},
+
+  "status_403": "沒有該操作權限",
+  "@status_403": {},
+
+  "status_500": "系統繁忙，請稍後重試",
+  "@status_500": {}
 }

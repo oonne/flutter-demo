@@ -117,5 +117,23 @@
   "@msg_operation_failed": {},
 
   "msg_login_failed": "Вход не выполнен",
-  "@msg_login_failed": {}
+  "@msg_login_failed": {},
+
+  "unknown_error": "Неизвестная ошибка",
+  "@unknown_error": {},
+
+  "request_error": "Ошибка запроса",
+  "@request_error": {},
+
+  "status_400": "Параметры запроса неверны",
+  "@status_400": {},
+
+  "status_401": "Нет прав на выполнение операции",
+  "@status_401": {},
+
+  "status_403": "Нет прав на выполнение операции",
+  "@status_403": {},
+
+  "status_500": "Система занята, попробуйте позже",
+  "@status_500": {}
 }

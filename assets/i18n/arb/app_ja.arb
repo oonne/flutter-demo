@@ -117,5 +117,23 @@
   "@msg_operation_failed": {},
 
   "msg_login_failed": "ログインに失敗しました",
-  "@msg_login_failed": {}
+  "@msg_login_failed": {},
+
+  "unknown_error": "未知のエラー",
+  "@unknown_error": {},
+
+  "request_error": "リクエストエラー",
+  "@request_error": {},
+
+  "status_400": "リクエストパラメータが正しくありません",
+  "@status_400": {},
+
+  "status_401": "操作権限がありません",
+  "@status_401": {},
+
+  "status_403": "操作権限がありません",
+  "@status_403": {},
+
+  "status_500": "システムが忙しいため、後で再試行してください",
+  "@status_500": {}
 }

@@ -127,4 +127,22 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get msg_login_failed => '로그인에 실패했습니다';
+
+  @override
+  String get unknown_error => '알 수 없는 오류';
+
+  @override
+  String get request_error => '요청 오류';
+
+  @override
+  String get status_400 => '계정이 로그인되지 않았습니다';
+
+  @override
+  String get status_401 => '계정이 로그인되지 않았습니다';
+
+  @override
+  String get status_403 => '계정이 로그인되지 않았습니다';
+
+  @override
+  String get status_500 => '시스템이 혼잡하여 잠시 후 다시 시도해 주세요';
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/api/modules/auth.dart';
 import 'package:flutter_demo/utils/log.dart';
-import 'package:flutter_demo/utils/toast.dart';
+import 'package:flutter_demo/utils/message.dart';
 
 import 'req_model.dart';
 
@@ -36,9 +36,8 @@ class ReqViewModel extends ChangeNotifier {
     notifyListeners();
 
     if (err != null) {
-      // model.error = err;
-      log.finest(err['message']);
-      // showTextSnackBar(context, msg: AppLocalizations.of(context)![err['code']] ?? err['message']);
+      model.error = getErrorMessage(context, err);
+      showTextSnackBar(context, msg: getErrorMessage(context, err));
       return;
     }
     

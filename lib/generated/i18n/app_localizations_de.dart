@@ -127,4 +127,22 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get msg_login_failed => 'Die Anmeldung ist fehlgeschlagen';
+
+  @override
+  String get unknown_error => 'Unbekannter Fehler';
+
+  @override
+  String get request_error => 'Anfragefehler';
+
+  @override
+  String get status_400 => 'Die Anforderungsparameter sind falsch';
+
+  @override
+  String get status_401 => 'Keine Berechtigung für die Operation';
+
+  @override
+  String get status_403 => 'Keine Berechtigung für die Operation';
+
+  @override
+  String get status_500 => 'System ist beschäftigt, bitte versuchen Sie es später erneut';
 }

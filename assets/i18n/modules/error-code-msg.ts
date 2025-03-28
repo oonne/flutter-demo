@@ -40,7 +40,7 @@ const msg: ILangMsgs = {
   /*
    * 服务器状态码
    */
-  '400': {
+  'status_400': {
     en_US: 'Request parameters are incorrect',
     zh_CN: '请求参数不正确',
     zh_TW: '請求參數不正確',
@@ -54,7 +54,7 @@ const msg: ILangMsgs = {
     ko_KR: '계정이 로그인되지 않았습니다',
     vi_VN: 'Tài khoản chưa đăng nhập',
   },
-  '401': {
+  'status_401': {
     en_US: 'Account not logged in',
     zh_CN: '账号未登录',
     zh_TW: '賬號未登錄',
@@ -68,7 +68,7 @@ const msg: ILangMsgs = {
     ko_KR: '계정이 로그인되지 않았습니다',
     vi_VN: 'Tài khoản chưa đăng nhập',
   },
-  '403': {
+  'status_403': {
     en_US: 'No operation permission',
     zh_CN: '没有该操作权限',
     zh_TW: '沒有該操作權限',
@@ -82,7 +82,7 @@ const msg: ILangMsgs = {
     ko_KR: '계정이 로그인되지 않았습니다',
     vi_VN: 'Tài khoản chưa đăng nhập',
   },
-  '500': {
+  'status_500': {
     en_US: 'System busy, please try again later',
     zh_CN: '系统繁忙，请稍后重试',
     zh_TW: '系統繁忙，請稍後重試',

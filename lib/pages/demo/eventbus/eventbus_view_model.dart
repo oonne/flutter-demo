@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_demo/global/event_bus.dart';
-import 'package:flutter_demo/utils/toast.dart';
+import 'package:flutter_demo/utils/message.dart';
 
 import 'eventbus_model.dart';
 

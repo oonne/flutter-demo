@@ -127,4 +127,22 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get msg_login_failed => 'L\'accesso non è riuscito';
+
+  @override
+  String get unknown_error => 'Errore sconosciuto';
+
+  @override
+  String get request_error => 'Errore di richiesta';
+
+  @override
+  String get status_400 => 'I parametri della richiesta sono errati';
+
+  @override
+  String get status_401 => 'Nessun permesso di operazione';
+
+  @override
+  String get status_403 => 'Nessun permesso di operazione';
+
+  @override
+  String get status_500 => 'Il sistema è occupato, riprova più tardi';
 }
