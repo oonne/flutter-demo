@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'home_view_model.dart';
+import 'scan_view_model.dart';
 
 /* 
- * 首页
+ * 扫描页面
  */
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class ScanView extends StatefulWidget {
+  const ScanView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<ScanView> createState() => _ScanViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
-  late final HomeViewModel viewModel;
+class _ScanViewState extends State<ScanView> {
+  late final ScanViewModel viewModel;
 
   /* 
    * 初始化
@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     super.initState();
-    viewModel = HomeViewModel();
+    viewModel = ScanViewModel();
   }
 
   /* 
@@ -32,7 +32,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: viewModel,
-      child: Consumer<HomeViewModel>(
+      child: Consumer<ScanViewModel>(
         builder: (context, viewModel, child) {
           /* 
            * 页面
@@ -41,14 +41,9 @@ class _HomeViewState extends State<HomeView> {
             body: SafeArea(
               child: SingleChildScrollView(
                 child: Column(children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'scan');
-                    },
-                    child: const Text('扫码'),
-                  ),
+                  Placeholder(),
                   const SizedBox(height: 20),
-                  Text('首页TODO'),
+                  Text('扫描页面TODO'),
                 ]),
               ),
             ),
