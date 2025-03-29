@@ -45,8 +45,8 @@ class _ScanViewState extends State<ScanView> {
    */
   @override
   Future<void> dispose() async {
-    await viewModel.cleanup();
     super.dispose();
+    await viewModel.cleanup();
   }
 
   /* 
