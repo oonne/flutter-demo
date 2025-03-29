@@ -51,5 +51,8 @@ class ScanViewModel extends ChangeNotifier {
       GoRouter.of(context).pop(result);
       return;
     }
+
+    // 扫码后跳到结果页面
+    GoRouter.of(context).pushNamed('scan/result', extra: {'result': result});
   }
 }
