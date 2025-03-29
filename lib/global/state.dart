@@ -171,7 +171,7 @@ class GlobalState extends ChangeNotifier {
     notifyListeners();
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('STAFF_INFO', info.toJson().toString());
+    await prefs.setString('STAFF_INFO', jsonEncode(info.toJson()));
   }
 
   // 读取账户信息
