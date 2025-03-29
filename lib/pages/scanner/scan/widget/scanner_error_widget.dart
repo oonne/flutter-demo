@@ -49,10 +49,10 @@ class ScannerErrorWidget extends StatelessWidget {
               height: 64,
             ),
             Text(errorMessage, style: const TextStyle(color: Colors.white)),
-            Text(
-              error.errorDetails?.message ?? '',
-              style: const TextStyle(color: Colors.white),
-            ),
+            // Text(
+            //   error.errorDetails?.message ?? '',
+            //   style: const TextStyle(color: Colors.grey, fontSize: 12),
+            // ),
           ],
         ),
       ),
