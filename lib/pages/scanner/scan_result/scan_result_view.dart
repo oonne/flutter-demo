@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
-
+import 'package:flutter_demo/theme/global.dart';
 import 'scan_result_view_model.dart';
 
 /* 
@@ -41,6 +41,8 @@ class _ScanResultViewState extends State<ScanResultView> {
    */
   @override
   Widget build(BuildContext context) {
+    final themeVars = getCurrentThemeVars(context);
+
     return ChangeNotifierProvider.value(
       value: viewModel,
       child: Consumer<ScanResultViewModel>(
@@ -77,11 +79,17 @@ class _ScanResultViewState extends State<ScanResultView> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     width: double.infinity,
+                    height: themeVars.buttonLargeHeight,
                     child: ElevatedButton(
                       onPressed: () {
                         viewModel.copy(context);
                       },
-                      child: Text(AppLocalizations.of(context)!.btn_copy),
+                      child: Text(
+                        AppLocalizations.of(context)!.btn_copy,
+                        style: TextStyle(
+                          fontSize: themeVars.buttonLargeFontSize,
+                        ),
+                      ),
                     ),
                   ),
                 ],

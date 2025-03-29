@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 class ThemeVars {
   final double radius;
   final double panelMargin;
+  final double buttonLargeHeight;
+  final double buttonLargeFontSize;
   final Color scaffoldBackground;
   final Color contentBackground;
   final Color textColor;
@@ -14,6 +16,10 @@ class ThemeVars {
   const ThemeVars({
     this.radius = 8, // 圆角大小
     this.panelMargin = 10, // 卡片margin
+
+    this.buttonLargeHeight = 48, // 按钮Large高度 (与输入框对齐)
+    this.buttonLargeFontSize = 16, // 按钮Large字体大小
+
     required this.scaffoldBackground, // 页面背景色
     required this.contentBackground, // 内容背景色
     required this.textColor, // 文字颜色

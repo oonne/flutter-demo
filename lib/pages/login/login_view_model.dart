@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_demo/api/modules/auth.dart';
+
 import 'login_model.dart';
 
 class LoginViewModel extends ChangeNotifier {
@@ -22,6 +24,9 @@ class LoginViewModel extends ChangeNotifier {
     model.isLoading = true;
     notifyListeners();
     
+    // 登录逻辑
+    // TODO
     
+    model.isLoading = false;
   }
 } 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package:flutter_demo/theme/global.dart';
+
 import 'login_view_model.dart';
 
 /* 
@@ -30,6 +32,8 @@ class _LoginViewState extends State<LoginView> {
    */
   @override
   Widget build(BuildContext context) {
+    final themeVars = getCurrentThemeVars(context);
+
     return ChangeNotifierProvider.value(
       value: viewModel,
       child: Consumer<LoginViewModel>(
@@ -47,26 +51,53 @@ class _LoginViewState extends State<LoginView> {
                    */
                   Image.asset('assets/img/logo.png', width: 100, height: 100),
 
+                  /* 
+                  * 账号
+                  */
                   Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Column(
-                      children: [
-                        /* 
-                          * 账号
-                          */
-                        TextField(
-                          controller: viewModel.nameController,
-                          decoration: const InputDecoration(labelText: '账号'),
-                        ),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: TextField(
+                      controller: viewModel.nameController,
+                      decoration: InputDecoration(
+                        labelText: '账号',
+                        border: OutlineInputBorder(),
+                        contentPadding: EdgeInsets.all(12),
+                      ),
+                    ),
+                  ),
 
-                        /* 
-                          * 密码
-                          */
-                        TextField(
-                          controller: viewModel.passwordController,
-                          decoration: const InputDecoration(labelText: '密码'),
+                  /* 
+                  * 密码
+                  */
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: TextField(
+                      controller: viewModel.passwordController,
+                      decoration: InputDecoration(
+                        labelText: '密码',
+                        border: OutlineInputBorder(),
+                        contentPadding: EdgeInsets.all(12),
+                      ),
+                    ),
+                  ),
+
+                  /* 
+                  * 登录按钮
+                  */
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    width: double.infinity,
+                    height: themeVars.buttonLargeHeight,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        viewModel.login();
+                      },
+                      child: Text(
+                        '登录',
+                        style: TextStyle(
+                          fontSize: themeVars.buttonLargeFontSize,
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ],
