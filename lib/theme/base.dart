@@ -6,24 +6,30 @@ import 'package:flutter/material.dart';
 class ThemeVars {
   final double radius;
   final double panelMargin;
+  
   final double buttonLargeHeight;
   final double buttonLargeFontSize;
+
   final Color scaffoldBackground;
   final Color contentBackground;
   final Color textColor;
   final Color secondaryTextColor;
-  
+  final Color dangerColor;
   const ThemeVars({
+    /* 尺寸 */
     this.radius = 8, // 圆角大小
     this.panelMargin = 12, // 卡片margin
 
+    /* 按钮 */
     this.buttonLargeHeight = 48, // 按钮Large高度 (与输入框对齐)
     this.buttonLargeFontSize = 16, // 按钮Large字体大小
 
+    /* 颜色 */
     required this.scaffoldBackground, // 页面背景色
     required this.contentBackground, // 内容背景色
     required this.textColor, // 文字颜色
     required this.secondaryTextColor, // 次要文字颜色
+    required this.dangerColor, // 危险颜色
   });
 }
 
@@ -62,6 +68,13 @@ ThemeData createBaseTheme({
       style: ElevatedButton.styleFrom(
         backgroundColor: colorScheme.primary,
         foregroundColor: const Color.fromRGBO(220, 220, 220, 1),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(vars.radius),
+        ),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(vars.radius),
         ),

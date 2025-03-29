@@ -87,12 +87,18 @@ class _SettingViewState extends State<SettingView> {
                     padding: EdgeInsets.symmetric(horizontal: themeVars.panelMargin),
                     width: double.infinity,
                     height: themeVars.buttonLargeHeight,
-                    child: ElevatedButton(
+                    child: OutlinedButton(
                       onPressed: () {},
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                          color: themeVars.dangerColor,
+                        ),
+                      ),
                       child: Text(
-                        AppLocalizations.of(context)!.btn_login,
+                        AppLocalizations.of(context)!.btn_logout,
                         style: TextStyle(
                           fontSize: themeVars.buttonLargeFontSize,
+                          color: themeVars.dangerColor,
                         ),
                       ),
                     ),

@@ -10,6 +10,7 @@ final ThemeVars darkThemeVars = ThemeVars(
   contentBackground: const Color.fromRGBO(32, 32, 32, 1),
   textColor: const Color.fromRGBO(220, 220, 220, 1),
   secondaryTextColor: const Color.fromRGBO(180, 180, 180, 1),
+  dangerColor: const Color.fromRGBO(180, 40, 40, 1),
 );
 
 /* 
