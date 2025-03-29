@@ -51,6 +51,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get this_quarter => '이번 분기';
 
   @override
+  String get btn_copy => '복사';
+
+  @override
   String get btn_login => '로그인';
 
   @override

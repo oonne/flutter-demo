@@ -41,6 +41,9 @@
   "this_quarter": "今の四半期",
   "@this_quarter": {},
 
+  "btn_copy": "コピー",
+  "@btn_copy": {},
+
   "btn_login": "ログイン",
   "@btn_login": {},
 

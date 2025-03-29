@@ -198,6 +198,12 @@ abstract class AppLocalizations {
   /// **'This Quarter'**
   String get this_quarter;
 
+  /// No description provided for @btn_copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get btn_copy;
+
   /// No description provided for @btn_login.
   ///
   /// In en, this message translates to:

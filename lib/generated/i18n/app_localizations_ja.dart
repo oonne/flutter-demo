@@ -51,6 +51,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get this_quarter => '今の四半期';
 
   @override
+  String get btn_copy => 'コピー';
+
+  @override
   String get btn_login => 'ログイン';
 
   @override

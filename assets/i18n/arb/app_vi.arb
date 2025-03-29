@@ -41,6 +41,9 @@
   "this_quarter": "Quý này",
   "@this_quarter": {},
 
+  "btn_copy": "Sao chép",
+  "@btn_copy": {},
+
   "btn_login": "Đăng nhập",
   "@btn_login": {},
 

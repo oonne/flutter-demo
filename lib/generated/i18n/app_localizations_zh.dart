@@ -51,6 +51,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get this_quarter => '本季';
 
   @override
+  String get btn_copy => '复制';
+
+  @override
   String get btn_login => '登录';
 
   @override
@@ -210,6 +213,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get this_quarter => '本季';
+
+  @override
+  String get btn_copy => '複製';
 
   @override
   String get btn_login => '登入';

@@ -41,6 +41,9 @@
   "this_quarter": "Этот квартал",
   "@this_quarter": {},
 
+  "btn_copy": "Копировать",
+  "@btn_copy": {},
+
   "btn_login": "Войти",
   "@btn_login": {},
 

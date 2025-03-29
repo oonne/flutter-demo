@@ -41,6 +41,9 @@
   "this_quarter": "이번 분기",
   "@this_quarter": {},
 
+  "btn_copy": "복사",
+  "@btn_copy": {},
+
   "btn_login": "로그인",
   "@btn_login": {},
 

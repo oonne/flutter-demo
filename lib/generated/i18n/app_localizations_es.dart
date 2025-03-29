@@ -51,6 +51,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get this_quarter => 'Este trimestre';
 
   @override
+  String get btn_copy => 'Copiar';
+
+  @override
   String get btn_login => 'Iniciar sesión';
 
   @override

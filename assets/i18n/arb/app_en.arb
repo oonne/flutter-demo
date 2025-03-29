@@ -41,6 +41,9 @@
   "this_quarter": "This Quarter",
   "@this_quarter": {},
 
+  "btn_copy": "Copy",
+  "@btn_copy": {},
+
   "btn_login": "Login",
   "@btn_login": {},
 

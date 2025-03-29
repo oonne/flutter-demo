@@ -4,6 +4,22 @@ import type { ILangMsgs } from "../type";
  * 按钮 btn_
  */
 const msg: ILangMsgs = {
+  /* 复制 */
+  btn_copy: {
+    zh_CN: "复制",
+    zh_TW: "複製",
+    en_US: "Copy",
+    ru_RU: "Копировать",
+    fr_FR: "Copier",
+    es_ES: "Copiar",
+    it_IT: "Copia",
+    pt_PT: "Copiar",
+    de_DE: "Kopieren",
+    ja_JP: "コピー",
+    ko_KR: "복사",
+    vi_VN: "Sao chép",
+  },
+
   /* 
    * 登录
    */

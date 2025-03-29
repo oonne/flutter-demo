@@ -52,11 +52,31 @@ class _ScanResultViewState extends State<ScanResultView> {
             appBar: CustomAppBar(
               title: Text(AppLocalizations.of(context)!.title_scan_result),
             ),
-            body: SafeArea(
-              child: SingleChildScrollView(
-                child: Column(children: [
-                  Text(viewModel.result),
-                ]),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  /* 
+                   * 扫码结果
+                   */
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: TextField(
+                      controller: viewModel.resultTextController,
+                      readOnly: false,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+
+                  /* 
+                   * 复制按钮
+                   */
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text(AppLocalizations.of(context)!.btn_copy),
+                  ),
+                ],
               ),
             ),
           );

@@ -9,12 +9,12 @@ class ScanResultViewModel extends ChangeNotifier {
    * 初始化
    */
   Future<void> init(Map<String, dynamic>? extra) async {
-    model.result = extra?['result'] ?? '';
+    resultTextController.text = extra?['result'] ?? '';
     notifyListeners();
   }
 
   /* 
    * 扫码结果
    */
-  String get result => model.result;
+  final TextEditingController resultTextController = TextEditingController();
 } 

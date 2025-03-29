@@ -51,6 +51,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get this_quarter => 'This Quarter';
 
   @override
+  String get btn_copy => 'Copy';
+
+  @override
   String get btn_login => 'Login';
 
   @override

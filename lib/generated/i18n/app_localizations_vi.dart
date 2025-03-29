@@ -51,6 +51,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get this_quarter => 'Quý này';
 
   @override
+  String get btn_copy => 'Sao chép';
+
+  @override
   String get btn_login => 'Đăng nhập';
 
   @override

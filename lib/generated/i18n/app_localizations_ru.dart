@@ -51,6 +51,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get this_quarter => 'Этот квартал';
 
   @override
+  String get btn_copy => 'Копировать';
+
+  @override
   String get btn_login => 'Войти';
 
   @override

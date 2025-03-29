@@ -41,6 +41,9 @@
   "this_quarter": "本季",
   "@this_quarter": {},
 
+  "btn_copy": "复制",
+  "@btn_copy": {},
+
   "btn_login": "登录",
   "@btn_login": {},
 

@@ -41,6 +41,9 @@
   "this_quarter": "Questo trimestre",
   "@this_quarter": {},
 
+  "btn_copy": "Copia",
+  "@btn_copy": {},
+
   "btn_login": "Accedi",
   "@btn_login": {},
 
