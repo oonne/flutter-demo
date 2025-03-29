@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_demo/theme/global.dart';
@@ -24,7 +23,6 @@ class ScanView extends StatefulWidget {
 
 class _ScanViewState extends State<ScanView> {
   late final ScanViewModel viewModel;
-  final player = AudioPlayer();
 
   /* 
    * 初始化
@@ -49,14 +47,6 @@ class _ScanViewState extends State<ScanView> {
   Future<void> dispose() async {
     super.dispose();
     await viewModel.cleanup();
-  }
-
-  /* 
-   * 播放声音
-   */
-  Future<void> playSound() async {
-    await player.setSource(AssetSource('audio/di.mp3'));
-    await player.resume();
   }
 
   /* 
@@ -95,7 +85,6 @@ class _ScanViewState extends State<ScanView> {
                       return ScannerErrorWidget(error: error);
                     },
                     onDetect: (barcode) {
-                      playSound();
                       viewModel.onDetect(context, barcode);
                     },
                   ),
