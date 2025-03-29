@@ -25,9 +25,9 @@ void showTextSnackBar(
 /* 
  * 获取请求返回体的本地化错误消息
  */
-String getErrorMessage(BuildContext context, Map<String, dynamic> err) {
-  final errorCode = err['code'];
-  final errorMessage = err['message'];
+String getErrorMessage(BuildContext context, Map<dynamic, dynamic> err, {String? defaultMessage}) {
+  var errorCode = err['code'];
+  final errorMessage = defaultMessage ??err['message'];
 
   if (errorCode == null) {
     return errorMessage;
@@ -36,6 +36,11 @@ String getErrorMessage(BuildContext context, Map<String, dynamic> err) {
   final localizations = AppLocalizations.of(context);
   if (localizations == null) {
     return errorMessage;
+  }
+
+  /* 如果code不是文本，则转化为文本 */
+  if (errorCode is! String) {
+    errorCode = errorCode.toString();
   }
 
   final formattedErrorCode = formatErrorCode(localizations, errorCode);

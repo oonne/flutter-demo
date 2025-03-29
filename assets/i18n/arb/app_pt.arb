@@ -171,5 +171,8 @@
   "@status_403": {},
 
   "status_500": "O sistema está ocupado, tente novamente mais tarde",
-  "@status_500": {}
+  "@status_500": {},
+
+  "code_1001002": "Login falhou",
+  "@code_1001002": {}
 }

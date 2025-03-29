@@ -171,5 +171,8 @@
   "@status_403": {},
 
   "status_500": "System busy, please try again later",
-  "@status_500": {}
+  "@status_500": {},
+
+  "code_1001002": "Login failed",
+  "@code_1001002": {}
 }

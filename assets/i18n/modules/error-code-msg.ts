@@ -96,5 +96,24 @@ const msg: ILangMsgs = {
     ko_KR: '시스템이 혼잡하여 잠시 후 다시 시도해 주세요',
     vi_VN: 'Hệ thống đang bận, vui lòng thử lại sau',
   },
+
+  /* 
+   * 错误码
+   */
+  // 登录失败
+  'code_1001002': {
+    en_US: 'Login failed',
+    zh_CN: '登录失败',
+    zh_TW: '登錄失敗',
+    es_ES: 'Inicio de sesión fallido',
+    fr_FR: 'Connexion échouée',
+    ru_RU: 'Вход в систему не выполнен',
+    it_IT: 'Accesso non riuscito',
+    pt_PT: 'Login falhou',
+    de_DE: 'Der Benutzer existiert nicht',
+    ja_JP: 'ユーザーが存在しません',
+    ko_KR: '사용자가 존재하지 않습니다',
+    vi_VN: 'Người dùng không tồn tại',
+  },
 };
 export default msg;

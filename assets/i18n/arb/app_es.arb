@@ -171,5 +171,8 @@
   "@status_403": {},
 
   "status_500": "El sistema está ocupado, inténtelo de nuevo más tarde",
-  "@status_500": {}
+  "@status_500": {},
+
+  "code_1001002": "Inicio de sesión fallido",
+  "@code_1001002": {}
 }

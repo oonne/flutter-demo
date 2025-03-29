@@ -181,4 +181,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get status_500 => 'Система занята, попробуйте позже';
+
+  @override
+  String get code_1001002 => 'Вход в систему не выполнен';
 }

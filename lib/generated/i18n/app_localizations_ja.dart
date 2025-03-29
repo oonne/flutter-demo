@@ -181,4 +181,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get status_500 => 'システムが忙しいため、後で再試行してください';
+
+  @override
+  String get code_1001002 => 'ユーザーが存在しません';
 }

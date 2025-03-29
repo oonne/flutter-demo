@@ -181,4 +181,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get status_500 => 'Hệ thống đang bận, vui lòng thử lại sau';
+
+  @override
+  String get code_1001002 => 'Người dùng không tồn tại';
 }

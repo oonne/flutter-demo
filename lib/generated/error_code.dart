@@ -12,6 +12,7 @@ String formatErrorCode(AppLocalizations localizations, String errorCode) {
       'status_401': localizations.status_401,
       'status_403': localizations.status_403,
       'status_500': localizations.status_500,
+      'code_1001002': localizations.code_1001002,
     };
     return localizedMap[errorCode] ?? '';
   } catch (e) {

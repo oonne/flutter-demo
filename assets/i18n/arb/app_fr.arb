@@ -171,5 +171,8 @@
   "@status_403": {},
 
   "status_500": "Le système est occupé, veuillez réessayer plus tard",
-  "@status_500": {}
+  "@status_500": {},
+
+  "code_1001002": "Connexion échouée",
+  "@code_1001002": {}
 }

@@ -181,4 +181,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get status_500 => 'Il sistema è occupato, riprova più tardi';
+
+  @override
+  String get code_1001002 => 'Accesso non riuscito';
 }

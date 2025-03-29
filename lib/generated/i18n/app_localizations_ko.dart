@@ -181,4 +181,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get status_500 => '시스템이 혼잡하여 잠시 후 다시 시도해 주세요';
+
+  @override
+  String get code_1001002 => '사용자가 존재하지 않습니다';
 }

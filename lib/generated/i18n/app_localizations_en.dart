@@ -181,4 +181,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get status_500 => 'System busy, please try again later';
+
+  @override
+  String get code_1001002 => 'Login failed';
 }

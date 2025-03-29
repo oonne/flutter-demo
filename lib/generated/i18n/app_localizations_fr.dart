@@ -181,4 +181,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get status_500 => 'Le système est occupé, veuillez réessayer plus tard';
+
+  @override
+  String get code_1001002 => 'Connexion échouée';
 }

@@ -181,6 +181,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get status_500 => '系统繁忙，请稍后重试';
+
+  @override
+  String get code_1001002 => '登录失败';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -360,4 +363,7 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get status_500 => '系統繁忙，請稍後重試';
+
+  @override
+  String get code_1001002 => '登錄失敗';
 }

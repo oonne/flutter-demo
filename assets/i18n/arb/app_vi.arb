@@ -171,5 +171,8 @@
   "@status_403": {},
 
   "status_500": "Hệ thống đang bận, vui lòng thử lại sau",
-  "@status_500": {}
+  "@status_500": {},
+
+  "code_1001002": "Người dùng không tồn tại",
+  "@code_1001002": {}
 }

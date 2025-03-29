@@ -171,5 +171,8 @@
   "@status_403": {},
 
   "status_500": "Il sistema è occupato, riprova più tardi",
-  "@status_500": {}
+  "@status_500": {},
+
+  "code_1001002": "Accesso non riuscito",
+  "@code_1001002": {}
 }

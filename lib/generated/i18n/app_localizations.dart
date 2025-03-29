@@ -461,6 +461,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'System busy, please try again later'**
   String get status_500;
+
+  /// No description provided for @code_1001002.
+  ///
+  /// In en, this message translates to:
+  /// **'Login failed'**
+  String get code_1001002;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

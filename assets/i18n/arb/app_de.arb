@@ -171,5 +171,8 @@
   "@status_403": {},
 
   "status_500": "System ist beschäftigt, bitte versuchen Sie es später erneut",
-  "@status_500": {}
+  "@status_500": {},
+
+  "code_1001002": "Der Benutzer existiert nicht",
+  "@code_1001002": {}
 }

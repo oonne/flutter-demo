@@ -181,4 +181,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get status_500 => 'System ist beschäftigt, bitte versuchen Sie es später erneut';
+
+  @override
+  String get code_1001002 => 'Der Benutzer existiert nicht';
 }

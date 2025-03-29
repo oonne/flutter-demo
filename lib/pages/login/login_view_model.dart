@@ -102,7 +102,7 @@ class LoginViewModel extends ChangeNotifier {
     model.isLoading = true;
     notifyListeners();
 
-    // 登录逻辑
+    // 计算pow
     final stopwatch = Stopwatch()..start();
     final powKey = await calcLoginPow(nameController.text);
     stopwatch.stop();
@@ -114,11 +114,31 @@ class LoginViewModel extends ChangeNotifier {
       if (!context.mounted) {
         return;
       }
-      showTextSnackBar(context, msg: '登录失败');
+      showTextSnackBar(context, msg: AppLocalizations.of(context)!.msg_login_failed);
       return;
     }
 
+    // 登录
+    var [err, res] = await AuthApi.login({
+      'powKey': powKey,
+      'name': nameController.text,
+      'password': passwordController.text,
+    });
     model.isLoading = false;
     notifyListeners();
+
+    if (err != null) {
+      if (!context.mounted) {
+        return;
+      }
+      showTextSnackBar(context, msg: getErrorMessage(context, err, defaultMessage: AppLocalizations.of(context)!.msg_login_failed));
+      return;
+    }
+
+    log.finest(res);
+    if (!context.mounted) {
+      return;
+    }
+    showTextSnackBar(context, msg: '登录成功');
   }
 }

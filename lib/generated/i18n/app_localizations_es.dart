@@ -181,4 +181,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get status_500 => 'El sistema está ocupado, inténtelo de nuevo más tarde';
+
+  @override
+  String get code_1001002 => 'Inicio de sesión fallido';
 }

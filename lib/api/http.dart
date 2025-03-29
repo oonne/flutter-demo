@@ -105,7 +105,11 @@ Future<List<dynamic>> req({String method = 'POST', required String url, Map<Stri
 
   // 当Code不为0时，抛出异常
   if (res != null && res['code'] != 0) {
-    return [res, null];
+    err = {
+      ...res,
+      "code": 'code_${res['code']}',
+    };
+    return [err, null];
   }
 
   // 正常返回
