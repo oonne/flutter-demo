@@ -85,6 +85,13 @@ class _IndexViewState extends State<IndexView> {
                           context.pushNamed('demo/req');
                         },
                       ),
+                      PanelItem(
+                        label: '扫码',
+                        showArrow: true,
+                        onTap: () {
+                          context.pushNamed('demo/scan_code');
+                        },
+                      ),
                     ],
                   ),
                 ],

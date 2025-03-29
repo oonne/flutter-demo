@@ -15,6 +15,7 @@ import 'package:flutter_demo/pages/me/about/about_view.dart';
 /* 扫码 */
 import 'package:flutter_demo/pages/scanner/scan/scan_view.dart';
 import 'package:flutter_demo/pages/scanner/result/result_view.dart';
+
 /* Demo */
 import 'package:flutter_demo/pages/demo/index/index_view.dart';
 import 'package:flutter_demo/pages/demo/mvvm/mvvm_view.dart';
@@ -22,6 +23,7 @@ import 'package:flutter_demo/pages/demo/eventbus/eventbus_view.dart';
 import 'package:flutter_demo/pages/demo/custom_font/custom_font_view.dart';
 import 'package:flutter_demo/pages/demo/date_picker/date_picker_view.dart';
 import 'package:flutter_demo/pages/demo/req/req_view.dart';
+import 'package:flutter_demo/pages/demo/scan_code/scan_code_view.dart';
 
 /*
  * 路由表
@@ -155,6 +157,12 @@ final router = GoRouter(
       name: 'demo/req',
       path: '/demo/req',
       builder: (context, state) => const ReqView(),
+    ),
+    /* 扫码 */
+    GoRoute(
+      name: 'demo/scan_code',
+      path: '/demo/scan_code',
+      builder: (context, state) => const ScanCodeView(),
     ),
   ],
 );

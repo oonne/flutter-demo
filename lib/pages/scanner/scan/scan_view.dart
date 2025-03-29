@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-
+import 'package:go_router/go_router.dart';
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
@@ -36,7 +36,9 @@ class _ScanViewState extends State<ScanView> {
 
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      viewModel.init();
+      final queryParameters =
+          GoRouterState.of(context).extra as Map<String, dynamic>?;
+      viewModel.init(queryParameters);
     });
   }
 
@@ -94,7 +96,7 @@ class _ScanViewState extends State<ScanView> {
                     },
                     onDetect: (barcode) {
                       playSound();
-                      viewModel.onDetect(barcode);
+                      viewModel.onDetect(context, barcode);
                     },
                   ),
                   // 扫描窗口覆盖层
