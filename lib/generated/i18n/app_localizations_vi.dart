@@ -132,6 +132,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get msg_operation_failed => 'Hoạt động không thành công';
 
   @override
+  String get msg_copied => 'Đã sao chép';
+
+  @override
+  String get msg_content_empty => 'Nội dung trống';
+
+  @override
   String get msg_scan_permission_denied => 'Quyền truy cập quét đã bị từ chối';
 
   @override

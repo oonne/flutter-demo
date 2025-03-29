@@ -122,6 +122,12 @@
   "msg_operation_failed": "操作失敗",
   "@msg_operation_failed": {},
 
+  "msg_copied": "已複製",
+  "@msg_copied": {},
+
+  "msg_content_empty": "內容為空",
+  "@msg_content_empty": {},
+
   "msg_scan_permission_denied": "申請掃碼權限被拒絕",
   "@msg_scan_permission_denied": {},
 

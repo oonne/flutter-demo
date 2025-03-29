@@ -122,6 +122,12 @@
   "msg_operation_failed": "La operación falló",
   "@msg_operation_failed": {},
 
+  "msg_copied": "Copiado",
+  "@msg_copied": {},
+
+  "msg_content_empty": "El contenido está vacío",
+  "@msg_content_empty": {},
+
   "msg_scan_permission_denied": "Permiso de escaneo denegado",
   "@msg_scan_permission_denied": {},
 

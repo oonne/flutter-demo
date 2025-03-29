@@ -62,6 +62,8 @@ class _ScanResultViewState extends State<ScanResultView> {
                     padding: const EdgeInsets.all(16),
                     child: TextField(
                       controller: viewModel.resultTextController,
+                      maxLines: null,
+                      textInputAction: TextInputAction.newline,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(12),
@@ -72,9 +74,15 @@ class _ScanResultViewState extends State<ScanResultView> {
                   /* 
                    * 复制按钮
                    */
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text(AppLocalizations.of(context)!.btn_copy),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        viewModel.copy(context);
+                      },
+                      child: Text(AppLocalizations.of(context)!.btn_copy),
+                    ),
                   ),
                 ],
               ),

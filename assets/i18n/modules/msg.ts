@@ -34,8 +34,38 @@ const msg: ILangMsgs = {
     ko_KR: "작업에 실패했습니다",
     vi_VN: "Hoạt động không thành công",
   },
+  // 已复制
+  msg_copied: {
+    zh_CN: "已复制",
+    zh_TW: "已複製",
+    en_US: "Copied",
+    ru_RU: "Скопировано",
+    fr_FR: "Copié",
+    es_ES: "Copiado",
+    it_IT: "Copiato",
+    pt_PT: "Copiado",
+    de_DE: "Kopiert",
+    ja_JP: "コピーされました",
+    ko_KR: "복사되었습니다",
+    vi_VN: "Đã sao chép",
+  },
+  // 内容为空
+  msg_content_empty: {
+    zh_CN: "内容为空",
+    zh_TW: "內容為空",
+    en_US: "Content is empty",
+    ru_RU: "Содержимое пусто",
+    fr_FR: "Le contenu est vide",
+    es_ES: "El contenido está vacío",
+    it_IT: "Il contenuto è vuoto",
+    pt_PT: "O conteúdo está vazio",
+    de_DE: "Der Inhalt ist leer",
+    ja_JP: "内容が空です",
+    ko_KR: "내용이 없습니다",
+    vi_VN: "Nội dung trống",
+  },
 
-  /* 
+  /*
    * 扫码
    */
   // 申请扫码权限被拒绝
@@ -98,8 +128,8 @@ const msg: ILangMsgs = {
     ko_KR: "바코드 또는 QR 코드가 감지되지 않았습니다",
     vi_VN: "Không tìm thấy mã vạch hoặc mã QR",
   },
-  
-  /* 
+
+  /*
    * 登录
    */
   // 请先阅读协议
@@ -130,10 +160,8 @@ const msg: ILangMsgs = {
     de_DE: "Die Anmeldung ist fehlgeschlagen",
     ja_JP: "ログインに失敗しました",
     ko_KR: "로그인에 실패했습니다",
-    vi_VN: "Đăng nhập không thành công"
+    vi_VN: "Đăng nhập không thành công",
   },
 };
-
-
 
 export default msg;

@@ -132,6 +132,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get msg_operation_failed => 'A operação falhou';
 
   @override
+  String get msg_copied => 'Copiado';
+
+  @override
+  String get msg_content_empty => 'O conteúdo está vazio';
+
+  @override
   String get msg_scan_permission_denied => 'Permissão de escaneamento negada';
 
   @override

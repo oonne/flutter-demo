@@ -122,6 +122,12 @@
   "msg_operation_failed": "Операция не удалась",
   "@msg_operation_failed": {},
 
+  "msg_copied": "Скопировано",
+  "@msg_copied": {},
+
+  "msg_content_empty": "Содержимое пусто",
+  "@msg_content_empty": {},
+
   "msg_scan_permission_denied": "Разрешение сканирования отклонено",
   "@msg_scan_permission_denied": {},
 

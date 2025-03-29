@@ -360,6 +360,18 @@ abstract class AppLocalizations {
   /// **'Operation failed'**
   String get msg_operation_failed;
 
+  /// No description provided for @msg_copied.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied'**
+  String get msg_copied;
+
+  /// No description provided for @msg_content_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'Content is empty'**
+  String get msg_content_empty;
+
   /// No description provided for @msg_scan_permission_denied.
   ///
   /// In en, this message translates to:

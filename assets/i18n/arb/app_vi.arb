@@ -122,6 +122,12 @@
   "msg_operation_failed": "Hoạt động không thành công",
   "@msg_operation_failed": {},
 
+  "msg_copied": "Đã sao chép",
+  "@msg_copied": {},
+
+  "msg_content_empty": "Nội dung trống",
+  "@msg_content_empty": {},
+
   "msg_scan_permission_denied": "Quyền truy cập quét đã bị từ chối",
   "@msg_scan_permission_denied": {},
 

@@ -122,6 +122,12 @@
   "msg_operation_failed": "操作に失敗しました",
   "@msg_operation_failed": {},
 
+  "msg_copied": "コピーされました",
+  "@msg_copied": {},
+
+  "msg_content_empty": "内容が空です",
+  "@msg_content_empty": {},
+
   "msg_scan_permission_denied": "スキャン許可が拒否されました",
   "@msg_scan_permission_denied": {},
 

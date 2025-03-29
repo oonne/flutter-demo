@@ -132,6 +132,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get msg_operation_failed => 'Operation failed';
 
   @override
+  String get msg_copied => 'Copied';
+
+  @override
+  String get msg_content_empty => 'Content is empty';
+
+  @override
   String get msg_scan_permission_denied => 'Scan permission denied';
 
   @override

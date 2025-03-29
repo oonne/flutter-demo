@@ -132,6 +132,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get msg_operation_failed => 'Операция не удалась';
 
   @override
+  String get msg_copied => 'Скопировано';
+
+  @override
+  String get msg_content_empty => 'Содержимое пусто';
+
+  @override
   String get msg_scan_permission_denied => 'Разрешение сканирования отклонено';
 
   @override

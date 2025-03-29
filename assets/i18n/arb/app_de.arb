@@ -122,6 +122,12 @@
   "msg_operation_failed": "Die Operation ist fehlgeschlagen",
   "@msg_operation_failed": {},
 
+  "msg_copied": "Kopiert",
+  "@msg_copied": {},
+
+  "msg_content_empty": "Der Inhalt ist leer",
+  "@msg_content_empty": {},
+
   "msg_scan_permission_denied": "Scannen-Berechtigung wurde abgelehnt",
   "@msg_scan_permission_denied": {},
 

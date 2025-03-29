@@ -132,6 +132,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get msg_operation_failed => '操作に失敗しました';
 
   @override
+  String get msg_copied => 'コピーされました';
+
+  @override
+  String get msg_content_empty => '内容が空です';
+
+  @override
   String get msg_scan_permission_denied => 'スキャン許可が拒否されました';
 
   @override

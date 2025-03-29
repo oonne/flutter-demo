@@ -132,6 +132,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get msg_operation_failed => '작업에 실패했습니다';
 
   @override
+  String get msg_copied => '복사되었습니다';
+
+  @override
+  String get msg_content_empty => '내용이 없습니다';
+
+  @override
   String get msg_scan_permission_denied => '스캔 권한이 거부되었습니다';
 
   @override

@@ -132,6 +132,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get msg_operation_failed => '操作失败';
 
   @override
+  String get msg_copied => '已复制';
+
+  @override
+  String get msg_content_empty => '内容为空';
+
+  @override
   String get msg_scan_permission_denied => '申请扫码权限被拒绝';
 
   @override
@@ -294,6 +300,12 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get msg_operation_failed => '操作失敗';
+
+  @override
+  String get msg_copied => '已複製';
+
+  @override
+  String get msg_content_empty => '內容為空';
 
   @override
   String get msg_scan_permission_denied => '申請掃碼權限被拒絕';
