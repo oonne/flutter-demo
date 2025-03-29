@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -30,8 +31,20 @@ class _ScanViewState extends State<ScanView> {
   void initState() {
     super.initState();
     viewModel = ScanViewModel();
+
+    // 启动扫码
+    unawaited(viewModel.controller.start());
   }
 
+  /* 
+   * 离开页面
+   */
+  @override
+  Future<void> dispose() async {
+    super.dispose();
+    // 释放扫描器资源
+    await viewModel.controller.dispose();
+  }
 
   /* 
    * 播放声音
@@ -47,11 +60,11 @@ class _ScanViewState extends State<ScanView> {
   @override
   Widget build(BuildContext context) {
     // 定义扫描窗口区域
-    // late final scanWindow = Rect.fromCenter(
-    //   center: MediaQuery.sizeOf(context).center(const Offset(0, -150)),
-    //   width: 300,
-    //   height: 300,
-    // );
+    late final scanWindow = Rect.fromCenter(
+      center: MediaQuery.sizeOf(context).center(const Offset(0, -150)),
+      width: 300,
+      height: 300,
+    );
 
     return ChangeNotifierProvider.value(
       value: viewModel,
@@ -66,15 +79,19 @@ class _ScanViewState extends State<ScanView> {
             ),
             body: SafeArea(
               child: SingleChildScrollView(
-                child: Column(children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      playSound();
-                    },
-                    child: Text('播放声音'),
-                  ),
-                  ScannerErrorWidget(error: MobileScannerException(errorCode: MobileScannerErrorCode.permissionDenied)),
-                ]),
+                child: Column(
+                  children: [
+                    // 扫描器
+                    MobileScanner(
+                      scanWindow: scanWindow,
+                      controller: viewModel.controller,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, child) {
+                        return ScannerErrorWidget(error: error);
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
           );
