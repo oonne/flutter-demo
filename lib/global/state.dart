@@ -8,6 +8,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_demo/config/lang_list.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/utils/utils.dart';
+import 'package:flutter_demo/models/staff.dart';
 
 /*
  * 全局的状态管理
@@ -161,8 +162,10 @@ class GlobalState extends ChangeNotifier {
    * 用户信息
    */
   // 记录用户信息
-  Future<void> setStaffInfo(Map<String, dynamic> info) async {
-    // TODO
+  Future<void> setStaffInfo(IStaff staffInfo) async {
+    log.config("设置用户信息: ${staffInfo.toJson()}");
+    log.config("设置用户信息: ${staffInfo.name}");
+    log.config("设置用户信息: ${staffInfo.role}");
   }
 
   // 记录token刷新时间

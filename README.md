@@ -15,6 +15,7 @@ flutter 基础项目
 * 二维码扫描(mobile_scanner)
 * 本地图片选择(image_picker)
 * 国际化(flutter_localizations)
+* JSON序列化(json_annotation)
 * 自定义字体
 * 深浅主题切换
 * 全局样式
@@ -25,7 +26,7 @@ flutter 基础项目
 * 底部弹框 BottomSheet
 * 提示 SnackBar
 * MVVM页面示例
-* TODO 账号密码登录页面（包含pow校验）
+* 账号密码登录页面（包含pow校验）
 * TODO 定时换票
 * TODO 列表上拉加载和下拉刷新(easy_refresh)
 
@@ -41,3 +42,10 @@ ipa需要使用 Transporter 上传。
 本地安装Node.js环境，然后运行 npm install -g tsx 全局安装 tsx 依赖。
 每次由ts文件生成arb文件，须运行: 
 tsx ./scripts/generate_arb.ts 
+
+## 生成类型定义
+一次性生成
+dart run build_runner build --delete-conflicting-outputs
+
+监听生成
+dart run build_runner watch --delete-conflicting-outputs
