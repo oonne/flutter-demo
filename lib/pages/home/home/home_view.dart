@@ -44,7 +44,9 @@ class _HomeViewState extends State<HomeView> {
                 child: Column(children: [
                   ElevatedButton(
                     onPressed: () {
-                      GoRouter.of(context).pushNamed('scan');
+                      GoRouter.of(context).pushNamed('scan/result', extra: {
+                        'result': '1234567890',
+                      });
                     },
                     child: const Text('扫码'),
                   ),

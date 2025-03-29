@@ -62,9 +62,9 @@ class _ScanResultViewState extends State<ScanResultView> {
                     padding: const EdgeInsets.all(16),
                     child: TextField(
                       controller: viewModel.resultTextController,
-                      readOnly: false,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
+                        contentPadding: EdgeInsets.all(12),
                       ),
                     ),
                   ),
