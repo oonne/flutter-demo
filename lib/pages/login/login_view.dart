@@ -73,10 +73,22 @@ class _LoginViewState extends State<LoginView> {
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: TextField(
                       controller: viewModel.passwordController,
+                      obscureText: !viewModel.isPasswordVisible,
                       decoration: InputDecoration(
                         labelText: '密码',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(12),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            viewModel.isPasswordVisible 
+                              ? Icons.visibility 
+                              : Icons.visibility_off,
+                            size: 16,
+                          ),
+                          onPressed: () {
+                            viewModel.togglePasswordVisibility();
+                          },
+                        ),
                       ),
                     ),
                   ),

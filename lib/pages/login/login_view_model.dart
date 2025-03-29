@@ -12,6 +12,15 @@ class LoginViewModel extends ChangeNotifier {
    */
   final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  
+  // 密码是否可见
+  bool get isPasswordVisible => model.isPasswordVisible;
+  
+  // 切换密码可见状态
+  void togglePasswordVisibility() {
+    model.isPasswordVisible = !model.isPasswordVisible;
+    notifyListeners();
+  }
 
   /* 
    * 登录
