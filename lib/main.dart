@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 
+import 'package:flutter_demo/global/periodic_tasks.dart';
 import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/utils/log.dart';
@@ -34,6 +35,9 @@ Future<void> main() async {
   // 初始化全局状态
   final globalState = GlobalState();
   await globalState.init();
+
+  // 定时token刷新任务
+  RefreshTokenManager().start();
 
   // 启动应用
   runApp(MainApp(globalState: globalState));

@@ -160,11 +160,11 @@ class GlobalState extends ChangeNotifier {
   }
 
   /* 
-   * 用户信息
+   * 账户信息
    */
   IStaff? staffInfo;
 
-  // 记录用户信息
+  // 记录账户信息
   Future<void> setStaffInfo(IStaff info) async {
     staffInfo = info;
     notifyListeners();
@@ -173,7 +173,7 @@ class GlobalState extends ChangeNotifier {
     await prefs.setString('STAFF_INFO', info.toJson().toString());
   }
 
-  // 读取用户信息
+  // 读取账户信息
   Future<void> getStaffInfo() async {
     final prefs = await SharedPreferences.getInstance();
     final staffInfoString = prefs.getString('STAFF_INFO');
