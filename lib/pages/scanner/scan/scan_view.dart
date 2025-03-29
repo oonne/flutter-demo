@@ -110,7 +110,7 @@ class _ScanViewState extends State<ScanView> {
                   bottom: 108,
                   child: InkWell(
                     onTap: () {
-                      viewModel.toggleFlashlight();
+                      viewModel.controller.toggleTorch();
                     },
                     child: Container(
                       width: 64,
@@ -134,6 +134,36 @@ class _ScanViewState extends State<ScanView> {
                 ),
 
                 /* 
+                 * 切换相机
+                 */
+                Positioned(
+                  right: 48,
+                  bottom: 108,
+                  child: InkWell(
+                    onTap: () {
+                    },
+                    child: Container(
+                      width: 64,
+                      height: 64,
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: .5),
+                        shape: BoxShape.circle,
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/icon/switch-camera.svg',
+                        width: 32,
+                        height: 32,
+                        colorFilter: ColorFilter.mode(
+                          Colors.white,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                /* 
                  * 选择照片
                  */
                 Positioned(
@@ -141,7 +171,6 @@ class _ScanViewState extends State<ScanView> {
                   bottom: 108,
                   child: InkWell(
                     onTap: () {
-                      viewModel.toggleFlashlight();
                     },
                     child: Container(
                       width: 64,

@@ -42,13 +42,6 @@ class ScanViewModel extends ChangeNotifier {
   );
 
   /* 
-   * 切换手电筒
-   */
-  void toggleFlashlight() {
-    model.flashlight = !model.flashlight;
-  }
-
-  /* 
    * 扫码回调
    */
   Future<void> onDetect(BuildContext context, BarcodeCapture barcode) async {
