@@ -138,6 +138,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get msg_scan_failed => '扫码失败';
 
   @override
+  String get msg_no_barcode_detected => '未检测到条码或二维码';
+
+  @override
   String get msg_read_agreement => '请先阅读协议';
 
   @override
@@ -294,6 +297,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get msg_scan_failed => '掃碼失敗';
+
+  @override
+  String get msg_no_barcode_detected => '未檢測到條碼或二維碼';
 
   @override
   String get msg_read_agreement => '請先閱讀協議';

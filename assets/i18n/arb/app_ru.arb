@@ -128,6 +128,9 @@
   "msg_scan_failed": "Сканирование не удалось",
   "@msg_scan_failed": {},
 
+  "msg_no_barcode_detected": "Ни один штрих-код или QR-код не обнаружен",
+  "@msg_no_barcode_detected": {},
+
   "msg_read_agreement": "Пожалуйста, прочитайте соглашение",
   "@msg_read_agreement": {},
 

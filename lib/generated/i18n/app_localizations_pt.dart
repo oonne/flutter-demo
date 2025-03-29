@@ -138,6 +138,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get msg_scan_failed => 'O escaneamento falhou';
 
   @override
+  String get msg_no_barcode_detected => 'Nenhum código de barras ou código QR foi detectado';
+
+  @override
   String get msg_read_agreement => 'Leia primeiro o acordo';
 
   @override

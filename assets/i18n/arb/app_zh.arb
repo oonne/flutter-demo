@@ -128,6 +128,9 @@
   "msg_scan_failed": "扫码失败",
   "@msg_scan_failed": {},
 
+  "msg_no_barcode_detected": "未检测到条码或二维码",
+  "@msg_no_barcode_detected": {},
+
   "msg_read_agreement": "请先阅读协议",
   "@msg_read_agreement": {},
 

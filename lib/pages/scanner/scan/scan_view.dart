@@ -4,10 +4,12 @@ import 'package:provider/provider.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:image_picker/image_picker.dart';
 
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
+import 'package:flutter_demo/utils/message.dart';
 
 import 'scan_view_model.dart';
 import 'widget/scanner_error_widget.dart';
@@ -49,6 +51,29 @@ class _ScanViewState extends State<ScanView> {
   Future<void> dispose() async {
     super.dispose();
     await viewModel.cleanup();
+  }
+
+  /* 
+   * 选择照片
+   */
+  Future<void> pickImage(context) async {
+    final image = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+    );
+    if (image == null) {
+      return;
+    }
+
+    final barcodes = await viewModel.controller.analyzeImage(image.path);
+    if (barcodes == null) {
+      showTextSnackBar(
+        context,
+        msg: AppLocalizations.of(context)!.msg_no_barcode_detected,
+      );
+      return;
+    }
+
+    viewModel.onDetect(context, barcodes);
   }
 
   /* 
@@ -165,12 +190,13 @@ class _ScanViewState extends State<ScanView> {
                           ),
                         ),
                       ),
-                      
+
                       /* 
                        * 选择照片
                        */
                       InkWell(
                         onTap: () {
+                          pickImage(context);
                         },
                         child: Container(
                           width: 64,

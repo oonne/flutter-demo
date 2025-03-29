@@ -128,6 +128,9 @@
   "msg_scan_failed": "Quét không thành công",
   "@msg_scan_failed": {},
 
+  "msg_no_barcode_detected": "Không tìm thấy mã vạch hoặc mã QR",
+  "@msg_no_barcode_detected": {},
+
   "msg_read_agreement": "Vui lòng đọc thỏa thuận trước",
   "@msg_read_agreement": {},
 

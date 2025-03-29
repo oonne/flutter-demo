@@ -138,6 +138,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get msg_scan_failed => '스캔에 실패했습니다';
 
   @override
+  String get msg_no_barcode_detected => '바코드 또는 QR 코드가 감지되지 않았습니다';
+
+  @override
   String get msg_read_agreement => '먼저 계약을 읽으십시오';
 
   @override

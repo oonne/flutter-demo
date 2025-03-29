@@ -372,6 +372,12 @@ abstract class AppLocalizations {
   /// **'Scan failed'**
   String get msg_scan_failed;
 
+  /// No description provided for @msg_no_barcode_detected.
+  ///
+  /// In en, this message translates to:
+  /// **'No barcode or QR code detected'**
+  String get msg_no_barcode_detected;
+
   /// No description provided for @msg_read_agreement.
   ///
   /// In en, this message translates to:

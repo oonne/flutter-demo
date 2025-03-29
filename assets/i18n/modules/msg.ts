@@ -83,6 +83,21 @@ const msg: ILangMsgs = {
     ko_KR: "스캔에 실패했습니다",
     vi_VN: "Quét không thành công",
   },
+  // 未检测到条码或二维码
+  msg_no_barcode_detected: {
+    zh_CN: "未检测到条码或二维码",
+    zh_TW: "未檢測到條碼或二維碼",
+    en_US: "No barcode or QR code detected",
+    ru_RU: "Ни один штрих-код или QR-код не обнаружен",
+    fr_FR: "Aucun code-barres ou QR-code n'a été détecté",
+    es_ES: "No se ha detectado ningún código de barras o código QR",
+    it_IT: "Nessun codice-barre o codice QR è stato rilevato",
+    pt_PT: "Nenhum código de barras ou código QR foi detectado",
+    de_DE: "Kein Strichcode oder QR-Code wurde erkannt",
+    ja_JP: "バーコードまたはQRコードが検出されませんでした",
+    ko_KR: "바코드 또는 QR 코드가 감지되지 않았습니다",
+    vi_VN: "Không tìm thấy mã vạch hoặc mã QR",
+  },
   
   /* 
    * 登录

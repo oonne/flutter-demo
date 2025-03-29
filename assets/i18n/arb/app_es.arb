@@ -128,6 +128,9 @@
   "msg_scan_failed": "El escaneo falló",
   "@msg_scan_failed": {},
 
+  "msg_no_barcode_detected": "No se ha detectado ningún código de barras o código QR",
+  "@msg_no_barcode_detected": {},
+
   "msg_read_agreement": "Por favor lea el acuerdo primero",
   "@msg_read_agreement": {},
 

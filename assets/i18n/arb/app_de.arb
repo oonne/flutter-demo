@@ -128,6 +128,9 @@
   "msg_scan_failed": "Der Scan ist fehlgeschlagen",
   "@msg_scan_failed": {},
 
+  "msg_no_barcode_detected": "Kein Strichcode oder QR-Code wurde erkannt",
+  "@msg_no_barcode_detected": {},
+
   "msg_read_agreement": "Bitte lesen Sie zuerst die Vereinbarung",
   "@msg_read_agreement": {},
 

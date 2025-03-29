@@ -138,6 +138,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get msg_scan_failed => 'スキャンに失敗しました';
 
   @override
+  String get msg_no_barcode_detected => 'バーコードまたはQRコードが検出されませんでした';
+
+  @override
   String get msg_read_agreement => '最初に契約を読み';
 
   @override

@@ -138,6 +138,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get msg_scan_failed => 'El escaneo falló';
 
   @override
+  String get msg_no_barcode_detected => 'No se ha detectado ningún código de barras o código QR';
+
+  @override
   String get msg_read_agreement => 'Por favor lea el acuerdo primero';
 
   @override

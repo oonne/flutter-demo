@@ -138,6 +138,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get msg_scan_failed => 'Quét không thành công';
 
   @override
+  String get msg_no_barcode_detected => 'Không tìm thấy mã vạch hoặc mã QR';
+
+  @override
   String get msg_read_agreement => 'Vui lòng đọc thỏa thuận trước';
 
   @override

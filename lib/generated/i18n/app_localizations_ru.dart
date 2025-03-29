@@ -138,6 +138,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get msg_scan_failed => 'Сканирование не удалось';
 
   @override
+  String get msg_no_barcode_detected => 'Ни один штрих-код или QR-код не обнаружен';
+
+  @override
   String get msg_read_agreement => 'Пожалуйста, прочитайте соглашение';
 
   @override

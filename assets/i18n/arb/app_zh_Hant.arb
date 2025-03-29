@@ -128,6 +128,9 @@
   "msg_scan_failed": "掃碼失敗",
   "@msg_scan_failed": {},
 
+  "msg_no_barcode_detected": "未檢測到條碼或二維碼",
+  "@msg_no_barcode_detected": {},
+
   "msg_read_agreement": "請先閱讀協議",
   "@msg_read_agreement": {},
 
