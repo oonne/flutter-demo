@@ -38,12 +38,38 @@ class _LoginViewState extends State<LoginView> {
            * 页面
            */
           return Scaffold(
-            body: SafeArea(
-              child: SingleChildScrollView(
-                child: Column(children: [
-                  const SizedBox(height: 20),
-                  Text('登录页TODO'),
-                ]),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  /* 
+                   * LOGO
+                   */
+                  Image.asset('assets/img/logo.png', width: 100, height: 100),
+
+                  Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Column(
+                      children: [
+                        /* 
+                          * 账号
+                          */
+                        TextField(
+                          controller: viewModel.nameController,
+                          decoration: const InputDecoration(labelText: '账号'),
+                        ),
+
+                        /* 
+                          * 密码
+                          */
+                        TextField(
+                          controller: viewModel.passwordController,
+                          decoration: const InputDecoration(labelText: '密码'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           );
