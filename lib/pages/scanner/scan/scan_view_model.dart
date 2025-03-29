@@ -15,10 +15,11 @@ class ScanViewModel extends ChangeNotifier {
    * 初始化
    */
   Future<void> init(Map<String, dynamic>? extra) async {
-    // 启动扫码
+    // 清空扫码结果
     model.result = '';
+    // 启动扫码
     unawaited(controller.start());
-
+    // 扫码后是否返回，默认不返回，跳转到结果页
     model.returnAfterScan = extra?['returnAfterScan'] == true;
   }
 
@@ -71,6 +72,6 @@ class ScanViewModel extends ChangeNotifier {
     }
 
     // 扫码后跳到结果页面
-    GoRouter.of(context).pushNamed('scan/result', extra: {'result': result});
+    GoRouter.of(context).pushReplacementNamed('scan/result', extra: {'result': result});
   }
 }

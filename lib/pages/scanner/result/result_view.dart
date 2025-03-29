@@ -27,6 +27,13 @@ class _ResultViewState extends State<ResultView> {
   void initState() {
     super.initState();
     viewModel = ResultViewModel();
+
+    // 在下一帧初始化 viewModel
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final queryParameters =
+          GoRouterState.of(context).extra as Map<String, dynamic>?;
+      viewModel.init(queryParameters);
+    });
   }
 
   /* 
@@ -48,12 +55,7 @@ class _ResultViewState extends State<ResultView> {
             body: SafeArea(
               child: SingleChildScrollView(
                 child: Column(children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      GoRouter.of(context).pushNamed('scan');
-                    },
-                    child: const Text('扫码'),
-                  ),
+                  Text(viewModel.result),
                 ]),
               ),
             ),
