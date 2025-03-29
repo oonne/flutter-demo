@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:crypto/crypto.dart';
 
 import 'package:flutter_demo/api/modules/auth.dart';
+import 'package:flutter_demo/config/config.dart';
+import 'package:flutter_demo/utils/utils.dart';
 
 import 'login_model.dart';
 
@@ -45,11 +49,43 @@ class LoginViewModel extends ChangeNotifier {
     return isValid;
   }
 
+  /*
+   * 计算登录pow
+   */
+  Future<String> calcLoginPow(String name) async {
+    var [err, res] = await AuthApi.getLoginPow({
+      'name': name,
+    });
+    
+    if (err != null) {
+      return '';
+    }
+
+    final salt = res['data']['salt'];
+    final result = res['data']['result'];
+    
+    if (salt == null || result == null) {
+      return '';
+    }
+
+    String powKey = '';
+
+    while (true) {
+      powKey = randomString(32);
+      final hash = sha512.convert(utf8.encode(powKey + salt)).toString();
+
+      if (hash.substring(hash.length - loginPowLength) == result.substring(result.length - loginPowLength)) {
+        break;
+      }
+    }
+    return powKey;
+  }
+
   /* 
    * 登录
    */
   // 登录
-  void login() {
+  Future<void> login() async {
     if (model.isLoading) {
       return;
     }
@@ -63,7 +99,8 @@ class LoginViewModel extends ChangeNotifier {
     notifyListeners();
 
     // 登录逻辑
-    // TODO
+    final powKey = await calcLoginPow(nameController.text);
+    debugPrint('powKey: $powKey');
 
     model.isLoading = false;
     notifyListeners();
