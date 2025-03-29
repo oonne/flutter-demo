@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
@@ -75,27 +77,94 @@ class _ScanViewState extends State<ScanView> {
               title: Text(AppLocalizations.of(context)!.title_scan),
             ),
             body: Stack(
-                children: [
-                  // 扫描器
-                  MobileScanner(
-                    scanWindow: scanWindow,
-                    controller: viewModel.controller,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, child) {
-                      return ScannerErrorWidget(error: error);
+              children: [
+                /* 
+                 * 扫描器
+                 */
+                MobileScanner(
+                  scanWindow: scanWindow,
+                  controller: viewModel.controller,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, child) {
+                    return ScannerErrorWidget(error: error);
+                  },
+                  onDetect: (barcode) {
+                    viewModel.onDetect(context, barcode);
+                  },
+                ),
+
+                /* 
+                 * 扫描窗口覆盖层
+                 */
+                ScanWindowOverlay(
+                  scanWindow: scanWindow,
+                  borderRadius: BorderRadius.circular(themeVars.radius),
+                  controller: viewModel.controller,
+                ),
+
+                /* 
+                 * 手电筒
+                 */
+                Positioned(
+                  left: 48,
+                  bottom: 108,
+                  child: InkWell(
+                    onTap: () {
+                      viewModel.toggleFlashlight();
                     },
-                    onDetect: (barcode) {
-                      viewModel.onDetect(context, barcode);
+                    child: Container(
+                      width: 64,
+                      height: 64,
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: .5),
+                        shape: BoxShape.circle,
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/icon/flashlight.svg',
+                        width: 32,
+                        height: 32,
+                        colorFilter: ColorFilter.mode(
+                          Colors.white,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                /* 
+                 * 选择照片
+                 */
+                Positioned(
+                  right: 48,
+                  bottom: 108,
+                  child: InkWell(
+                    onTap: () {
+                      viewModel.toggleFlashlight();
                     },
+                    child: Container(
+                      width: 64,
+                      height: 64,
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: .5),
+                        shape: BoxShape.circle,
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/icon/picture-fill.svg',
+                        width: 32,
+                        height: 32,
+                        colorFilter: ColorFilter.mode(
+                          Colors.white,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                    ),
                   ),
-                  // 扫描窗口覆盖层
-                  ScanWindowOverlay(
-                    scanWindow: scanWindow,
-                    borderRadius: BorderRadius.circular(themeVars.radius),
-                    controller: viewModel.controller,
-                  ),
-                ],
-              ),
+                ),
+              ],
+            ),
           );
         },
       ),
