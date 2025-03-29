@@ -9,7 +9,7 @@ import 'package:flutter_demo/layout/custom_app_bar.dart';
 
 import 'scan_view_model.dart';
 import 'widget/scanner_error_widget.dart';
-
+import 'widget/scan_window_overlay.dart';
 /* 
  * 扫码页面
  */
@@ -77,22 +77,23 @@ class _ScanViewState extends State<ScanView> {
             appBar: CustomAppBar(
               title: Text(AppLocalizations.of(context)!.title_scan),
             ),
-            body: SafeArea(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    // 扫描器
-                    MobileScanner(
-                      scanWindow: scanWindow,
-                      controller: viewModel.controller,
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, child) {
-                        return ScannerErrorWidget(error: error);
-                      },
-                    ),
-                  ],
+            body: Stack(
+              children: [
+                // 扫描器
+                MobileScanner(
+                  scanWindow: scanWindow,
+                  controller: viewModel.controller,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, child) {
+                    return ScannerErrorWidget(error: error);
+                  },
                 ),
-              ),
+                // 扫描窗口覆盖层
+                ScanWindowOverlay(
+                  scanWindow: scanWindow,
+                  controller: viewModel.controller,
+                ),
+              ],
             ),
           );
         },
