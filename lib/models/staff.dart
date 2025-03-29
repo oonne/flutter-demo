@@ -31,6 +31,7 @@ class IStaff {
   final String name; // 名称
   final StaffRole? role; // 角色
 
+
   factory IStaff.fromJson(json) => _$IStaffFromJson(json);
 
   Map<String, dynamic> toJson() => _$IStaffToJson(this);

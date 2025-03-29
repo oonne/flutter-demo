@@ -100,9 +100,6 @@ Future<List<dynamic>> req({String method = 'POST', required String url, Map<Stri
     log.warning('💥请求错误', {'url': url, '错误信息': e});
   }
 
-  // Token过期处理
-  // TODO
-
   // 当Code不为0时，抛出异常
   if (res != null && res['code'] != 0) {
     err = {

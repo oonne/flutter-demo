@@ -6,6 +6,7 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+import 'package:flutter_demo/global/event_bus.dart';
 import 'package:flutter_demo/config/lang_list.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/utils/utils.dart';
@@ -182,12 +183,6 @@ class GlobalState extends ChangeNotifier {
     }
   }
 
-  // 记录token刷新时间
-  Future<void> setTokenRefreshTime() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setInt('TOKEN_REFRESH_TIME', DateTime.now().millisecondsSinceEpoch);
-  }
-
   /*
    * 清空所有信息
    * （退出登录的时候调用）
@@ -197,6 +192,10 @@ class GlobalState extends ChangeNotifier {
     prefs.remove('TOKEN');
     prefs.remove('REFRESH_TOKEN');
     prefs.remove('STAFF_INFO');
+    prefs.remove('TOKEN_REFRESH_TIME');
+
+    staffInfo = null;
+    notifyListeners();
   }
 
   /* 
@@ -210,5 +209,10 @@ class GlobalState extends ChangeNotifier {
       initEnv(),
       getStaffInfo(),
     ]);
+
+    // 监听退出登录事件
+    eventBus.on<LogoutEvent>().listen((event) {
+      clear();
+    });
   }
 }

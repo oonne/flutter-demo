@@ -2,9 +2,14 @@
  * 定时任务
  */
 import 'dart:async';
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:flutter_demo/global/event_bus.dart';
 import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/utils/log.dart';
+import 'package:flutter_demo/api/modules/auth.dart';
+import 'package:flutter_demo/models/staff.dart';
 
 /* 
  * 刷新token
@@ -35,7 +40,7 @@ class RefreshTokenManager {
     // 如果已存在定时器，先取消
     _timer?.cancel();
     
-    _timer = Timer.periodic(Duration(milliseconds: tokenRefreshTime), (timer) {
+    _timer = Timer.periodic(Duration(hours: 1), (timer) {
       _executeTask();
     });
   }
@@ -52,6 +57,41 @@ class RefreshTokenManager {
    * 刷新toekn任务
    */
   Future<void> _executeTask() async {
-    log.finest("准备刷新token");
+    final prefs = await SharedPreferences.getInstance();
+    final staffInfoStr = prefs.getString('STAFF_INFO');
+    final refreshToken = prefs.getString('REFRESH_TOKEN');
+    final refreshTime = prefs.getInt('TOKEN_REFRESH_TIME');
+
+    if (refreshToken == null || refreshTime == null || staffInfoStr == null) {
+      return;
+    }
+
+    // 如果当前时间与refreshTime差值小于 tokenRefreshTime，则不用刷新
+    if (DateTime.now().millisecondsSinceEpoch - refreshTime < tokenRefreshTime) {
+      return;
+    }
+
+    final staffInfo = IStaff.fromJson(jsonDecode(staffInfoStr));
+    var [err, res] = await AuthApi.refreshToken({
+      'staffId': staffInfo.staffId,
+      'refreshToken': refreshToken,
+    });
+
+    if (err != null) {
+      if (err['code'] == 'code_1001003') {
+        eventBus.fire(LogoutEvent());
+        log.finest('换票失败，退出登录');
+        return;
+      }
+      log.finest('换票失败');
+      return;
+    }
+
+    // 更新token
+    prefs.setString('TOKEN', res['token']);
+    prefs.setString('REFRESH_TOKEN', res['refreshToken']);
+    prefs.setInt('TOKEN_REFRESH_TIME', DateTime.now().millisecondsSinceEpoch);
+
+    log.finest('换票成功');
   }
 }
