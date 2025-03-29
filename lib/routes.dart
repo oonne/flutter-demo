@@ -24,7 +24,7 @@ import 'package:flutter_demo/pages/demo/custom_font/custom_font_view.dart';
 import 'package:flutter_demo/pages/demo/date_picker/date_picker_view.dart';
 import 'package:flutter_demo/pages/demo/req/req_view.dart';
 import 'package:flutter_demo/pages/demo/scan_code/scan_code_view.dart';
-
+import 'package:flutter_demo/pages/demo/calc_sha/calc_sha_view.dart';
 /*
  * 路由表
  */
@@ -163,6 +163,12 @@ final router = GoRouter(
       name: 'demo/scan_code',
       path: '/demo/scan_code',
       builder: (context, state) => const ScanCodeView(),
+    ),
+    /* 计算SHA */
+    GoRoute(
+      name: 'demo/calc_sha',
+      path: '/demo/calc_sha',
+      builder: (context, state) => const CalcShaView(),
     ),
   ],
 );

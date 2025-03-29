@@ -92,6 +92,13 @@ class _IndexViewState extends State<IndexView> {
                           context.pushNamed('demo/scan_code');
                         },
                       ),
+                      PanelItem(
+                        label: '计算SHA',
+                        showArrow: true,
+                        onTap: () {
+                          context.pushNamed('demo/calc_sha');
+                        },
+                      ),
                     ],
                   ),
                 ],
