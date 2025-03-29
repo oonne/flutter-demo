@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:device_info_plus/device_info_plus.dart';
@@ -161,11 +162,24 @@ class GlobalState extends ChangeNotifier {
   /* 
    * 用户信息
    */
+  IStaff? staffInfo;
+
   // 记录用户信息
-  Future<void> setStaffInfo(IStaff staffInfo) async {
-    log.config("设置用户信息: ${staffInfo.toJson()}");
-    log.config("设置用户信息: ${staffInfo.name}");
-    log.config("设置用户信息: ${staffInfo.role}");
+  Future<void> setStaffInfo(IStaff info) async {
+    staffInfo = info;
+    notifyListeners();
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('STAFF_INFO', info.toJson().toString());
+  }
+
+  // 读取用户信息
+  Future<void> getStaffInfo() async {
+    final prefs = await SharedPreferences.getInstance();
+    final staffInfoString = prefs.getString('STAFF_INFO');
+    if (staffInfoString != null) {
+      staffInfo = IStaff.fromJson(jsonDecode(staffInfoString));
+    }
   }
 
   // 记录token刷新时间
@@ -194,6 +208,7 @@ class GlobalState extends ChangeNotifier {
       initThemeMode(),
       initLocale(),
       initEnv(),
+      getStaffInfo(),
     ]);
   }
 }

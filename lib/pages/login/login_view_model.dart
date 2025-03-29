@@ -139,7 +139,7 @@ class LoginViewModel extends ChangeNotifier {
       return;
     }
 
-    // 登录成功后处理
+    // 登录成功后存储数据
     final prefs = await SharedPreferences.getInstance();
     if (!context.mounted) {
       return;
