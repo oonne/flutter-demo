@@ -20,15 +20,6 @@
   "theme_dark": "Темный",
   "@theme_dark": {},
 
-  "user_agreement": "《Пользовательское соглашение》",
-  "@user_agreement": {},
-
-  "privacy_policy": "《Политика конфиденциальности》",
-  "@privacy_policy": {},
-
-  "and": "и",
-  "@and": {},
-
   "today": "Сегодня",
   "@today": {},
 
@@ -40,6 +31,21 @@
 
   "this_quarter": "Этот квартал",
   "@this_quarter": {},
+
+  "user_agreement": "《Пользовательское соглашение》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《Политика конфиденциальности》",
+  "@privacy_policy": {},
+
+  "and": "и",
+  "@and": {},
+
+  "account": "Аккаунт",
+  "@account": {},
+
+  "password": "Пароль",
+  "@password": {},
 
   "btn_copy": "Копировать",
   "@btn_copy": {},
@@ -70,6 +76,9 @@
 
   "title_scan_result": "Результат сканирования",
   "@title_scan_result": {},
+
+  "info_please_input": "Пожалуйста, введите",
+  "@info_please_input": {},
 
   "info_have_read_and_agree": "Прочитано и согласен",
   "@info_have_read_and_agree": {},

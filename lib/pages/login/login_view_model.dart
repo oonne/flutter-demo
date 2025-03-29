@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
+import 'dart:async';
 
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/api/modules/auth.dart';
 import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/utils/utils.dart';
+import 'package:flutter_demo/utils/log.dart';
+import 'package:flutter_demo/utils/message.dart';
 
 import 'login_model.dart';
 
@@ -26,20 +30,20 @@ class LoginViewModel extends ChangeNotifier {
   /*
   * 表单校验
   */
-  bool validateForm() {
+  bool validateForm(BuildContext context) {
     bool isValid = true;
     model.nameError = null;
     model.passwordError = null;
 
     if (nameController.text.isEmpty) {
-      model.nameError = '请输入账号';
+      model.nameError = '${AppLocalizations.of(context)!.info_please_input} ${AppLocalizations.of(context)!.account}';
       isValid = false;
     } else {
       model.nameError = null;
     }
 
     if (passwordController.text.isEmpty) {
-      model.passwordError = '请输入密码';
+      model.passwordError = '${AppLocalizations.of(context)!.info_please_input} ${AppLocalizations.of(context)!.password}';
       isValid = false;
     } else {
       model.passwordError = null;
@@ -64,7 +68,7 @@ class LoginViewModel extends ChangeNotifier {
     final salt = res['data']['salt'];
     final result = res['data']['result'];
     
-    if (salt == null || result == null) {
+    if (salt.isEmpty || result.isEmpty) {
       return '';
     }
 
@@ -85,13 +89,13 @@ class LoginViewModel extends ChangeNotifier {
    * 登录
    */
   // 登录
-  Future<void> login() async {
+  Future<void> login(BuildContext context) async {
     if (model.isLoading) {
       return;
     }
 
     // 表单验证
-    if (!validateForm()) {
+    if (!validateForm(context)) {
       return;
     }
 
@@ -99,8 +103,20 @@ class LoginViewModel extends ChangeNotifier {
     notifyListeners();
 
     // 登录逻辑
+    final stopwatch = Stopwatch()..start();
     final powKey = await calcLoginPow(nameController.text);
-    debugPrint('powKey: $powKey');
+    stopwatch.stop();
+    log.finest('pow耗时 耗时: ${stopwatch.elapsedMilliseconds} 毫秒');
+    
+    if (powKey.isEmpty) {
+      model.isLoading = false;
+      notifyListeners();
+      if (!context.mounted) {
+        return;
+      }
+      showTextSnackBar(context, msg: '登录失败');
+      return;
+    }
 
     model.isLoading = false;
     notifyListeners();

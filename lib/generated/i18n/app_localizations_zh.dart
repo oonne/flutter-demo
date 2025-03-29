@@ -30,15 +30,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get theme_dark => '深色';
 
   @override
-  String get user_agreement => '《用户协议》';
-
-  @override
-  String get privacy_policy => '《隐私政策》';
-
-  @override
-  String get and => '和';
-
-  @override
   String get today => '今天';
 
   @override
@@ -49,6 +40,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get this_quarter => '本季';
+
+  @override
+  String get user_agreement => '《用户协议》';
+
+  @override
+  String get privacy_policy => '《隐私政策》';
+
+  @override
+  String get and => '和';
+
+  @override
+  String get account => '账号';
+
+  @override
+  String get password => '密码';
 
   @override
   String get btn_copy => '复制';
@@ -79,6 +85,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get title_scan_result => '扫码结果';
+
+  @override
+  String get info_please_input => '请输入';
 
   @override
   String get info_have_read_and_agree => '已阅读并同意';
@@ -200,15 +209,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get theme_dark => '深色';
 
   @override
-  String get user_agreement => '《用戶協議》';
-
-  @override
-  String get privacy_policy => '《隱私政策》';
-
-  @override
-  String get and => '和';
-
-  @override
   String get today => '今天';
 
   @override
@@ -219,6 +219,21 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get this_quarter => '本季';
+
+  @override
+  String get user_agreement => '《用戶協議》';
+
+  @override
+  String get privacy_policy => '《隱私政策》';
+
+  @override
+  String get and => '和';
+
+  @override
+  String get account => '帳號';
+
+  @override
+  String get password => '密碼';
 
   @override
   String get btn_copy => '複製';
@@ -249,6 +264,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get title_scan_result => '掃碼結果';
+
+  @override
+  String get info_please_input => '請輸入';
 
   @override
   String get info_have_read_and_agree => '已閱讀並同意';

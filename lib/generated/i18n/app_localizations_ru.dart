@@ -30,15 +30,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get theme_dark => 'Темный';
 
   @override
-  String get user_agreement => '《Пользовательское соглашение》';
-
-  @override
-  String get privacy_policy => '《Политика конфиденциальности》';
-
-  @override
-  String get and => 'и';
-
-  @override
   String get today => 'Сегодня';
 
   @override
@@ -49,6 +40,21 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get this_quarter => 'Этот квартал';
+
+  @override
+  String get user_agreement => '《Пользовательское соглашение》';
+
+  @override
+  String get privacy_policy => '《Политика конфиденциальности》';
+
+  @override
+  String get and => 'и';
+
+  @override
+  String get account => 'Аккаунт';
+
+  @override
+  String get password => 'Пароль';
 
   @override
   String get btn_copy => 'Копировать';
@@ -79,6 +85,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get title_scan_result => 'Результат сканирования';
+
+  @override
+  String get info_please_input => 'Пожалуйста, введите';
 
   @override
   String get info_have_read_and_agree => 'Прочитано и согласен';

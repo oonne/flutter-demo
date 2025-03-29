@@ -20,15 +20,6 @@
   "theme_dark": "Dark",
   "@theme_dark": {},
 
-  "user_agreement": "《User Agreement》",
-  "@user_agreement": {},
-
-  "privacy_policy": "《Privacy Policy》",
-  "@privacy_policy": {},
-
-  "and": "and",
-  "@and": {},
-
   "today": "Today",
   "@today": {},
 
@@ -40,6 +31,21 @@
 
   "this_quarter": "This Quarter",
   "@this_quarter": {},
+
+  "user_agreement": "《User Agreement》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《Privacy Policy》",
+  "@privacy_policy": {},
+
+  "and": "and",
+  "@and": {},
+
+  "account": "Account",
+  "@account": {},
+
+  "password": "Password",
+  "@password": {},
 
   "btn_copy": "Copy",
   "@btn_copy": {},
@@ -70,6 +76,9 @@
 
   "title_scan_result": "Scan Result",
   "@title_scan_result": {},
+
+  "info_please_input": "Please input",
+  "@info_please_input": {},
 
   "info_have_read_and_agree": "Have read and agreed",
   "@info_have_read_and_agree": {},

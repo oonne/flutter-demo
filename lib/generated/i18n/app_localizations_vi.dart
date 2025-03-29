@@ -30,15 +30,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get theme_dark => 'Tối';
 
   @override
-  String get user_agreement => '《Thỏa thuận người dùng》';
-
-  @override
-  String get privacy_policy => '《Chính sách bảo mật》';
-
-  @override
-  String get and => 'và';
-
-  @override
   String get today => 'Hôm nay';
 
   @override
@@ -49,6 +40,21 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get this_quarter => 'Quý này';
+
+  @override
+  String get user_agreement => '《Thỏa thuận người dùng》';
+
+  @override
+  String get privacy_policy => '《Chính sách bảo mật》';
+
+  @override
+  String get and => 'và';
+
+  @override
+  String get account => 'Tài khoản';
+
+  @override
+  String get password => 'Mật khẩu';
 
   @override
   String get btn_copy => 'Sao chép';
@@ -79,6 +85,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get title_scan_result => 'Kết quả quét';
+
+  @override
+  String get info_please_input => 'Vui lòng nhập';
 
   @override
   String get info_have_read_and_agree => 'Đã đọcvà đồng ý';

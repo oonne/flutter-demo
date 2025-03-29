@@ -30,15 +30,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get theme_dark => '어두운';
 
   @override
-  String get user_agreement => '《사용자 계약》';
-
-  @override
-  String get privacy_policy => '《개인정보 정책》';
-
-  @override
-  String get and => '와';
-
-  @override
   String get today => '오늘';
 
   @override
@@ -49,6 +40,21 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get this_quarter => '이번 분기';
+
+  @override
+  String get user_agreement => '《사용자 계약》';
+
+  @override
+  String get privacy_policy => '《개인정보 정책》';
+
+  @override
+  String get and => '와';
+
+  @override
+  String get account => '계정';
+
+  @override
+  String get password => '비밀번호';
 
   @override
   String get btn_copy => '복사';
@@ -79,6 +85,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get title_scan_result => '스캔 결과';
+
+  @override
+  String get info_please_input => '입력해주세요';
 
   @override
   String get info_have_read_and_agree => '읽고 약속';

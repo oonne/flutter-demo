@@ -30,15 +30,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get theme_dark => '暗い';
 
   @override
-  String get user_agreement => '《ユーザー契約》';
-
-  @override
-  String get privacy_policy => '《プライバシーポリシー》';
-
-  @override
-  String get and => 'と';
-
-  @override
   String get today => '今日';
 
   @override
@@ -49,6 +40,21 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get this_quarter => '今の四半期';
+
+  @override
+  String get user_agreement => '《ユーザー契約》';
+
+  @override
+  String get privacy_policy => '《プライバシーポリシー》';
+
+  @override
+  String get and => 'と';
+
+  @override
+  String get account => 'アカウント';
+
+  @override
+  String get password => 'パスワード';
 
   @override
   String get btn_copy => 'コピー';
@@ -79,6 +85,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get title_scan_result => 'スキャン結果';
+
+  @override
+  String get info_please_input => '入力してください';
 
   @override
   String get info_have_read_and_agree => '既読と同意';

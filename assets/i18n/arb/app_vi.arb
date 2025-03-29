@@ -20,15 +20,6 @@
   "theme_dark": "Tối",
   "@theme_dark": {},
 
-  "user_agreement": "《Thỏa thuận người dùng》",
-  "@user_agreement": {},
-
-  "privacy_policy": "《Chính sách bảo mật》",
-  "@privacy_policy": {},
-
-  "and": "và",
-  "@and": {},
-
   "today": "Hôm nay",
   "@today": {},
 
@@ -40,6 +31,21 @@
 
   "this_quarter": "Quý này",
   "@this_quarter": {},
+
+  "user_agreement": "《Thỏa thuận người dùng》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《Chính sách bảo mật》",
+  "@privacy_policy": {},
+
+  "and": "và",
+  "@and": {},
+
+  "account": "Tài khoản",
+  "@account": {},
+
+  "password": "Mật khẩu",
+  "@password": {},
 
   "btn_copy": "Sao chép",
   "@btn_copy": {},
@@ -70,6 +76,9 @@
 
   "title_scan_result": "Kết quả quét",
   "@title_scan_result": {},
+
+  "info_please_input": "Vui lòng nhập",
+  "@info_please_input": {},
 
   "info_have_read_and_agree": "Đã đọcvà đồng ý",
   "@info_have_read_and_agree": {},

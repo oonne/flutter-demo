@@ -20,15 +20,6 @@
   "theme_dark": "暗い",
   "@theme_dark": {},
 
-  "user_agreement": "《ユーザー契約》",
-  "@user_agreement": {},
-
-  "privacy_policy": "《プライバシーポリシー》",
-  "@privacy_policy": {},
-
-  "and": "と",
-  "@and": {},
-
   "today": "今日",
   "@today": {},
 
@@ -40,6 +31,21 @@
 
   "this_quarter": "今の四半期",
   "@this_quarter": {},
+
+  "user_agreement": "《ユーザー契約》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《プライバシーポリシー》",
+  "@privacy_policy": {},
+
+  "and": "と",
+  "@and": {},
+
+  "account": "アカウント",
+  "@account": {},
+
+  "password": "パスワード",
+  "@password": {},
 
   "btn_copy": "コピー",
   "@btn_copy": {},
@@ -70,6 +76,9 @@
 
   "title_scan_result": "スキャン結果",
   "@title_scan_result": {},
+
+  "info_please_input": "入力してください",
+  "@info_please_input": {},
 
   "info_have_read_and_agree": "既読と同意",
   "@info_have_read_and_agree": {},

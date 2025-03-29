@@ -156,24 +156,6 @@ abstract class AppLocalizations {
   /// **'Dark'**
   String get theme_dark;
 
-  /// No description provided for @user_agreement.
-  ///
-  /// In en, this message translates to:
-  /// **'《User Agreement》'**
-  String get user_agreement;
-
-  /// No description provided for @privacy_policy.
-  ///
-  /// In en, this message translates to:
-  /// **'《Privacy Policy》'**
-  String get privacy_policy;
-
-  /// No description provided for @and.
-  ///
-  /// In en, this message translates to:
-  /// **'and'**
-  String get and;
-
   /// No description provided for @today.
   ///
   /// In en, this message translates to:
@@ -197,6 +179,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This Quarter'**
   String get this_quarter;
+
+  /// No description provided for @user_agreement.
+  ///
+  /// In en, this message translates to:
+  /// **'《User Agreement》'**
+  String get user_agreement;
+
+  /// No description provided for @privacy_policy.
+  ///
+  /// In en, this message translates to:
+  /// **'《Privacy Policy》'**
+  String get privacy_policy;
+
+  /// No description provided for @and.
+  ///
+  /// In en, this message translates to:
+  /// **'and'**
+  String get and;
+
+  /// No description provided for @account.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
 
   /// No description provided for @btn_copy.
   ///
@@ -257,6 +269,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Scan Result'**
   String get title_scan_result;
+
+  /// No description provided for @info_please_input.
+  ///
+  /// In en, this message translates to:
+  /// **'Please input'**
+  String get info_please_input;
 
   /// No description provided for @info_have_read_and_agree.
   ///

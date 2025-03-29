@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/theme/global.dart';
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 
 import 'login_view_model.dart';
 
@@ -60,7 +61,7 @@ class _LoginViewState extends State<LoginView> {
                     child: TextField(
                       controller: viewModel.nameController,
                       decoration: InputDecoration(
-                        labelText: '账号',
+                        labelText: AppLocalizations.of(context)!.account,
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(12),
                         errorText: viewModel.model.nameError,
@@ -78,7 +79,7 @@ class _LoginViewState extends State<LoginView> {
                       controller: viewModel.passwordController,
                       obscureText: !viewModel.model.isPasswordVisible,
                       decoration: InputDecoration(
-                        labelText: '密码',
+                        labelText: AppLocalizations.of(context)!.password,
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(12),
                         errorText: viewModel.model.passwordError,
@@ -107,7 +108,7 @@ class _LoginViewState extends State<LoginView> {
                     height: themeVars.buttonLargeHeight,
                     child: ElevatedButton(
                       onPressed: () {
-                        viewModel.login();
+                        viewModel.login(context);
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -124,7 +125,7 @@ class _LoginViewState extends State<LoginView> {
                             const SizedBox(width: 8),
                           ],
                           Text(
-                            '登录',
+                            AppLocalizations.of(context)!.btn_login,
                             style: TextStyle(
                               fontSize: themeVars.buttonLargeFontSize,
                             ),

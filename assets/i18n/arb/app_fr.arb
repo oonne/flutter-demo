@@ -20,15 +20,6 @@
   "theme_dark": "Sombre",
   "@theme_dark": {},
 
-  "user_agreement": "《Les conditions d'utilisation》",
-  "@user_agreement": {},
-
-  "privacy_policy": "《Politique de confidentialité》",
-  "@privacy_policy": {},
-
-  "and": "et",
-  "@and": {},
-
   "today": "Aujourd'hui",
   "@today": {},
 
@@ -40,6 +31,21 @@
 
   "this_quarter": "Ce trimestre",
   "@this_quarter": {},
+
+  "user_agreement": "《Les conditions d'utilisation》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《Politique de confidentialité》",
+  "@privacy_policy": {},
+
+  "and": "et",
+  "@and": {},
+
+  "account": "Compte",
+  "@account": {},
+
+  "password": "Mot de passe",
+  "@password": {},
 
   "btn_copy": "Copier",
   "@btn_copy": {},
@@ -70,6 +76,9 @@
 
   "title_scan_result": "Résultat du scan",
   "@title_scan_result": {},
+
+  "info_please_input": "Veuillez entrer",
+  "@info_please_input": {},
 
   "info_have_read_and_agree": "Lu et accepté",
   "@info_have_read_and_agree": {},

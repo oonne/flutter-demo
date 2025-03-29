@@ -111,54 +111,6 @@ const msg: ILangMsgs = {
     ko_KR: "어두운",
     vi_VN: "Tối",
   },
-
-
-  /*
-   * 用户协议
-   */
-  user_agreement: {
-    zh_CN: "《用户协议》",
-    zh_TW: "《用戶協議》",
-    en_US: "《User Agreement》",
-    ru_RU: "《Пользовательское соглашение》",
-    fr_FR: "《Les conditions d'utilisation》",
-    es_ES: "《Acuerdo de Usuario》",
-    it_IT: "《Accordo Utente》",
-    pt_PT: "《Termos de Uso》",
-    de_DE: "《Benutzervereinbarung》",
-    ja_JP: "《ユーザー契約》",
-    ko_KR: "《사용자 계약》",
-    vi_VN: "《Thỏa thuận người dùng》",
-  },
-  privacy_policy: {
-    zh_CN: "《隐私政策》",
-    zh_TW: "《隱私政策》",
-    en_US: "《Privacy Policy》",
-    ru_RU: "《Политика конфиденциальности》",
-    fr_FR: "《Politique de confidentialité》",
-    es_ES: "《Política de privacidad》",
-    it_IT: "《Politica sulla riservatezza》",
-    pt_PT: "《Política de Privacidade》",
-    de_DE: "《Datenschutzrichtlinie》",
-    ja_JP: "《プライバシーポリシー》",
-    ko_KR: "《개인정보 정책》",
-    vi_VN: "《Chính sách bảo mật》",
-  },
-  // 和
-  and: {
-    zh_CN: "和",
-    zh_TW: "和",
-    en_US: "and",
-    ru_RU: "и",
-    fr_FR: "et",
-    es_ES: "y",
-    it_IT: "e",
-    pt_PT: "e",
-    de_DE: "und",
-    ja_JP: "と",
-    ko_KR: "와",
-    vi_VN: "và",
-  },
   
   /*
    * 时间筛选
@@ -222,6 +174,87 @@ const msg: ILangMsgs = {
     ja_JP: "今の四半期",
     ko_KR: "이번 분기",
     vi_VN: "Quý này",
+  },
+
+  /*
+   * 用户协议
+   */
+  user_agreement: {
+    zh_CN: "《用户协议》",
+    zh_TW: "《用戶協議》",
+    en_US: "《User Agreement》",
+    ru_RU: "《Пользовательское соглашение》",
+    fr_FR: "《Les conditions d'utilisation》",
+    es_ES: "《Acuerdo de Usuario》",
+    it_IT: "《Accordo Utente》",
+    pt_PT: "《Termos de Uso》",
+    de_DE: "《Benutzervereinbarung》",
+    ja_JP: "《ユーザー契約》",
+    ko_KR: "《사용자 계약》",
+    vi_VN: "《Thỏa thuận người dùng》",
+  },
+  privacy_policy: {
+    zh_CN: "《隐私政策》",
+    zh_TW: "《隱私政策》",
+    en_US: "《Privacy Policy》",
+    ru_RU: "《Политика конфиденциальности》",
+    fr_FR: "《Politique de confidentialité》",
+    es_ES: "《Política de privacidad》",
+    it_IT: "《Politica sulla riservatezza》",
+    pt_PT: "《Política de Privacidade》",
+    de_DE: "《Datenschutzrichtlinie》",
+    ja_JP: "《プライバシーポリシー》",
+    ko_KR: "《개인정보 정책》",
+    vi_VN: "《Chính sách bảo mật》",
+  },
+  // 和
+  and: {
+    zh_CN: "和",
+    zh_TW: "和",
+    en_US: "and",
+    ru_RU: "и",
+    fr_FR: "et",
+    es_ES: "y",
+    it_IT: "e",
+    pt_PT: "e",
+    de_DE: "und",
+    ja_JP: "と",
+    ko_KR: "와",
+    vi_VN: "và",
+  },
+
+  /* 
+   * 用户字段
+   */
+  /* 账号 */
+  account: {
+    zh_CN: "账号",
+    zh_TW: "帳號",
+    en_US: "Account",
+    ru_RU: "Аккаунт",
+    fr_FR: "Compte",
+    es_ES: "Cuenta",
+    it_IT: "Account",
+    pt_PT: "Conta",
+    de_DE: "Konto",
+    ja_JP: "アカウント",
+    ko_KR: "계정",
+    vi_VN: "Tài khoản",
+  },
+  /* 密码 */
+  password: {
+    zh_CN: "密码",
+    zh_TW: "密碼",
+    en_US: "Password",
+    ru_RU: "Пароль",
+    fr_FR: "Mot de passe",
+    es_ES: "Contraseña",
+    it_IT: "Password",
+    pt_PT: "Palavra-passe",
+    de_DE: "Passwort",
+    ja_JP: "パスワード",
+    ko_KR: "비밀번호",
+    vi_VN: "Mật khẩu",
   },
 };
 

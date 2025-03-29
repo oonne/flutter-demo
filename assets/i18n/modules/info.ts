@@ -4,6 +4,22 @@ import type { ILangMsgs } from "../type";
  * 界面信息 btn_
  */
 const msg: ILangMsgs = {
+  // 请输入
+  info_please_input: {
+    zh_CN: "请输入",
+    zh_TW: "請輸入",
+    en_US: "Please input",
+    ru_RU: "Пожалуйста, введите",
+    fr_FR: "Veuillez entrer",
+    es_ES: "Por favor, ingrese",
+    it_IT: "Per favore, inserisci",
+    pt_PT: "Por favor, insira",
+    de_DE: "Bitte geben Sie ein",
+    ja_JP: "入力してください",
+    ko_KR: "입력해주세요",
+    vi_VN: "Vui lòng nhập",
+  },
+  
   // 已阅读并同意
   info_have_read_and_agree: {
     zh_CN: "已阅读并同意",

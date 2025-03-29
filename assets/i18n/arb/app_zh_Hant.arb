@@ -20,15 +20,6 @@
   "theme_dark": "深色",
   "@theme_dark": {},
 
-  "user_agreement": "《用戶協議》",
-  "@user_agreement": {},
-
-  "privacy_policy": "《隱私政策》",
-  "@privacy_policy": {},
-
-  "and": "和",
-  "@and": {},
-
   "today": "今天",
   "@today": {},
 
@@ -40,6 +31,21 @@
 
   "this_quarter": "本季",
   "@this_quarter": {},
+
+  "user_agreement": "《用戶協議》",
+  "@user_agreement": {},
+
+  "privacy_policy": "《隱私政策》",
+  "@privacy_policy": {},
+
+  "and": "和",
+  "@and": {},
+
+  "account": "帳號",
+  "@account": {},
+
+  "password": "密碼",
+  "@password": {},
 
   "btn_copy": "複製",
   "@btn_copy": {},
@@ -70,6 +76,9 @@
 
   "title_scan_result": "掃碼結果",
   "@title_scan_result": {},
+
+  "info_please_input": "請輸入",
+  "@info_please_input": {},
 
   "info_have_read_and_agree": "已閱讀並同意",
   "@info_have_read_and_agree": {},
