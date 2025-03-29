@@ -44,11 +44,9 @@ class _HomeViewState extends State<HomeView> {
                 child: Column(children: [
                   ElevatedButton(
                     onPressed: () {
-                      GoRouter.of(context).pushNamed('scan/result', extra: {
-                        'result': '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890',
-                      });
+                      GoRouter.of(context).pushNamed('demo/calc_sha');
                     },
-                    child: const Text('扫码'),
+                    child: const Text('计算SHA'),
                   ),
                   const SizedBox(height: 20),
                   Text('首页TODO'),

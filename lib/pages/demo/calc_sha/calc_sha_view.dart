@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
-import 'package:flutter_demo/utils/message.dart';
 
 import 'calc_sha_view_model.dart';
 
@@ -43,29 +41,37 @@ class _CalcShaViewState extends State<CalcShaView> {
            */
           return Scaffold(
             appBar: CustomAppBar(title: const Text('计算SHA')),
-            body: Center(
+            body: SingleChildScrollView(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () async {
-                      final result = await context.pushNamed(
-                        'scan',
-                        extra: {'returnAfterScan': true},
-                      );
-                      if (result != null && context.mounted) {
-                        showTextSnackBar(context, msg: '扫码结果: $result');
-                      }
-                    },
-                    child: const Text('扫码并返回'),
+                  /* 
+                   * 内容
+                   */
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: TextField(
+                      controller: viewModel.contentTextController,
+                      maxLines: null,
+                      textInputAction: TextInputAction.newline,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        contentPadding: EdgeInsets.all(12),
+                      ),
+                    ),
                   ),
 
-                  const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      context.pushNamed('scan');
-                    },
-                    child: const Text('扫码并跳到结果页面'),
+                  /* 
+                   * 计算
+                   */
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        viewModel.calc(context);
+                      },
+                      child: Text('计算'),
+                    ),
                   ),
                 ],
               ),
