@@ -92,6 +92,10 @@ class _ScanViewState extends State<ScanView> {
                     errorBuilder: (context, error, child) {
                       return ScannerErrorWidget(error: error);
                     },
+                    onDetect: (barcode) {
+                      playSound();
+                      viewModel.onDetect(barcode);
+                    },
                   ),
                   // 扫描窗口覆盖层
                   ScanWindowOverlay(

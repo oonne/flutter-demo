@@ -32,4 +32,9 @@ class ScanViewModel extends ChangeNotifier {
   MobileScannerController initController() => MobileScannerController(
     autoStart: true, // 自动开始扫描
   );
+
+  // 扫码回调
+  void onDetect(BarcodeCapture barcode) {
+    debugPrint('扫码结果: ${barcode.barcodes.first.rawValue}');
+  }
 }
