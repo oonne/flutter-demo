@@ -14,7 +14,7 @@ import 'package:flutter_demo/pages/me/about/about_view.dart';
 
 /* 扫码 */
 import 'package:flutter_demo/pages/scanner/scan/scan_view.dart';
-import 'package:flutter_demo/pages/scanner/result/result_view.dart';
+import 'package:flutter_demo/pages/scanner/scan_result/scan_result_view.dart';
 
 /* Demo */
 import 'package:flutter_demo/pages/demo/index/index_view.dart';
@@ -117,7 +117,7 @@ final router = GoRouter(
     GoRoute(
       name: 'scan/result',
       path: '/scan/result',
-      builder: (context, state) => const ResultView(),
+      builder: (context, state) => const ScanResultView(),
     ),
 
     /* 

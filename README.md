@@ -11,7 +11,9 @@ flutter 基础项目
 * 自定义svg图标(flutter_svg)
 * 时间日期选择器(board_datetime_picker)
 * 网络请求(dio)
-* 国际化
+* 二维码扫描(mobile_scanner)
+* 本地图片选择(image_picker)
+* 国际化(flutter_localizations)
 * 自定义字体
 * 深浅主题切换
 * 全局样式
@@ -22,8 +24,6 @@ flutter 基础项目
 * 底部弹框 BottomSheet
 * 提示 SnackBar
 * MVVM页面示例
-* TODO 二维码扫描(mobile_scanner)
-* TODO 本地图片选择
 * TODO 列表上拉加载和下拉刷新(easy_refresh)
 
 # 打包

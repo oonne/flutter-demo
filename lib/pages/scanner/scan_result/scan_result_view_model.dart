@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'result_model.dart';
+import 'scan_result_model.dart';
 
-class ResultViewModel extends ChangeNotifier {
-  final ResultModel model = ResultModel();
+class ScanResultViewModel extends ChangeNotifier {
+  final ScanResultModel model = ScanResultModel();
 
   /* 
    * 初始化

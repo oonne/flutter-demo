@@ -5,20 +5,20 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 
-import 'result_view_model.dart';
+import 'scan_result_view_model.dart';
 
 /* 
- * 首页
+ * 扫码结果
  */
-class ResultView extends StatefulWidget {
-  const ResultView({super.key});
+class ScanResultView extends StatefulWidget {
+  const ScanResultView({super.key});
 
   @override
-  State<ResultView> createState() => _ResultViewState();
+  State<ScanResultView> createState() => _ScanResultViewState();
 }
 
-class _ResultViewState extends State<ResultView> {
-  late final ResultViewModel viewModel;
+class _ScanResultViewState extends State<ScanResultView> {
+  late final ScanResultViewModel viewModel;
 
   /* 
    * 初始化
@@ -26,7 +26,7 @@ class _ResultViewState extends State<ResultView> {
   @override
   void initState() {
     super.initState();
-    viewModel = ResultViewModel();
+    viewModel = ScanResultViewModel();
 
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -43,7 +43,7 @@ class _ResultViewState extends State<ResultView> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: viewModel,
-      child: Consumer<ResultViewModel>(
+      child: Consumer<ScanResultViewModel>(
         builder: (context, viewModel, child) {
           /* 
            * 页面
