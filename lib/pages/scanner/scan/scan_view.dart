@@ -106,11 +106,11 @@ class _ScanViewState extends State<ScanView> {
                  * 底部按钮组
                  */
                 Positioned(
-                  left: 0,
-                  right: 0,
-                  bottom: 128,
+                  left: MediaQuery.sizeOf(context).width / 2 - 150,
+                  right: MediaQuery.sizeOf(context).width / 2 - 150,
+                  bottom: MediaQuery.sizeOf(context).height / 2 - 200,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       /* 
                        * 切换相机
