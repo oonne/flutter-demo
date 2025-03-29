@@ -1,4 +1,6 @@
 import 'dart:math';
+import 'package:crypto/crypto.dart';
+import 'dart:convert';
 
 /* 
  * 获取n以内的随机整数
@@ -47,4 +49,16 @@ String randomString(int length) {
     }
   }
   return result;
+}
+
+/*
+ * 获取哈希值
+ */
+String createHash(String text, [int? maxLen]) {
+  final length = maxLen ?? 16;
+  final hashedText = sha256.convert(utf8.encode(text)).toString();
+  if (hashedText.length > length) {
+    return hashedText.substring(0, length);
+  }
+  return hashedText;
 }

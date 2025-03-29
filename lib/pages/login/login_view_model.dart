@@ -122,7 +122,7 @@ class LoginViewModel extends ChangeNotifier {
     var [err, res] = await AuthApi.login({
       'powKey': powKey,
       'name': nameController.text,
-      'password': passwordController.text,
+      'password': createHash(passwordController.text, 32),
     });
     model.isLoading = false;
     notifyListeners();
