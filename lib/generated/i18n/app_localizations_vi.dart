@@ -165,6 +165,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get msg_login_failed => 'Đăng nhập không thành công';
 
   @override
+  String get msg_logout => 'Đăng xuất';
+
+  @override
   String get unknown_error => 'Lỗi không xác định';
 
   @override

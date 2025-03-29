@@ -165,6 +165,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get msg_login_failed => 'La connexion a échoué';
 
   @override
+  String get msg_logout => 'Déconnexion';
+
+  @override
   String get unknown_error => 'Erreur inconnue';
 
   @override

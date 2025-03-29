@@ -165,6 +165,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get msg_login_failed => '로그인에 실패했습니다';
 
   @override
+  String get msg_logout => '로그아웃되었습니다';
+
+  @override
   String get unknown_error => '알 수 없는 오류';
 
   @override

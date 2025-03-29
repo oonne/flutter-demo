@@ -165,6 +165,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get msg_login_failed => 'Вход не выполнен';
 
   @override
+  String get msg_logout => 'Вышли из системы';
+
+  @override
   String get unknown_error => 'Неизвестная ошибка';
 
   @override

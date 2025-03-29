@@ -426,6 +426,12 @@ abstract class AppLocalizations {
   /// **'Login Failed'**
   String get msg_login_failed;
 
+  /// No description provided for @msg_logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logged out'**
+  String get msg_logout;
+
   /// No description provided for @unknown_error.
   ///
   /// In en, this message translates to:

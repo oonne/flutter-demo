@@ -165,6 +165,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get msg_login_failed => '登录失败';
 
   @override
+  String get msg_logout => '已退出登录';
+
+  @override
   String get unknown_error => '未知错误';
 
   @override
@@ -345,6 +348,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get msg_login_failed => '登入失敗';
+
+  @override
+  String get msg_logout => '已退出登入';
 
   @override
   String get unknown_error => '未知錯誤';

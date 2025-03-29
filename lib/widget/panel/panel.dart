@@ -17,7 +17,7 @@ class Panel extends StatelessWidget {
     final themeVars = getCurrentThemeVars(context);
 
     return Container(
-      margin: EdgeInsets.all(themeVars.panelMargin),
+      margin: EdgeInsets.only(top: themeVars.panelMargin, left: themeVars.panelMargin, right: themeVars.panelMargin),
       width: double.infinity,
       decoration: BoxDecoration(
         color: themeVars.contentBackground,

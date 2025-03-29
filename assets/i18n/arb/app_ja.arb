@@ -155,6 +155,9 @@
   "msg_login_failed": "ログインに失敗しました",
   "@msg_login_failed": {},
 
+  "msg_logout": "ログアウトしました",
+  "@msg_logout": {},
+
   "unknown_error": "未知のエラー",
   "@unknown_error": {},
 

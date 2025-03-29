@@ -155,6 +155,9 @@
   "msg_login_failed": "Die Anmeldung ist fehlgeschlagen",
   "@msg_login_failed": {},
 
+  "msg_logout": "Abmelden",
+  "@msg_logout": {},
+
   "unknown_error": "Unbekannter Fehler",
   "@unknown_error": {},
 

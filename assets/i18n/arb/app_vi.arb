@@ -155,6 +155,9 @@
   "msg_login_failed": "Đăng nhập không thành công",
   "@msg_login_failed": {},
 
+  "msg_logout": "Đăng xuất",
+  "@msg_logout": {},
+
   "unknown_error": "Lỗi không xác định",
   "@unknown_error": {},
 

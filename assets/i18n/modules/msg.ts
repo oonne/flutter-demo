@@ -162,6 +162,21 @@ const msg: ILangMsgs = {
     ko_KR: "로그인에 실패했습니다",
     vi_VN: "Đăng nhập không thành công",
   },
+  // 已退出登录
+  msg_logout: {
+    zh_CN: "已退出登录",
+    zh_TW: "已退出登入",
+    en_US: "Logged out",
+    ru_RU: "Вышли из системы",
+    fr_FR: "Déconnexion",
+    es_ES: "Cierre de sesión",
+    it_IT: "Disconnessione",
+    pt_PT: "Desconexão",
+    de_DE: "Abmelden",
+    ja_JP: "ログアウトしました",
+    ko_KR: "로그아웃되었습니다",
+    vi_VN: "Đăng xuất",
+  },
 };
 
 export default msg;

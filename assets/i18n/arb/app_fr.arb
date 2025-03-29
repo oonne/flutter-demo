@@ -155,6 +155,9 @@
   "msg_login_failed": "La connexion a échoué",
   "@msg_login_failed": {},
 
+  "msg_logout": "Déconnexion",
+  "@msg_logout": {},
+
   "unknown_error": "Erreur inconnue",
   "@unknown_error": {},
 

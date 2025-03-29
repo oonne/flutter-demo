@@ -46,6 +46,8 @@ tsx ./scripts/generate_arb.ts
 ## 生成类型定义
 一次性生成
 dart run build_runner build --delete-conflicting-outputs
+或
+sh ./scripts/build_runner.sh
 
 监听生成
 dart run build_runner watch --delete-conflicting-outputs

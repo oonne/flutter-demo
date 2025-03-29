@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/config/lang_list.dart';
 import 'package:flutter_demo/global/state.dart';
+import 'package:flutter_demo/utils/message.dart';
 import 'package:flutter_demo/widget/bottom_sheet/selection_bottom_sheet.dart';
 
 import 'setting_model.dart';
@@ -116,5 +118,17 @@ class SettingViewModel extends ChangeNotifier {
     await globalState.changeLocale(result);
     model.localeCode = result;
     notifyListeners();
+  }
+
+  /* 
+   * 退出登录
+   */
+  Future<void> logout(BuildContext context) async {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+    await globalState.clear();
+    if (!context.mounted) {
+      return;
+    }
+    showTextSnackBar(context, msg: AppLocalizations.of(context)!.msg_logout);
   }
 }

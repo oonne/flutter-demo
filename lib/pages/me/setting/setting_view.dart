@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
+import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
@@ -41,6 +42,7 @@ class _SettingViewState extends State<SettingView> {
    */
   @override
   Widget build(BuildContext context) {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
     final themeVars = getCurrentThemeVars(context);
 
     return ChangeNotifierProvider.value(
@@ -83,26 +85,31 @@ class _SettingViewState extends State<SettingView> {
                   /* 
                   * 退出登录按钮
                   */
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: themeVars.panelMargin),
-                    width: double.infinity,
-                    height: themeVars.buttonLargeHeight,
-                    child: OutlinedButton(
-                      onPressed: () {},
-                      style: OutlinedButton.styleFrom(
-                        side: BorderSide(
-                          color: themeVars.dangerColor,
-                        ),
+                  if (globalState.staffInfo != null) ...[
+                    Container(
+                      margin: EdgeInsets.only(top: themeVars.panelMargin),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: themeVars.panelMargin,
                       ),
-                      child: Text(
-                        AppLocalizations.of(context)!.btn_logout,
-                        style: TextStyle(
-                          fontSize: themeVars.buttonLargeFontSize,
-                          color: themeVars.dangerColor,
+                      width: double.infinity,
+                      height: themeVars.buttonLargeHeight,
+                      child: OutlinedButton(
+                        onPressed: () {
+                          viewModel.logout(context);
+                        },
+                        style: OutlinedButton.styleFrom(
+                          side: BorderSide(color: themeVars.dangerColor),
+                        ),
+                        child: Text(
+                          AppLocalizations.of(context)!.btn_logout,
+                          style: TextStyle(
+                            fontSize: themeVars.buttonLargeFontSize,
+                            color: themeVars.dangerColor,
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ],
               ),
             ),

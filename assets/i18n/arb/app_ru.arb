@@ -155,6 +155,9 @@
   "msg_login_failed": "Вход не выполнен",
   "@msg_login_failed": {},
 
+  "msg_logout": "Вышли из системы",
+  "@msg_logout": {},
+
   "unknown_error": "Неизвестная ошибка",
   "@unknown_error": {},
 
