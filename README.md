@@ -11,6 +11,7 @@ flutter 基础项目
 * 自定义svg图标(flutter_svg)
 * 时间日期选择器(board_datetime_picker)
 * 网络请求(dio)
+* 计算SHA(crypto)
 * 二维码扫描(mobile_scanner)
 * 本地图片选择(image_picker)
 * 国际化(flutter_localizations)
@@ -24,7 +25,6 @@ flutter 基础项目
 * 底部弹框 BottomSheet
 * 提示 SnackBar
 * MVVM页面示例
-* TODO 计算SHA-512(crypto)
 * TODO 账号密码登录页面（包含pow校验）
 * TODO 列表上拉加载和下拉刷新(easy_refresh)
 
