@@ -86,7 +86,8 @@ class ScanWindowOverlay extends StatelessWidget {
         }
 
         return CustomPaint(
-          size: value.size,
+          // size: value.size, // 使用相机预览的尺寸
+          size: MediaQuery.of(context).size, // 使用屏幕的尺寸
           painter: ScanWindowPainter(
             borderColor: borderColor,
             borderRadius: borderRadius,

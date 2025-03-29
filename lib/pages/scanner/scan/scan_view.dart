@@ -34,8 +34,10 @@ class _ScanViewState extends State<ScanView> {
     super.initState();
     viewModel = ScanViewModel();
 
-    // 启动扫码
-    unawaited(viewModel.controller.start());
+    // 在下一帧初始化 viewModel
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      viewModel.init();
+    });
   }
 
   /* 
@@ -43,9 +45,8 @@ class _ScanViewState extends State<ScanView> {
    */
   @override
   Future<void> dispose() async {
+    await viewModel.cleanup();
     super.dispose();
-    // 释放扫描器资源
-    await viewModel.controller.dispose();
   }
 
   /* 
