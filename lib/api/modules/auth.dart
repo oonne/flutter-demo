@@ -8,4 +8,21 @@ class AuthApi {
       data: data,
     );
   }
+
+  // 登录
+  static login(Map<String, dynamic> data) async {
+    return await req(
+      url: '/auth/login',
+      data: data,
+    );
+  }
+
+  // 换票
+  static refreshToken(Map<String, dynamic> data) async {
+    return await req(
+      url: '/auth/refresh-token',
+      data: data,
+    );
+  }
+  
 }
