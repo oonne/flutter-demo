@@ -26,6 +26,7 @@ flutter 基础项目
 * 提示 SnackBar
 * MVVM页面示例
 * TODO 账号密码登录页面（包含pow校验）
+* TODO 定时换票
 * TODO 列表上拉加载和下拉刷新(easy_refresh)
 
 # 打包

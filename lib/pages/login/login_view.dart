@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:go_router/go_router.dart';
 
-import 'home_view_model.dart';
+import 'login_view_model.dart';
 
 /* 
- * 首页
+ * 登录页
  */
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
-  late final HomeViewModel viewModel;
+class _LoginViewState extends State<LoginView> {
+  late final LoginViewModel viewModel;
 
   /* 
    * 初始化
@@ -23,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     super.initState();
-    viewModel = HomeViewModel();
+    viewModel = LoginViewModel();
   }
 
   /* 
@@ -33,7 +32,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: viewModel,
-      child: Consumer<HomeViewModel>(
+      child: Consumer<LoginViewModel>(
         builder: (context, viewModel, child) {
           /* 
            * 页面
@@ -42,12 +41,8 @@ class _HomeViewState extends State<HomeView> {
             body: SafeArea(
               child: SingleChildScrollView(
                 child: Column(children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      GoRouter.of(context).pushNamed('login');
-                    },
-                    child: const Text('登录页'),
-                  ),
+                  const SizedBox(height: 20),
+                  Text('登录页TODO'),
                 ]),
               ),
             ),

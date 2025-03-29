@@ -12,6 +12,9 @@ import 'package:flutter_demo/pages/me/me/me_view.dart';
 import 'package:flutter_demo/pages/me/setting/setting_view.dart';
 import 'package:flutter_demo/pages/me/about/about_view.dart';
 
+/* 登录 */
+import 'package:flutter_demo/pages/login/login_view.dart';
+
 /* 扫码 */
 import 'package:flutter_demo/pages/scanner/scan/scan_view.dart';
 import 'package:flutter_demo/pages/scanner/scan_result/scan_result_view.dart';
@@ -103,6 +106,15 @@ final router = GoRouter(
       name: 'me/about',
       path: '/me/about',
       builder: (context, state) => const AboutView(),
+    ),
+
+    /* 
+     * 登录
+     */
+    GoRoute(
+      name: 'login',
+      path: '/login',
+      builder: (context, state) => const LoginView(),
     ),
 
     /* 
