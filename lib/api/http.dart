@@ -37,8 +37,11 @@ Dio getDioInstance() {
     onRequest: (options, handler) async {
       final prefs = await SharedPreferences.getInstance();
       PackageInfo packageInfo = await PackageInfo.fromPlatform();
-
-      options.headers['Authorization'] = 'Bearer ${prefs.getString('TOKEN')}';
+      String? token = prefs.getString('TOKEN');
+      
+      if (token != null) {
+        options.headers['Authorization'] = 'Bearer $token';
+      }
       options.headers['x-version'] = packageInfo.version;
       options.headers['x-uuid'] = prefs.getString('UUID');
       options.headers['x-lang'] = prefs.getString('LANG');
