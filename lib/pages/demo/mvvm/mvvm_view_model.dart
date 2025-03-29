@@ -16,8 +16,6 @@ class MvvmViewModel extends ChangeNotifier {
   /* 
    * 数字
    */
-  int get number => model.number;
-
   void add() {
     model.number++;
     notifyListeners();

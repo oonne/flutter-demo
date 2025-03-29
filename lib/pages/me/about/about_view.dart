@@ -63,7 +63,7 @@ class _AboutViewState extends State<AboutView> {
                       // 版本号
                       PanelItem(
                         label: AppLocalizations.of(context)!.title_version,
-                        value: viewModel.version,
+                        value: viewModel.model.version,
                       ),
 
                       // 环境

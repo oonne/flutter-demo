@@ -57,7 +57,7 @@ class _MvvmViewState extends State<MvvmView> {
                   /* 
                    * 页面数字
                    */
-                  Text('页面数字：${viewModel.number}'),
+                  Text('页面数字：${viewModel.model.number}'),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

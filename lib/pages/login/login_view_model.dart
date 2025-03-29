@@ -13,10 +13,7 @@ class LoginViewModel extends ChangeNotifier {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  // 密码是否可见
-  bool get isPasswordVisible => model.isPasswordVisible;
-
-  // 切换密码可见状态
+  // 切换密码是否可见
   void togglePasswordVisibility() {
     model.isPasswordVisible = !model.isPasswordVisible;
     notifyListeners();
@@ -25,10 +22,6 @@ class LoginViewModel extends ChangeNotifier {
   /*
   * 表单校验
   */
-  String? get nameError => model.nameError;
-  String? get passwordError => model.passwordError;
-
-  // 验证表单
   bool validateForm() {
     bool isValid = true;
     model.nameError = null;
@@ -55,6 +48,7 @@ class LoginViewModel extends ChangeNotifier {
   /* 
    * 登录
    */
+  // 登录
   void login() {
     if (model.isLoading) {
       return;

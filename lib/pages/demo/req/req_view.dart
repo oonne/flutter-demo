@@ -48,8 +48,8 @@ class _ReqViewState extends State<ReqView> {
                   /* 
                    * 请求
                    */
-                  Text('请求结果: ${viewModel.result}'),
-                  Text('请求错误: ${viewModel.error}'),
+                  Text('请求结果: ${viewModel.model.result}'),
+                  Text('请求错误: ${viewModel.model.error}'),
                   const SizedBox(height: 20),
 
                   ElevatedButton(
@@ -61,7 +61,7 @@ class _ReqViewState extends State<ReqView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          if (viewModel.isLoading) ...[
+                          if (viewModel.model.isLoading) ...[
                             const SizedBox(
                               width: 16,
                               height: 16,

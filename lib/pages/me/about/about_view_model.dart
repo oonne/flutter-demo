@@ -21,11 +21,8 @@ class AboutViewModel extends ChangeNotifier {
   }
 
   /* 
-   * 版本号
+   * 获取版本号
    */
-  String get version => model.version;
-
-  // 获取版本号
   Future<void> getVersion() async {
     try {
       PackageInfo packageInfo = await PackageInfo.fromPlatform();

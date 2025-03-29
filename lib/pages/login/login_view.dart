@@ -50,6 +50,7 @@ class _LoginViewState extends State<LoginView> {
                    * LOGO
                    */
                   Image.asset('assets/img/logo.png', width: 100, height: 100),
+                  const SizedBox(height: 36),
 
                   /* 
                   * 账号
@@ -62,11 +63,11 @@ class _LoginViewState extends State<LoginView> {
                         labelText: '账号',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(12),
-                        errorText: viewModel.nameError,
+                        errorText: viewModel.model.nameError,
                       ),
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
 
                   /* 
                   * 密码
@@ -75,17 +76,17 @@ class _LoginViewState extends State<LoginView> {
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: TextField(
                       controller: viewModel.passwordController,
-                      obscureText: !viewModel.isPasswordVisible,
+                      obscureText: !viewModel.model.isPasswordVisible,
                       decoration: InputDecoration(
                         labelText: '密码',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(12),
-                        errorText: viewModel.passwordError,
+                        errorText: viewModel.model.passwordError,
                         suffixIcon: IconButton(
                           icon: Icon(
-                            viewModel.isPasswordVisible 
-                              ? Icons.visibility 
-                              : Icons.visibility_off,
+                            viewModel.model.isPasswordVisible
+                                ? Icons.visibility
+                                : Icons.visibility_off,
                             size: 16,
                           ),
                           onPressed: () {
@@ -95,7 +96,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 16),
 
                   /* 
                   * 登录按钮
@@ -108,11 +109,27 @@ class _LoginViewState extends State<LoginView> {
                       onPressed: () {
                         viewModel.login();
                       },
-                      child: Text(
-                        '登录',
-                        style: TextStyle(
-                          fontSize: themeVars.buttonLargeFontSize,
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (viewModel.model.isLoading) ...[
+                            const SizedBox(
+                              width: 16,
+                              height: 16,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                          ],
+                          Text(
+                            '登录',
+                            style: TextStyle(
+                              fontSize: themeVars.buttonLargeFontSize,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

@@ -11,15 +11,6 @@ class ReqViewModel extends ChangeNotifier {
   /*
    * 请求
    */
-  // 是否请求中
-  bool get isLoading => model.isLoading;
-
-  // 请求结果
-  String get result => model.result;
-
-  // 请求错误
-  String get error => model.error;
-
   // 请求
   Future<void> request(BuildContext context) async {
     if (model.isLoading) {
