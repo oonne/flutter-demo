@@ -62,9 +62,11 @@ class _LoginViewState extends State<LoginView> {
                         labelText: '账号',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(12),
+                        errorText: viewModel.nameError,
                       ),
                     ),
                   ),
+                  SizedBox(height: 16),
 
                   /* 
                   * 密码
@@ -78,6 +80,7 @@ class _LoginViewState extends State<LoginView> {
                         labelText: '密码',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(12),
+                        errorText: viewModel.passwordError,
                         suffixIcon: IconButton(
                           icon: Icon(
                             viewModel.isPasswordVisible 
@@ -92,6 +95,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 24),
 
                   /* 
                   * 登录按钮
