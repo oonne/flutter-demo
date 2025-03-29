@@ -103,93 +103,95 @@ class _ScanViewState extends State<ScanView> {
                 ),
 
                 /* 
-                 * 手电筒
+                 * 底部按钮组
                  */
                 Positioned(
-                  left: 48,
-                  bottom: 108,
-                  child: InkWell(
-                    onTap: () {
-                      viewModel.controller.toggleTorch();
-                    },
-                    child: Container(
-                      width: 64,
-                      height: 64,
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: .5),
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/icon/flashlight.svg',
-                        width: 32,
-                        height: 32,
-                        colorFilter: ColorFilter.mode(
-                          Colors.white,
-                          BlendMode.srcIn,
+                  left: 0,
+                  right: 0,
+                  bottom: 128,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      /* 
+                       * 切换相机
+                       */
+                      InkWell(
+                        onTap: () {
+                          viewModel.controller.switchCamera();
+                        },
+                        child: Container(
+                          width: 64,
+                          height: 64,
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.3),
+                            shape: BoxShape.circle,
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/icon/switch-camera.svg',
+                            width: 32,
+                            height: 32,
+                            colorFilter: ColorFilter.mode(
+                              Colors.white,
+                              BlendMode.srcIn,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                ),
 
-                /* 
-                 * 切换相机
-                 */
-                Positioned(
-                  right: 48,
-                  bottom: 108,
-                  child: InkWell(
-                    onTap: () {
-                    },
-                    child: Container(
-                      width: 64,
-                      height: 64,
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: .5),
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/icon/switch-camera.svg',
-                        width: 32,
-                        height: 32,
-                        colorFilter: ColorFilter.mode(
-                          Colors.white,
-                          BlendMode.srcIn,
+                      /* 
+                       * 手电筒
+                       */
+                      InkWell(
+                        onTap: () {
+                          viewModel.controller.toggleTorch();
+                        },
+                        child: Container(
+                          width: 64,
+                          height: 64,
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.3),
+                            shape: BoxShape.circle,
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/icon/flashlight.svg',
+                            width: 32,
+                            height: 32,
+                            colorFilter: ColorFilter.mode(
+                              Colors.white,
+                              BlendMode.srcIn,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                ),
-
-                /* 
-                 * 选择照片
-                 */
-                Positioned(
-                  right: 48,
-                  bottom: 108,
-                  child: InkWell(
-                    onTap: () {
-                    },
-                    child: Container(
-                      width: 64,
-                      height: 64,
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: .5),
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/icon/picture-fill.svg',
-                        width: 32,
-                        height: 32,
-                        colorFilter: ColorFilter.mode(
-                          Colors.white,
-                          BlendMode.srcIn,
+                      
+                      /* 
+                       * 选择照片
+                       */
+                      InkWell(
+                        onTap: () {
+                        },
+                        child: Container(
+                          width: 64,
+                          height: 64,
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.3),
+                            shape: BoxShape.circle,
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/icon/picture-fill.svg',
+                            width: 32,
+                            height: 32,
+                            colorFilter: ColorFilter.mode(
+                              Colors.white,
+                              BlendMode.srcIn,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ],
