@@ -57,7 +57,7 @@ class _LoginViewState extends State<LoginView> {
                   * 账号
                   */
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: EdgeInsets.symmetric(horizontal: themeVars.panelMargin),
                     child: TextField(
                       controller: viewModel.nameController,
                       decoration: InputDecoration(
@@ -68,13 +68,13 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: themeVars.panelMargin),
 
                   /* 
                   * 密码
                   */
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: EdgeInsets.symmetric(horizontal: themeVars.panelMargin),
                     child: TextField(
                       controller: viewModel.passwordController,
                       obscureText: !viewModel.model.isPasswordVisible,
@@ -97,13 +97,13 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: themeVars.panelMargin),
 
                   /* 
                   * 登录按钮
                   */
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: EdgeInsets.symmetric(horizontal: themeVars.panelMargin),
                     width: double.infinity,
                     height: themeVars.buttonLargeHeight,
                     child: ElevatedButton(

@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
 import 'dart:convert';
-import 'package:crypto/crypto.dart';
 import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:crypto/crypto.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/api/modules/auth.dart';
 import 'package:flutter_demo/config/config.dart';
@@ -135,10 +138,18 @@ class LoginViewModel extends ChangeNotifier {
       return;
     }
 
-    log.finest(res);
+    // 登录成功后处理
+    final prefs = await SharedPreferences.getInstance();
     if (!context.mounted) {
       return;
     }
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+
+    prefs.setString('TOKEN', res['data']['token']);
+    prefs.setString('REFRESH_TOKEN', res['data']['refreshToken']);
+    globalState.setTokenRefreshTime();
+    globalState.setStaffInfo(res['data']['staff']);
+    
     showTextSnackBar(context, msg: '登录成功');
   }
 }

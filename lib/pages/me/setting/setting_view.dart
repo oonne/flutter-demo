@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 
+import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
@@ -28,7 +29,7 @@ class _SettingViewState extends State<SettingView> {
   void initState() {
     super.initState();
     viewModel = SettingViewModel();
-    
+
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
       viewModel.init(context);
@@ -40,6 +41,8 @@ class _SettingViewState extends State<SettingView> {
    */
   @override
   Widget build(BuildContext context) {
+    final themeVars = getCurrentThemeVars(context);
+
     return ChangeNotifierProvider.value(
       value: viewModel,
       child: Consumer<SettingViewModel>(
@@ -48,7 +51,9 @@ class _SettingViewState extends State<SettingView> {
            * 页面
            */
           return Scaffold(
-            appBar: CustomAppBar(title: Text(AppLocalizations.of(context)!.title_setting)),
+            appBar: CustomAppBar(
+              title: Text(AppLocalizations.of(context)!.title_setting),
+            ),
             body: SingleChildScrollView(
               child: Column(
                 children: [
@@ -70,9 +75,27 @@ class _SettingViewState extends State<SettingView> {
                         showArrow: true,
                         onTap: () {
                           viewModel.changeLocale(context);
-                        }
+                        },
                       ),
                     ],
+                  ),
+
+                  /* 
+                  * 退出登录按钮
+                  */
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: themeVars.panelMargin),
+                    width: double.infinity,
+                    height: themeVars.buttonLargeHeight,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        AppLocalizations.of(context)!.btn_login,
+                        style: TextStyle(
+                          fontSize: themeVars.buttonLargeFontSize,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -82,4 +105,4 @@ class _SettingViewState extends State<SettingView> {
       ),
     );
   }
-} 
+}

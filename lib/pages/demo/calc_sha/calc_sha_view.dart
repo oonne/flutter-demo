@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 
 import 'calc_sha_view_model.dart';
@@ -32,6 +33,7 @@ class _CalcShaViewState extends State<CalcShaView> {
    */
   @override
   Widget build(BuildContext context) {
+    final themeVars = getCurrentThemeVars(context);
     return ChangeNotifierProvider.value(
       value: viewModel,
       child: Consumer<CalcShaViewModel>(
@@ -48,7 +50,7 @@ class _CalcShaViewState extends State<CalcShaView> {
                    * 内容
                    */
                   Padding(
-                    padding: const EdgeInsets.all(16),
+                    padding: EdgeInsets.all(themeVars.panelMargin),
                     child: TextField(
                       controller: viewModel.contentTextController,
                       maxLines: null,
@@ -64,8 +66,9 @@ class _CalcShaViewState extends State<CalcShaView> {
                    * 计算
                    */
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: EdgeInsets.symmetric(horizontal: themeVars.panelMargin),
                     width: double.infinity,
+                    height: themeVars.buttonLargeHeight,
                     child: ElevatedButton(
                       onPressed: () {
                         viewModel.calc(context);

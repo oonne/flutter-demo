@@ -158,6 +158,31 @@ class GlobalState extends ChangeNotifier {
   }
 
   /* 
+   * 用户信息
+   */
+  // 记录用户信息
+  Future<void> setStaffInfo(Map<String, dynamic> info) async {
+    // TODO
+  }
+
+  // 记录token刷新时间
+  Future<void> setTokenRefreshTime() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('TOKEN_REFRESH_TIME', DateTime.now().millisecondsSinceEpoch);
+  }
+
+  /*
+   * 清空所有信息
+   * （退出登录的时候调用）
+   */
+  Future<void> clear() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove('TOKEN');
+    prefs.remove('REFRESH_TOKEN');
+    prefs.remove('STAFF_INFO');
+  }
+
+  /* 
    * 全局初始化
    */
   Future<void> init() async {

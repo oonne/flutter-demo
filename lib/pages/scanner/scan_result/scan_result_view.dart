@@ -61,7 +61,7 @@ class _ScanResultViewState extends State<ScanResultView> {
                    * 扫码结果
                    */
                   Padding(
-                    padding: const EdgeInsets.all(16),
+                    padding: EdgeInsets.all(themeVars.panelMargin),
                     child: TextField(
                       controller: viewModel.resultTextController,
                       maxLines: null,
@@ -77,7 +77,7 @@ class _ScanResultViewState extends State<ScanResultView> {
                    * 复制按钮
                    */
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: EdgeInsets.symmetric(horizontal: themeVars.panelMargin),
                     width: double.infinity,
                     height: themeVars.buttonLargeHeight,
                     child: ElevatedButton(

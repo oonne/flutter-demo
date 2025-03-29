@@ -15,7 +15,7 @@ class ThemeVars {
   
   const ThemeVars({
     this.radius = 8, // 圆角大小
-    this.panelMargin = 10, // 卡片margin
+    this.panelMargin = 12, // 卡片margin
 
     this.buttonLargeHeight = 48, // 按钮Large高度 (与输入框对齐)
     this.buttonLargeFontSize = 16, // 按钮Large字体大小
