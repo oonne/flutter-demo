@@ -29,6 +29,7 @@ import 'package:flutter_demo/pages/demo/req/req_view.dart';
 import 'package:flutter_demo/pages/demo/scan_code/scan_code_view.dart';
 import 'package:flutter_demo/pages/demo/calc_sha/calc_sha_view.dart';
 import 'package:flutter_demo/pages/demo/user_info/user_info_view.dart';
+import 'package:flutter_demo/pages/demo/data_list/data_view.dart';
 
 /*
  * 路由表
@@ -189,6 +190,12 @@ final router = GoRouter(
       name: 'demo/user_info',
       path: '/demo/user_info',
       builder: (context, state) => const UserInfoView(),
+    ),
+    /* 数据列表 */
+    GoRoute(
+      name: 'demo/data_list',
+      path: '/demo/data_list',
+      builder: (context, state) => const DataListView(),
     ),
   ],
 );
