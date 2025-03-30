@@ -88,8 +88,8 @@ class RefreshTokenManager {
     }
 
     // 更新token
-    prefs.setString('TOKEN', res['token']);
-    prefs.setString('REFRESH_TOKEN', res['refreshToken']);
+    prefs.setString('TOKEN', res['data']['token']);
+    prefs.setString('REFRESH_TOKEN', res['data']['refreshToken']);
     prefs.setInt('TOKEN_REFRESH_TIME', DateTime.now().millisecondsSinceEpoch);
 
     log.finest('换票成功');

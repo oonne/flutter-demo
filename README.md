@@ -16,6 +16,7 @@ flutter 基础项目
 * 本地图片选择(image_picker)
 * 国际化(flutter_localizations)
 * JSON序列化(json_annotation)
+* 时间日期格式化(date_format)
 * 自定义字体
 * 深浅主题切换
 * 全局样式

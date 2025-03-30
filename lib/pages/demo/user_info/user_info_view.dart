@@ -33,15 +33,6 @@ class _UserInfoViewState extends State<UserInfoView> {
   }
 
   /* 
-   * 离开页面
-   */
-  @override
-  void dispose() {
-    viewModel.cleanup();
-    super.dispose();
-  }
-
-  /* 
    * 页面构建
    */
   @override
@@ -59,12 +50,11 @@ class _UserInfoViewState extends State<UserInfoView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      viewModel.sendEvent();
-                    },
-                    child: const Text('发送事件'),
-                  ),
+                  Text('token: ${viewModel.model.token}'),
+                  const SizedBox(height: 10),
+                  Text('refreshToken: ${viewModel.model.refreshToken}'),
+                  const SizedBox(height: 10),
+                  Text('refreshTime: ${viewModel.tokenRefreshTime}'),
                 ],
               ),
             ),

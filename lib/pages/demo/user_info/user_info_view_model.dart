@@ -1,37 +1,36 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-
-import 'package:flutter_demo/global/event_bus.dart';
-import 'package:flutter_demo/utils/message.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:date_format/date_format.dart';
 
 import 'user_info_model.dart';
 
 class UserInfoViewModel extends ChangeNotifier {
   final UserInfoModel model = UserInfoModel();
-  StreamSubscription? _subscription;
 
   /* 
    * 初始化
    */
   init(BuildContext context) {
-    _subscription = eventBus.on<TestEvent>().listen((event) {
-      if (context.mounted) {
-        showTextSnackBar(context, msg: event.message);
-      }
-    });
+    getUserInfo();
   }
 
   /* 
-   * 离开页面
+   * 获取用户信息
    */
-  cleanup() {
-    _subscription?.cancel();
+  Future<void> getUserInfo() async {
+    final prefs = await SharedPreferences.getInstance();
+    model.token = prefs.getString('TOKEN');
+    model.refreshToken = prefs.getString('REFRESH_TOKEN');
+    model.refreshTime = prefs.getInt('TOKEN_REFRESH_TIME');
+    notifyListeners();
   }
 
-  /* 
-   * 发送事件
-   */
-  void sendEvent() {
-    eventBus.fire(TestEvent('测试事件'));
+  // token 刷新时间
+  String get tokenRefreshTime {
+    if (model.refreshTime == null) {
+      return '未获取到刷新时间';
+    }
+
+    return formatDate(DateTime.fromMillisecondsSinceEpoch(model.refreshTime!), [yyyy, '-', mm, '-', dd, ' ', HH, ':', nn, ':', ss]);
   }
 }
