@@ -46,6 +46,11 @@ class _DataListViewState extends State<DataListView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 /* 
+                 * 列表头部
+                 */
+                Text('列表头部: ${viewModel.model.dataList.length}'),
+                const SizedBox(height: 10),
+                /* 
                  * 列表内容
                  */
                 Expanded(
@@ -65,7 +70,7 @@ class _DataListViewState extends State<DataListView> {
                         ),
                       );
                     },
-                    isLoading: viewModel.model.isLoading,
+                    isEmpty: viewModel.model.isEmpty,
                     onRefresh: () async {
                       await viewModel.refresh(context);
                     },

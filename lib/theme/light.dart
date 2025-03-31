@@ -10,6 +10,7 @@ final ThemeVars lightThemeVars = ThemeVars(
   contentBackground: const Color.fromRGBO(255, 255, 255, 1),
   textColor: const Color.fromRGBO(30, 30, 30, 1),
   secondaryTextColor: const Color.fromRGBO(100, 100, 100, 1),
+  placeholderTextColor: const Color.fromRGBO(180, 180, 180, 1),
   dangerColor: const Color.fromRGBO(255, 77, 77, 1),
 );
 

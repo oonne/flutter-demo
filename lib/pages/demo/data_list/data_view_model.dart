@@ -38,6 +38,9 @@ class DataListViewModel extends ChangeNotifier {
     model.pageNo = res['data']['pageNo'];
     if (model.pageNo == 1) {
       model.dataList = [];
+      if (res['data']['list'].isEmpty) {
+        model.isEmpty = true;
+      }
     }
     model.dataList.addAll(res['data']['list']);
     notifyListeners();
@@ -47,6 +50,7 @@ class DataListViewModel extends ChangeNotifier {
   Future<void> refresh(BuildContext context) async {
     model.pageNo = 1;
     model.total = 0;
+    model.isEmpty = false;
     await requestList(context);
   }
 

@@ -14,8 +14,9 @@ class EasyRefreshDataList<T> extends StatelessWidget {
   // 列表项构建器
   final ItemBuilder<T> itemBuilder;
 
-  // 是否加载中
-  final bool isLoading;
+  // 是否为空
+  final bool isEmpty;
+
   // 下拉刷新回调
   final Future<void> Function() onRefresh;
 
@@ -26,7 +27,7 @@ class EasyRefreshDataList<T> extends StatelessWidget {
     super.key,
     required this.dataList,
     required this.itemBuilder,
-    required this.isLoading,
+    required this.isEmpty,
     required this.onRefresh,
     required this.onLoad,
   });
@@ -39,8 +40,13 @@ class EasyRefreshDataList<T> extends StatelessWidget {
       refreshOnStart: true,
       onRefresh: onRefresh,
       onLoad: onLoad,
-      child: dataList.isEmpty && !isLoading
-          ? EmptyPlaceholder()
+      child: isEmpty
+          ? ListView.builder(
+              itemCount: 1,
+              itemBuilder: (context, index) {
+                return EmptyPlaceholder();
+              },
+            )
           : ListView.builder(
               itemCount: dataList.length,
               itemBuilder: (context, index) {

@@ -14,7 +14,9 @@ class ThemeVars {
   final Color contentBackground;
   final Color textColor;
   final Color secondaryTextColor;
+  final Color placeholderTextColor;
   final Color dangerColor;
+  
   const ThemeVars({
     /* 尺寸 */
     this.radius = 8, // 圆角大小
@@ -29,6 +31,7 @@ class ThemeVars {
     required this.contentBackground, // 内容背景色
     required this.textColor, // 文字颜色
     required this.secondaryTextColor, // 次要文字颜色
+    required this.placeholderTextColor, // 注释文字颜色
     required this.dangerColor, // 危险颜色
   });
 }
