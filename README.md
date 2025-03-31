@@ -17,6 +17,7 @@ flutter 基础项目
 * 国际化(flutter_localizations)
 * JSON序列化(json_annotation)
 * 时间日期格式化(date_format)
+* 列表上拉加载和下拉刷新(easy_refresh)
 * 自定义字体
 * 深浅主题切换
 * 全局样式
@@ -29,7 +30,6 @@ flutter 基础项目
 * MVVM页面示例
 * 账号密码登录页面（包含pow校验）
 * 定时换票
-* TODO 列表上拉加载和下拉刷新(easy_refresh)
 
 # 打包
 运行 sh scripts/build.sh 
