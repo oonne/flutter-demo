@@ -11,6 +11,13 @@ class DataListViewModel extends ChangeNotifier {
   final DataListModel model = DataListModel();
 
   /* 
+   * 初始化
+   */
+  void init(BuildContext context) {
+    refresh(context);
+  }
+
+  /* 
    * 请求列表数据
    */
   Future<void> requestList(BuildContext context) async {
@@ -34,9 +41,34 @@ class DataListViewModel extends ChangeNotifier {
       return;
     }
 
-    model.dataList = res['data']['list'];
     model.total = res['data']['total'];
     model.pageNo = res['data']['pageNo'];
+    if (model.pageNo == 1) {
+      model.dataList = [];
+    }
+    model.dataList.addAll(res['data']['list']);
     notifyListeners();
+  }
+
+  // 是否有下一页
+  bool get hasMore {
+    return model.pageNo * pageSize < model.total;
+  }
+
+  // 加载更多
+  Future<void> loadMore(BuildContext context) async {
+    if (!hasMore || model.isLoading) {
+      return;
+    }
+
+    model.pageNo++;
+    requestList(context);
+  }
+
+  // 刷新
+  Future<void> refresh(BuildContext context) async {
+    model.pageNo = 1;
+    model.total = 0;
+    requestList(context);
   }
 } 

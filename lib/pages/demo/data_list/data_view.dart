@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:easy_refresh/easy_refresh.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
+import 'package:flutter_demo/widget/easy_refresh/easy_refresh.dart';
 
 import 'data_view_model.dart';
 
@@ -25,6 +27,11 @@ class _DataListViewState extends State<DataListView> {
   void initState() {
     super.initState();
     viewModel = DataListViewModel();
+
+    // 在下一帧初始化 viewModel
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      viewModel.init(context);
+    });
   }
 
   /* 
@@ -50,22 +57,40 @@ class _DataListViewState extends State<DataListView> {
                 Container(
                   padding: EdgeInsets.all(10),
                   color: Colors.red.shade600,
-                  child: Text(
-                    '头部内容',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
+                  child: Text('头部内容', style: TextStyle(color: Colors.white)),
                 ),
 
                 /* 
                  * 列表内容
                  */
                 Expanded(
-                  child: ListView.builder(
-                    itemBuilder: (context, index) {
-                      return Text('列表内容');
+                  child: EasyRefresh(
+                    header: CustomRefreshHeader(context),
+                    footer: CustomRefreshFooter(context),
+                    onRefresh: () async {
+                      await viewModel.refresh(context);
                     },
+                    onLoad: () async {
+                      await viewModel.loadMore(context);
+                    },
+                    child: ListView.builder(
+                      itemCount: viewModel.model.dataList.length,
+                      itemBuilder: (context, index) {
+                        var item = viewModel.model.dataList[index];
+                        return Container(
+                          padding: EdgeInsets.all(20),
+                          margin: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.shade600,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text(
+                            item['redeemCode'] ?? '',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ],
