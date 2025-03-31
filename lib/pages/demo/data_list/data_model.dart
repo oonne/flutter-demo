@@ -1,10 +1,7 @@
 class DataListModel {
-  // 是否请求中
+  /* 列表 */
   bool isLoading = false;
-
-  // 请求结果
-  String result = '';
-
-  // 请求错误
-  String error = '';
+  List<dynamic> dataList = [];
+  int total = 0;
+  int pageNo = 1;
 } 

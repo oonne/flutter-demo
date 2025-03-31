@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_demo/api/modules/auth.dart';
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
+import 'package:flutter_demo/api/modules/redeem.dart';
+import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/utils/message.dart';
 
 import 'data_model.dart';
@@ -8,11 +10,10 @@ import 'data_model.dart';
 class DataListViewModel extends ChangeNotifier {
   final DataListModel model = DataListModel();
 
-  /*
-   * 请求
+  /* 
+   * 请求列表数据
    */
-  // 请求
-  Future<void> request(BuildContext context) async {
+  Future<void> requestList(BuildContext context) async {
     if (model.isLoading) {
       return;
     }
@@ -20,20 +21,22 @@ class DataListViewModel extends ChangeNotifier {
     model.isLoading = true;
     notifyListeners();
 
-    var [err, res] = await AuthApi.getLoginPow({
-      'name': 'admin',
+    var [err, res] = await RedeemApi.getList({
+      'pageNo': model.pageNo,
+      'pageSize': pageSize,
     });
+
     model.isLoading = false;
     notifyListeners();
 
     if (err != null) {
-      model.error = getErrorMessage(context, err);
-      showTextSnackBar(context, msg: getErrorMessage(context, err));
+      showTextSnackBar(context, msg: getErrorMessage(context, err, defaultMessage: AppLocalizations.of(context)!.msg_query_failed));
       return;
     }
-    
-    var resData = res['data'];
-    model.result = resData['salt'];
+
+    model.dataList = res['data']['list'];
+    model.total = res['data']['total'];
+    model.pageNo = res['data']['pageNo'];
     notifyListeners();
   }
 } 

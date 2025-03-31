@@ -41,48 +41,38 @@ class _DataListViewState extends State<DataListView> {
            */
           return Scaffold(
             appBar: CustomAppBar(title: const Text('网络请求')),
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  /* 
-                   * 请求
-                   */
-                  Text('请求结果: ${viewModel.model.result}'),
-                  Text('请求错误: ${viewModel.model.error}'),
-                  const SizedBox(height: 20),
-
-                  ElevatedButton(
-                    onPressed: () {
-                      viewModel.request(context);
-                    },
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          if (viewModel.model.isLoading) ...[
-                            const SizedBox(
-                              width: 16,
-                              height: 16,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                color: Colors.white,
-                              ),
-                            ),
-                            const SizedBox(width: 8),
-                          ],
-                          const Text('请求'),
-                        ],
-                      ),
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                /* 
+                  * 头部内容
+                  */
+                Container(
+                  padding: EdgeInsets.all(10),
+                  color: Colors.red.shade600,
+                  child: Text(
+                    '头部内容',
+                    style: TextStyle(
+                      color: Colors.white,
                     ),
                   ),
-                ],
-              ),
+                ),
+
+                /* 
+                 * 列表内容
+                 */
+                Expanded(
+                  child: ListView.builder(
+                    itemBuilder: (context, index) {
+                      return Text('列表内容');
+                    },
+                  ),
+                ),
+              ],
             ),
           );
         },
       ),
     );
   }
-} 
+}
