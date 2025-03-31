@@ -39,7 +39,7 @@ class DataListViewModel extends ChangeNotifier {
     if (model.pageNo == 1) {
       model.dataList = [];
     }
-    // model.dataList.addAll(res['data']['list']);
+    model.dataList.addAll(res['data']['list']);
     notifyListeners();
   }
 

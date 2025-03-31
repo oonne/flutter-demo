@@ -50,12 +50,6 @@ class _DataListViewState extends State<DataListView> {
                  */
                 Expanded(
                   child: EasyRefreshDataList(
-                    onRefresh: () async {
-                      await viewModel.refresh(context);
-                    },
-                    onLoad: () async {
-                      await viewModel.loadMore(context);
-                    },
                     dataList: viewModel.model.dataList,
                     itemBuilder: (context, item, index) {
                       return Container(
@@ -70,6 +64,13 @@ class _DataListViewState extends State<DataListView> {
                           style: TextStyle(color: Colors.white),
                         ),
                       );
+                    },
+                    isLoading: viewModel.model.isLoading,
+                    onRefresh: () async {
+                      await viewModel.refresh(context);
+                    },
+                    onLoad: () async {
+                      await viewModel.loadMore(context);
                     },
                   ),
                 ),

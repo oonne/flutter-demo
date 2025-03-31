@@ -2,30 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:easy_refresh/easy_refresh.dart';
 
 import 'easy_refresh.dart';
+import 'empty_placeholder.dart';
 
 typedef ItemBuilder<T> =
     Widget Function(BuildContext context, T item, int index);
 
 class EasyRefreshDataList<T> extends StatelessWidget {
-  /// 数据列表
+  // 数据列表
   final List<T> dataList;
 
-  /// 下拉刷新回调
-  final Future<void> Function()? onRefresh;
-
-  /// 上拉加载更多回调
-  final Future<void> Function()? onLoad;
-
-  /// 列表项构建器
+  // 列表项构建器
   final ItemBuilder<T> itemBuilder;
 
+  // 是否加载中
+  final bool isLoading;
+  // 下拉刷新回调
+  final Future<void> Function() onRefresh;
+
+  // 上拉加载更多回调
+  final Future<void> Function() onLoad;
+
   const EasyRefreshDataList({
-    Key? key,
+    super.key,
     required this.dataList,
     required this.itemBuilder,
-    this.onRefresh,
-    this.onLoad,
-  }) : super(key: key);
+    required this.isLoading,
+    required this.onRefresh,
+    required this.onLoad,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +39,14 @@ class EasyRefreshDataList<T> extends StatelessWidget {
       refreshOnStart: true,
       onRefresh: onRefresh,
       onLoad: onLoad,
-      child: ListView.builder(
-        itemCount: dataList.length,
-        itemBuilder: (context, index) {
-          return itemBuilder(context, dataList[index], index);
-        },
-      ),
+      child: dataList.isEmpty && !isLoading
+          ? EmptyPlaceholder()
+          : ListView.builder(
+              itemCount: dataList.length,
+              itemBuilder: (context, index) {
+                return itemBuilder(context, dataList[index], index);
+              },
+            ),
     );
   }
 }
