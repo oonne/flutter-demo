@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:easy_refresh/easy_refresh.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
-import 'package:flutter_demo/widget/easy_refresh/easy_refresh.dart';
+import 'package:flutter_demo/widget/data_list/easy_refresh.dart';
 
 import 'data_view_model.dart';
 
