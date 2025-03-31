@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:easy_refresh/easy_refresh.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
-import 'package:flutter_demo/widget/data_list/easy_refresh.dart';
+import 'package:flutter_demo/widget/data_list/data_list_view.dart';
 
 import 'data_view_model.dart';
 
@@ -47,46 +46,31 @@ class _DataListViewState extends State<DataListView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 /* 
-                  * 头部内容
-                  */
-                Container(
-                  padding: EdgeInsets.all(10),
-                  color: Colors.red.shade600,
-                  child: Text('头部内容', style: TextStyle(color: Colors.white)),
-                ),
-
-                /* 
                  * 列表内容
                  */
                 Expanded(
-                  child: EasyRefresh(
-                    header: CustomRefreshHeader(context),
-                    footer: CustomRefreshFooter(context),
-                    refreshOnStart: true,
+                  child: EasyRefreshDataList(
                     onRefresh: () async {
                       await viewModel.refresh(context);
                     },
                     onLoad: () async {
                       await viewModel.loadMore(context);
                     },
-                    child: ListView.builder(
-                      itemCount: viewModel.model.dataList.length,
-                      itemBuilder: (context, index) {
-                        var item = viewModel.model.dataList[index];
-                        return Container(
-                          padding: EdgeInsets.all(20),
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: Colors.blue.shade600,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Text(
-                            item['redeemCode'] ?? '',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        );
-                      },
-                    ),
+                    dataList: viewModel.model.dataList,
+                    itemBuilder: (context, item, index) {
+                      return Container(
+                        padding: EdgeInsets.all(20),
+                        margin: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.blue.shade600,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Text(
+                          item['redeemCode'] ?? '',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
