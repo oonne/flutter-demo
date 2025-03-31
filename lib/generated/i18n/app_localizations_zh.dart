@@ -135,6 +135,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get info_last_updated => '最后更新于  %T';
 
   @override
+  String get info_data_empty => '数据为空';
+
+  @override
   String get msg_query_failed => '查询失败';
 
   @override
@@ -318,6 +321,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get info_last_updated => '最後更新於  %T';
+
+  @override
+  String get info_data_empty => '數據為空';
 
   @override
   String get msg_query_failed => '查詢失敗';

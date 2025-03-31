@@ -249,6 +249,21 @@ const msg: ILangMsgs = {
     ko_KR: "마지막 업데이트 %T",
     vi_VN: "Cập nhật cuối cùng vào %T",
   },
+  // 数据为空
+  info_data_empty: {
+    zh_CN: "数据为空",
+    zh_TW: "數據為空",
+    en_US: "Data is empty",
+    ru_RU: "Данные пусты",
+    fr_FR: "Les données sont vides",
+    es_ES: "Los datos están vacíos",
+    it_IT: "I dati sono vuoti",
+    pt_PT: "Os dados estão vazios",
+    de_DE: "Die Daten sind leer",
+    ja_JP: "データが空です",
+    ko_KR: "데이터가 없습니다",
+    vi_VN: "Dữ liệu trống",
+  },
 };
 
 export default msg;

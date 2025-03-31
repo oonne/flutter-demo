@@ -366,6 +366,12 @@ abstract class AppLocalizations {
   /// **'Last updated at %T'**
   String get info_last_updated;
 
+  /// No description provided for @info_data_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'Data is empty'**
+  String get info_data_empty;
+
   /// No description provided for @msg_query_failed.
   ///
   /// In en, this message translates to:

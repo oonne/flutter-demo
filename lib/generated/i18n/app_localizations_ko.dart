@@ -135,6 +135,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get info_last_updated => '마지막 업데이트 %T';
 
   @override
+  String get info_data_empty => '데이터가 없습니다';
+
+  @override
   String get msg_query_failed => '쿼리에 실패했습니다';
 
   @override

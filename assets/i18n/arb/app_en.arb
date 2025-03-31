@@ -125,6 +125,9 @@
   "info_last_updated": "Last updated at %T",
   "@info_last_updated": {},
 
+  "info_data_empty": "Data is empty",
+  "@info_data_empty": {},
+
   "msg_query_failed": "Query failed",
   "@msg_query_failed": {},
 

@@ -135,6 +135,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get info_last_updated => '最終更新 %T';
 
   @override
+  String get info_data_empty => 'データが空です';
+
+  @override
   String get msg_query_failed => 'クエリに失敗しました';
 
   @override

@@ -125,6 +125,9 @@
   "info_last_updated": "Atualizado pela última vez às %T",
   "@info_last_updated": {},
 
+  "info_data_empty": "Os dados estão vazios",
+  "@info_data_empty": {},
+
   "msg_query_failed": "A consulta falhou",
   "@msg_query_failed": {},
 

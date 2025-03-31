@@ -135,6 +135,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get info_last_updated => 'Cập nhật cuối cùng vào %T';
 
   @override
+  String get info_data_empty => 'Dữ liệu trống';
+
+  @override
   String get msg_query_failed => 'Truy vấn không thành công';
 
   @override

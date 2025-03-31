@@ -125,6 +125,9 @@
   "info_last_updated": "Последнее обновление в %T",
   "@info_last_updated": {},
 
+  "info_data_empty": "Данные пусты",
+  "@info_data_empty": {},
+
   "msg_query_failed": "Не удалось выполнить запрос",
   "@msg_query_failed": {},
 

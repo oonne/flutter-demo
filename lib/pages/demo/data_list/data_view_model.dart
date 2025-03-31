@@ -39,29 +39,23 @@ class DataListViewModel extends ChangeNotifier {
     if (model.pageNo == 1) {
       model.dataList = [];
     }
-    model.dataList.addAll(res['data']['list']);
+    // model.dataList.addAll(res['data']['list']);
     notifyListeners();
-  }
-
-  // 是否有下一页
-  bool get hasMore {
-    return model.pageNo * pageSize < model.total;
-  }
-
-  // 加载更多
-  Future<void> loadMore(BuildContext context) async {
-    if (!hasMore || model.isLoading) {
-      return;
-    }
-
-    model.pageNo++;
-    await requestList(context);
   }
 
   // 刷新
   Future<void> refresh(BuildContext context) async {
     model.pageNo = 1;
     model.total = 0;
+    await requestList(context);
+  }
+
+  // 加载更多
+  Future<void> loadMore(BuildContext context) async {
+    if (model.pageNo * pageSize >= model.total || model.isLoading) {
+      return;
+    }
+    model.pageNo++;
     await requestList(context);
   }
 } 

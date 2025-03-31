@@ -135,6 +135,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get info_last_updated => 'Zuletzt aktualisiert um %T';
 
   @override
+  String get info_data_empty => 'Die Daten sind leer';
+
+  @override
   String get msg_query_failed => 'Die Abfrage ist fehlgeschlagen';
 
   @override

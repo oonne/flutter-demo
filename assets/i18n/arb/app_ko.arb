@@ -125,6 +125,9 @@
   "info_last_updated": "마지막 업데이트 %T",
   "@info_last_updated": {},
 
+  "info_data_empty": "데이터가 없습니다",
+  "@info_data_empty": {},
+
   "msg_query_failed": "쿼리에 실패했습니다",
   "@msg_query_failed": {},
 

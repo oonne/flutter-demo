@@ -125,6 +125,9 @@
   "info_last_updated": "最後更新於  %T",
   "@info_last_updated": {},
 
+  "info_data_empty": "數據為空",
+  "@info_data_empty": {},
+
   "msg_query_failed": "查詢失敗",
   "@msg_query_failed": {},
 

@@ -135,6 +135,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get info_last_updated => 'Последнее обновление в %T';
 
   @override
+  String get info_data_empty => 'Данные пусты';
+
+  @override
   String get msg_query_failed => 'Не удалось выполнить запрос';
 
   @override
