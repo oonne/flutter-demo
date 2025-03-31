@@ -11,13 +11,6 @@ class DataListViewModel extends ChangeNotifier {
   final DataListModel model = DataListModel();
 
   /* 
-   * 初始化
-   */
-  void init(BuildContext context) {
-    refresh(context);
-  }
-
-  /* 
    * 请求列表数据
    */
   Future<void> requestList(BuildContext context) async {
@@ -62,13 +55,13 @@ class DataListViewModel extends ChangeNotifier {
     }
 
     model.pageNo++;
-    requestList(context);
+    await requestList(context);
   }
 
   // 刷新
   Future<void> refresh(BuildContext context) async {
     model.pageNo = 1;
     model.total = 0;
-    requestList(context);
+    await requestList(context);
   }
 } 

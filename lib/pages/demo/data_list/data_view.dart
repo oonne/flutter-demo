@@ -27,11 +27,6 @@ class _DataListViewState extends State<DataListView> {
   void initState() {
     super.initState();
     viewModel = DataListViewModel();
-
-    // 在下一帧初始化 viewModel
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      viewModel.init(context);
-    });
   }
 
   /* 
@@ -67,6 +62,7 @@ class _DataListViewState extends State<DataListView> {
                   child: EasyRefresh(
                     header: CustomRefreshHeader(context),
                     footer: CustomRefreshFooter(context),
+                    refreshOnStart: true,
                     onRefresh: () async {
                       await viewModel.refresh(context);
                     },
