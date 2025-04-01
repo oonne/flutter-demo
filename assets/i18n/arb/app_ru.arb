@@ -161,6 +161,9 @@
   "msg_logout": "Вышли из системы",
   "@msg_logout": {},
 
+  "msg_login_success": "Вход выполнен успешно",
+  "@msg_login_success": {},
+
   "unknown_error": "Неизвестная ошибка",
   "@unknown_error": {},
 

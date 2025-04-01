@@ -171,6 +171,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get msg_logout => 'ログアウトしました';
 
   @override
+  String get msg_login_success => 'ログインに成功しました';
+
+  @override
   String get unknown_error => '未知のエラー';
 
   @override

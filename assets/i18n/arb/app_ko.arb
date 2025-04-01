@@ -161,6 +161,9 @@
   "msg_logout": "로그아웃되었습니다",
   "@msg_logout": {},
 
+  "msg_login_success": "로그인에 성공했습니다",
+  "@msg_login_success": {},
+
   "unknown_error": "알 수 없는 오류",
   "@unknown_error": {},
 

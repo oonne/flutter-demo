@@ -161,6 +161,9 @@
   "msg_logout": "Déconnexion",
   "@msg_logout": {},
 
+  "msg_login_success": "Connexion réussie",
+  "@msg_login_success": {},
+
   "unknown_error": "Erreur inconnue",
   "@unknown_error": {},
 

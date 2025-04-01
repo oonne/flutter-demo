@@ -161,6 +161,9 @@
   "msg_logout": "Logged out",
   "@msg_logout": {},
 
+  "msg_login_success": "Login successful",
+  "@msg_login_success": {},
+
   "unknown_error": "Unknown error",
   "@unknown_error": {},
 

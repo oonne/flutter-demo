@@ -171,6 +171,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get msg_logout => 'Cierre de sesión';
 
   @override
+  String get msg_login_success => 'Inicio de sesión exitoso';
+
+  @override
   String get unknown_error => 'Error desconocido';
 
   @override

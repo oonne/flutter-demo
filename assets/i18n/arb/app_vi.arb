@@ -161,6 +161,9 @@
   "msg_logout": "Đăng xuất",
   "@msg_logout": {},
 
+  "msg_login_success": "Đăng nhập thành công",
+  "@msg_login_success": {},
+
   "unknown_error": "Lỗi không xác định",
   "@unknown_error": {},
 

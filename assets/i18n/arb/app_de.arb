@@ -161,6 +161,9 @@
   "msg_logout": "Abmelden",
   "@msg_logout": {},
 
+  "msg_login_success": "Anmeldung erfolgreich",
+  "@msg_login_success": {},
+
   "unknown_error": "Unbekannter Fehler",
   "@unknown_error": {},
 

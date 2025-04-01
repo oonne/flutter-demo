@@ -177,6 +177,21 @@ const msg: ILangMsgs = {
     ko_KR: "로그아웃되었습니다",
     vi_VN: "Đăng xuất",
   },
+  // 登录成功
+  msg_login_success: {
+    zh_CN: "登录成功",
+    zh_TW: "登入成功",
+    en_US: "Login successful",
+    ru_RU: "Вход выполнен успешно",
+    fr_FR: "Connexion réussie",
+    es_ES: "Inicio de sesión exitoso",
+    it_IT: "Accesso riuscito",
+    pt_PT: "Login bem-sucedido",
+    de_DE: "Anmeldung erfolgreich",
+    ja_JP: "ログインに成功しました",
+    ko_KR: "로그인에 성공했습니다",
+    vi_VN: "Đăng nhập thành công",
+  },
 };
 
 export default msg;

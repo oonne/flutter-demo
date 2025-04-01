@@ -161,6 +161,9 @@
   "msg_logout": "已退出登入",
   "@msg_logout": {},
 
+  "msg_login_success": "登入成功",
+  "@msg_login_success": {},
+
   "unknown_error": "未知錯誤",
   "@unknown_error": {},
 

@@ -171,6 +171,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get msg_logout => 'Logged out';
 
   @override
+  String get msg_login_success => 'Login successful';
+
+  @override
   String get unknown_error => 'Unknown error';
 
   @override

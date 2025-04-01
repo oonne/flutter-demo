@@ -151,6 +151,6 @@ class LoginViewModel extends ChangeNotifier {
     prefs.setInt('TOKEN_REFRESH_TIME', DateTime.now().millisecondsSinceEpoch);
     globalState.setStaffInfo(IStaff.fromJson(res['data']['staff']));
     
-    showTextSnackBar(context, msg: '登录成功');
+    showTextSnackBar(context, msg: AppLocalizations.of(context)!.msg_login_success);
   }
 }

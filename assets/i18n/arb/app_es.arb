@@ -161,6 +161,9 @@
   "msg_logout": "Cierre de sesión",
   "@msg_logout": {},
 
+  "msg_login_success": "Inicio de sesión exitoso",
+  "@msg_login_success": {},
+
   "unknown_error": "Error desconocido",
   "@unknown_error": {},
 

@@ -438,6 +438,12 @@ abstract class AppLocalizations {
   /// **'Logged out'**
   String get msg_logout;
 
+  /// No description provided for @msg_login_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Login successful'**
+  String get msg_login_success;
+
   /// No description provided for @unknown_error.
   ///
   /// In en, this message translates to:

@@ -171,6 +171,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get msg_logout => 'Disconnessione';
 
   @override
+  String get msg_login_success => 'Accesso riuscito';
+
+  @override
   String get unknown_error => 'Errore sconosciuto';
 
   @override
