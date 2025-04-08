@@ -1,5 +1,6 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dio/dio.dart';
+import 'package:dio_http2_adapter/dio_http2_adapter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -29,6 +30,13 @@ Dio getDioInstance() {
       connectTimeout: const Duration(seconds: apiTimeOut),
     ),
   );
+
+  // 只有在生产环境才使用http2
+  if (dotenv.env['ENV_NAME'] == 'prod') {
+    dio.httpClientAdapter = Http2Adapter(
+      ConnectionManager(idleTimeout: Duration(seconds: apiTimeOut)),
+    );
+  }
 
   /*
   * 拦截器
