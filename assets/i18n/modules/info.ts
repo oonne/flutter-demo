@@ -19,6 +19,21 @@ const msg: ILangMsgs = {
     ko_KR: "입력해주세요",
     vi_VN: "Vui lòng nhập",
   },
+  // 搜索
+  info_search: {
+    zh_CN: "搜索",
+    zh_TW: "搜索",
+    en_US: "Search",
+    ru_RU: "Поиск",
+    fr_FR: "Rechercher",
+    es_ES: "Buscar",
+    it_IT: "Cerca",
+    pt_PT: "Pesquisar",
+    de_DE: "Suchen",
+    ja_JP: "検索",
+    ko_KR: "검색",
+    vi_VN: "Tìm kiếm",
+  },
   
   // 已阅读并同意
   info_have_read_and_agree: {

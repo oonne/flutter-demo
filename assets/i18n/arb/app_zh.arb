@@ -80,6 +80,9 @@
   "info_please_input": "请输入",
   "@info_please_input": {},
 
+  "info_search": "搜索",
+  "@info_search": {},
+
   "info_have_read_and_agree": "已阅读并同意",
   "@info_have_read_and_agree": {},
 
