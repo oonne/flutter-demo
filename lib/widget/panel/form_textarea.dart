@@ -1,0 +1,44 @@
+import 'package:flutter/material.dart';
+
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
+
+import './panel_item.dart';
+
+/* 
+ * 表单文本域项
+ * label: 标签文字
+ * controller: 输入框控制器
+ * hintText: 提示文字（可选）
+ */
+class FormTextarea extends PanelItem {
+  final TextEditingController controller;
+  final String? hintText;
+
+  FormTextarea({
+    super.key,
+    required super.label,
+    required this.controller,
+    this.hintText,
+  }) : super(
+         labelFlex: 1,
+         contentFlex: 2,
+         footer: Builder(
+           builder:
+               (context) => Padding(
+                 padding: EdgeInsets.only(top: 12),
+                 child: TextField(
+                   controller: controller,
+                   decoration: InputDecoration(
+                     hintText:
+                         hintText ??
+                         AppLocalizations.of(context)!.info_please_input,
+                     border: InputBorder.none,
+                     contentPadding: EdgeInsets.zero,
+                     isDense: true,
+                   ),
+                   maxLines: null,
+                 ),
+               ),
+         ),
+       );
+}

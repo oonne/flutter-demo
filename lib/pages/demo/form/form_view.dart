@@ -7,6 +7,7 @@ import 'package:flutter_demo/widget/panel/form_text.dart';
 import 'package:flutter_demo/widget/panel/form_input.dart';
 import 'package:flutter_demo/widget/panel/form_number_input.dart';
 import 'package:flutter_demo/widget/panel/form_switch.dart';
+import 'package:flutter_demo/widget/panel/form_textarea.dart';
 
 import 'form_view_model.dart';
 
@@ -73,7 +74,7 @@ class _FormViewState extends State<FormView> {
                       ),
                       FormNumberInput(
                         label: '数字输入框',
-                        controller: viewModel.numberField1Controller,
+                        controller: viewModel.numberFieldController,
                         hintText: '请输入数字',
                       ),
                       FormSwitch(
@@ -82,6 +83,11 @@ class _FormViewState extends State<FormView> {
                         onChanged: (value) {
                           viewModel.setSwitchValue(value);
                         },
+                      ),
+                      FormTextarea(
+                        label: '文本域',
+                        controller: viewModel.textareaFieldController,
+                        hintText: '请输入内容',
                       ),
                     ],
                   ),
