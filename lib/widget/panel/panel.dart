@@ -40,6 +40,7 @@ class Panel extends StatelessWidget {
                   showArrow: item.showArrow,
                   labelFlex: item.labelFlex,
                   contentFlex: item.contentFlex,
+                  footer: item.footer,
                   onTap: item.onTap,
                 );
               }).toList(),
