@@ -53,11 +53,14 @@ class _FormViewState extends State<FormView> {
                 Panel(children: [
                   PanelItem(
                     label: '输入框',
+                    labelFlex: 1,
+                    contentFlex: 3,
                     content: TextField(
                       decoration: InputDecoration(
                         hintText: '请输入内容',
                         border: InputBorder.none,
                       ),
+                      textAlign: TextAlign.right,
                     ),
                   ),
                 ]),

@@ -21,6 +21,8 @@ class PanelItem extends StatelessWidget {
   final String? value;
   final bool showArrow;
   final VoidCallback? onTap;
+  final int labelFlex;
+  final int contentFlex;
 
   const PanelItem({
     super.key,
@@ -31,6 +33,8 @@ class PanelItem extends StatelessWidget {
     this.value,
     this.showArrow = false,
     this.onTap,
+    this.labelFlex = 3,
+    this.contentFlex = 2,
   });
 
   @override
@@ -66,7 +70,7 @@ class PanelItem extends StatelessWidget {
 
                   // 标签文字
                   Expanded(
-                    flex: 3,
+                    flex: labelFlex,
                     child: Text(
                       label,
                       textAlign: TextAlign.left,
@@ -79,7 +83,7 @@ class PanelItem extends StatelessWidget {
                   // 内容区域
                   if (content != null) ...[
                     Expanded(
-                      flex: 2,
+                      flex: contentFlex,
                       child: content!,
                     ),
                   ],
@@ -87,7 +91,7 @@ class PanelItem extends StatelessWidget {
                   // 右侧区域：值
                   if (content == null && value != null) ...[
                     Expanded(
-                      flex: 2,
+                      flex: contentFlex,
                       child: Text(
                         value!,
                         textAlign: TextAlign.right,
