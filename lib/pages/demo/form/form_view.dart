@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
+import 'package:flutter_demo/widget/panel/panel.dart';
+import 'package:flutter_demo/widget/panel/panel_item.dart';
 
 import 'form_view_model.dart';
 
@@ -46,12 +48,20 @@ class _FormViewState extends State<FormView> {
            */
           return Scaffold(
             appBar: CustomAppBar(title: const Text('表单')),
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                ],
-              ),
+            body: Column(
+              children: [
+                Panel(children: [
+                  PanelItem(
+                    label: '输入框',
+                    content: TextField(
+                      decoration: InputDecoration(
+                        hintText: '请输入内容',
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                ]),
+              ],
             ),
           );
         },

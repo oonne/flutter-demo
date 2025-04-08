@@ -35,6 +35,7 @@ class Panel extends StatelessWidget {
                   isLast: index == children.length - 1,
                   icon: item.icon,
                   label: item.label,
+                  content: item.content,
                   value: item.value,
                   showArrow: item.showArrow,
                   onTap: item.onTap,
