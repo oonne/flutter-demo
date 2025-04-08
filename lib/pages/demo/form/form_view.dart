@@ -5,6 +5,7 @@ import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/form_text.dart';
 import 'package:flutter_demo/widget/panel/form_input.dart';
+import 'package:flutter_demo/widget/panel/form_switch.dart';
 
 import 'form_view_model.dart';
 
@@ -36,6 +37,15 @@ class _FormViewState extends State<FormView> {
   }
 
   /* 
+   * 销毁
+   */
+  @override
+  void dispose() {
+    viewModel.cleanup();
+    super.dispose();
+  }
+
+  /* 
    * 页面构建
    */
   @override
@@ -57,9 +67,16 @@ class _FormViewState extends State<FormView> {
                     value: '内容',
                   ),
                   FormInput(
-                    label: '输入框',
+                    label: '文本输入框',
                     controller: viewModel.textFieldController,
                     hintText: '请输入内容',
+                  ),
+                  FormSwitch(
+                    label: '开关: ${viewModel.model.switchValue ? '开' : '关'}',
+                    switchValue: viewModel.model.switchValue,
+                    onChanged: (value) {
+                      viewModel.setSwitchValue(value);
+                    },
                   ),
                 ]),
               ],
