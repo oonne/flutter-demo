@@ -113,6 +113,13 @@ class _IndexViewState extends State<IndexView> {
                           context.pushNamed('demo/data_list');
                         },
                       ),
+                      PanelItem(
+                        label: '表单',
+                        showArrow: true,
+                        onTap: () {
+                          context.pushNamed('demo/form');
+                        },
+                      ),
                     ],
                   ),
                 ],
