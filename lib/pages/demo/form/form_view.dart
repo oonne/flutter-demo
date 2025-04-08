@@ -5,6 +5,7 @@ import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/form_text.dart';
 import 'package:flutter_demo/widget/panel/form_input.dart';
+import 'package:flutter_demo/widget/panel/form_number_input.dart';
 import 'package:flutter_demo/widget/panel/form_switch.dart';
 
 import 'form_view_model.dart';
@@ -59,27 +60,33 @@ class _FormViewState extends State<FormView> {
            */
           return Scaffold(
             appBar: CustomAppBar(title: const Text('表单')),
-            body: Column(
-              children: [
-                Panel(children: [
-                  FormText(
-                    label: '纯文本',
-                    value: '内容',
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Panel(
+                    children: [
+                      FormText(label: '纯文本', value: '内容'),
+                      FormInput(
+                        label: '文本输入框',
+                        controller: viewModel.textFieldController,
+                        hintText: '请输入内容',
+                      ),
+                      FormNumberInput(
+                        label: '数字输入框',
+                        controller: viewModel.numberField1Controller,
+                        hintText: '请输入数字',
+                      ),
+                      FormSwitch(
+                        label: '开关: ${viewModel.model.switchValue ? '开' : '关'}',
+                        switchValue: viewModel.model.switchValue,
+                        onChanged: (value) {
+                          viewModel.setSwitchValue(value);
+                        },
+                      ),
+                    ],
                   ),
-                  FormInput(
-                    label: '文本输入框',
-                    controller: viewModel.textFieldController,
-                    hintText: '请输入内容',
-                  ),
-                  FormSwitch(
-                    label: '开关: ${viewModel.model.switchValue ? '开' : '关'}',
-                    switchValue: viewModel.model.switchValue,
-                    onChanged: (value) {
-                      viewModel.setSwitchValue(value);
-                    },
-                  ),
-                ]),
-              ],
+                ],
+              ),
             ),
           );
         },

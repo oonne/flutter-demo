@@ -19,7 +19,7 @@ class FormSwitch extends PanelItem {
     required this.onChanged,
   }) : super(
     labelFlex: 1,
-    contentFlex: 3,
+    contentFlex: 2,
     content: Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [

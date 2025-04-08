@@ -5,6 +5,10 @@ import 'form_model.dart';
 class FormViewModel extends ChangeNotifier {
   final FormModel model = FormModel();
   final TextEditingController textFieldController = TextEditingController();
+  final TextEditingController numberField1Controller = TextEditingController();
+  final TextEditingController numberField2Controller = TextEditingController();
+  final TextEditingController numberField3Controller = TextEditingController();
+  final TextEditingController numberField4Controller = TextEditingController();
 
   /* 
    * 初始化

@@ -14,6 +14,6 @@ class FormText extends PanelItem {
     super.showArrow = false,
   }) : super(
     labelFlex: 1,
-    contentFlex: 3,
+    contentFlex: 2,
   );
 } 

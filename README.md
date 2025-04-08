@@ -28,6 +28,7 @@ flutter 基础项目
 * 底部弹框 BottomSheet
 * 提示 SnackBar
 * MVVM页面示例
+* 表单示例
 * 账号密码登录页面（包含pow校验）
 * 定时换票
 
