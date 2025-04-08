@@ -23,9 +23,16 @@ class FormSwitch extends PanelItem {
     content: Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Switch(
-          value: switchValue,
-          onChanged: onChanged,
+        SizedBox(
+          height:20,
+          child: Transform.scale(
+            scale: 0.8,
+            child: Switch(
+              value: switchValue,
+              onChanged: onChanged,
+              padding: EdgeInsets.zero,
+            ),
+          ),
         ),
       ],
     ),

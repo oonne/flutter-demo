@@ -4,20 +4,18 @@ import 'form_model.dart';
 
 class FormViewModel extends ChangeNotifier {
   final FormModel model = FormModel();
-  late final TextEditingController textFieldController;
+  final TextEditingController textFieldController = TextEditingController();
 
   /* 
    * 初始化
    */
   void init(BuildContext context) {
-    textFieldController = TextEditingController();
   }
 
   /* 
    * 离开页面
    */
   void cleanup() {
-    textFieldController.dispose();
   }
 
   /* 
