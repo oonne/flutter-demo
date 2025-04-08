@@ -11,6 +11,8 @@ import 'package:flutter_demo/theme/global.dart';
  * content: 内容区域，如果 content 不为空，则value和showArrow无效
  * value: 右侧值
  * showArrow: 是否显示右侧箭头
+ * labelFlex: 标签文字区域宽度
+ * contentFlex: 内容区域宽度
  * onTap: 点击事件
  */
 class PanelItem extends StatelessWidget {
@@ -20,9 +22,9 @@ class PanelItem extends StatelessWidget {
   final Widget? content;
   final String? value;
   final bool showArrow;
-  final VoidCallback? onTap;
   final int labelFlex;
   final int contentFlex;
+  final VoidCallback? onTap;
 
   const PanelItem({
     super.key,
@@ -32,9 +34,9 @@ class PanelItem extends StatelessWidget {
     this.content,
     this.value,
     this.showArrow = false,
-    this.onTap,
     this.labelFlex = 3,
     this.contentFlex = 2,
+    this.onTap,
   });
 
   @override

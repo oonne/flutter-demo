@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
+import 'package:flutter_demo/widget/panel/form_text.dart';
 
 import 'form_view_model.dart';
 
@@ -51,6 +52,10 @@ class _FormViewState extends State<FormView> {
             body: Column(
               children: [
                 Panel(children: [
+                  FormText(
+                    label: '内容',
+                    value: '123',
+                  ),
                   PanelItem(
                     label: '输入框',
                     labelFlex: 1,
@@ -59,7 +64,10 @@ class _FormViewState extends State<FormView> {
                       decoration: InputDecoration(
                         hintText: '请输入内容',
                         border: InputBorder.none,
+                        contentPadding: EdgeInsets.zero,
+                        isDense: true,
                       ),
+                      maxLines: null,
                       textAlign: TextAlign.right,
                     ),
                   ),
