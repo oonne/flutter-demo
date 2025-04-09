@@ -70,6 +70,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                 style: TextStyle(fontSize: 16, height: 1.5),
                 decoration: InputDecoration(
                   hintText: AppLocalizations.of(context)!.info_search,
+                  hintStyle: TextStyle(color: borderColor),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(themeVars.radius),
