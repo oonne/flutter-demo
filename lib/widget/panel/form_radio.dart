@@ -16,7 +16,7 @@ import './panel_item.dart';
  */
 class FormRadio<T> extends PanelItem {
   final T selectedValue;
-  final List<Map<String, dynamic>> options;
+  final List<Map<String, Object>> options;
   final String? title;
   final ValueChanged<T> onChanged;
 
