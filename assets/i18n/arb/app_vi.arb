@@ -50,6 +50,9 @@
   "btn_copy": "Sao chép",
   "@btn_copy": {},
 
+  "btn_save": "Lưu",
+  "@btn_save": {},
+
   "btn_login": "Đăng nhập",
   "@btn_login": {},
 
@@ -142,6 +145,12 @@
 
   "msg_content_empty": "Nội dung trống",
   "@msg_content_empty": {},
+
+  "msg_operation_success": "Hoạt động thành công",
+  "@msg_operation_success": {},
+
+  "msg_saved": "Đã lưu",
+  "@msg_saved": {},
 
   "msg_scan_permission_denied": "Quyền truy cập quét đã bị từ chối",
   "@msg_scan_permission_denied": {},

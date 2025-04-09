@@ -50,6 +50,9 @@
   "btn_copy": "Copy",
   "@btn_copy": {},
 
+  "btn_save": "Save",
+  "@btn_save": {},
+
   "btn_login": "Login",
   "@btn_login": {},
 
@@ -142,6 +145,12 @@
 
   "msg_content_empty": "Content is empty",
   "@msg_content_empty": {},
+
+  "msg_operation_success": "Operation successful",
+  "@msg_operation_success": {},
+
+  "msg_saved": "Saved",
+  "@msg_saved": {},
 
   "msg_scan_permission_denied": "Scan permission denied",
   "@msg_scan_permission_denied": {},

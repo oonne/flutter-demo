@@ -50,6 +50,9 @@
   "btn_copy": "Copiar",
   "@btn_copy": {},
 
+  "btn_save": "Salvar",
+  "@btn_save": {},
+
   "btn_login": "Entrar",
   "@btn_login": {},
 
@@ -142,6 +145,12 @@
 
   "msg_content_empty": "O conteúdo está vazio",
   "@msg_content_empty": {},
+
+  "msg_operation_success": "A operação foi bem-sucedida",
+  "@msg_operation_success": {},
+
+  "msg_saved": "Salvo",
+  "@msg_saved": {},
 
   "msg_scan_permission_denied": "Permissão de escaneamento negada",
   "@msg_scan_permission_denied": {},

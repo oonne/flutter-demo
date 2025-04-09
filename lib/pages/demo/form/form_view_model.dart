@@ -27,4 +27,12 @@ class FormViewModel extends ChangeNotifier {
     model.switchValue = value;
     notifyListeners();
   }
+
+  /* 
+   * 设置日期字符串
+   */
+  void setDateStr(String value) {
+    model.dateStr = value;
+    notifyListeners();
+  }
 }

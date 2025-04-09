@@ -7,6 +7,7 @@ import 'package:flutter_demo/widget/panel/form_text.dart';
 import 'package:flutter_demo/widget/panel/form_input.dart';
 import 'package:flutter_demo/widget/panel/form_number_input.dart';
 import 'package:flutter_demo/widget/panel/form_switch.dart';
+import 'package:flutter_demo/widget/panel/form_date_picker.dart';
 import 'package:flutter_demo/widget/panel/form_textarea.dart';
 
 import 'form_view_model.dart';
@@ -82,6 +83,13 @@ class _FormViewState extends State<FormView> {
                         switchValue: viewModel.model.switchValue,
                         onChanged: (value) {
                           viewModel.setSwitchValue(value);
+                        },
+                      ),
+                      FormDatePicker(
+                        label: '日期选择',
+                        dateStr: viewModel.model.dateStr,
+                        onChanged: (value) {
+                          viewModel.setDateStr(value);
                         },
                       ),
                       FormTextarea(

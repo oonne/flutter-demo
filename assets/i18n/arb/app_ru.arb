@@ -50,6 +50,9 @@
   "btn_copy": "Копировать",
   "@btn_copy": {},
 
+  "btn_save": "Сохранить",
+  "@btn_save": {},
+
   "btn_login": "Войти",
   "@btn_login": {},
 
@@ -142,6 +145,12 @@
 
   "msg_content_empty": "Содержимое пусто",
   "@msg_content_empty": {},
+
+  "msg_operation_success": "Операция выполнена успешно",
+  "@msg_operation_success": {},
+
+  "msg_saved": "Сохранено",
+  "@msg_saved": {},
 
   "msg_scan_permission_denied": "Разрешение сканирования отклонено",
   "@msg_scan_permission_denied": {},

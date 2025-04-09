@@ -50,6 +50,9 @@
   "btn_copy": "복사",
   "@btn_copy": {},
 
+  "btn_save": "저장",
+  "@btn_save": {},
+
   "btn_login": "로그인",
   "@btn_login": {},
 
@@ -142,6 +145,12 @@
 
   "msg_content_empty": "내용이 없습니다",
   "@msg_content_empty": {},
+
+  "msg_operation_success": "작업이 성공했습니다",
+  "@msg_operation_success": {},
+
+  "msg_saved": "저장되었습니다",
+  "@msg_saved": {},
 
   "msg_scan_permission_denied": "스캔 권한이 거부되었습니다",
   "@msg_scan_permission_denied": {},

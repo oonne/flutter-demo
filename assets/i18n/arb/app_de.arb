@@ -50,6 +50,9 @@
   "btn_copy": "Kopieren",
   "@btn_copy": {},
 
+  "btn_save": "Speichern",
+  "@btn_save": {},
+
   "btn_login": "Anmelden",
   "@btn_login": {},
 
@@ -142,6 +145,12 @@
 
   "msg_content_empty": "Der Inhalt ist leer",
   "@msg_content_empty": {},
+
+  "msg_operation_success": "Die Operation war erfolgreich",
+  "@msg_operation_success": {},
+
+  "msg_saved": "Gespeichert",
+  "@msg_saved": {},
 
   "msg_scan_permission_denied": "Scannen-Berechtigung wurde abgelehnt",
   "@msg_scan_permission_denied": {},

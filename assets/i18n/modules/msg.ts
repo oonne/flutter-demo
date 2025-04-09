@@ -64,6 +64,36 @@ const msg: ILangMsgs = {
     ko_KR: "내용이 없습니다",
     vi_VN: "Nội dung trống",
   },
+  // 操作成功
+  msg_operation_success: {
+    zh_CN: "操作成功",
+    zh_TW: "操作成功",
+    en_US: "Operation successful",
+    ru_RU: "Операция выполнена успешно",
+    fr_FR: "L'opération a été réussie",
+    es_ES: "La operación ha sido exitosa",
+    it_IT: "L'operazione è stata completata con successo",
+    pt_PT: "A operação foi bem-sucedida",
+    de_DE: "Die Operation war erfolgreich",
+    ja_JP: "操作が成功しました",
+    ko_KR: "작업이 성공했습니다",
+    vi_VN: "Hoạt động thành công",
+  },
+  // 已保存
+  msg_saved: {
+    zh_CN: "已保存",
+    zh_TW: "已保存",
+    en_US: "Saved",
+    ru_RU: "Сохранено",
+    fr_FR: "Enregistré",
+    es_ES: "Guardado",
+    it_IT: "Salvato",
+    pt_PT: "Salvo",
+    de_DE: "Gespeichert",
+    ja_JP: "保存されました",
+    ko_KR: "저장되었습니다",
+    vi_VN: "Đã lưu",
+  },
 
   /*
    * 扫码

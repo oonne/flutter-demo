@@ -19,6 +19,21 @@ const msg: ILangMsgs = {
     ko_KR: "복사",
     vi_VN: "Sao chép",
   },
+  /* 保存 */
+  btn_save: {
+    zh_CN: "保存",
+    zh_TW: "保存",
+    en_US: "Save",
+    ru_RU: "Сохранить",
+    fr_FR: "Enregistrer",
+    es_ES: "Guardar",
+    it_IT: "Salvare",
+    pt_PT: "Salvar",
+    de_DE: "Speichern",
+    ja_JP: "保存",
+    ko_KR: "저장",
+    vi_VN: "Lưu",
+  },
 
   /* 
    * 登录
