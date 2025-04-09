@@ -16,7 +16,7 @@ class FormTextarea extends PanelItem {
 
   FormTextarea({
     super.key,
-    required super.label,
+    super.label,
     required this.controller,
     this.hintText,
   }) : super(
@@ -25,7 +25,7 @@ class FormTextarea extends PanelItem {
          footer: Builder(
            builder:
                (context) => Padding(
-                 padding: EdgeInsets.only(top: 12),
+                 padding: label != null ? EdgeInsets.only(top: 12) : EdgeInsets.zero,
                  child: TextField(
                    controller: controller,
                    decoration: InputDecoration(

@@ -19,7 +19,7 @@ import 'package:flutter_demo/theme/global.dart';
 class PanelItem extends StatelessWidget {
   final bool isLast;
   final Widget? icon;
-  final String label;
+  final String? label;
   final Widget? content;
   final String? value;
   final bool showArrow;
@@ -32,7 +32,7 @@ class PanelItem extends StatelessWidget {
     super.key,
     this.isLast = true,
     this.icon,
-    required this.label,
+    this.label,
     this.content,
     this.value,
     this.showArrow = false,
@@ -69,65 +69,65 @@ class PanelItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    spacing: 4,
-                    children: [
-                      // 左侧区域：图标（可选）
-                      if (icon != null) ...[icon!],
+                  if (label != null) ...[
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      spacing: 4,
+                      children: [
+                        // 左侧区域：图标（可选）
+                        if (icon != null) ...[icon!],
 
-                      // 标签文字
-                      Expanded(
-                        flex: labelFlex,
-                        child: Text(
-                          label,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(color: themeVars.textColor),
-                          softWrap: true,
-                          overflow: TextOverflow.visible,
-                        ),
-                      ),
-
-                      // 内容区域
-                      if (content != null) ...[
-                        Expanded(flex: contentFlex, child: content!),
-                      ],
-
-                      // 右侧区域：值
-                      if (content == null && value != null) ...[
+                        // 标签文字
                         Expanded(
-                          flex: contentFlex,
+                          flex: labelFlex,
                           child: Text(
-                            value!,
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                              color: themeVars.secondaryTextColor,
-                            ),
+                            label ?? '',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(color: themeVars.textColor),
                             softWrap: true,
                             overflow: TextOverflow.visible,
                           ),
                         ),
-                      ],
 
-                      // 右侧区域：箭头
-                      if (content == null && showArrow) ...[
-                        SvgPicture.asset(
-                          'assets/icon/right.svg',
-                          colorFilter: ColorFilter.mode(
-                            themeVars.textColor,
-                            BlendMode.srcIn,
+                        // 内容区域
+                        if (content != null) ...[
+                          Expanded(flex: contentFlex, child: content!),
+                        ],
+
+                        // 右侧区域：值
+                        if (content == null && value != null) ...[
+                          Expanded(
+                            flex: contentFlex,
+                            child: Text(
+                              value!,
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                color: themeVars.secondaryTextColor,
+                              ),
+                              softWrap: true,
+                              overflow: TextOverflow.visible,
+                            ),
                           ),
-                          width: 16,
-                          height: 16,
-                        ),
+                        ],
+
+                        // 右侧区域：箭头
+                        if (content == null && showArrow) ...[
+                          SvgPicture.asset(
+                            'assets/icon/right.svg',
+                            colorFilter: ColorFilter.mode(
+                              themeVars.textColor,
+                              BlendMode.srcIn,
+                            ),
+                            width: 16,
+                            height: 16,
+                          ),
+                        ],
                       ],
-                    ],
-                  ),
+                    ),
+                  ],
 
                   // 底部区域
-                  if (footer != null) ...[
-                    footer!,
-                  ],
+                  if (footer != null) ...[footer!],
                 ],
               ),
             ),
