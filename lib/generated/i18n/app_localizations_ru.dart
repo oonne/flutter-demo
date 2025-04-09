@@ -90,6 +90,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get info_please_input => 'Пожалуйста, введите';
 
   @override
+  String get info_search => 'Поиск';
+
+  @override
   String get info_have_read_and_agree => 'Прочитано и согласен';
 
   @override

@@ -90,6 +90,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get info_please_input => 'Vui lòng nhập';
 
   @override
+  String get info_search => 'Tìm kiếm';
+
+  @override
   String get info_have_read_and_agree => 'Đã đọcvà đồng ý';
 
   @override

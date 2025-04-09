@@ -276,6 +276,12 @@ abstract class AppLocalizations {
   /// **'Please input'**
   String get info_please_input;
 
+  /// No description provided for @info_search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get info_search;
+
   /// No description provided for @info_have_read_and_agree.
   ///
   /// In en, this message translates to:

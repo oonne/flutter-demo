@@ -90,6 +90,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get info_please_input => '请输入';
 
   @override
+  String get info_search => '搜索';
+
+  @override
   String get info_have_read_and_agree => '已阅读并同意';
 
   @override
@@ -279,6 +282,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get info_please_input => '請輸入';
+
+  @override
+  String get info_search => '搜索';
 
   @override
   String get info_have_read_and_agree => '已閱讀並同意';

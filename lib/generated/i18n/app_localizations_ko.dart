@@ -90,6 +90,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get info_please_input => '입력해주세요';
 
   @override
+  String get info_search => '검색';
+
+  @override
   String get info_have_read_and_agree => '읽고 약속';
 
   @override

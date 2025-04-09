@@ -90,6 +90,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get info_please_input => 'Bitte geben Sie ein';
 
   @override
+  String get info_search => 'Suchen';
+
+  @override
   String get info_have_read_and_agree => 'Gelesen und akzeptiert';
 
   @override

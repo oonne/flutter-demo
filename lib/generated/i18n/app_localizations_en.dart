@@ -90,6 +90,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get info_please_input => 'Please input';
 
   @override
+  String get info_search => 'Search';
+
+  @override
   String get info_have_read_and_agree => 'Have read and agreed';
 
   @override
