@@ -18,8 +18,6 @@ class CustomSearchBar extends StatefulWidget {
 
 class _CustomSearchBarState extends State<CustomSearchBar> {
   final TextEditingController _controller = TextEditingController();
-  // 边框颜色
-  final Color borderColor = Colors.grey.shade400;
 
   @override
   void dispose() {
@@ -70,7 +68,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                 style: TextStyle(fontSize: 16, height: 1.5),
                 decoration: InputDecoration(
                   hintText: AppLocalizations.of(context)!.info_search,
-                  hintStyle: TextStyle(color: borderColor),
+                  hintStyle: TextStyle(color: themeVars.placeholderTextColor),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(themeVars.radius),
@@ -82,14 +80,14 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                       topLeft: Radius.circular(themeVars.radius),
                       bottomLeft: Radius.circular(themeVars.radius),
                     ),
-                    borderSide: BorderSide(width: 2, color: borderColor),
+                    borderSide: BorderSide(width: 2, color: themeVars.placeholderTextColor),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(themeVars.radius),
                       bottomLeft: Radius.circular(themeVars.radius),
                     ),
-                    borderSide: BorderSide(width: 2, color: borderColor),
+                    borderSide: BorderSide(width: 2, color: themeVars.placeholderTextColor),
                   ),
                   contentPadding: EdgeInsets.symmetric(
                     horizontal: themeVars.panelMargin,
@@ -134,7 +132,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                     bottomRight: Radius.circular(themeVars.radius),
                   ),
                 ),
-                backgroundColor: borderColor,
+                backgroundColor: themeVars.placeholderTextColor,
                 side: BorderSide.none,
               ),
               child: SvgPicture.asset(
