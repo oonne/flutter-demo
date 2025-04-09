@@ -35,4 +35,12 @@ class FormViewModel extends ChangeNotifier {
     model.dateStr = value;
     notifyListeners();
   }
+
+  /* 
+   * 设置性别
+   */
+  void setGender(String value) {
+    model.gender = value;
+    notifyListeners();
+  }
 }
