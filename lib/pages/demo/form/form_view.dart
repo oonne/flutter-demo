@@ -8,6 +8,7 @@ import 'package:flutter_demo/widget/panel/form_input.dart';
 import 'package:flutter_demo/widget/panel/form_number_input.dart';
 import 'package:flutter_demo/widget/panel/form_switch.dart';
 import 'package:flutter_demo/widget/panel/form_date_picker.dart';
+import 'package:flutter_demo/widget/panel/form_radio.dart';
 import 'package:flutter_demo/widget/panel/form_textarea.dart';
 
 import 'form_view_model.dart';
@@ -90,6 +91,18 @@ class _FormViewState extends State<FormView> {
                         dateStr: viewModel.model.dateStr,
                         onChanged: (value) {
                           viewModel.setDateStr(value);
+                        },
+                      ),
+                      FormRadio<String>(
+                        label: '性别',
+                        selectedValue: viewModel.model.gender,
+                        title: '请选择性别',
+                        options: [
+                          {'value': 'male', 'text': '男'},
+                          {'value': 'female', 'text': '女'},
+                        ],
+                        onChanged: (value) {
+                          viewModel.setGender(value);
                         },
                       ),
                       FormTextarea(
