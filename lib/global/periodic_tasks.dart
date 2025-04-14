@@ -37,6 +37,9 @@ class RefreshTokenManager {
    * 开始执行token刷新任务
    */
   void start() {
+    // 立即执行一次
+    _executeTask();
+    
     // 如果已存在定时器，先取消
     _timer?.cancel();
     
