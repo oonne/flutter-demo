@@ -86,6 +86,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
     return Scaffold(
       body: child,
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: navItems.map((item) => BottomNavigationBarItem(
           icon: SvgPicture.asset(
             item.icon,
