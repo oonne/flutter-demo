@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
+import 'package:flutter_demo/theme/global.dart';
 
 import './panel_item.dart';
 
@@ -25,20 +26,29 @@ class FormNumberInput extends PanelItem {
     this.decimal = true,
     this.sign = true,
   }) : super(
-    labelFlex: 1,
-    contentFlex: 2,
-    content: Builder(
-      builder: (context) => TextField(
-        controller: controller,
-        keyboardType: TextInputType.numberWithOptions(decimal: decimal, signed: sign),
-        decoration: InputDecoration(
-          hintText: hintText ?? AppLocalizations.of(context)!.info_please_input,
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.zero,
-          isDense: true,
-        ),
-        textAlign: TextAlign.right,
-      ),
-    ),
-  );
-} 
+         labelFlex: 1,
+         contentFlex: 2,
+         content: Builder(
+           builder:
+               (context) => TextField(
+                 controller: controller,
+                 keyboardType: TextInputType.numberWithOptions(
+                   decimal: decimal,
+                   signed: sign,
+                 ),
+                 decoration: InputDecoration(
+                   hintText:
+                       hintText ??
+                       AppLocalizations.of(context)!.info_please_input,
+                   hintStyle: TextStyle(
+                     color: getCurrentThemeVars(context).placeholderTextColor,
+                   ),
+                   border: InputBorder.none,
+                   contentPadding: EdgeInsets.zero,
+                   isDense: true,
+                 ),
+                 textAlign: TextAlign.right,
+               ),
+         ),
+       );
+}

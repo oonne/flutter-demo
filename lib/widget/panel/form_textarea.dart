@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
-
+import 'package:flutter_demo/theme/global.dart';
 import './panel_item.dart';
 
 /* 
@@ -25,13 +25,17 @@ class FormTextarea extends PanelItem {
          footer: Builder(
            builder:
                (context) => Padding(
-                 padding: label != null ? EdgeInsets.only(top: 12) : EdgeInsets.zero,
+                 padding:
+                     label != null ? EdgeInsets.only(top: 12) : EdgeInsets.zero,
                  child: TextField(
                    controller: controller,
                    decoration: InputDecoration(
                      hintText:
                          hintText ??
                          AppLocalizations.of(context)!.info_please_input,
+                     hintStyle: TextStyle(
+                       color: getCurrentThemeVars(context).placeholderTextColor,
+                     ),
                      border: InputBorder.none,
                      contentPadding: EdgeInsets.zero,
                      isDense: true,
