@@ -60,6 +60,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get btn_copy => 'Копировать';
 
   @override
+  String get btn_save => 'Сохранить';
+
+  @override
   String get btn_login => 'Войти';
 
   @override
@@ -151,6 +154,12 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get msg_content_empty => 'Содержимое пусто';
+
+  @override
+  String get msg_operation_success => 'Операция выполнена успешно';
+
+  @override
+  String get msg_saved => 'Сохранено';
 
   @override
   String get msg_scan_permission_denied => 'Разрешение сканирования отклонено';

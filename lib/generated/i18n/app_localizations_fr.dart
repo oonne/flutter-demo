@@ -60,6 +60,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get btn_copy => 'Copier';
 
   @override
+  String get btn_save => 'Enregistrer';
+
+  @override
   String get btn_login => 'Connexion';
 
   @override
@@ -151,6 +154,12 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get msg_content_empty => 'Le contenu est vide';
+
+  @override
+  String get msg_operation_success => 'L\'opération a été réussie';
+
+  @override
+  String get msg_saved => 'Enregistré';
 
   @override
   String get msg_scan_permission_denied => 'Permission de scan refusée';

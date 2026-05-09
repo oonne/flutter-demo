@@ -60,6 +60,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get btn_copy => 'Sao chép';
 
   @override
+  String get btn_save => 'Lưu';
+
+  @override
   String get btn_login => 'Đăng nhập';
 
   @override
@@ -151,6 +154,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get msg_content_empty => 'Nội dung trống';
+
+  @override
+  String get msg_operation_success => 'Hoạt động thành công';
+
+  @override
+  String get msg_saved => 'Đã lưu';
 
   @override
   String get msg_scan_permission_denied => 'Quyền truy cập quét đã bị từ chối';

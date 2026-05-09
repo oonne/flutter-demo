@@ -60,6 +60,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get btn_copy => '复制';
 
   @override
+  String get btn_save => '保存';
+
+  @override
   String get btn_login => '登录';
 
   @override
@@ -151,6 +154,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get msg_content_empty => '内容为空';
+
+  @override
+  String get msg_operation_success => '操作成功';
+
+  @override
+  String get msg_saved => '已保存';
 
   @override
   String get msg_scan_permission_denied => '申请扫码权限被拒绝';
@@ -254,6 +263,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get btn_copy => '複製';
 
   @override
+  String get btn_save => '保存';
+
+  @override
   String get btn_login => '登入';
 
   @override
@@ -345,6 +357,12 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get msg_content_empty => '內容為空';
+
+  @override
+  String get msg_operation_success => '操作成功';
+
+  @override
+  String get msg_saved => '已保存';
 
   @override
   String get msg_scan_permission_denied => '申請掃碼權限被拒絕';

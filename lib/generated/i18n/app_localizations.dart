@@ -216,6 +216,12 @@ abstract class AppLocalizations {
   /// **'Copy'**
   String get btn_copy;
 
+  /// No description provided for @btn_save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get btn_save;
+
   /// No description provided for @btn_login.
   ///
   /// In en, this message translates to:
@@ -401,6 +407,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Content is empty'**
   String get msg_content_empty;
+
+  /// No description provided for @msg_operation_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Operation successful'**
+  String get msg_operation_success;
+
+  /// No description provided for @msg_saved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get msg_saved;
 
   /// No description provided for @msg_scan_permission_denied.
   ///

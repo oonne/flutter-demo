@@ -60,6 +60,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get btn_copy => '복사';
 
   @override
+  String get btn_save => '저장';
+
+  @override
   String get btn_login => '로그인';
 
   @override
@@ -151,6 +154,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get msg_content_empty => '내용이 없습니다';
+
+  @override
+  String get msg_operation_success => '작업이 성공했습니다';
+
+  @override
+  String get msg_saved => '저장되었습니다';
 
   @override
   String get msg_scan_permission_denied => '스캔 권한이 거부되었습니다';

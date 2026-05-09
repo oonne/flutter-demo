@@ -60,6 +60,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get btn_copy => 'コピー';
 
   @override
+  String get btn_save => '保存';
+
+  @override
   String get btn_login => 'ログイン';
 
   @override
@@ -151,6 +154,12 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get msg_content_empty => '内容が空です';
+
+  @override
+  String get msg_operation_success => '操作が成功しました';
+
+  @override
+  String get msg_saved => '保存されました';
 
   @override
   String get msg_scan_permission_denied => 'スキャン許可が拒否されました';
