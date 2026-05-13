@@ -43,28 +43,30 @@ class GlobalState extends ChangeNotifier {
 
     // iOS 不获取广告id，因为广告id需要用户授权，影响体验
     if (Platform.isIOS && deviceInfo['identifierForVendor'] != null) {
-      uuid = deviceInfo['identifierForVendor'];
+      uuid = deviceInfo['identifierForVendor'] as String;
     }
 
     // Android 因为没有获取权限，正常来说 serialNumber 是 unknown
-    if (Platform.isAndroid && deviceInfo['serialNumber'] != 'unknown') {
-      uuid = deviceInfo['serialNumber'];
+    if (Platform.isAndroid &&
+        deviceInfo['serialNumber'] != null &&
+        deviceInfo['serialNumber'] != 'unknown') {
+      uuid = deviceInfo['serialNumber'] as String;
     }
 
     // 如果uuid是空的，生成一个随机字符串，并保存到本地
-    if (uuid == '') {
+    if (uuid.isEmpty) {
       uuid = prefs.getString('UUID') ?? randomString(12);
     }
 
     // 存储到本地
     await prefs.setString('UUID', uuid);
   }
-  
+
   /* 
    * 主题管理 （深色/浅色）
    */
   ThemeMode themeMode = ThemeMode.system;
-  
+
   // 设置主题模式
   Future<void> setThemeMode(ThemeMode mode) async {
     themeMode = mode;
@@ -73,7 +75,7 @@ class GlobalState extends ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('THEME_MODE', mode.toString());
   }
-  
+
   // 初始化主题模式
   Future<void> initThemeMode() async {
     final prefs = await SharedPreferences.getInstance();
@@ -89,7 +91,6 @@ class GlobalState extends ChangeNotifier {
     }
   }
 
-
   /*
    * 语言
    */
@@ -104,7 +105,9 @@ class GlobalState extends ChangeNotifier {
     // 设置语言
     lang = res['code'];
     locale = Locale.fromSubtags(
-        languageCode: res['languageCode'], scriptCode: res['scriptCode']);
+      languageCode: res['languageCode'],
+      scriptCode: res['scriptCode'],
+    );
     notifyListeners();
 
     // 保存语言

@@ -99,7 +99,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get info_have_read_and_agree => 'Gelesen und akzeptiert';
 
   @override
-  String get info_pull_down_refresh => 'Ziehen Sie nach unten, um zu aktualisieren';
+  String get info_pull_down_refresh =>
+      'Ziehen Sie nach unten, um zu aktualisieren';
 
   @override
   String get info_release_refresh => 'Loslassen, um zu aktualisieren';
@@ -162,16 +163,19 @@ class AppLocalizationsDe extends AppLocalizations {
   String get msg_saved => 'Gespeichert';
 
   @override
-  String get msg_scan_permission_denied => 'Scannen-Berechtigung wurde abgelehnt';
+  String get msg_scan_permission_denied =>
+      'Scannen-Berechtigung wurde abgelehnt';
 
   @override
-  String get msg_device_scan_unsupported => 'Scannen ist auf diesem Gerät nicht möglich';
+  String get msg_device_scan_unsupported =>
+      'Scannen ist auf diesem Gerät nicht möglich';
 
   @override
   String get msg_scan_failed => 'Der Scan ist fehlgeschlagen';
 
   @override
-  String get msg_no_barcode_detected => 'Kein Strichcode oder QR-Code wurde erkannt';
+  String get msg_no_barcode_detected =>
+      'Kein Strichcode oder QR-Code wurde erkannt';
 
   @override
   String get msg_read_agreement => 'Bitte lesen Sie zuerst die Vereinbarung';
@@ -201,7 +205,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get status_403 => 'Keine Berechtigung für die Operation';
 
   @override
-  String get status_500 => 'System ist beschäftigt, bitte versuchen Sie es später erneut';
+  String get status_500 =>
+      'System ist beschäftigt, bitte versuchen Sie es später erneut';
 
   @override
   String get code_1001002 => 'Der Benutzer existiert nicht';

@@ -165,7 +165,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get msg_scan_permission_denied => 'Scan permission denied';
 
   @override
-  String get msg_device_scan_unsupported => 'Scanning is unsupported on this device';
+  String get msg_device_scan_unsupported =>
+      'Scanning is unsupported on this device';
 
   @override
   String get msg_scan_failed => 'Scan failed';

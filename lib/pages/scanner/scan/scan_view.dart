@@ -13,7 +13,7 @@ import 'package:flutter_demo/utils/message.dart';
 
 import 'scan_view_model.dart';
 import 'widget/scanner_error_widget.dart';
-import 'widget/scan_window_overlay.dart';
+import 'widget/custom_scan_window_overlay.dart';
 
 /* 
  * 扫码页面
@@ -56,7 +56,7 @@ class _ScanViewState extends State<ScanView> {
   /* 
    * 选择照片
    */
-  Future<void> pickImage(context) async {
+  Future<void> pickImage(BuildContext context) async {
     final image = await ImagePicker().pickImage(
       source: ImageSource.gallery,
     );
@@ -110,7 +110,7 @@ class _ScanViewState extends State<ScanView> {
                   scanWindow: scanWindow,
                   controller: viewModel.controller,
                   fit: BoxFit.cover,
-                  errorBuilder: (context, error, child) {
+                  errorBuilder: (context, error) {
                     return ScannerErrorWidget(error: error);
                   },
                   onDetect: (barcode) {
@@ -121,7 +121,7 @@ class _ScanViewState extends State<ScanView> {
                 /* 
                  * 扫描窗口覆盖层
                  */
-                ScanWindowOverlay(
+                CustomScanWindowOverlay(
                   scanWindow: scanWindow,
                   borderRadius: BorderRadius.circular(themeVars.radius),
                   controller: viewModel.controller,

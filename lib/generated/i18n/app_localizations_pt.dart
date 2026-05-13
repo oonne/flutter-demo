@@ -165,13 +165,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get msg_scan_permission_denied => 'Permissão de escaneamento negada';
 
   @override
-  String get msg_device_scan_unsupported => 'O escaneamento não é compatível com este dispositivo';
+  String get msg_device_scan_unsupported =>
+      'O escaneamento não é compatível com este dispositivo';
 
   @override
   String get msg_scan_failed => 'O escaneamento falhou';
 
   @override
-  String get msg_no_barcode_detected => 'Nenhum código de barras ou código QR foi detectado';
+  String get msg_no_barcode_detected =>
+      'Nenhum código de barras ou código QR foi detectado';
 
   @override
   String get msg_read_agreement => 'Leia primeiro o acordo';

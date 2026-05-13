@@ -165,13 +165,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get msg_scan_permission_denied => 'Permiso de escaneo denegado';
 
   @override
-  String get msg_device_scan_unsupported => 'El escaneo no es compatible con este dispositivo';
+  String get msg_device_scan_unsupported =>
+      'El escaneo no es compatible con este dispositivo';
 
   @override
   String get msg_scan_failed => 'El escaneo falló';
 
   @override
-  String get msg_no_barcode_detected => 'No se ha detectado ningún código de barras o código QR';
+  String get msg_no_barcode_detected =>
+      'No se ha detectado ningún código de barras o código QR';
 
   @override
   String get msg_read_agreement => 'Por favor lea el acuerdo primero';
@@ -201,7 +203,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get status_403 => 'Sin permiso de operación';
 
   @override
-  String get status_500 => 'El sistema está ocupado, inténtelo de nuevo más tarde';
+  String get status_500 =>
+      'El sistema está ocupado, inténtelo de nuevo más tarde';
 
   @override
   String get code_1001002 => 'Inicio de sesión fallido';

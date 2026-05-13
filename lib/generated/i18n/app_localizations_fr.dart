@@ -165,13 +165,15 @@ class AppLocalizationsFr extends AppLocalizations {
   String get msg_scan_permission_denied => 'Permission de scan refusée';
 
   @override
-  String get msg_device_scan_unsupported => 'Le scan n\'est pas pris en charge sur cet appareil';
+  String get msg_device_scan_unsupported =>
+      'Le scan n\'est pas pris en charge sur cet appareil';
 
   @override
   String get msg_scan_failed => 'Le scan a échoué';
 
   @override
-  String get msg_no_barcode_detected => 'Aucun code-barres ou QR-code n\'a été détecté';
+  String get msg_no_barcode_detected =>
+      'Aucun code-barres ou QR-code n\'a été détecté';
 
   @override
   String get msg_read_agreement => 'Veuillez d\'abord lire l\'accord';
@@ -201,7 +203,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get status_403 => 'Pas de permission d\'opération';
 
   @override
-  String get status_500 => 'Le système est occupé, veuillez réessayer plus tard';
+  String get status_500 =>
+      'Le système est occupé, veuillez réessayer plus tard';
 
   @override
   String get code_1001002 => 'Connexion échouée';

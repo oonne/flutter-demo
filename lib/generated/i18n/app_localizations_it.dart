@@ -156,7 +156,8 @@ class AppLocalizationsIt extends AppLocalizations {
   String get msg_content_empty => 'Il contenuto è vuoto';
 
   @override
-  String get msg_operation_success => 'L\'operazione è stata completata con successo';
+  String get msg_operation_success =>
+      'L\'operazione è stata completata con successo';
 
   @override
   String get msg_saved => 'Salvato';
@@ -165,13 +166,15 @@ class AppLocalizationsIt extends AppLocalizations {
   String get msg_scan_permission_denied => 'Permesso di scansione negato';
 
   @override
-  String get msg_device_scan_unsupported => 'Lo scan non è compatibile con questo dispositivo';
+  String get msg_device_scan_unsupported =>
+      'Lo scan non è compatibile con questo dispositivo';
 
   @override
   String get msg_scan_failed => 'Lo scan non è riuscito';
 
   @override
-  String get msg_no_barcode_detected => 'Nessun codice-barre o codice QR è stato rilevato';
+  String get msg_no_barcode_detected =>
+      'Nessun codice-barre o codice QR è stato rilevato';
 
   @override
   String get msg_read_agreement => 'Leggi prima l\'accordo';

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 /* 
  * 绘制扫描窗口矩形的 [CustomPainter]。
  */
-class ScanWindowPainter extends CustomPainter {
-  const ScanWindowPainter({
+class CustomScanWindowPainter extends CustomPainter {
+  const CustomScanWindowPainter({
     required this.borderColor,
     required this.borderRadius,
     required this.borderStrokeCap,
@@ -89,7 +89,7 @@ class ScanWindowPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(ScanWindowPainter oldDelegate) {
+  bool shouldRepaint(CustomScanWindowPainter oldDelegate) {
     return oldDelegate.scanWindow != scanWindow ||
         oldDelegate.color != color ||
         oldDelegate.borderRadius != borderRadius;

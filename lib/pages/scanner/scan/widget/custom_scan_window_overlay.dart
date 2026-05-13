@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-import 'scan_window_painter.dart';
+import 'custom_scan_window_painter.dart';
 
 /* 
  * 绘制扫描窗口镂空效果的遮罩层
  */
-class ScanWindowOverlay extends StatelessWidget {
-  const ScanWindowOverlay({
+class CustomScanWindowOverlay extends StatelessWidget {
+  const CustomScanWindowOverlay({
     super.key,
     required this.controller,
     required this.scanWindow,
@@ -88,7 +88,7 @@ class ScanWindowOverlay extends StatelessWidget {
         return CustomPaint(
           // size: value.size, // 使用相机预览的尺寸
           size: MediaQuery.of(context).size, // 使用屏幕的尺寸
-          painter: ScanWindowPainter(
+          painter: CustomScanWindowPainter(
             borderColor: borderColor,
             borderRadius: borderRadius,
             borderStrokeCap: borderStrokeCap,

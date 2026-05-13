@@ -165,7 +165,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get msg_scan_permission_denied => 'Quyền truy cập quét đã bị từ chối';
 
   @override
-  String get msg_device_scan_unsupported => 'Quét không thành công trên thiết bị này';
+  String get msg_device_scan_unsupported =>
+      'Quét không thành công trên thiết bị này';
 
   @override
   String get msg_scan_failed => 'Quét không thành công';

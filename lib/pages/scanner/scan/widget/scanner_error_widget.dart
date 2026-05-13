@@ -34,6 +34,10 @@ class ScannerErrorWidget extends StatelessWidget {
         errorMessage = AppLocalizations.of(context)!.msg_scan_failed;
       case MobileScannerErrorCode.genericError:
         errorMessage = AppLocalizations.of(context)!.unknown_error;
+      case MobileScannerErrorCode.controllerInitializing:
+        errorMessage = AppLocalizations.of(context)!.msg_scan_failed;
+      default:
+        errorMessage = AppLocalizations.of(context)!.unknown_error;
     }
 
     return ColoredBox(
