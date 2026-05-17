@@ -1,5 +1,5 @@
 // 应用名称
-CFBundleDisplayName = "FlutterDemo";
+CFBundleDisplayName = "Flutter示例";
 
 // 权限
 NSCameraUsageDescription = "需要相机权限来扫描二维码或条形码";
