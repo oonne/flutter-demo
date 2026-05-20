@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/ad/widgets/banner_ad_widget.dart';
+import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/utils/log.dart';
 
 import 'banner_ad_view_model.dart';
@@ -39,12 +40,12 @@ class _BannerAdViewState extends State<BannerAdView> {
                   ),
                 ),
                 Container(
-                  height: 120,
+                  height: adBannerHeight,
                   color: Colors.grey[200],
                   child: Center(
                     child: BannerAdWidget(
-                      width: 600.5,
-                      height: 120.5,
+                      width: adBannerWidth,
+                      height: adBannerHeight,
                       onShow: () {
                         log.info('Banner广告展示成功');
                       },

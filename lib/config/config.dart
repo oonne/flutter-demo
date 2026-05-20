@@ -31,6 +31,9 @@ const bool adUseMediation = false;
 const String adSplashAndroidCodeId = '896279658';
 const String adSplashIosCodeId = '896279658';
 
-// Banner广告
+// Banner广告 
 const String adBannerAndroidCodeId = '981876707';
 const String adBannerIosCodeId = '981876707';
+// Banner广告尺寸（与后台代码位设置一致）
+const double adBannerWidth = 300.0;
+const double adBannerHeight = 150.0;
