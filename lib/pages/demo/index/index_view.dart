@@ -120,6 +120,13 @@ class _IndexViewState extends State<IndexView> {
                           context.pushNamed('demo/form');
                         },
                       ),
+                      PanelItem(
+                        label: 'Banner广告',
+                        showArrow: true,
+                        onTap: () {
+                          context.pushNamed('demo/banner_ad');
+                        },
+                      ),
                     ],
                   ),
                 ],

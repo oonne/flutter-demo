@@ -27,7 +27,7 @@ const String adAppName = 'flutter_demo';
 // 是否为生产环境
 const bool adIsProduction = false;
 // 是否使用GroMore聚合功能
-const bool adUseMediation = true;
+const bool adUseMediation = false;
 
 // 开屏广告
 const String adSplashAndroidCodeId = '102729400';

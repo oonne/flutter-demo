@@ -1,6 +1,7 @@
 import 'package:flutter_unionad/flutter_unionad.dart';
 import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/utils/log.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// 广告管理器类
 /// 
@@ -55,6 +56,8 @@ class AdManager {
   /// await AdManager.init();
   /// ```
   static Future<void> init() async {
+    final String env = dotenv.env['ENV_NAME'] ?? '';
+
     // 检查是否已经初始化，避免重复操作
     if (_isInitialized) {
       log.info('广告SDK已经初始化');
@@ -74,9 +77,9 @@ class AdManager {
         paid: false,         // 是否为付费用户，影响广告类型
         keywords: '',        // 用户兴趣关键词，用于精准投放
         
-        // SDK行为配置
-        allowShowNotify: true,   // 是否允许SDK在通知栏显示提示
-        debug: !adIsProduction,  // 调试模式（生产环境关闭）
+        // SDK 行为配置
+        allowShowNotify: true,   // 是否允许 SDK 在通知栏显示提示
+        debug: env != 'prod',  // 调试模式（生产环境关闭）
         supportMultiProcess: false,      // 是否支持多进程
         
         // 主题配置（0-日间模式，1-夜间模式）
@@ -171,7 +174,7 @@ class AdManager {
   static Future<String> getSDKVersion() async {
     try {
       final version = await FlutterUnionad.getSDKVersion();
-      return version ?? 'unknown';
+      return version;
     } catch (e) {
       log.severe('获取SDK版本失败: $e');
       return 'error';
@@ -229,7 +232,7 @@ class AdManager {
   static Future<int> getThemeStatus() async {
     try {
       final status = await FlutterUnionad.getThemeStatus();
-      return status ?? 0;
+      return status;
     } catch (e) {
       log.severe('获取主题状态失败: $e');
       return 0;
