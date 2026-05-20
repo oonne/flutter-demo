@@ -85,6 +85,9 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
   Widget build(BuildContext context) {
     // 构建穿山甲SDK的Banner广告视图
     return FlutterUnionad.bannerAdView(
+      // 是否使用个性化模板渲染（关键参数）
+      mIsExpress: true,
+      
       // 平台配置
       androidCodeId: adBannerAndroidCodeId,  // Android广告位ID
       iosCodeId: adBannerIosCodeId,          // iOS广告位ID
