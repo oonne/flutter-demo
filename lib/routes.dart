@@ -31,6 +31,7 @@ import 'package:flutter_demo/pages/demo/calc_sha/calc_sha_view.dart';
 import 'package:flutter_demo/pages/demo/user_info/user_info_view.dart';
 import 'package:flutter_demo/pages/demo/data_list/data_view.dart';
 import 'package:flutter_demo/pages/demo/form/form_view.dart';
+import 'package:flutter_demo/pages/demo/banner_ad/banner_ad_view.dart';
 
 /*
  * 路由表
@@ -203,6 +204,12 @@ final router = GoRouter(
       name: 'demo/form',
       path: '/demo/form',
       builder: (context, state) => const FormView(),
+    ),
+    /* Banner广告 */
+    GoRoute(
+      name: 'demo/banner_ad',
+      path: '/demo/banner_ad',
+      builder: (context, state) => const BannerAdView(),
     ),
   ],
 );

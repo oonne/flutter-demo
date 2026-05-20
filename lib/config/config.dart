@@ -13,26 +13,24 @@ const int loginPowLength = 4;
 // 分页
 const int pageSize = 10;
 
-// ==========================================================================
-// 广告配置
-// ==========================================================================
+/* 
+ * 广告配置
+ */
 
 // 穿山甲广告平台的 Android AppID
-const String adAndroidAppId = '5098580';
+const String adAndroidAppId = '5827803';
 // 穿山甲广告平台的 iOS AppID
-const String adIosAppId = '5098580';
+const String adIosAppId = '5827803';
 // 应用名称
-const String adAppName = 'flutter_demo';
+const String adAppName = 'PMS';
 
-// 是否为生产环境
-const bool adIsProduction = false;
 // 是否使用GroMore聚合功能
 const bool adUseMediation = false;
 
 // 开屏广告
-const String adSplashAndroidCodeId = '102729400';
-const String adSplashIosCodeId = '102729400';
+const String adSplashAndroidCodeId = '896279658';
+const String adSplashIosCodeId = '896279658';
 
 // Banner广告
-const String adBannerAndroidCodeId = '102735527';
-const String adBannerIosCodeId = '102735527';
+const String adBannerAndroidCodeId = '981876707';
+const String adBannerIosCodeId = '981876707';
