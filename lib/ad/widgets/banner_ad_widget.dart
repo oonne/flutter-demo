@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unionad/flutter_unionad.dart';
+import 'package:flutter_unionad/bannerad/BannerAdView.dart';
 import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/utils/log.dart';
 
@@ -83,18 +84,15 @@ class BannerAdWidget extends StatefulWidget {
 class _BannerAdWidgetState extends State<BannerAdWidget> {
   @override
   Widget build(BuildContext context) {
-    // 构建穿山甲SDK的Banner广告视图
-    return FlutterUnionad.bannerAdView(
-      // 是否使用个性化模板渲染（关键参数）
-      mIsExpress: true,
-      
+    // 构建穿山甲SDK的Banner广告视图（使用推荐的FlutterUnionadBannerView）
+    return FlutterUnionadBannerView(
       // 平台配置
       androidCodeId: adBannerAndroidCodeId,  // Android广告位ID
       iosCodeId: adBannerIosCodeId,          // iOS广告位ID
       
-      // 尺寸配置
-      expressViewWidth: widget.width,    // 广告视图宽度
-      expressViewHeight: widget.height,  // 广告视图高度
+      // 尺寸配置（模板渲染模式下必填）
+      width: widget.width,    // 广告视图宽度
+      height: widget.height,  // 广告视图高度
       
       // 回调配置
       callBack: FlutterUnionadBannerCallBack(
