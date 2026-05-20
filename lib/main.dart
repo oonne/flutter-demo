@@ -10,6 +10,7 @@ import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/routes.dart';
+import 'package:flutter_demo/ad/ad_manager.dart';
 
 /* 
  * 主函数
@@ -38,6 +39,12 @@ Future<void> main() async {
 
   // 定时token刷新任务
   RefreshTokenManager().start();
+
+  // 初始化广告SDK
+  await AdManager.init();
+  
+  // 请求广告权限
+  await AdManager.requestPermission();
 
   // 启动应用
   runApp(MainApp(globalState: globalState));
