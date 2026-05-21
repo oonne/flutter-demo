@@ -38,6 +38,7 @@ class _BannerAdViewState extends State<BannerAdView> {
 
                 /* Banner广告区域 */
                 BannerAdWidget(
+                  bannerSize: BannerAdSize.size300_150,
                   onShow: () {
                     log.info('Banner广告展示成功');
                   },

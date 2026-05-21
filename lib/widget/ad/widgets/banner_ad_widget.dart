@@ -8,13 +8,37 @@ import 'package:flutter_demo/utils/log.dart';
 /// 用于处理Banner广告的各种事件回调
 typedef BannerAdCallback = void Function();
 
+/// Banner广告尺寸标识枚举
+enum BannerAdSize {
+  size300_150('300_150'),
+  size300_45('300_45'),
+  ;
+
+  const BannerAdSize(this.value);
+  final String value;
+}
+
+/// Banner广告尺寸配置映射
+/// 尺寸标识 -> (宽度, 高度)
+const Map<String, (double, double)> bannerAdSizeMap = {
+  '300_150': (300.0, 150.0),
+  '300_45': (300.0, 45.0),
+};
+
+/// Banner广告代码位配置映射
+/// 尺寸标识 -> (Android代码位, iOS代码位)
+Map<String, (String, String)> get bannerAdCodeIdMap => {
+      '300_150': (adBannerAndroidCodeId300_150, adBannerIosCodeId300_150),
+      '300_45': (adBannerAndroidCodeId300_45, adBannerIosCodeId300_45),
+    };
+
 /// Banner广告Widget
 /// 
 /// Banner广告是一种固定在页面顶部或底部的条形广告，
 /// 尺寸相对较小，通常不会遮挡太多内容。
 /// 
 /// 主要特点：
-/// - 尺寸固定（通常为屏幕宽度 x 高度120dp左右）
+/// - 尺寸根据bannerSize参数动态确定
 /// - 持续展示，用户可以随时点击
 /// - 通常放在页面底部，作为固定元素
 /// - 支持不感兴趣反馈
@@ -22,8 +46,7 @@ typedef BannerAdCallback = void Function();
 /// 使用示例：
 /// ```dart
 /// BannerAdWidget(
-///   width: 600.5,
-///   height: 120.5,
+///   bannerSize: BannerAdSize.size300_150,
 ///   onShow: () => print('Banner广告展示成功'),
 ///   onFail: (error) => print('Banner广告加载失败: $error'),
 /// )
@@ -32,6 +55,10 @@ class BannerAdWidget extends StatefulWidget {
   // ==========================================================================
   // 构造函数参数
   // ==========================================================================
+
+  /// Banner广告尺寸标识
+  /// 用于确定广告的尺寸和对应的代码位
+  final BannerAdSize bannerSize;
 
   /// 广告展示成功回调
   /// 当广告加载并成功展示时触发
@@ -56,6 +83,7 @@ class BannerAdWidget extends StatefulWidget {
 
   const BannerAdWidget({
     super.key,
+    required this.bannerSize,
     this.onShow,
     this.onClick,
     this.onDislike,
@@ -73,11 +101,28 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final bannerHeight = screenWidth * (adBannerHeight / adBannerWidth);
+    final sizeKey = widget.bannerSize.value;
+    
+    // 获取尺寸配置
+    final sizeConfig = bannerAdSizeMap[sizeKey];
+    if (sizeConfig == null) {
+      log.warning('Banner广告尺寸配置不存在: $sizeKey');
+      return const SizedBox.shrink();
+    }
+    final (width, height) = sizeConfig;
+    final bannerHeight = screenWidth * (height / width);
+    
+    // 获取代码位配置
+    final codeIdConfig = bannerAdCodeIdMap[sizeKey];
+    if (codeIdConfig == null) {
+      log.warning('Banner广告代码位配置不存在: $sizeKey');
+      return const SizedBox.shrink();
+    }
+    final (androidCodeId, iosCodeId) = codeIdConfig;
     
     return FlutterUnionadBannerView(
-      androidCodeId: adBannerAndroidCodeId,
-      iosCodeId: adBannerIosCodeId,
+      androidCodeId: androidCodeId,
+      iosCodeId: iosCodeId,
       
       width: screenWidth,
       height: bannerHeight,
