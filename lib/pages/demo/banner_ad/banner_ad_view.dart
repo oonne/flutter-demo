@@ -34,26 +34,17 @@ class _BannerAdViewState extends State<BannerAdView> {
             appBar: CustomAppBar(title: const Text('Banner广告')),
             body: Column(
               children: [
-                const Expanded(
-                  child: Center(
-                    child: Text('页面内容'),
-                  ),
-                ),
-                Container(
-                  height: adBannerHeight,
-                  color: Colors.grey[200],
-                  child: Center(
-                    child: BannerAdWidget(
-                      width: adBannerWidth,
-                      height: adBannerHeight,
-                      onShow: () {
-                        log.info('Banner广告展示成功');
-                      },
-                      onFail: (error) {
-                        log.info('Banner广告加载失败: $error');
-                      },
-                    ),
-                  ),
+                /* 页面内容区域 */
+                const Expanded(child: Center(child: Text('页面内容'))),
+                
+                /* Banner广告区域 */
+                BannerAdWidget(
+                  onShow: () {
+                    log.info('Banner广告展示成功');
+                  },
+                  onFail: (error) {
+                    log.info('Banner广告加载失败: $error');
+                  },
                 ),
               ],
             ),

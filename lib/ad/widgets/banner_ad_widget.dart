@@ -33,16 +33,6 @@ class BannerAdWidget extends StatefulWidget {
   // 构造函数参数
   // ==========================================================================
 
-  /// 广告视图的宽度（dp）
-  /// 默认值为 600.5
-  /// 建议使用屏幕宽度或接近屏幕宽度的值
-  final double width;
-
-  /// 广告视图的高度（dp）
-  /// 默认值为 120.5
-  /// 标准Banner高度通常在100-150dp之间
-  final double height;
-
   /// 广告展示成功回调
   /// 当广告加载并成功展示时触发
   final BannerAdCallback? onShow;
@@ -66,8 +56,6 @@ class BannerAdWidget extends StatefulWidget {
 
   const BannerAdWidget({
     super.key,
-    this.width = adBannerWidth,
-    this.height = adBannerHeight,
     this.onShow,
     this.onClick,
     this.onDislike,
@@ -84,15 +72,15 @@ class BannerAdWidget extends StatefulWidget {
 class _BannerAdWidgetState extends State<BannerAdWidget> {
   @override
   Widget build(BuildContext context) {
-    // 构建穿山甲SDK的Banner广告视图（使用推荐的FlutterUnionadBannerView）
+    final screenWidth = MediaQuery.of(context).size.width;
+    final bannerHeight = screenWidth * (adBannerHeight / adBannerWidth);
+    
     return FlutterUnionadBannerView(
-      // 平台配置
-      androidCodeId: adBannerAndroidCodeId,  // Android广告位ID
-      iosCodeId: adBannerIosCodeId,          // iOS广告位ID
+      androidCodeId: adBannerAndroidCodeId,
+      iosCodeId: adBannerIosCodeId,
       
-      // 尺寸配置（模板渲染模式下必填）
-      width: widget.width,    // 广告视图宽度
-      height: widget.height,  // 广告视图高度
+      width: screenWidth,
+      height: bannerHeight,
       
       // 回调配置
       callBack: FlutterUnionadBannerCallBack(
