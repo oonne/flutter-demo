@@ -18,6 +18,7 @@ class AboutViewModel extends ChangeNotifier {
   void init(BuildContext context) {
     getVersion();
     initEnvironment(context);
+    initIsShowAd(context);
   }
 
   /* 
@@ -85,6 +86,30 @@ class AboutViewModel extends ChangeNotifier {
     // 提示
     if (context.mounted) {
       showTextSnackBar(context, msg: '环境切换为: $result');
+    }
+  }
+
+  /* 
+   * 广告
+   */
+
+  // 初始化广告开关状态
+  Future<void> initIsShowAd(context) async {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+    model.isShowAd = globalState.isShowAd;
+    notifyListeners();
+  }
+
+  // 设置是否显示广告
+  Future<void> setIsShowAd(BuildContext context, bool value) async {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+    await globalState.setIsShowAd(value);
+    model.isShowAd = value;
+    notifyListeners();
+
+    // 提示
+    if (context.mounted) {
+      showTextSnackBar(context, msg: '广告开关已设置为: $value');
     }
   }
 }

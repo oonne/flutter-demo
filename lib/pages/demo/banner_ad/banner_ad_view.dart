@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/ad/widgets/banner_ad_widget.dart';
-import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/utils/log.dart';
 
 import 'banner_ad_view_model.dart';
@@ -36,7 +35,7 @@ class _BannerAdViewState extends State<BannerAdView> {
               children: [
                 /* 页面内容区域 */
                 const Expanded(child: Center(child: Text('页面内容'))),
-                
+
                 /* Banner广告区域 */
                 BannerAdWidget(
                   onShow: () {

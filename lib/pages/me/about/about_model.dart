@@ -4,4 +4,7 @@ class AboutModel {
 
   /* 环境 */
   String environment = 'prod';
+
+  /* 是否显示广告 */
+  bool isShowAd = true;
 } 

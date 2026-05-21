@@ -7,6 +7,7 @@ import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
+import 'package:flutter_demo/widget/panel/form_switch.dart';
 
 import 'about_view_model.dart';
 
@@ -80,6 +81,15 @@ class _AboutViewState extends State<AboutView> {
                           label: '环境',
                           value: viewModel.getEnvText(context),
                           onTap: () => viewModel.changeEnv(context),
+                        ),
+
+                        // 是否开启广告
+                        FormSwitch(
+                          label: '是否开启广告',
+                          switchValue: viewModel.model.isShowAd,
+                          onChanged: (value) {
+                            viewModel.setIsShowAd(context, value);
+                          },
                         ),
 
                         // Demo
