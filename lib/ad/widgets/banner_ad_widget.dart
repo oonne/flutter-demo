@@ -66,8 +66,8 @@ class BannerAdWidget extends StatefulWidget {
 
   const BannerAdWidget({
     super.key,
-    this.width = 600.5,
-    this.height = 120.5,
+    this.width = adBannerWidth,
+    this.height = adBannerHeight,
     this.onShow,
     this.onClick,
     this.onDislike,
