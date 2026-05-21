@@ -164,6 +164,27 @@ class GlobalState extends ChangeNotifier {
   }
 
   /* 
+   * 是否显示广告
+   */
+  bool isShowAd = true;
+
+  // 初始化是否显示广告
+  Future<void> initIsShowAd() async {
+    final prefs = await SharedPreferences.getInstance();
+    isShowAd = prefs.getBool('IS_SHOW_AD') ?? true;
+    notifyListeners();
+  }
+
+  // 设置是否显示广告
+  Future<void> setIsShowAd(bool value) async {
+    isShowAd = value;
+    notifyListeners();
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('IS_SHOW_AD', value);
+  }
+
+  /* 
    * 账户信息
    */
   IStaff? staffInfo;
@@ -210,6 +231,7 @@ class GlobalState extends ChangeNotifier {
       initThemeMode(),
       initLocale(),
       initEnv(),
+      initIsShowAd(),
       getStaffInfo(),
     ]);
 
