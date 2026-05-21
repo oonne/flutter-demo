@@ -1,11 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'staff.g.dart';
+part 'user.g.dart';
 
 /* 
  * 角色枚举
  */
-enum StaffRole {
+enum UserRole {
   @JsonValue(1)
   role1,
   @JsonValue(2)
@@ -17,22 +17,22 @@ enum StaffRole {
 }
 
 /* 
- * Staff信息
+ * User信息
  */
 @JsonSerializable()
-class IStaff {
-  IStaff({
-    required this.staffId,
+class IUser {
+  IUser({
+    required this.userId,
     required this.name,
     this.role,
   });
 
-  final String staffId;
+  final String userId;
   final String name; // 名称
-  final StaffRole? role; // 角色
+  final UserRole? role; // 角色
 
 
-  factory IStaff.fromJson(json) => _$IStaffFromJson(json);
+  factory IUser.fromJson(json) => _$IUserFromJson(json);
 
-  Map<String, dynamic> toJson() => _$IStaffToJson(this);
+  Map<String, dynamic> toJson() => _$IUserToJson(this);
 }

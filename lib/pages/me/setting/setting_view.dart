@@ -85,7 +85,7 @@ class _SettingViewState extends State<SettingView> {
                   /* 
                   * 退出登录按钮
                   */
-                  if (globalState.staffInfo != null) ...[
+                  if (globalState.userInfo != null) ...[
                     Container(
                       margin: EdgeInsets.only(top: themeVars.panelMargin),
                       padding: EdgeInsets.symmetric(

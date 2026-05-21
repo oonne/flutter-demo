@@ -12,7 +12,7 @@ import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/utils/utils.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/utils/message.dart';
-import 'package:flutter_demo/models/staff.dart';
+import 'package:flutter_demo/models/user.dart';
 
 import 'login_model.dart';
 
@@ -149,7 +149,7 @@ class LoginViewModel extends ChangeNotifier {
     prefs.setString('TOKEN', res['data']['token']);
     prefs.setString('REFRESH_TOKEN', res['data']['refreshToken']);
     prefs.setInt('TOKEN_REFRESH_TIME', DateTime.now().millisecondsSinceEpoch);
-    globalState.setStaffInfo(IStaff.fromJson(res['data']['staff']));
+    globalState.setUserInfo(IUser.fromJson(res['data']['user']));
     
     showTextSnackBar(context, msg: AppLocalizations.of(context)!.msg_login_success);
   }

@@ -9,7 +9,7 @@ import 'package:flutter_demo/global/event_bus.dart';
 import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/api/modules/auth.dart';
-import 'package:flutter_demo/models/staff.dart';
+import 'package:flutter_demo/models/user.dart';
 
 /* 
  * 刷新token
@@ -61,11 +61,11 @@ class RefreshTokenManager {
    */
   Future<void> _executeTask() async {
     final prefs = await SharedPreferences.getInstance();
-    final staffInfoStr = prefs.getString('STAFF_INFO');
+    final userInfoStr = prefs.getString('USER_INFO');
     final refreshToken = prefs.getString('REFRESH_TOKEN');
     final refreshTime = prefs.getInt('TOKEN_REFRESH_TIME');
 
-    if (refreshToken == null || refreshTime == null || staffInfoStr == null) {
+    if (refreshToken == null || refreshTime == null || userInfoStr == null) {
       return;
     }
 
@@ -74,9 +74,9 @@ class RefreshTokenManager {
       return;
     }
 
-    final staffInfo = IStaff.fromJson(jsonDecode(staffInfoStr));
+    final userInfo = IUser.fromJson(jsonDecode(userInfoStr));
     var [err, res] = await AuthApi.refreshToken({
-      'staffId': staffInfo.staffId,
+      'userId': userInfo.userId,
       'refreshToken': refreshToken,
     });
 

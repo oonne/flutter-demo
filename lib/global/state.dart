@@ -10,7 +10,7 @@ import 'package:flutter_demo/global/event_bus.dart';
 import 'package:flutter_demo/config/lang_list.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/utils/utils.dart';
-import 'package:flutter_demo/models/staff.dart';
+import 'package:flutter_demo/models/user.dart';
 
 /*
  * 全局的状态管理
@@ -187,23 +187,23 @@ class GlobalState extends ChangeNotifier {
   /* 
    * 账户信息
    */
-  IStaff? staffInfo;
+  IUser? userInfo;
 
   // 记录账户信息
-  Future<void> setStaffInfo(IStaff info) async {
-    staffInfo = info;
+  Future<void> setUserInfo(IUser info) async {
+    userInfo = info;
     notifyListeners();
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('STAFF_INFO', jsonEncode(info.toJson()));
+    await prefs.setString('USER_INFO', jsonEncode(info.toJson()));
   }
 
   // 读取账户信息
-  Future<void> getStaffInfo() async {
+  Future<void> getUserInfo() async {
     final prefs = await SharedPreferences.getInstance();
-    final staffInfoString = prefs.getString('STAFF_INFO');
-    if (staffInfoString != null) {
-      staffInfo = IStaff.fromJson(jsonDecode(staffInfoString));
+    final userInfoString = prefs.getString('USER_INFO');
+    if (userInfoString != null) {
+      userInfo = IUser.fromJson(jsonDecode(userInfoString));
     }
   }
 
@@ -215,10 +215,10 @@ class GlobalState extends ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     prefs.remove('TOKEN');
     prefs.remove('REFRESH_TOKEN');
-    prefs.remove('STAFF_INFO');
+    prefs.remove('USER_INFO');
     prefs.remove('TOKEN_REFRESH_TIME');
 
-    staffInfo = null;
+    userInfo = null;
     notifyListeners();
   }
 
@@ -232,7 +232,7 @@ class GlobalState extends ChangeNotifier {
       initLocale(),
       initEnv(),
       initIsShowAd(),
-      getStaffInfo(),
+      getUserInfo(),
     ]);
 
     // 监听退出登录事件
