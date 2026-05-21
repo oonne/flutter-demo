@@ -42,7 +42,6 @@ Future<void> main() async {
 
   // 初始化广告SDK
   await AdManager.init();
-  
   // 请求广告权限
   await AdManager.requestPermission();
 
