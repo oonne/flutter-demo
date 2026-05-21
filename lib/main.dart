@@ -10,7 +10,7 @@ import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/routes.dart';
-import 'package:flutter_demo/ad/ad_manager.dart';
+import 'package:flutter_demo/widget/ad/ad_manager.dart';
 
 /* 
  * 主函数

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
-import 'package:flutter_demo/ad/widgets/banner_ad_widget.dart';
+import 'package:flutter_demo/widget/ad/widgets/banner_ad_widget.dart';
 import 'package:flutter_demo/utils/log.dart';
 
 import 'banner_ad_view_model.dart';
