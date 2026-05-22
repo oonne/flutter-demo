@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unionad/flutter_unionad.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_demo/config/config.dart';
+import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/utils/log.dart';
 
 /// 开屏广告组件的回调函数类型定义
@@ -30,14 +32,6 @@ class SplashAdWidget extends StatefulWidget {
   // ==========================================================================
   // 构造函数参数
   // ==========================================================================
-
-  /// 广告视图的宽度
-  /// 如果不指定，默认为屏幕宽度
-  final double? width;
-
-  /// 广告视图的高度
-  /// 如果不指定，默认为屏幕高度
-  final double? height;
 
   /// 是否隐藏跳过按钮
   /// - false（默认）：显示跳过按钮，用户可以提前关闭广告
@@ -80,8 +74,6 @@ class SplashAdWidget extends StatefulWidget {
 
   const SplashAdWidget({
     super.key,
-    this.width,
-    this.height,
     this.hideSkip = false,
     this.timeout = 3000,
     this.onShow,
@@ -100,11 +92,37 @@ class SplashAdWidget extends StatefulWidget {
 /// 
 /// 负责构建穿山甲SDK的开屏广告视图
 class _SplashAdWidgetState extends State<SplashAdWidget> {
+  bool _isShowAd = true;
+  bool _isInitialized = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_isInitialized) {
+      _isInitialized = true;
+      // 从全局状态读取是否显示广告
+      final globalState = Provider.of<GlobalState>(context, listen: false);
+      _isShowAd = globalState.isShowAd;
+      
+      // 如果不显示广告，直接触发完成回调
+      if (!_isShowAd) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          widget.onFinish?.call();
+        });
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    // 如果没有指定宽高，则使用屏幕的宽高
-    final screenWidth = widget.width ?? MediaQuery.of(context).size.width;
-    final screenHeight = widget.height ?? MediaQuery.of(context).size.height;
+    // 如果不显示广告，返回空容器
+    if (!_isShowAd) {
+      return const SizedBox.shrink();
+    }
+
+    // 使用屏幕的宽高作为广告视图尺寸
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
 
     // 构建穿山甲SDK的开屏广告视图
     return FlutterUnionadSplashAdView(
