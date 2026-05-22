@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unionad/flutter_unionad.dart';
 import 'package:flutter_unionad/bannerad/BannerAdView.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/utils/log.dart';
+import 'package:flutter_demo/global/state.dart';
 
 /// Banner广告组件的回调函数类型定义
 /// 用于处理Banner广告的各种事件回调
@@ -100,59 +102,68 @@ class BannerAdWidget extends StatefulWidget {
 class _BannerAdWidgetState extends State<BannerAdWidget> {
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final sizeKey = widget.bannerSize.value;
-    
-    // 获取尺寸配置
-    final sizeConfig = bannerAdSizeMap[sizeKey];
-    if (sizeConfig == null) {
-      log.warning('Banner广告尺寸配置不存在: $sizeKey');
-      return const SizedBox.shrink();
-    }
-    final (width, height) = sizeConfig;
-    final bannerHeight = screenWidth * (height / width);
-    
-    // 获取代码位配置
-    final codeIdConfig = bannerAdCodeIdMap[sizeKey];
-    if (codeIdConfig == null) {
-      log.warning('Banner广告代码位配置不存在: $sizeKey');
-      return const SizedBox.shrink();
-    }
-    final (androidCodeId, iosCodeId) = codeIdConfig;
-    
-    return FlutterUnionadBannerView(
-      androidCodeId: androidCodeId,
-      iosCodeId: iosCodeId,
-      
-      width: screenWidth,
-      height: bannerHeight,
-      
-      // 回调配置
-      callBack: FlutterUnionadBannerCallBack(
-        // 广告加载成功并展示
-        onShow: () {
-          log.info('Banner广告加载完成');
-          widget.onShow?.call();
-        },
+    return Consumer<GlobalState>(
+      builder: (context, globalState, child) {
+        // 如果全局配置不显示广告，则返回空组件
+        if (!globalState.isShowAd) {
+          return const SizedBox.shrink();
+        }
         
-        // 用户点击"不感兴趣"
-        onDislike: (message) {
-          log.info('Banner广告不感兴趣: $message');
-          widget.onDislike?.call(message);
-        },
+        final screenWidth = MediaQuery.of(context).size.width;
+        final sizeKey = widget.bannerSize.value;
         
-        // 广告加载失败
-        onFail: (error) {
-          log.warning('Banner广告加载失败: $error');
-          widget.onFail?.call(error);
-        },
+        // 获取尺寸配置
+        final sizeConfig = bannerAdSizeMap[sizeKey];
+        if (sizeConfig == null) {
+          log.warning('Banner广告尺寸配置不存在: $sizeKey');
+          return const SizedBox.shrink();
+        }
+        final (width, height) = sizeConfig;
+        final bannerHeight = screenWidth * (height / width);
         
-        // 广告被点击
-        onClick: () {
-          log.info('Banner广告点击');
-          widget.onClick?.call();
-        },
-      ),
+        // 获取代码位配置
+        final codeIdConfig = bannerAdCodeIdMap[sizeKey];
+        if (codeIdConfig == null) {
+          log.warning('Banner广告代码位配置不存在: $sizeKey');
+          return const SizedBox.shrink();
+        }
+        final (androidCodeId, iosCodeId) = codeIdConfig;
+        
+        return FlutterUnionadBannerView(
+          androidCodeId: androidCodeId,
+          iosCodeId: iosCodeId,
+          
+          width: screenWidth,
+          height: bannerHeight,
+          
+          // 回调配置
+          callBack: FlutterUnionadBannerCallBack(
+            // 广告加载成功并展示
+            onShow: () {
+              log.info('Banner广告加载完成');
+              widget.onShow?.call();
+            },
+            
+            // 用户点击"不感兴趣"
+            onDislike: (message) {
+              log.info('Banner广告不感兴趣: $message');
+              widget.onDislike?.call(message);
+            },
+            
+            // 广告加载失败
+            onFail: (error) {
+              log.warning('Banner广告加载失败: $error');
+              widget.onFail?.call(error);
+            },
+            
+            // 广告被点击
+            onClick: () {
+              log.info('Banner广告点击');
+              widget.onClick?.call();
+            },
+          ),
+        );
+      },
     );
   }
 }
