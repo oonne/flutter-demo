@@ -1,4 +1,7 @@
 {
+  "app_name": "Demo приложение",
+  "@app_name": {},
+
   "lang_name": "Русский",
   "@lang_name": {},
 

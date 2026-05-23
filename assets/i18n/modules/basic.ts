@@ -4,6 +4,21 @@ import type { ILangMsgs } from "../type";
  * 基础信息
  */
 const msg: ILangMsgs = {
+  app_name: {
+    zh_CN: "Demo应用",
+    zh_TW: "Demo應用",
+    en_US: "Demo App",
+    ru_RU: "Demo приложение",
+    fr_FR: "Demo Application",
+    es_ES: "Demo Aplicación",
+    it_IT: "Demo Applicazione",
+    pt_PT: "Demo Aplicação",
+    de_DE: "Demo Anwendung",
+    ja_JP: "Demoアプリケーション",
+    ko_KR: "Demo 애플리케이션",
+    vi_VN: "Demo ứng dụng",
+  },
+
   lang_name: {
     zh_CN: "中文（简体）",
     zh_TW: "中文（繁体）",

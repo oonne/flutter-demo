@@ -1,4 +1,7 @@
 {
+  "app_name": "Demo应用",
+  "@app_name": {},
+
   "lang_name": "中文（简体）",
   "@lang_name": {},
 
