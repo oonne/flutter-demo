@@ -19,6 +19,35 @@ android {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
+    flavorDimensions += "store"
+    productFlavors {
+        create("googleplay") {
+            dimension = "store"
+            applicationIdSuffix = ".googleplay"
+            resValue("string", "app_name", "Flutter Demo")
+        }
+        create("xiaomi") {
+            dimension = "store"
+            applicationIdSuffix = ".xiaomi"
+            resValue("string", "app_name", "Flutter Demo")
+        }
+        create("oppo") {
+            dimension = "store"
+            applicationIdSuffix = ".oppo"
+            resValue("string", "app_name", "Flutter Demo")
+        }
+        create("vivo") {
+            dimension = "store"
+            applicationIdSuffix = ".vivo"
+            resValue("string", "app_name", "Flutter Demo")
+        }
+        create("honor") {
+            dimension = "store"
+            applicationIdSuffix = ".honor"
+            resValue("string", "app_name", "Flutter Demo")
+        }
+    }
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.runawaystar.flutter_demo"
