@@ -59,18 +59,26 @@ class _SplashViewState extends State<SplashView> {
                 // 底部Logo和App名称 - 占屏幕15%
                 Expanded(
                   flex: 15,
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset('assets/img/logo.png', width: 36, height: 36),
-                        const SizedBox(width: 8),
-                        Text(
-                          AppLocalizations.of(context)!.app_name,
-                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset('assets/img/logo.png', width: 24, height: 24),
+                            const SizedBox(width: 8),
+                            Text(
+                              AppLocalizations.of(context)!.app_name,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(height: MediaQuery.of(context).padding.bottom),
+                    ],
                   ),
                 ),
               ],
