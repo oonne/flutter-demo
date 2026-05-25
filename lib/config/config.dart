@@ -24,9 +24,6 @@ const String adIosAppId = '5827803';
 // 应用名称
 const String adAppName = 'PMS';
 
-// 是否使用GroMore聚合功能
-const bool adUseMediation = false;
-
 // 开屏广告
 const String adSplashAndroidCodeId = '896279658';
 const String adSplashIosCodeId = '896279658';
@@ -35,5 +32,5 @@ const String adSplashIosCodeId = '896279658';
 const String adBannerAndroidCodeId300_150 = '981876707';
 const String adBannerIosCodeId300_150 = '981876707';
 // Banner广告 300_45
-const String adBannerAndroidCodeId300_45 = '';
-const String adBannerIosCodeId300_45 = '';
+const String adBannerAndroidCodeId300_45 = '982295843';
+const String adBannerIosCodeId300_45 = '982295843';

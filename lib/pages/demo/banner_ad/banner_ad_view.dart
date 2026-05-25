@@ -46,6 +46,15 @@ class _BannerAdViewState extends State<BannerAdView> {
                     log.info('Banner广告加载失败: $error');
                   },
                 ),
+                // BannerAdWidget(
+                //   bannerSize: BannerAdSize.size300_45,
+                //   onShow: () {
+                //     log.info('Banner广告展示成功');
+                //   },
+                //   onFail: (error) {
+                //     log.info('Banner广告加载失败: $error');
+                //   },
+                // ),
               ],
             ),
           );

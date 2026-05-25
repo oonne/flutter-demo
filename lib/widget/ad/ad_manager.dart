@@ -74,7 +74,7 @@ class AdManager {
         androidAppId: adAndroidAppId, // Android AppID
         iosAppId: adIosAppId, // iOS AppID
         appName: adAppName, // 应用名称
-        useMediation: adUseMediation, // 是否使用聚合功能
+        useMediation: false, // 是否使用聚合功能
         // 用户相关配置
         paid: true, // 是否为付费用户，影响广告类型
         keywords: '', // 用户兴趣关键词，用于精准投放
