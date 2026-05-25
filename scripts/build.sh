@@ -53,19 +53,23 @@ cp "build/ios/ipa/$PACKAGE_NAME.ipa" "$SCRIPT_DIR/app/$PACKAGE_NAME-$NEW_VERSION
 # 删除 打包后的 ipa 文件
 rm -f "build/ios/ipa/$PACKAGE_NAME.ipa"
 
-# 打包apk
-flutter build apk --obfuscate --split-debug-info=scripts/symbols
-# 判断 打包后的 apk 文件是否存在
-if [ -f "build/app/outputs/flutter-apk/app-release.apk" ]; then
-    echo "apk 打包成功"
-else
-    echo "apk 打包失败"
-    exit 1
-fi
-# 复制 apk 文件到scripts/app/ 并重命名为 package_name.apk
-cp "build/app/outputs/flutter-apk/app-release.apk" "$SCRIPT_DIR/app/$PACKAGE_NAME-$NEW_VERSION.apk"
-# 删除 打包后的 apk 文件
-rm -f "build/app/outputs/flutter-apk/app-release.apk"
+# 打包 apk - 多个 flavor
+FLAVORS=("googleplay" "xiaomi" "oppo" "vivo" "honor")
+for FLAVOR in "${FLAVORS[@]}"; do
+    echo "开始打包 $FLAVOR flavor"
+    flutter build apk --flavor $FLAVOR --obfuscate --split-debug-info=scripts/symbols-$FLAVOR
+    # 判断 打包后的 apk 文件是否存在
+    if [ -f "build/app/outputs/flutter-apk/$FLAVOR/release/app-$FLAVOR-release.apk" ]; then
+        echo "apk $FLAVOR 打包成功"
+        # 复制 apk 文件到 scripts/app/ 并重命名为 package_name-flavor.apk
+        cp "build/app/outputs/flutter-apk/$FLAVOR/release/app-$FLAVOR-release.apk" "$SCRIPT_DIR/app/$PACKAGE_NAME-$NEW_VERSION-$FLAVOR.apk"
+        # 删除 打包后的 apk 文件
+        rm -f "build/app/outputs/flutter-apk/$FLAVOR/release/app-$FLAVOR-release.apk"
+    else
+        echo "apk $FLAVOR 打包失败"
+        exit 1
+    fi
+done
 
 # 全部打包完成
 END_TIME=$(date +%s)

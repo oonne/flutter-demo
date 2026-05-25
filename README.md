@@ -33,12 +33,6 @@ flutter 基础项目
 * 账号密码登录页面（包含pow校验）
 * 定时换票
 
-# 打包
-运行 sh scripts/build.sh 
-
-可打包出ipa包和apk包。
-ipa需要使用 Transporter 上传。
-
 # 开发
 ## 国际化
 由于arb文件难以维护，所以使用ts文件来管理国际化语言。  
@@ -54,3 +48,9 @@ sh ./scripts/build_runner.sh
 
 监听生成
 dart run build_runner watch --delete-conflicting-outputs
+
+# 打包
+运行 sh scripts/build.sh 
+
+可打包出ipa包和apk包。
+Android会根据flavor生成不同的apk包。ipa需要使用 Transporter 上传。
