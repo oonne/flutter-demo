@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'splash_view_model.dart';
 import 'package:flutter_demo/widget/ad/widgets/splash_ad_widget.dart';
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 
 /* 
  * Splash页面
@@ -55,11 +56,21 @@ class _SplashViewState extends State<SplashView> {
                     onFail: (error) => viewModel.onAdFail(context, error),
                   ),
                 ),
-                // 底部Logo - 占屏幕15%
+                // 底部Logo和App名称 - 占屏幕15%
                 Expanded(
                   flex: 15,
                   child: Center(
-                    child: Image.asset('assets/img/logo.png', width: 100, height: 100),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/img/logo.png', width: 36, height: 36),
+                        const SizedBox(width: 8),
+                        Text(
+                          AppLocalizations.of(context)!.app_name,
+                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
