@@ -9,6 +9,9 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
+  String get app_name => 'Demo应用';
+
+  @override
   String get lang_name => '中文（简体）';
 
   @override
@@ -210,6 +213,9 @@ class AppLocalizationsZh extends AppLocalizations {
 /// The translations for Chinese, using the Han script (`zh_Hant`).
 class AppLocalizationsZhHant extends AppLocalizationsZh {
   AppLocalizationsZhHant() : super('zh_Hant');
+
+  @override
+  String get app_name => 'Demo應用';
 
   @override
   String get lang_name => '中文（繁体）';

@@ -33,15 +33,9 @@ class SplashAdWidget extends StatefulWidget {
   // 构造函数参数
   // ==========================================================================
 
-  /// 是否隐藏跳过按钮
-  /// - false（默认）：显示跳过按钮，用户可以提前关闭广告
-  /// - true：隐藏跳过按钮，必须等广告倒计时结束
-  final bool hideSkip;
-
-  /// 广告加载超时时间，单位毫秒
-  /// 如果超过此时间广告仍未加载成功，将触发 onTimeOut 回调
-  /// 默认值为 3000ms（3秒）
-  final int timeout;
+  /// 广告占比高度占屏幕高度的比例
+  /// 默认值为 0.85（占85%屏幕高度）
+  final double heightFraction;
 
   /// 广告展示成功回调
   /// 当广告成功展示时触发
@@ -74,8 +68,7 @@ class SplashAdWidget extends StatefulWidget {
 
   const SplashAdWidget({
     super.key,
-    this.hideSkip = false,
-    this.timeout = 3000,
+    this.heightFraction = 0.85,
     this.onShow,
     this.onClick,
     this.onSkip,
@@ -123,9 +116,13 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
     // 使用屏幕的宽高作为广告视图尺寸
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+    final adHeight = screenHeight * widget.heightFraction;
 
     // 构建穿山甲SDK的开屏广告视图
-    return FlutterUnionadSplashAdView(
+    return SizedBox(
+      width: screenWidth,
+      height: adHeight,
+      child: FlutterUnionadSplashAdView(
       // 平台配置
       androidCodeId: adSplashAndroidCodeId,  // Android广告位ID
       iosCodeId: adSplashIosCodeId,          // iOS广告位ID
@@ -134,8 +131,8 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
       supportDeepLink: true,      // 是否支持DeepLink深度链接
       width: screenWidth,         // 广告视图宽度
       height: screenHeight,       // 广告视图高度
-      hideSkip: widget.hideSkip, // 是否隐藏跳过按钮
-      timeout: widget.timeout,    // 超时时间
+      hideSkip: false, // 是否隐藏跳过按钮
+      timeout: 3000,    // 超时时间
       
       // 回调配置
       callBack: FlutterUnionadSplashCallBack(
@@ -175,6 +172,7 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
           widget.onTimeOut?.call();
         },
       ),
+    ),
     );
   }
 }

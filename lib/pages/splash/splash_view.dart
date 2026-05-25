@@ -40,31 +40,27 @@ class _SplashViewState extends State<SplashView> {
       value: _viewModel,
       child: Consumer<SplashViewModel>(
         builder: (context, viewModel, child) {
-          /* 
-           * 页面
-           */
           return Scaffold(
-            body: Stack(
+            body: Column(
               children: [
-                // 背景Logo：广告未展示时显示
-                if (!viewModel.isAdShown)
-                  Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset('assets/img/logo.png', width: 100, height: 100),
-                      ],
-                    ),
+                // 开屏广告 - 占屏幕85%
+                Expanded(
+                  flex: 85,
+                  child: SplashAdWidget(
+                    heightFraction: 0.85,
+                    onShow: viewModel.onAdShow,
+                    onSkip: () => viewModel.onAdSkip(context),
+                    onFinish: () => viewModel.onAdFinish(context),
+                    onTimeOut: () => viewModel.onAdTimeOut(context),
+                    onFail: (error) => viewModel.onAdFail(context, error),
                   ),
-                // 开屏广告
-                SplashAdWidget(
-                  hideSkip: false,
-                  timeout: 3000,
-                  onShow: viewModel.onAdShow,
-                  onSkip: () => viewModel.onAdSkip(context),
-                  onFinish: () => viewModel.onAdFinish(context),
-                  onTimeOut: () => viewModel.onAdTimeOut(context),
-                  onFail: (error) => viewModel.onAdFail(context, error),
+                ),
+                // 底部Logo - 占屏幕15%
+                Expanded(
+                  flex: 15,
+                  child: Center(
+                    child: Image.asset('assets/img/logo.png', width: 100, height: 100),
+                  ),
                 ),
               ],
             ),

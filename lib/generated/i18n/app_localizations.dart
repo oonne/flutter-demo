@@ -117,6 +117,12 @@ abstract class AppLocalizations {
     Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
   ];
 
+  /// No description provided for @app_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo App'**
+  String get app_name;
+
   /// No description provided for @lang_name.
   ///
   /// In en, this message translates to:

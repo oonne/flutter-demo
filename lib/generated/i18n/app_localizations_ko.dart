@@ -9,6 +9,9 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
+  String get app_name => 'Demo 애플리케이션';
+
+  @override
   String get lang_name => '한국어';
 
   @override
