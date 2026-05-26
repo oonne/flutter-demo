@@ -9,6 +9,7 @@ import 'package:flutter_demo/global/periodic_tasks.dart';
 import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/utils/log.dart';
+import 'package:flutter_demo/utils/flavor_utils.dart';
 import 'package:flutter_demo/routes.dart';
 import 'package:flutter_demo/widget/ad/ad_manager.dart';
 
@@ -31,7 +32,8 @@ Future<void> main() async {
     await dotenv.load(fileName: ".env.$env");
   }
   String envName = dotenv.env['ENV_NAME'] ?? '';
-  log.info("准备启动 环境: $envName");
+  String flavor = await FlavorUtils.getFlavor() ?? '';
+  log.info("准备启动 环境: $envName, Flavor: $flavor");
 
   // 初始化全局状态
   final globalState = GlobalState();

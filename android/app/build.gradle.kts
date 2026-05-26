@@ -10,6 +10,10 @@ android {
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "29.0.13113456"
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -25,26 +29,31 @@ android {
             dimension = "store"
             applicationIdSuffix = ".googleplay"
             resValue("string", "app_name", "Flutter Demo")
+            buildConfigField("String", "FLAVOR", "\"googleplay\"")
         }
         create("xiaomi") {
             dimension = "store"
             applicationIdSuffix = ".xiaomi"
             resValue("string", "app_name", "Flutter Demo")
+            buildConfigField("String", "FLAVOR", "\"xiaomi\"")
         }
         create("oppo") {
             dimension = "store"
             applicationIdSuffix = ".oppo"
             resValue("string", "app_name", "Flutter Demo")
+            buildConfigField("String", "FLAVOR", "\"oppo\"")
         }
         create("vivo") {
             dimension = "store"
             applicationIdSuffix = ".vivo"
             resValue("string", "app_name", "Flutter Demo")
+            buildConfigField("String", "FLAVOR", "\"vivo\"")
         }
         create("honor") {
             dimension = "store"
             applicationIdSuffix = ".honor"
             resValue("string", "app_name", "Flutter Demo")
+            buildConfigField("String", "FLAVOR", "\"honor\"")
         }
     }
 

@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Flutter (googleplay)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": ["--flavor", "googleplay"],
+            "flutterMode": "debug"
+        },
+        {
+            "name": "Flutter (xiaomi)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": ["--flavor", "xiaomi"],
+            "flutterMode": "debug"
+        },
+        {
+            "name": "Flutter (oppo)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": ["--flavor", "oppo"],
+            "flutterMode": "debug"
+        },
+        {
+            "name": "Flutter (vivo)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": ["--flavor", "vivo"],
+            "flutterMode": "debug"
+        },
+        {
+            "name": "Flutter (honor)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": ["--flavor", "honor"],
+            "flutterMode": "debug"
+        }
+    ]
+}
