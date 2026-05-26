@@ -1,6 +1,6 @@
 import 'package:flutter_unionad/flutter_unionad.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_demo/config/config.dart';
+import 'package:flutter_demo/widget/ad/platform_ad_config.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -70,10 +70,9 @@ class AdManager {
     try {
       // 调用穿山甲SDK的注册方法，配置所有必要参数
       await FlutterUnionad.register(
-        // 基础配置
-        androidAppId: adAndroidAppId, // Android AppID
-        iosAppId: adIosAppId, // iOS AppID
-        appName: adAppName, // 应用名称
+        androidAppId: PlatformAdConfig.appId,
+        iosAppId: PlatformAdConfig.appId,
+        appName: PlatformAdConfig.appName,
         useMediation: false, // 是否使用聚合功能
         // 用户相关配置
         paid: true, // 是否为付费用户，影响广告类型

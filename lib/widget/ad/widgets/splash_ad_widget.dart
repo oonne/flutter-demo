@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unionad/flutter_unionad.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_demo/config/config.dart';
+import 'package:flutter_demo/widget/ad/platform_ad_config.dart';
 import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/utils/log.dart';
 
@@ -10,16 +10,16 @@ import 'package:flutter_demo/utils/log.dart';
 typedef SplashAdCallback = void Function();
 
 /// 开屏广告Widget
-/// 
+///
 /// 开屏广告（ Splash Ad ）是用户在打开App时看到的第一个广告，
 /// 通常展示3-5秒后自动消失或显示跳过按钮让用户提前关闭。
-/// 
+///
 /// 主要特点：
 /// - 全屏展示，视觉效果强
 /// - 通常在应用启动时展示
 /// - 支持跳过按钮，用户可以提前关闭
 /// - 支持DeepLink深度链接
-/// 
+///
 /// 使用示例：
 /// ```dart
 /// SplashAdWidget(
@@ -82,7 +82,7 @@ class SplashAdWidget extends StatefulWidget {
 }
 
 /// 开屏广告组件的状态类
-/// 
+///
 /// 负责构建穿山甲SDK的开屏广告视图
 class _SplashAdWidgetState extends State<SplashAdWidget> {
   bool _isShowAd = true;
@@ -96,7 +96,7 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
       // 从全局状态读取是否显示广告
       final globalState = Provider.of<GlobalState>(context, listen: false);
       _isShowAd = globalState.isShowAd;
-      
+
       // 如果不显示广告，直接触发完成回调
       if (!_isShowAd) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -123,56 +123,54 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
       width: screenWidth,
       height: adHeight,
       child: FlutterUnionadSplashAdView(
-      // 平台配置
-      androidCodeId: adSplashAndroidCodeId,  // Android广告位ID
-      iosCodeId: adSplashIosCodeId,          // iOS广告位ID
-      
-      // 功能配置
-      supportDeepLink: true,      // 是否支持DeepLink深度链接
-      width: screenWidth,         // 广告视图宽度
-      height: screenHeight,       // 广告视图高度
-      hideSkip: false, // 是否隐藏跳过按钮
-      timeout: 3000,    // 超时时间
-      
-      // 回调配置
-      callBack: FlutterUnionadSplashCallBack(
-        // 广告展示成功
-        onShow: () {
-          log.info('开屏广告显示');
-          widget.onShow?.call();
-        },
-        
-        // 广告被点击
-        onClick: () {
-          log.info('开屏广告点击');
-          widget.onClick?.call();
-        },
-        
-        // 广告加载失败
-        onFail: (error) {
-          log.warning('开屏广告失败: $error');
-          widget.onFail?.call(error);
-        },
-        
-        // 广告倒计时结束
-        onFinish: () {
-          log.info('开屏广告倒计时结束');
-          widget.onFinish?.call();
-        },
-        
-        // 用户点击跳过
-        onSkip: () {
-          log.info('开屏广告跳过');
-          widget.onSkip?.call();
-        },
-        
-        // 广告加载超时
-        onTimeOut: () {
-          log.warning('开屏广告超时');
-          widget.onTimeOut?.call();
-        },
+        androidCodeId: PlatformAdConfig.splashCodeId,
+        iosCodeId: PlatformAdConfig.splashCodeId,
+
+        // 功能配置
+        supportDeepLink: true, // 是否支持DeepLink深度链接
+        width: screenWidth, // 广告视图宽度
+        height: screenHeight, // 广告视图高度
+        hideSkip: false, // 是否隐藏跳过按钮
+        timeout: 3000, // 超时时间
+        // 回调配置
+        callBack: FlutterUnionadSplashCallBack(
+          // 广告展示成功
+          onShow: () {
+            log.info('开屏广告显示');
+            widget.onShow?.call();
+          },
+
+          // 广告被点击
+          onClick: () {
+            log.info('开屏广告点击');
+            widget.onClick?.call();
+          },
+
+          // 广告加载失败
+          onFail: (error) {
+            log.warning('开屏广告失败: $error');
+            widget.onFail?.call(error);
+          },
+
+          // 广告倒计时结束
+          onFinish: () {
+            log.info('开屏广告倒计时结束');
+            widget.onFinish?.call();
+          },
+
+          // 用户点击跳过
+          onSkip: () {
+            log.info('开屏广告跳过');
+            widget.onSkip?.call();
+          },
+
+          // 广告加载超时
+          onTimeOut: () {
+            log.warning('开屏广告超时');
+            widget.onTimeOut?.call();
+          },
+        ),
       ),
-    ),
     );
   }
 }

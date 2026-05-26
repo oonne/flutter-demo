@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unionad/flutter_unionad.dart';
 import 'package:flutter_unionad/bannerad/BannerAdView.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_demo/config/config.dart';
+import 'package:flutter_demo/widget/ad/platform_ad_config.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/global/state.dart';
 
@@ -27,12 +27,16 @@ const Map<String, (double, double)> bannerAdSizeMap = {
   '300_45': (300.0, 45.0),
 };
 
-/// Banner广告代码位配置映射
-/// 尺寸标识 -> (Android代码位, iOS代码位)
-Map<String, (String, String)> get bannerAdCodeIdMap => {
-      '300_150': (adBannerAndroidCodeId300_150, adBannerIosCodeId300_150),
-      '300_45': (adBannerAndroidCodeId300_45, adBannerIosCodeId300_45),
-    };
+String getBannerCodeId(String sizeKey) {
+  switch (sizeKey) {
+    case '300_150':
+      return PlatformAdConfig.bannerCodeId300_150;
+    case '300_45':
+      return PlatformAdConfig.bannerCodeId300_45;
+    default:
+      return PlatformAdConfig.bannerCodeId300_150;
+  }
+}
 
 /// Banner广告Widget
 /// 
@@ -122,16 +126,11 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
         final bannerHeight = screenWidth * (height / width);
         
         // 获取代码位配置
-        final codeIdConfig = bannerAdCodeIdMap[sizeKey];
-        if (codeIdConfig == null) {
-          log.warning('Banner广告代码位配置不存在: $sizeKey');
-          return const SizedBox.shrink();
-        }
-        final (androidCodeId, iosCodeId) = codeIdConfig;
+        final codeId = getBannerCodeId(sizeKey);
         
         return FlutterUnionadBannerView(
-          androidCodeId: androidCodeId,
-          iosCodeId: iosCodeId,
+          androidCodeId: codeId,
+          iosCodeId: codeId,
           
           width: screenWidth,
           height: bannerHeight,

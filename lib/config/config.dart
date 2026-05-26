@@ -1,36 +1,54 @@
-/* 
+/*
  * 全局的配置文件
  */
-// 超时时间
+/// HTTP请求超时时间（秒）
 const int apiTimeOut = 30;
+/// 文件上传超时时间（秒）
 const int uploadTimeOut = 60;
 
-// token刷新时间
+
+/// Token刷新时间间隔（毫秒）
 const int tokenRefreshTime = 1000 * 60 * 60 * 12;
-// 登录pow计算位数
+/// 登录Pow（工作量证明）计算位数
 const int loginPowLength = 4;
 
-// 分页
+/// 默认分页大小
 const int pageSize = 10;
 
 /* 
  * 广告配置
  */
 
-// 穿山甲广告平台的 Android AppID
-const String adAndroidAppId = '5827803';
-// 穿山甲广告平台的 iOS AppID
-const String adIosAppId = '5827803';
-// 应用名称
+/// 应用名称
 const String adAppName = 'PMS';
 
-// 开屏广告
-const String adSplashAndroidCodeId = '896279658';
-const String adSplashIosCodeId = '896279658';
+/// 广告配置类
+class AdConfig {
+  final String appId;
+  final String splashCodeId;
+  final String bannerCodeId300_150;
+  final String bannerCodeId300_45;
 
-// Banner广告 300_150
-const String adBannerAndroidCodeId300_150 = '981876707';
-const String adBannerIosCodeId300_150 = '981876707';
-// Banner广告 300_45
-const String adBannerAndroidCodeId300_45 = '982295843';
-const String adBannerIosCodeId300_45 = '982295843';
+  const AdConfig({
+    required this.appId,
+    required this.splashCodeId,
+    required this.bannerCodeId300_150,
+    required this.bannerCodeId300_45,
+  });
+}
+
+/// Android 广告配置
+const AdConfig adAndroidConfig = AdConfig(
+  appId: '5827803', // 应用id
+  splashCodeId: '896279658', // 开屏广告代码位ID
+  bannerCodeId300_150: '981876707', // Banner 300x150
+  bannerCodeId300_45: '982295843', // Banner 300x45
+);
+
+/// iOS 广告配置
+const AdConfig adIosConfig = AdConfig(
+  appId: '', // 应用id
+  splashCodeId: '', // 开屏广告代码位ID
+  bannerCodeId300_150: '', // Banner 300x150
+  bannerCodeId300_45: '', // Banner 300x45
+);
