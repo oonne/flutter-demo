@@ -102,6 +102,17 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           widget.onFinish?.call();
         });
+        return;
+      }
+
+      // 检查开屏广告代码位ID是否有效
+      final splashCodeId = PlatformAdConfig.splashCodeId;
+      if (splashCodeId.isEmpty) {
+        log.warning('开屏广告代码位ID为空');
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          widget.onFinish?.call();
+        });
+        return;
       }
     }
   }
@@ -110,6 +121,13 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
   Widget build(BuildContext context) {
     // 如果不显示广告，返回空容器
     if (!_isShowAd) {
+      return const SizedBox.shrink();
+    }
+
+    // 检查开屏广告代码位ID是否有效
+    final splashCodeId = PlatformAdConfig.splashCodeId;
+    if (splashCodeId.isEmpty) {
+      log.warning('开屏广告代码位ID为空');
       return const SizedBox.shrink();
     }
 
@@ -123,8 +141,8 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
       width: screenWidth,
       height: adHeight,
       child: FlutterUnionadSplashAdView(
-        androidCodeId: PlatformAdConfig.splashCodeId,
-        iosCodeId: PlatformAdConfig.splashCodeId,
+        androidCodeId: splashCodeId,
+        iosCodeId: splashCodeId,
 
         // 功能配置
         supportDeepLink: true, // 是否支持DeepLink深度链接

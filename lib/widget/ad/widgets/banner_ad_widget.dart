@@ -38,6 +38,11 @@ String getBannerCodeId(String sizeKey) {
   }
 }
 
+bool isBannerCodeIdValid(String sizeKey) {
+  final codeId = getBannerCodeId(sizeKey);
+  return codeId.isNotEmpty;
+}
+
 /// Banner广告Widget
 /// 
 /// Banner广告是一种固定在页面顶部或底部的条形广告，
@@ -122,6 +127,13 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
           log.warning('Banner广告尺寸配置不存在: $sizeKey');
           return const SizedBox.shrink();
         }
+        
+        // 检查代码位ID是否有效
+        if (!isBannerCodeIdValid(sizeKey)) {
+          log.warning('Banner广告代码位ID为空: $sizeKey');
+          return const SizedBox.shrink();
+        }
+        
         final (width, height) = sizeConfig;
         final bannerHeight = screenWidth * (height / width);
         

@@ -67,6 +67,13 @@ class AdManager {
       return;
     }
 
+    // 检查 AppID 是否有效
+    final appId = PlatformAdConfig.appId;
+    if (appId.isEmpty) {
+      log.warning('广告SDK初始化跳过：AppID为空');
+      return;
+    }
+
     try {
       // 调用穿山甲SDK的注册方法，配置所有必要参数
       await FlutterUnionad.register(
