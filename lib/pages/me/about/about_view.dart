@@ -76,6 +76,12 @@ class _AboutViewState extends State<AboutView> {
                   if (!globalState.isRelease || globalState.env != 'prod') ...[
                     Panel(
                       children: [
+                        // Flavor
+                        PanelItem(
+                          label: '渠道',
+                          value: globalState.flavor,
+                        ),
+
                         // 环境
                         PanelItem(
                           label: '环境',

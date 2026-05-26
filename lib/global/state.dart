@@ -10,6 +10,7 @@ import 'package:flutter_demo/global/event_bus.dart';
 import 'package:flutter_demo/config/lang_list.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/utils/utils.dart';
+import 'package:flutter_demo/utils/flavor_utils.dart';
 import 'package:flutter_demo/models/user.dart';
 
 /*
@@ -17,22 +18,25 @@ import 'package:flutter_demo/models/user.dart';
  */
 class GlobalState extends ChangeNotifier {
   /* 
-   * 设备信息
+   * 设备信息 & Flavor渠道
    */
   Map<String, dynamic> deviceInfo = {};
   String uuid = '';
+  String flavor = '';
 
   // 获取设备信息
   Future<void> initDeviceInfo() async {
     final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
 
-    if (Platform.isAndroid) {
-      AndroidDeviceInfo androidInfo = await deviceInfoPlugin.androidInfo;
-      deviceInfo = androidInfo.data;
-    }
     if (Platform.isIOS) {
       IosDeviceInfo iosInfo = await deviceInfoPlugin.iosInfo;
       deviceInfo = iosInfo.data;
+      flavor = 'ios';
+    }
+    if (Platform.isAndroid) {
+      AndroidDeviceInfo androidInfo = await deviceInfoPlugin.androidInfo;
+      deviceInfo = androidInfo.data;
+      flavor = await FlavorUtils.getFlavor() ?? 'android';
     }
   }
 

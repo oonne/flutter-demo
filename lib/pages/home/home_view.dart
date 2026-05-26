@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:flutter_demo/utils/flavor_utils.dart';
 import 'package:flutter_demo/utils/log.dart';
 import 'home_view_model.dart';
 
@@ -49,14 +48,6 @@ class _HomeViewState extends State<HomeView> {
                       GoRouter.of(context).pushNamed('login');
                     },
                     child: const Text('登录页'),
-                  ),
-                  const SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () async {
-                      String flavor = await FlavorUtils.getFlavor() ?? '';
-                      log.info("获取到的flavor: $flavor");
-                    },
-                    child: const Text('获取flavor'),
                   ),
                 ]),
               ),
