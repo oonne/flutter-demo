@@ -79,12 +79,13 @@ if [ "$PACK_ANDROID" = true ]; then
         echo "开始打包 $FLAVOR flavor"
         flutter build apk --flavor $FLAVOR --obfuscate --split-debug-info=scripts/symbols-$FLAVOR
         # 判断 打包后的 apk 文件是否存在
-        if [ -f "build/app/outputs/flutter-apk/$FLAVOR/release/app-$FLAVOR-release.apk" ]; then
+        APK_PATH="build/app/outputs/flutter-apk/app-$FLAVOR-release.apk"
+        if [ -f "$APK_PATH" ]; then
             echo "apk $FLAVOR 打包成功"
             # 复制 apk 文件到 scripts/app/ 并重命名为 package_name-flavor.apk
-            cp "build/app/outputs/flutter-apk/$FLAVOR/release/app-$FLAVOR-release.apk" "$SCRIPT_DIR/app/$PACKAGE_NAME-$NEW_VERSION-$FLAVOR.apk"
+            cp "$APK_PATH" "$SCRIPT_DIR/app/$PACKAGE_NAME-$NEW_VERSION-$FLAVOR.apk"
             # 删除 打包后的 apk 文件
-            rm -f "build/app/outputs/flutter-apk/$FLAVOR/release/app-$FLAVOR-release.apk"
+            rm -f "$APK_PATH"
         else
             echo "apk $FLAVOR 打包失败"
             exit 1
