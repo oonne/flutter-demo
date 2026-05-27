@@ -9,6 +9,63 @@ import 'package:flutter_demo/utils/log.dart';
 /// 用于处理开屏广告的各种事件回调
 typedef SplashAdCallback = void Function();
 
+/// 开屏广告请求管理器
+class SplashAdRequestManager {
+  /// 单例实例
+  static final SplashAdRequestManager _instance = SplashAdRequestManager._internal();
+  
+  /// 最小请求间隔（秒）- 根据穿山甲建议设置为30秒
+  static const int _minRequestInterval = 30;
+  
+  /// 上次请求时间戳
+  int _lastRequestTime = 0;
+  
+  /// 是否正在请求中
+  bool _isRequesting = false;
+
+  factory SplashAdRequestManager() => _instance;
+
+  SplashAdRequestManager._internal();
+
+  /// 检查是否可以发起新请求
+  bool canRequest() {
+    final now = DateTime.now().millisecondsSinceEpoch;
+    final elapsed = (now - _lastRequestTime) ~/ 1000;
+    
+    if (_isRequesting) {
+      log.warning('开屏广告正在请求中，忽略重复请求');
+      return false;
+    }
+    
+    if (elapsed < _minRequestInterval) {
+      log.warning('开屏广告请求过于频繁，距离上次请求仅${elapsed}秒，需要等待${_minRequestInterval - elapsed}秒');
+      return false;
+    }
+    
+    return true;
+  }
+
+  /// 标记开始请求
+  void startRequest() {
+    _isRequesting = true;
+    _lastRequestTime = DateTime.now().millisecondsSinceEpoch;
+    log.info('开屏广告开始请求');
+  }
+
+  /// 标记请求结束（成功或失败）
+  void endRequest() {
+    _isRequesting = false;
+    log.info('开屏广告请求结束');
+  }
+
+  /// 获取距离下次可请求的剩余时间（秒）
+  int getRemainingSeconds() {
+    final now = DateTime.now().millisecondsSinceEpoch;
+    final elapsed = (now - _lastRequestTime) ~/ 1000;
+    return _minRequestInterval - elapsed;
+  }
+}
+
 /// 开屏广告Widget
 ///
 /// 开屏广告（ Splash Ad ）是用户在打开App时看到的第一个广告，
@@ -87,6 +144,10 @@ class SplashAdWidget extends StatefulWidget {
 class _SplashAdWidgetState extends State<SplashAdWidget> {
   bool _isShowAd = true;
   bool _isInitialized = false;
+  bool _isAdRequested = false;
+  
+  /// 请求管理器实例
+  final SplashAdRequestManager _requestManager = SplashAdRequestManager();
 
   @override
   void didChangeDependencies() {
@@ -114,6 +175,16 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
         });
         return;
       }
+
+      // 检查请求频率控制
+      if (!_requestManager.canRequest()) {
+        log.warning('开屏广告请求过于频繁，跳过本次请求');
+        _isShowAd = false;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          widget.onFinish?.call();
+        });
+        return;
+      }
     }
   }
 
@@ -129,6 +200,18 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
     if (splashCodeId.isEmpty) {
       log.warning('开屏广告代码位ID为空');
       return const SizedBox.shrink();
+    }
+
+    // 再次检查请求频率（防止build被多次调用导致重复请求）
+    if (!_isAdRequested && !_requestManager.canRequest()) {
+      log.warning('开屏广告请求过于频繁(build阶段)，跳过本次请求');
+      return const SizedBox.shrink();
+    }
+
+    // 标记广告请求开始
+    if (!_isAdRequested) {
+      _isAdRequested = true;
+      _requestManager.startRequest();
     }
 
     // 使用屏幕的宽高作为广告视图尺寸
@@ -167,24 +250,29 @@ class _SplashAdWidgetState extends State<SplashAdWidget> {
           // 广告加载失败
           onFail: (error) {
             log.warning('开屏广告失败: $error');
+            _requestManager.endRequest();
+            
             widget.onFail?.call(error);
           },
 
           // 广告倒计时结束
           onFinish: () {
             log.info('开屏广告倒计时结束');
+            _requestManager.endRequest();
             widget.onFinish?.call();
           },
 
           // 用户点击跳过
           onSkip: () {
             log.info('开屏广告跳过');
+            _requestManager.endRequest();
             widget.onSkip?.call();
           },
 
           // 广告加载超时
           onTimeOut: () {
             log.warning('开屏广告超时');
+            _requestManager.endRequest();
             widget.onTimeOut?.call();
           },
         ),
