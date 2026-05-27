@@ -34,6 +34,12 @@ flutter 基础项目
 * 定时换票
 
 # 开发
+## 安装依赖
+flutter pub get
+
+## 如果后台在本地运行，需要更新开发环境的环境变量
+sh ./scripts/update_env_ip.sh
+
 ## 国际化
 由于arb文件难以维护，所以使用ts文件来管理国际化语言。  
 本地安装Node.js环境，然后运行 npm install -g tsx 全局安装 tsx 依赖。
