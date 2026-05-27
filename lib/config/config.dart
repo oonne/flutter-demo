@@ -37,16 +37,48 @@ class AdConfig {
   });
 }
 
-/// Android 广告配置
-const AdConfig adAndroidConfig = AdConfig(
+/// iOS 广告配置
+const AdConfig adIosConfig = AdConfig(
+  appId: '', // 应用id
+  splashCodeId: '', // 开屏广告代码位ID
+  bannerCodeId300_150: '', // Banner 300x150
+  bannerCodeId300_45: '', // Banner 300x45
+);
+
+/// Android GooglePlay 广告配置
+const AdConfig adGoogleplayConfig = AdConfig(
   appId: '5827803', // 应用id
   splashCodeId: '896279658', // 开屏广告代码位ID
   bannerCodeId300_150: '981876707', // Banner 300x150
   bannerCodeId300_45: '982295843', // Banner 300x45
 );
 
-/// iOS 广告配置
-const AdConfig adIosConfig = AdConfig(
+/// Android Xiaomi 广告配置
+const AdConfig adXiaomiConfig = AdConfig(
+  appId: '', // 应用id
+  splashCodeId: '', // 开屏广告代码位ID
+  bannerCodeId300_150: '', // Banner 300x150
+  bannerCodeId300_45: '', // Banner 300x45
+);
+
+/// Android Oppo 广告配置
+const AdConfig adOppoConfig = AdConfig(
+  appId: '', // 应用id
+  splashCodeId: '', // 开屏广告代码位ID
+  bannerCodeId300_150: '', // Banner 300x150
+  bannerCodeId300_45: '', // Banner 300x45
+);
+
+/// Android Vivo 广告配置
+const AdConfig adVivoConfig = AdConfig(
+  appId: '', // 应用id
+  splashCodeId: '', // 开屏广告代码位ID
+  bannerCodeId300_150: '', // Banner 300x150
+  bannerCodeId300_45: '', // Banner 300x45
+);
+
+/// Android Honor 广告配置
+const AdConfig adHonorConfig = AdConfig(
   appId: '', // 应用id
   splashCodeId: '', // 开屏广告代码位ID
   bannerCodeId300_150: '', // Banner 300x150

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter_demo/config/config.dart';
+import 'package:flutter_demo/utils/flavor_utils.dart';
 
 /// 广告平台配置获取工具
 ///
@@ -14,9 +15,27 @@ class PlatformAdConfig {
     if (Platform.isIOS) {
       return adIosConfig;
     } else if (Platform.isAndroid) {
-      return adAndroidConfig;
+      return _getAndroidConfig();
     }
-    return adAndroidConfig;
+    return adGoogleplayConfig;
+  }
+
+  static AdConfig _getAndroidConfig() {
+    final flavor = FlavorUtils.cachedFlavor;
+    switch (flavor) {
+      case 'googleplay':
+        return adGoogleplayConfig;
+      case 'xiaomi':
+        return adXiaomiConfig;
+      case 'oppo':
+        return adOppoConfig;
+      case 'vivo':
+        return adVivoConfig;
+      case 'honor':
+        return adHonorConfig;
+      default:
+        return adGoogleplayConfig;
+    }
   }
 
   /// 获取当前平台的 AppID
