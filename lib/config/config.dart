@@ -50,7 +50,7 @@ const AdConfig adGoogleplayConfig = AdConfig(
   appId: '5827803', // 应用id
   splashCodeId: '896279658', // 开屏广告代码位ID
   bannerCodeId300_150: '981876707', // Banner 300x150
-  bannerCodeId300_45: '982295843', // Banner 300x45
+  bannerCodeId300_45: '', // Banner 300x45
 );
 
 /// Android Xiaomi 广告配置
