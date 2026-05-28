@@ -61,6 +61,67 @@ class _AboutViewState extends State<AboutView> {
                 children: [
                   Panel(
                     children: [
+                      // Logo 和 App名称
+                      PanelItem(
+                        footer: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          child: Center(
+                            child: Column(
+                              children: [
+                                // Logo
+                                Container(
+                                  width: 80,
+                                  height: 80,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: const DecorationImage(
+                                      image: AssetImage('assets/img/logo.png'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                // App名称
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 4),
+                                  child: Text(
+                                    AppLocalizations.of(context)!.app_name,
+                                    style: const TextStyle(fontSize: 16),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      // Logo 和 App名称
+                      PanelItem(
+                        footer: Center(
+                          child: Column(
+                            children: [
+                              // Logo
+                              Container(
+                                width: 80,
+                                height: 80,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: const DecorationImage(
+                                    image: AssetImage('assets/img/logo.png'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              // App名称
+                              Padding(
+                                padding: const EdgeInsets.only(top: 4),
+                                child: Text(
+                                  AppLocalizations.of(context)!.app_name,
+                                  style: const TextStyle(fontSize: 16),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                       // 版本号
                       PanelItem(
                         label: AppLocalizations.of(context)!.title_version,
@@ -77,10 +138,7 @@ class _AboutViewState extends State<AboutView> {
                     Panel(
                       children: [
                         // Flavor
-                        PanelItem(
-                          label: '渠道',
-                          value: globalState.flavor,
-                        ),
+                        PanelItem(label: '渠道', value: globalState.flavor),
 
                         // 环境
                         PanelItem(
