@@ -59,7 +59,13 @@ Run the following command to generate arb files:
 tsx ./scripts/generate_arb.ts
 ```
 
-### Step 6: Replace Chinese in Dart Files
+### Step 6: Generate Flutter AppLocalizations Class
+Run the following command to regenerate the Flutter AppLocalizations class:
+```bash
+flutter gen-l10n
+```
+
+### Step 7: Replace Chinese in Dart Files
 Replace all Chinese text in the target file with i18n keys using the format:
 - For titles: `localizations.title_xxx`
 - For buttons: `localizations.btn_xxx`
@@ -98,4 +104,5 @@ title_home: {
 1. **Comments are NOT internationalized** - Skip any text within comment blocks
 2. **Keys are case-sensitive** - Use camelCase for keys
 3. **Run generate_arb.ts after modifying ts files** - This generates the Flutter ARB files
-4. **Verify i18n keys exist** - Ensure all keys are properly defined in modules before final replacement
+4. **Run flutter gen-l10n after generating ARB files** - This regenerates the Flutter AppLocalizations class
+5. **Verify i18n keys exist** - Ensure all keys are properly defined in modules before final replacement

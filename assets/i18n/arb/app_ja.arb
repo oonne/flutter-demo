@@ -83,6 +83,18 @@
   "title_scan_result": "スキャン結果",
   "@title_scan_result": {},
 
+  "title_developer": "開発者",
+  "@title_developer": {},
+
+  "title_channel": "チャンネル",
+  "@title_channel": {},
+
+  "title_environment": "環境",
+  "@title_environment": {},
+
+  "title_show_ad": "広告を表示",
+  "@title_show_ad": {},
+
   "info_please_input": "入力してください",
   "@info_please_input": {},
 

@@ -98,6 +98,11 @@ class _AboutViewState extends State<AboutView> {
                         label: AppLocalizations.of(context)!.title_version,
                         value: viewModel.model.version,
                       ),
+                      // 开发者
+                      PanelItem(
+                        label: AppLocalizations.of(context)!.title_developer,
+                        value: 'JAY',
+                      ),
                     ],
                   ),
 
@@ -109,23 +114,23 @@ class _AboutViewState extends State<AboutView> {
                     Panel(
                       children: [
                         // Flavor
-                        PanelItem(label: '渠道', value: globalState.flavor),
+                      PanelItem(label: AppLocalizations.of(context)!.title_channel, value: globalState.flavor),
 
-                        // 环境
-                        PanelItem(
-                          label: '环境',
-                          value: viewModel.getEnvText(context),
-                          onTap: () => viewModel.changeEnv(context),
-                        ),
+                      // 环境
+                      PanelItem(
+                        label: AppLocalizations.of(context)!.title_environment,
+                        value: viewModel.getEnvText(context),
+                        onTap: () => viewModel.changeEnv(context),
+                      ),
 
-                        // 是否开启广告
-                        FormSwitch(
-                          label: '是否开启广告',
-                          switchValue: viewModel.model.isShowAd,
-                          onChanged: (value) {
-                            viewModel.setIsShowAd(context, value);
-                          },
-                        ),
+                      // 是否开启广告
+                      FormSwitch(
+                        label: AppLocalizations.of(context)!.title_show_ad,
+                        switchValue: viewModel.model.isShowAd,
+                        onChanged: (value) {
+                          viewModel.setIsShowAd(context, value);
+                        },
+                      ),
 
                         // Demo
                         PanelItem(

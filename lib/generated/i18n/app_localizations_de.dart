@@ -93,6 +93,18 @@ class AppLocalizationsDe extends AppLocalizations {
   String get title_scan_result => 'Scan-Ergebnis';
 
   @override
+  String get title_developer => 'Entwickler';
+
+  @override
+  String get title_channel => 'Kanal';
+
+  @override
+  String get title_environment => 'Umgebung';
+
+  @override
+  String get title_show_ad => 'Werbung anzeigen';
+
+  @override
   String get info_please_input => 'Bitte geben Sie ein';
 
   @override

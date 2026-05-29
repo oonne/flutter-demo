@@ -93,6 +93,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get title_scan_result => '扫码结果';
 
   @override
+  String get title_developer => '开发者';
+
+  @override
+  String get title_channel => '渠道';
+
+  @override
+  String get title_environment => '环境';
+
+  @override
+  String get title_show_ad => '是否开启广告';
+
+  @override
   String get info_please_input => '请输入';
 
   @override
@@ -297,6 +309,18 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get title_scan_result => '掃碼結果';
+
+  @override
+  String get title_developer => '開發者';
+
+  @override
+  String get title_channel => '渠道';
+
+  @override
+  String get title_environment => '環境';
+
+  @override
+  String get title_show_ad => '是否開啟廣告';
 
   @override
   String get info_please_input => '請輸入';

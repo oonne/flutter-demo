@@ -83,6 +83,18 @@
   "title_scan_result": "扫码结果",
   "@title_scan_result": {},
 
+  "title_developer": "开发者",
+  "@title_developer": {},
+
+  "title_channel": "渠道",
+  "@title_channel": {},
+
+  "title_environment": "环境",
+  "@title_environment": {},
+
+  "title_show_ad": "是否开启广告",
+  "@title_show_ad": {},
+
   "info_please_input": "请输入",
   "@info_please_input": {},
 

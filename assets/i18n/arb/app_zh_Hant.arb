@@ -83,6 +83,18 @@
   "title_scan_result": "掃碼結果",
   "@title_scan_result": {},
 
+  "title_developer": "開發者",
+  "@title_developer": {},
+
+  "title_channel": "渠道",
+  "@title_channel": {},
+
+  "title_environment": "環境",
+  "@title_environment": {},
+
+  "title_show_ad": "是否開啟廣告",
+  "@title_show_ad": {},
+
   "info_please_input": "請輸入",
   "@info_please_input": {},
 

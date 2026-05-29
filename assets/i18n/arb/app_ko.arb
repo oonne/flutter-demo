@@ -83,6 +83,18 @@
   "title_scan_result": "스캔 결과",
   "@title_scan_result": {},
 
+  "title_developer": "개발자",
+  "@title_developer": {},
+
+  "title_channel": "채널",
+  "@title_channel": {},
+
+  "title_environment": "환경",
+  "@title_environment": {},
+
+  "title_show_ad": "광고 표시",
+  "@title_show_ad": {},
+
   "info_please_input": "입력해주세요",
   "@info_please_input": {},
 

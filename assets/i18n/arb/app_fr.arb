@@ -83,6 +83,18 @@
   "title_scan_result": "Résultat du scan",
   "@title_scan_result": {},
 
+  "title_developer": "Développeur",
+  "@title_developer": {},
+
+  "title_channel": "Canal",
+  "@title_channel": {},
+
+  "title_environment": "Environnement",
+  "@title_environment": {},
+
+  "title_show_ad": "Afficher les publicités",
+  "@title_show_ad": {},
+
   "info_please_input": "Veuillez entrer",
   "@info_please_input": {},
 

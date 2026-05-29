@@ -93,6 +93,18 @@ class AppLocalizationsJa extends AppLocalizations {
   String get title_scan_result => 'スキャン結果';
 
   @override
+  String get title_developer => '開発者';
+
+  @override
+  String get title_channel => 'チャンネル';
+
+  @override
+  String get title_environment => '環境';
+
+  @override
+  String get title_show_ad => '広告を表示';
+
+  @override
   String get info_please_input => '入力してください';
 
   @override

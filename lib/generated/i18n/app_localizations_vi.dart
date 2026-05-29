@@ -93,6 +93,18 @@ class AppLocalizationsVi extends AppLocalizations {
   String get title_scan_result => 'Kết quả quét';
 
   @override
+  String get title_developer => 'Nhà phát triển';
+
+  @override
+  String get title_channel => 'Kênh';
+
+  @override
+  String get title_environment => 'Môi trường';
+
+  @override
+  String get title_show_ad => 'Hiển thị quảng cáo';
+
+  @override
   String get info_please_input => 'Vui lòng nhập';
 
   @override

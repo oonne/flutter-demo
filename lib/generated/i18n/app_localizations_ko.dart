@@ -93,6 +93,18 @@ class AppLocalizationsKo extends AppLocalizations {
   String get title_scan_result => '스캔 결과';
 
   @override
+  String get title_developer => '개발자';
+
+  @override
+  String get title_channel => '채널';
+
+  @override
+  String get title_environment => '환경';
+
+  @override
+  String get title_show_ad => '광고 표시';
+
+  @override
   String get info_please_input => '입력해주세요';
 
   @override

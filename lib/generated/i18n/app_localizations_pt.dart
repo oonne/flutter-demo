@@ -93,6 +93,18 @@ class AppLocalizationsPt extends AppLocalizations {
   String get title_scan_result => 'Resultado do escaneamento';
 
   @override
+  String get title_developer => 'Desenvolvedor';
+
+  @override
+  String get title_channel => 'Canal';
+
+  @override
+  String get title_environment => 'Ambiente';
+
+  @override
+  String get title_show_ad => 'Mostrar anúncios';
+
+  @override
   String get info_please_input => 'Por favor, insira';
 
   @override

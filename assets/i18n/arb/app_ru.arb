@@ -83,6 +83,18 @@
   "title_scan_result": "Результат сканирования",
   "@title_scan_result": {},
 
+  "title_developer": "Разработчик",
+  "@title_developer": {},
+
+  "title_channel": "Канал",
+  "@title_channel": {},
+
+  "title_environment": "Окружение",
+  "@title_environment": {},
+
+  "title_show_ad": "Показывать рекламу",
+  "@title_show_ad": {},
+
   "info_please_input": "Пожалуйста, введите",
   "@info_please_input": {},
 
