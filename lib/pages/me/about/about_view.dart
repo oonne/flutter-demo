@@ -93,35 +93,6 @@ class _AboutViewState extends State<AboutView> {
                           ),
                         ),
                       ),
-                      // Logo 和 App名称
-                      PanelItem(
-                        footer: Center(
-                          child: Column(
-                            children: [
-                              // Logo
-                              Container(
-                                width: 80,
-                                height: 80,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  image: const DecorationImage(
-                                    image: AssetImage('assets/img/logo.png'),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              // App名称
-                              Padding(
-                                padding: const EdgeInsets.only(top: 4),
-                                child: Text(
-                                  AppLocalizations.of(context)!.app_name,
-                                  style: const TextStyle(fontSize: 16),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
                       // 版本号
                       PanelItem(
                         label: AppLocalizations.of(context)!.title_version,
