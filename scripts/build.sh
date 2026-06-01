@@ -20,6 +20,9 @@ cd ../
 PACKAGE_NAME=$(grep "name:" pubspec.yaml | cut -d' ' -f2)
 echo "开始打包: $PACKAGE_NAME"
 
+# 创建输出目录
+mkdir -p "$SCRIPT_DIR/app"
+
 # 递增版本号和构件号
 VERSION_LINE=$(grep "version:" pubspec.yaml)
 VERSION=$(echo $VERSION_LINE | cut -d'+' -f1 | cut -d' ' -f2)
