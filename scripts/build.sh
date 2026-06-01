@@ -4,6 +4,8 @@ INCREMENT_VERSION=false
 PACK_IOS=false
 #是否打包android
 PACK_ANDROID=true
+#是否打包每个flavor
+PACK_EACH_FLAVOR=true
 
 
 # 记录开始时间
@@ -75,7 +77,28 @@ fi
 # 打包 apk - 多个 flavor
 if [ "$PACK_ANDROID" = true ]; then
     FLAVORS=("googleplay" "xiaomi" "oppo" "vivo" "honor")
-    for FLAVOR in "${FLAVORS[@]}"; do
+    
+    if [ "$PACK_EACH_FLAVOR" = true ]; then
+        # 打包所有 flavor
+        for FLAVOR in "${FLAVORS[@]}"; do
+            echo "开始打包 $FLAVOR flavor"
+            flutter build apk --flavor $FLAVOR --obfuscate --split-debug-info=scripts/symbols-$FLAVOR
+            # 判断 打包后的 apk 文件是否存在
+            APK_PATH="build/app/outputs/flutter-apk/app-$FLAVOR-release.apk"
+            if [ -f "$APK_PATH" ]; then
+                echo "apk $FLAVOR 打包成功"
+                # 复制 apk 文件到 scripts/app/ 并重命名为 package_name-flavor.apk
+                cp "$APK_PATH" "$SCRIPT_DIR/app/$PACKAGE_NAME-$NEW_VERSION-$FLAVOR.apk"
+                # 删除 打包后的 apk 文件
+                rm -f "$APK_PATH"
+            else
+                echo "apk $FLAVOR 打包失败"
+                exit 1
+            fi
+        done
+    else
+        # 只打包第一个 flavor
+        FLAVOR=${FLAVORS[0]}
         echo "开始打包 $FLAVOR flavor"
         flutter build apk --flavor $FLAVOR --obfuscate --split-debug-info=scripts/symbols-$FLAVOR
         # 判断 打包后的 apk 文件是否存在
@@ -90,7 +113,7 @@ if [ "$PACK_ANDROID" = true ]; then
             echo "apk $FLAVOR 打包失败"
             exit 1
         fi
-    done
+    fi
 else
     echo "跳过 Android 打包"
 fi
