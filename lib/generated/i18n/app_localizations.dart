@@ -285,12 +285,6 @@ abstract class AppLocalizations {
   /// **'Scan Result'**
   String get title_scan_result;
 
-  /// No description provided for @title_developer.
-  ///
-  /// In en, this message translates to:
-  /// **'Developer'**
-  String get title_developer;
-
   /// No description provided for @title_channel.
   ///
   /// In en, this message translates to:

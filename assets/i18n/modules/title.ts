@@ -120,21 +120,6 @@ const msg: ILangMsgs = {
     ko_KR: "스캔 결과",
     vi_VN: "Kết quả quét",
   },
-  // 开发者
-  title_developer: {
-    zh_CN: "开发者",
-    zh_TW: "開發者",
-    en_US: "Developer",
-    ru_RU: "Разработчик",
-    fr_FR: "Développeur",
-    es_ES: "Desarrollador",
-    it_IT: "Sviluppatore",
-    pt_PT: "Desenvolvedor",
-    de_DE: "Entwickler",
-    ja_JP: "開発者",
-    ko_KR: "개발자",
-    vi_VN: "Nhà phát triển",
-  },
   // 渠道
   title_channel: {
     zh_CN: "渠道",

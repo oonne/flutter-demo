@@ -64,7 +64,7 @@ class _AboutViewState extends State<AboutView> {
                       // Logo 和 App名称
                       PanelItem(
                         footer: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          padding: const EdgeInsets.only(top: 16),
                           child: Center(
                             child: Column(
                               children: [
@@ -88,6 +88,14 @@ class _AboutViewState extends State<AboutView> {
                                     style: const TextStyle(fontSize: 16),
                                   ),
                                 ),
+                                // 版权信息
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 24, bottom: 8),
+                                  child: Text(
+                                    'Copyright © JAY.',
+                                    style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -98,11 +106,7 @@ class _AboutViewState extends State<AboutView> {
                         label: AppLocalizations.of(context)!.title_version,
                         value: viewModel.model.version,
                       ),
-                      // 开发者
-                      PanelItem(
-                        label: AppLocalizations.of(context)!.title_developer,
-                        value: 'JAY',
-                      ),
+                      
                     ],
                   ),
 

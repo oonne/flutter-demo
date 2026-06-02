@@ -93,9 +93,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get title_scan_result => 'Risultato dello scan';
 
   @override
-  String get title_developer => 'Sviluppatore';
-
-  @override
   String get title_channel => 'Canale';
 
   @override

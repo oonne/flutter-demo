@@ -93,9 +93,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get title_scan_result => 'Resultado do escaneamento';
 
   @override
-  String get title_developer => 'Desenvolvedor';
-
-  @override
   String get title_channel => 'Canal';
 
   @override
