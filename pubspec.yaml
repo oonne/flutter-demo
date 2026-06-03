@@ -34,15 +34,17 @@ dependencies:
   date_format: ^2.0.9
   flutter_unionad: ^2.2.7
   webview_flutter: ^4.13.1
-  sqflite: ^2.4.2+1
-  path: ^1.9.1
+  drift: ^2.33.0
+  drift_flutter: ^0.3.0
+  path_provider: ^2.1.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
-  build_runner: ^2.4.15
+  build_runner: ^2.15.0
   json_serializable: ^6.9.4
+  drift_dev: ^2.33.0
 
 flutter:
   generate: true
