@@ -41,7 +41,7 @@ class AboutViewModel extends ChangeNotifier {
    * 环境
    */
   // 初始化环境
-  Future<void> initEnvironment(context) async {
+  Future<void> initEnvironment(BuildContext context) async {
     final globalState = Provider.of<GlobalState>(context, listen: false);
     model.environment = globalState.env;
   }
@@ -94,7 +94,7 @@ class AboutViewModel extends ChangeNotifier {
    */
 
   // 初始化广告开关状态
-  Future<void> initIsShowAd(context) async {
+  Future<void> initIsShowAd(BuildContext context) async {
     final globalState = Provider.of<GlobalState>(context, listen: false);
     model.isShowAd = globalState.isShowAd;
     notifyListeners();
