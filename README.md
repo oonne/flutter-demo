@@ -40,6 +40,11 @@ flutter pub get
 ## 如果后台在本地运行，需要更新开发环境的环境变量
 sh ./scripts/update_env_ip.sh
 
+## 寻找合适的图标
+本项目图标风格为[阿里巴巴国际站官方图标库](https://www.iconfont.cn/collections/detail?cid=19238)
+可使用skill来搜索或创建的图标并下载:
+@icon-search 找一个”飞机“的图标。
+
 ## 国际化
 由于arb文件难以维护，所以使用ts文件来管理国际化语言。  
 本地安装Node.js环境，然后运行 npm install -g tsx 全局安装 tsx 依赖。
