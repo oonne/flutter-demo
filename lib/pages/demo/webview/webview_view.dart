@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:go_router/go_router.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
@@ -8,9 +9,7 @@ import 'webview_model.dart';
 import 'webview_view_model.dart';
 
 class WebViewDemoView extends StatefulWidget {
-  final String? url;
-
-  const WebViewDemoView({super.key, this.url});
+  const WebViewDemoView({super.key});
 
   @override
   State<WebViewDemoView> createState() => _WebViewDemoViewState();
@@ -23,12 +22,20 @@ class _WebViewDemoViewState extends State<WebViewDemoView> {
   @override
   void initState() {
     super.initState();
-    viewModel = WebViewViewModel(model: WebViewModel(url: widget.url));
-    if (viewModel.hasUrl) {
-      controller = WebViewController()
-        ..setJavaScriptMode(JavaScriptMode.unrestricted)
-        ..loadRequest(Uri.parse(widget.url!));
-    }
+    viewModel = WebViewViewModel(model: WebViewModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final queryParameters =
+          GoRouterState.of(context).extra as Map<String, dynamic>?;
+      final url = queryParameters?['url'] as String?;
+      if (url != null) {
+        viewModel.model.url = url;
+        controller = WebViewController()
+          ..setJavaScriptMode(JavaScriptMode.unrestricted)
+          ..loadRequest(Uri.parse(url));
+        setState(() {});
+      }
+    });
   }
 
   @override
