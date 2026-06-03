@@ -121,6 +121,13 @@ class _IndexViewState extends State<IndexView> {
                         },
                       ),
                       PanelItem(
+                        label: 'WebView',
+                        showArrow: true,
+                        onTap: () {
+                          context.pushNamed('demo/webview', extra: {'url': 'https://blog.oonne.com'});
+                        },
+                      ),
+                      PanelItem(
                         label: 'Banner广告',
                         showArrow: true,
                         onTap: () {
