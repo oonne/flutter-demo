@@ -78,6 +78,9 @@ ThemeData createBaseTheme({
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
+        side: BorderSide(
+          color: colorScheme.primary,
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(vars.radius),
         ),
