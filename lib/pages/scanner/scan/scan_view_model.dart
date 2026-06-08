@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:go_router/go_router.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 import 'package:flutter_demo/utils/log.dart';
+import 'package:flutter_demo/global/state.dart';
 import 'scan_model.dart';
 
 class ScanViewModel extends ChangeNotifier {
@@ -58,9 +60,12 @@ class ScanViewModel extends ChangeNotifier {
     model.result = result;
     log.info('扫码结果: $result');
 
-    // 播放声音
-    await player.setSource(AssetSource('audio/di.mp3'));
-    await player.resume();
+    // 根据全局配置决定是否播放声音
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+    if (globalState.isSoundEnabled) {
+      await player.setSource(AssetSource('audio/di.mp3'));
+      await player.resume();
+    }
     if (!context.mounted) {
       return;
     }
