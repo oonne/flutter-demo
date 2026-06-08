@@ -54,7 +54,7 @@ sh ./scripts/update_env_ip.sh
 tsx ./scripts/generate_arb.ts 
 
 如果是开发中，直接使用纯中文开发，页面完成后再调用skill去做国际化处理即可: 
-@i18n-internationalization 拖入指定的文件或目录。
+@i18n 拖入指定的文件或目录。
 
 ## 生成类型定义
 一次性生成
