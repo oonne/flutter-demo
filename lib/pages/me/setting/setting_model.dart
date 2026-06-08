@@ -6,4 +6,7 @@ class SettingModel {
 
   /* 语言 */
   String localeCode = 'zh_CN';
+
+  /* 声音 */
+  bool isSoundEnabled = true;
 } 

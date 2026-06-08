@@ -18,6 +18,7 @@ flutter 基础项目
 * JSON序列化(json_annotation)
 * 时间日期格式化(date_format)
 * 列表上拉加载和下拉刷新(easy_refresh)
+* 播放声音(audioplayers)
 * 数据库(drift)
 * 广告(flutter_unionad)
 * 自定义字体

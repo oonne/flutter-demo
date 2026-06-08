@@ -102,6 +102,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get title_show_ad => '広告を表示';
 
   @override
+  String get title_sound => 'サウンド';
+
+  @override
   String get info_please_input => '入力してください';
 
   @override

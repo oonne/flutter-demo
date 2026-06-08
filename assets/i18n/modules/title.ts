@@ -165,6 +165,21 @@ const msg: ILangMsgs = {
     ko_KR: "광고 표시",
     vi_VN: "Hiển thị quảng cáo",
   },
+  // 声音开关
+  title_sound: {
+    zh_CN: "声音",
+    zh_TW: "聲音",
+    en_US: "Sound",
+    ru_RU: "Звук",
+    fr_FR: "Son",
+    es_ES: "Sonido",
+    it_IT: "Suono",
+    pt_PT: "Som",
+    de_DE: "Ton",
+    ja_JP: "サウンド",
+    ko_KR: "사운드",
+    vi_VN: "Âm thanh",
+  },
 };
 
 export default msg;

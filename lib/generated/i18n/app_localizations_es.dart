@@ -102,6 +102,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get title_show_ad => 'Mostrar anuncios';
 
   @override
+  String get title_sound => 'Sonido';
+
+  @override
   String get info_please_input => 'Por favor, ingrese';
 
   @override

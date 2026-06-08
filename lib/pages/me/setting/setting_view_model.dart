@@ -18,6 +18,7 @@ class SettingViewModel extends ChangeNotifier {
   void init(BuildContext context) {
     initThemeMode(context);
     initLocale(context);
+    initIsSoundEnabled(context);
   }
 
   /* 
@@ -116,6 +117,24 @@ class SettingViewModel extends ChangeNotifier {
 
     await globalState.changeLocale(result);
     model.localeCode = result;
+    notifyListeners();
+  }
+
+  /* 
+   * 声音
+   */
+  // 初始化声音设置
+  void initIsSoundEnabled(BuildContext context) {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+    model.isSoundEnabled = globalState.isSoundEnabled;
+    notifyListeners();
+  }
+
+  // 切换声音设置
+  Future<void> toggleIsSoundEnabled(BuildContext context) async {
+    final globalState = Provider.of<GlobalState>(context, listen: false);
+    await globalState.setIsSoundEnabled(!model.isSoundEnabled);
+    model.isSoundEnabled = !model.isSoundEnabled;
     notifyListeners();
   }
 

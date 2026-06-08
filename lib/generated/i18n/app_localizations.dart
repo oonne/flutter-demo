@@ -303,6 +303,12 @@ abstract class AppLocalizations {
   /// **'Show Ads'**
   String get title_show_ad;
 
+  /// No description provided for @title_sound.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound'**
+  String get title_sound;
+
   /// No description provided for @info_please_input.
   ///
   /// In en, this message translates to:

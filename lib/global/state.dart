@@ -95,6 +95,26 @@ class GlobalState extends ChangeNotifier {
     }
   }
 
+  /* 
+   * 声音
+   */
+  bool isSoundEnabled = true;
+
+  // 设置是否开启声音
+  Future<void> setIsSoundEnabled(bool enabled) async {
+    isSoundEnabled = enabled;
+    notifyListeners();
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('IS_SOUND_ENABLED', enabled);
+  }
+
+  // 初始化是否开启声音
+  Future<void> initIsSoundEnabled() async {
+    final prefs = await SharedPreferences.getInstance();
+    isSoundEnabled = prefs.getBool('IS_SOUND_ENABLED') ?? true;
+  }
+
   /*
    * 语言
    */
@@ -233,6 +253,7 @@ class GlobalState extends ChangeNotifier {
     await Future.wait([
       initUUID(),
       initThemeMode(),
+      initIsSoundEnabled(),
       initLocale(),
       initEnv(),
       initIsShowAd(),

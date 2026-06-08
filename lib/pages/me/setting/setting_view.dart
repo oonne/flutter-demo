@@ -7,6 +7,7 @@ import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/panel_item.dart';
+import 'package:flutter_demo/widget/panel/form_switch.dart';
 
 import 'setting_view_model.dart';
 
@@ -77,6 +78,14 @@ class _SettingViewState extends State<SettingView> {
                         showArrow: true,
                         onTap: () {
                           viewModel.changeLocale(context);
+                        },
+                      ),
+                      /* 声音 */
+                      FormSwitch(
+                        label: AppLocalizations.of(context)!.title_sound,
+                        switchValue: viewModel.model.isSoundEnabled,
+                        onChanged: (value) {
+                          viewModel.toggleIsSoundEnabled(context);
                         },
                       ),
                     ],

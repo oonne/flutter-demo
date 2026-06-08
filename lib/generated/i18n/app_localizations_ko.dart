@@ -102,6 +102,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get title_show_ad => '광고 표시';
 
   @override
+  String get title_sound => '사운드';
+
+  @override
   String get info_please_input => '입력해주세요';
 
   @override

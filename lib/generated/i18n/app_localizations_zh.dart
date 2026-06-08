@@ -102,6 +102,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get title_show_ad => '是否开启广告';
 
   @override
+  String get title_sound => '声音';
+
+  @override
   String get info_please_input => '请输入';
 
   @override
@@ -315,6 +318,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get title_show_ad => '是否開啟廣告';
+
+  @override
+  String get title_sound => '聲音';
 
   @override
   String get info_please_input => '請輸入';

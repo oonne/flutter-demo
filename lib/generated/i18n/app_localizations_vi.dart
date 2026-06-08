@@ -102,6 +102,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get title_show_ad => 'Hiển thị quảng cáo';
 
   @override
+  String get title_sound => 'Âm thanh';
+
+  @override
   String get info_please_input => 'Vui lòng nhập';
 
   @override
