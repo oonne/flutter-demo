@@ -13,7 +13,7 @@ class EventbusViewModel extends ChangeNotifier {
   /* 
    * 初始化
    */
-  init(BuildContext context) {
+  void init(BuildContext context) {
     _subscription = eventBus.on<TestEvent>().listen((event) {
       if (context.mounted) {
         showTextSnackBar(context, msg: event.message);
@@ -24,7 +24,7 @@ class EventbusViewModel extends ChangeNotifier {
   /* 
    * 离开页面
    */
-  cleanup() {
+  void cleanup() {
     _subscription?.cancel();
   }
 
