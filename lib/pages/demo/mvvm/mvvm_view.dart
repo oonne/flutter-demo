@@ -75,6 +75,15 @@ class _MvvmViewState extends State<MvvmView> {
                   ),
 
                   /* 
+                   * 精度计算结果
+                   */
+                  Text('直接计算：'),
+                  Text(viewModel.model.directlyResult),
+                  Text('精度计算：'),
+                  Text(viewModel.model.decimalResult),
+                  const SizedBox(height: 20),
+
+                  /* 
                    * 模态弹框
                    */
                   ElevatedButton(
