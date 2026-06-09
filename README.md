@@ -51,7 +51,7 @@ sh ./scripts/update_env_ip.sh
 由于arb文件难以维护，所以使用ts文件来管理国际化语言。  
 本地安装Node.js环境，然后运行 npm install -g tsx 全局安装 tsx 依赖。
 每次由ts文件生成arb文件，须运行: 
-tsx ./scripts/generate_arb.ts 
+tsx ./scripts/generate_arb.ts && flutter gen-l10n
 
 如果是开发中，直接使用纯中文开发，页面完成后再调用skill去做国际化处理即可: 
 使用i18n技能 处理xxxx
