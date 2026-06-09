@@ -67,7 +67,7 @@ description: "搜索并下载符合项目设计风格的SVG图标，存入assets
 - 统一命名格式
 
 ### Step 4: 保存图标
-- 存储到 `/Users/jay/Code/flutter-demo/assets/icon/` 目录
+- 存储到 `assets/icon/` 目录
 - 使用小写字母+中划线命名
 - 填充版本添加 `-fill` 后缀
 
