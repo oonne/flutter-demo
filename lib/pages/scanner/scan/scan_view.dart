@@ -36,6 +36,16 @@ class _ScanViewState extends State<ScanView> {
     super.initState();
     viewModel = ScanViewModel();
 
+    // 设置权限回调
+    viewModel.permissionCallback = (granted) {
+      if (!granted && mounted) {
+        showTextSnackBar(
+          context,
+          msg: AppLocalizations.of(context)!.msg_scan_permission_denied,
+        );
+      }
+    };
+
     // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final queryParameters =

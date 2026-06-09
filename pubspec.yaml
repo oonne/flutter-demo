@@ -38,6 +38,7 @@ dependencies:
   drift_flutter: ^0.3.0
   path_provider: ^2.1.5
   decimal: ^3.2.4
+  permission_handler: ^12.0.3
 
 dev_dependencies:
   flutter_test:
