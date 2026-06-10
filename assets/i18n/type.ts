@@ -1,3 +1,8 @@
+/* 参数类型定义 */
+export interface IParams {
+  [key: string]: 'int' | 'double' | 'String';
+}
+
 /* 语言类型 */
 export interface ILangMsg {
   // 中文
@@ -23,7 +28,10 @@ export interface ILangMsg {
   ko_KR: string;
   // 越南语
   vi_VN: string;
+  // 可选的参数定义（用于插值）
+  _params?: IParams;
 }
+
 export interface ILangMsgs {
   [key: string | number]: ILangMsg;
 }

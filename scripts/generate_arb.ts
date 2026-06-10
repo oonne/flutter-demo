@@ -6,14 +6,30 @@ import errorCodeMsg from '../assets/i18n/modules/error-code-msg';
 /* 
  * 生成语言文件
  * langName: ts文件里的语言名，如 zh_CN
- * arbName: 生成的语言文件名，如 
+ * arbName: 生成的语言文件名
  */
 const generateArb = (langName: string, arbName: string, name: string) => {
   // 构造文件
   let fileContent = '{\n';
   Object.keys(langMsg).forEach(key => {
-    fileContent += `  "${key}": "${langMsg[key][langName]}",\n`;
-    fileContent += `  "@${key}": {},\n\n`;
+    const msg = langMsg[key];
+    // 提取翻译文本（排除 _params 属性）
+    const text = msg[langName];
+    fileContent += `  "${key}": "${text}",\n`;
+    
+    // 生成 placeholders 元数据
+    const params = msg._params || {};
+    const placeholderEntries = Object.entries(params).map(([paramName, paramType]) => 
+      `"${paramName}": {"type": "${paramType}"}`
+    ).join(',\n      ');
+    
+    const placeholders = placeholderEntries ? `"placeholders": {\n      ${placeholderEntries}\n    }` : '';
+    
+    if (placeholders) {
+      fileContent += `  "@${key}": {\n    ${placeholders}\n  },\n\n`;
+    } else {
+      fileContent += `  "@${key}": {},\n\n`;
+    }
   });
 
   fileContent = fileContent.slice(0, -3);
