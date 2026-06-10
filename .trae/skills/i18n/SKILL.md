@@ -92,35 +92,116 @@ flutter gen-l10n
 ```
 
 ### 步骤 7：替换 Dart 文件中的中文，并提供中文注释
-使用以下格式将目标文件中的所有中文替换为 i18n key：
-- 标题：使用 `localizations.title_xxx`
-- 按钮：使用 `localizations.btn_xxx`
-- 消息：使用 `localizations.msg_xxx`
-- 信息：使用 `localizations.info_xxx`
-- 基础：使用 `localizations.xxx`
+
+根据使用场景选择合适的调用方式：
+
+#### 场景 1：在 Widget 树中直接使用
+在 Widget 的 build 方法、回调函数等场景中，直接使用 `AppLocalizations.of(context)!`：
+
+```dart
+// 在 build 方法中
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text(AppLocalizations.of(context)!.title_home), // 首页
+    ),
+    body: ElevatedButton(
+      onPressed: () {
+        showTextSnackBar(
+          context,
+          msg: AppLocalizations.of(context)!.msg_operation_success, // 操作成功
+        );
+      },
+      child: Text(AppLocalizations.of(context)!.btn_save), // 保存
+    ),
+  );
+}
+```
+
+#### 场景 2：在函数中多次使用
+当在一个函数中需要多次访问 i18n 时，先获取变量以避免重复调用：
+
+```dart
+void someFunction(BuildContext context) {
+  final localizations = AppLocalizations.of(context)!;
+  
+  print(localizations.title_home); // 首页
+  print(localizations.btn_save); // 保存
+  print(localizations.msg_operation_success); // 操作成功
+}
+```
+
+#### 场景 3：在工具函数中作为参数
+工具函数应将 `AppLocalizations` 作为参数传递：
+
+```dart
+// 函数定义
+String formatErrorCode(AppLocalizations localizations, String errorCode) {
+  return localizations.unknown_error; // 未知错误
+}
+
+// 函数调用
+void handleError(BuildContext context, String code) {
+  final localizations = AppLocalizations.of(context)!;
+  final message = formatErrorCode(localizations, code);
+}
+```
+
+#### 场景 4：需要判空处理
+当需要处理 localizations 可能为 null 的情况：
+
+```dart
+void someFunction(BuildContext context) {
+  final localizations = AppLocalizations.of(context);
+  if (localizations == null) {
+    return defaultMessage;
+  }
+  
+  return localizations.msg_operation_success; // 操作成功
+}
+```
+
+**Key 前缀规则**：
+- 标题：使用 `title_xxx`
+- 按钮：使用 `btn_xxx`
+- 消息：使用 `msg_xxx`
+- 信息：使用 `info_xxx`
+- 基础：使用 `xxx`（无前缀）
 
 **带参数的翻译**：
 
 对于包含插值参数的翻译，需要传入相应的参数：
 ```dart
-Text(localizations.msg_new_messages(count: 5))
+Text(AppLocalizations.of(context)!.msg_new_messages(count: 5)) // 你有 5 条新消息
 ```
 
 ## 示例
 
-### 示例 1：普通翻译
+### 示例 1：Widget 中的普通翻译
 输入（Dart 文件）：
 ```dart
-Text("首页")
-Text("复制")
-Text("操作成功")
+Widget build(BuildContext context) {
+  return Column(
+    children: [
+      Text("首页"),
+      Text("复制"),
+      Text("操作成功"),
+    ],
+  );
+}
 ```
 
 输出（国际化后）：
 ```dart
-Text(localizations.title_home)
-Text(localizations.btn_copy)
-Text(localizations.msg_operation_success)
+Widget build(BuildContext context) {
+  return Column(
+    children: [
+      Text(AppLocalizations.of(context)!.title_home), // 首页
+      Text(AppLocalizations.of(context)!.btn_copy), // 复制
+      Text(AppLocalizations.of(context)!.msg_operation_success), // 操作成功
+    ],
+  );
+}
 ```
 
 对应的 `title.ts`：
@@ -133,7 +214,27 @@ title_home: {
 },
 ```
 
-### 示例 2：带插值的翻译
+### 示例 2：函数中多次使用
+输入（Dart 文件）：
+```dart
+void showInfo(BuildContext context) {
+  print("首页");
+  print("复制");
+  print("操作成功");
+}
+```
+
+输出（国际化后）：
+```dart
+void showInfo(BuildContext context) {
+  final localizations = AppLocalizations.of(context)!;
+  print(localizations.title_home); // 首页
+  print(localizations.btn_copy); // 复制
+  print(localizations.msg_operation_success); // 操作成功
+}
+```
+
+### 示例 3：带插值的翻译
 输入（Dart 文件）：
 ```dart
 Text("你有 5 条新消息")
@@ -141,7 +242,7 @@ Text("你有 5 条新消息")
 
 输出（国际化后）：
 ```dart
-Text(localizations.msg_new_messages(count: 5))
+Text(AppLocalizations.of(context)!.msg_new_messages(count: 5)) // 你有 5 条新消息
 ```
 
 对应的 `msg.ts`：
@@ -187,3 +288,8 @@ msg_new_messages: {
 6. **插值参数** - 带参数的翻译需要在 `_params` 中定义参数类型，否则参数可能无法正确工作
 7. **专有名词和大写的缩写词 不需要国际化** - 专有名词（如NFC、WiFi等大写的缩写词）不需要进行国际化处理
 8. **替换key后，需要提供中文注释** - 为每个替换的中文文本添加中文注释，便于后续维护
+9. **选择正确的调用方式** - 根据使用场景选择 `AppLocalizations.of(context)!` 或 `localizations` 变量：
+   - Widget 树中单次使用：直接使用 `AppLocalizations.of(context)!`
+   - 函数中多次使用：先获取 `final localizations = AppLocalizations.of(context)!`
+   - 工具函数：将 `AppLocalizations` 作为参数传递
+   - 需要判空：使用 `final localizations = AppLocalizations.of(context)` 并检查 null
