@@ -9,9 +9,9 @@ import 'base.dart';
 @DataClassName('Demo')
 class Demos extends BaseTable {
   /// 字符串字段示例
-  /// - 最大长度限制为 200 个字符
+  /// - 最大长度限制为 256 个字符
   /// - 不允许为空（必填字段）
-  TextColumn get demoTextField => text().withLength(max: 200)();
+  TextColumn get demoTextField => text().withLength(max: 256)();
 
   /// 浮点数字段示例
   /// - 使用 real() 类型存储浮点数
