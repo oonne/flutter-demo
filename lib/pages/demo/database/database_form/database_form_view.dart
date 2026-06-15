@@ -39,13 +39,6 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
     super.dispose();
   }
 
-  Future<void> _handleSave() async {
-    final success = await viewModel.save(context);
-    if (success) {
-      Navigator.pop(context);
-    }
-  }
-
   Future<void> _handleDelete() async {
     final confirm = await showModal<bool>(
       context: context,
@@ -95,20 +88,29 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
                           width: double.infinity,
                           height: 48,
                           child: ElevatedButton(
-                            onPressed: _handleSave,
+                            onPressed: () => viewModel.save(context),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: colorScheme.primary,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(themeVars.radius),
                               ),
                             ),
-                            child: Text(
-                              '保存',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                              ),
-                            ),
+                            child: viewModel.model.isSaving
+                                ? const SizedBox(
+                                    width: 16,
+                                    height: 16,
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                : const Text(
+                                    '保存',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                           ),
                         ),
                         if (_demoId != null) ...[

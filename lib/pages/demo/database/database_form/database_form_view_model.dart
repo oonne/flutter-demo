@@ -34,10 +34,16 @@ class DatabaseFormViewModel extends ChangeNotifier {
   }
 
   Future<bool> save(BuildContext context) async {
+    if (model.isSaving) return false;
+    model.isSaving = true;
+    notifyListeners();
+
     final text = textFieldController.text.trim();
     final doubleStr = doubleFieldController.text.trim();
 
     if (text.isEmpty) {
+      model.isSaving = false;
+      notifyListeners();
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('请输入文本内容')),
       );
@@ -48,6 +54,8 @@ class DatabaseFormViewModel extends ChangeNotifier {
     if (doubleStr.isNotEmpty) {
       doubleValue = double.tryParse(doubleStr);
       if (doubleValue == null) {
+        model.isSaving = false;
+        notifyListeners();
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('请输入有效的数字')),
         );
@@ -70,6 +78,9 @@ class DatabaseFormViewModel extends ChangeNotifier {
       );
     }
 
+    model.isSaving = false;
+    notifyListeners();
+    Navigator.pop(context);
     return true;
   }
 
