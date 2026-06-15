@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/database/database.dart';
 
@@ -80,14 +81,24 @@ class DatabaseFormViewModel extends ChangeNotifier {
 
     model.isSaving = false;
     notifyListeners();
-    Navigator.pop(context);
+    GoRouter.of(context).pop({'refresh': true});
     return true;
   }
 
   Future<void> delete(BuildContext context) async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => const AlertDialog(
+        content: Text('确定要删除这条记录吗？'),
+      ),
+    );
+
+    if (confirm != true) return;
+
     if (model.id != null) {
       final database = DemoDatabase();
       await database.demoDao.deleteDemo(model.id!);
+      GoRouter.of(context).pop({'refresh': true});
     }
   }
 } 

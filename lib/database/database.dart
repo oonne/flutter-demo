@@ -13,7 +13,7 @@ import 'daos/demo_dao.dart';
 
 part 'database.g.dart';
 
-/// Demo 数据库实例
+/// 数据库实例
 ///
 /// 使用 @DriftDatabase 注解声明数据库
 /// - tables 参数列出所有需要管理的数据表

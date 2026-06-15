@@ -36,10 +36,14 @@ class _DatabaseListViewState extends State<DatabaseListView> {
     viewModel.refresh(context);
   }
 
-  void _handleItemTap(Demo? item) {
-    context.pushNamed('demo/database_form', extra: {'id': item?.id}).then((_) {
-      viewModel.refresh(context);
-    });
+  void _handleItemTap(Demo? item) async {
+    final result = await context.pushNamed('demo/database_form', extra: {'id': item?.id});
+    if (result != null) {
+      final Map<String, dynamic> resultMap = result as Map<String, dynamic>;
+      if (resultMap['refresh'] == true && context.mounted) {
+        viewModel.refresh(context);
+      }
+    }
   }
 
   @override

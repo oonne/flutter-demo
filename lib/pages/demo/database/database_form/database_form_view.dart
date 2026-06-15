@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/theme/global.dart';
-import 'package:flutter_demo/widget/modal/modal_dialog.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/form_input.dart';
 
@@ -27,7 +27,8 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
     viewModel = DatabaseFormViewModel();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final queryParameters = GoRouterState.of(context).extra as Map<String, dynamic>?;
+      final queryParameters =
+          GoRouterState.of(context).extra as Map<String, dynamic>?;
       _demoId = queryParameters?['id'] as int?;
       viewModel.init(context, _demoId);
     });
@@ -37,18 +38,6 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
   void dispose() {
     viewModel.cleanup();
     super.dispose();
-  }
-
-  Future<void> _handleDelete() async {
-    final confirm = await showModal<bool>(
-      context: context,
-      child: const Text('确定要删除这条记录吗？'),
-    );
-
-    if (confirm == true) {
-      await viewModel.delete(context);
-      Navigator.pop(context);
-    }
   }
 
   @override
@@ -61,7 +50,9 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
       child: Consumer<DatabaseFormViewModel>(
         builder: (context, viewModel, child) {
           return Scaffold(
-            appBar: CustomAppBar(title: Text(_demoId != null ? '编辑数据' : '新增数据')),
+            appBar: CustomAppBar(
+              title: Text(_demoId != null ? '编辑数据' : '新增数据'),
+            ),
             body: SingleChildScrollView(
               child: Column(
                 children: [
@@ -81,36 +72,40 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
                   ),
                   SizedBox(height: themeVars.panelMargin),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: themeVars.panelMargin),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: themeVars.panelMargin,
+                    ),
                     child: Column(
                       children: [
+                        // 保存
                         SizedBox(
                           width: double.infinity,
                           height: 48,
                           child: ElevatedButton(
                             onPressed: () => viewModel.save(context),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: colorScheme.primary,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(themeVars.radius),
-                              ),
-                            ),
-                            child: viewModel.model.isSaving
-                                ? const SizedBox(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              spacing: 8,
+                              children: [
+                                // 加载中
+                                if (viewModel.model.isSaving) ...[
+                                  const SizedBox(
                                     width: 16,
                                     height: 16,
                                     child: CircularProgressIndicator(
                                       strokeWidth: 2,
                                       color: Colors.white,
                                     ),
-                                  )
-                                : const Text(
-                                    '保存',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.white,
-                                    ),
                                   ),
+                                ],
+                                Text(
+                                  AppLocalizations.of(context)!.btn_save,
+                                  style: TextStyle(
+                                    fontSize: themeVars.buttonLargeFontSize,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         if (_demoId != null) ...[
@@ -119,10 +114,12 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
                             width: double.infinity,
                             height: 48,
                             child: OutlinedButton(
-                              onPressed: _handleDelete,
+                              onPressed: () => viewModel.delete(context),
                               style: OutlinedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(themeVars.radius),
+                                  borderRadius: BorderRadius.circular(
+                                    themeVars.radius,
+                                  ),
                                 ),
                                 side: BorderSide(color: themeVars.dangerColor),
                               ),
@@ -147,4 +144,4 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
       ),
     );
   }
-} 
+}
