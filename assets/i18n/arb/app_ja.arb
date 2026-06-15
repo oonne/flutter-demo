@@ -95,6 +95,12 @@
   "title_sound": "サウンド",
   "@title_sound": {},
 
+  "title_user_agreement": "利用規約",
+  "@title_user_agreement": {},
+
+  "title_privacy_policy": "プライバシーポリシー",
+  "@title_privacy_policy": {},
+
   "info_please_input": "入力してください",
   "@info_please_input": {},
 

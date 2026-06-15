@@ -105,6 +105,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get title_sound => '声音';
 
   @override
+  String get title_user_agreement => '用户协议';
+
+  @override
+  String get title_privacy_policy => '隐私政策';
+
+  @override
   String get info_please_input => '请输入';
 
   @override
@@ -321,6 +327,12 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get title_sound => '聲音';
+
+  @override
+  String get title_user_agreement => '用戶協議';
+
+  @override
+  String get title_privacy_policy => '隱私政策';
 
   @override
   String get info_please_input => '請輸入';

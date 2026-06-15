@@ -95,6 +95,12 @@
   "title_sound": "聲音",
   "@title_sound": {},
 
+  "title_user_agreement": "用戶協議",
+  "@title_user_agreement": {},
+
+  "title_privacy_policy": "隱私政策",
+  "@title_privacy_policy": {},
+
   "info_please_input": "請輸入",
   "@info_please_input": {},
 

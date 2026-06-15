@@ -95,6 +95,12 @@
   "title_sound": "Âm thanh",
   "@title_sound": {},
 
+  "title_user_agreement": "Thỏa thuận người dùng",
+  "@title_user_agreement": {},
+
+  "title_privacy_policy": "Chính sách riêng tư",
+  "@title_privacy_policy": {},
+
   "info_please_input": "Vui lòng nhập",
   "@info_please_input": {},
 

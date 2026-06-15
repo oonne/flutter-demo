@@ -95,6 +95,12 @@
   "title_sound": "Som",
   "@title_sound": {},
 
+  "title_user_agreement": "Acordo de utilizador",
+  "@title_user_agreement": {},
+
+  "title_privacy_policy": "Política de privacidade",
+  "@title_privacy_policy": {},
+
   "info_please_input": "Por favor, insira",
   "@info_please_input": {},
 

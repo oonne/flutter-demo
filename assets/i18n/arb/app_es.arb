@@ -95,6 +95,12 @@
   "title_sound": "Sonido",
   "@title_sound": {},
 
+  "title_user_agreement": "Acuerdo de usuario",
+  "@title_user_agreement": {},
+
+  "title_privacy_policy": "Política de privacidad",
+  "@title_privacy_policy": {},
+
   "info_please_input": "Por favor, ingrese",
   "@info_please_input": {},
 

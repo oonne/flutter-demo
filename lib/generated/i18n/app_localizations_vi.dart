@@ -105,6 +105,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get title_sound => 'Âm thanh';
 
   @override
+  String get title_user_agreement => 'Thỏa thuận người dùng';
+
+  @override
+  String get title_privacy_policy => 'Chính sách riêng tư';
+
+  @override
   String get info_please_input => 'Vui lòng nhập';
 
   @override

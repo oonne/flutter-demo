@@ -105,6 +105,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get title_sound => 'Ton';
 
   @override
+  String get title_user_agreement => 'Nutzungsbedingungen';
+
+  @override
+  String get title_privacy_policy => 'Datenschutzpolitik';
+
+  @override
   String get info_please_input => 'Bitte geben Sie ein';
 
   @override

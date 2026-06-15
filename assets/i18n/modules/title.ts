@@ -180,6 +180,36 @@ const msg: ILangMsgs = {
     ko_KR: "사운드",
     vi_VN: "Âm thanh",
   },
+  // 用户协议
+  title_user_agreement: {
+    zh_CN: "用户协议",
+    zh_TW: "用戶協議",
+    en_US: "User Agreement",
+    ru_RU: "Пользовательское соглашение",
+    fr_FR: "Accord utilisateur",
+    es_ES: "Acuerdo de usuario",
+    it_IT: "Accordo utente",
+    pt_PT: "Acordo de utilizador",
+    de_DE: "Nutzungsbedingungen",
+    ja_JP: "利用規約",
+    ko_KR: "사용자 계약",
+    vi_VN: "Thỏa thuận người dùng",
+  },
+  // 隐私政策
+  title_privacy_policy: {
+    zh_CN: "隐私政策",
+    zh_TW: "隱私政策",
+    en_US: "Privacy Policy",
+    ru_RU: "Политика конфиденциальности",
+    fr_FR: "Politique de confidentialité",
+    es_ES: "Política de privacidad",
+    it_IT: "Informativa sulla privacy",
+    pt_PT: "Política de privacidade",
+    de_DE: "Datenschutzpolitik",
+    ja_JP: "プライバシーポリシー",
+    ko_KR: "개인정보 보호 정책",
+    vi_VN: "Chính sách riêng tư",
+  },
 };
 
 export default msg;

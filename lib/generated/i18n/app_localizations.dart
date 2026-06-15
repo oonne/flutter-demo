@@ -309,6 +309,18 @@ abstract class AppLocalizations {
   /// **'Sound'**
   String get title_sound;
 
+  /// No description provided for @title_user_agreement.
+  ///
+  /// In en, this message translates to:
+  /// **'User Agreement'**
+  String get title_user_agreement;
+
+  /// No description provided for @title_privacy_policy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get title_privacy_policy;
+
   /// No description provided for @info_please_input.
   ///
   /// In en, this message translates to:

@@ -95,6 +95,12 @@
   "title_sound": "Ton",
   "@title_sound": {},
 
+  "title_user_agreement": "Nutzungsbedingungen",
+  "@title_user_agreement": {},
+
+  "title_privacy_policy": "Datenschutzpolitik",
+  "@title_privacy_policy": {},
+
   "info_please_input": "Bitte geben Sie ein",
   "@info_please_input": {},
 

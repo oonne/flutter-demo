@@ -105,6 +105,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get title_sound => 'Звук';
 
   @override
+  String get title_user_agreement => 'Пользовательское соглашение';
+
+  @override
+  String get title_privacy_policy => 'Политика конфиденциальности';
+
+  @override
   String get info_please_input => 'Пожалуйста, введите';
 
   @override

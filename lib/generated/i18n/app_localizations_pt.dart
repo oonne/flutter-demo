@@ -105,6 +105,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get title_sound => 'Som';
 
   @override
+  String get title_user_agreement => 'Acordo de utilizador';
+
+  @override
+  String get title_privacy_policy => 'Política de privacidade';
+
+  @override
   String get info_please_input => 'Por favor, insira';
 
   @override

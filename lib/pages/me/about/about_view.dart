@@ -106,7 +106,29 @@ class _AboutViewState extends State<AboutView> {
                         label: AppLocalizations.of(context)!.title_version,
                         value: viewModel.model.version,
                       ),
-                      
+
+                      // 用户协议
+                      PanelItem(
+                        label: AppLocalizations.of(context)!.title_user_agreement, // 用户协议
+                        showArrow: true,
+                        onTap: () {
+                          final userAgreementUrl = (globalState.locale.languageCode == 'zh') 
+                              ? 'https://any-print.com/piconfc/user_agreement.html'
+                              : 'https://any-print.com/piconfc/user_agreement_en.html';
+                          context.pushNamed('demo/webview', extra: {'url': userAgreementUrl});
+                        },
+                      ),
+                      // 隐私政策
+                      PanelItem(
+                        label: AppLocalizations.of(context)!.title_privacy_policy, // 隐私政策
+                        showArrow: true,
+                        onTap: () {
+                          final privacyPolicyUrl = (globalState.locale.languageCode == 'zh') 
+                              ? 'https://any-print.com/piconfc/privacy_policy.html'
+                              : 'https://any-print.com/piconfc/privacy_policy_en.html';
+                          context.pushNamed('demo/webview', extra: {'url': privacyPolicyUrl});
+                        },
+                      ),
                     ],
                   ),
 
