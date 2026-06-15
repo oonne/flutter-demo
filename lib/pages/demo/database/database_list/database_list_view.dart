@@ -83,15 +83,7 @@ class _DatabaseListViewState extends State<DatabaseListView> {
             body: Column(
               children: [
                 /* 搜索栏 */
-                Container(
-                  padding: EdgeInsets.only(
-                    left: themeVars.panelMargin,
-                    right: themeVars.panelMargin,
-                    bottom: 8,
-                  ),
-                  color: themeVars.contentBackground,
-                  child: CustomSearchBar(onSearch: _handleSearch),
-                ),
+                CustomSearchBar(onSearch: _handleSearch),
                 Expanded(
                   child: EasyRefreshDataList(
                     dataList: viewModel.model.dataList,
