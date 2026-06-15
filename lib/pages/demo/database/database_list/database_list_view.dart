@@ -52,7 +52,6 @@ class _DatabaseListViewState extends State<DatabaseListView> {
   @override
   Widget build(BuildContext context) {
     final themeVars = getCurrentThemeVars(context);
-    final colorScheme = getCurrentThemeColorScheme(context);
 
     return ChangeNotifierProvider.value(
       value: viewModel,
