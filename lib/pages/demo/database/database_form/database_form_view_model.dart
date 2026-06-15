@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/database/database.dart';
+import 'package:flutter_demo/database/database_service.dart';
 
 import 'database_form_model.dart';
 
@@ -108,7 +109,7 @@ class DatabaseFormViewModel extends ChangeNotifier {
     if (confirm != true) return;
 
     if (model.id != null) {
-      final database = DemoDatabase();
+      final database = DatabaseService.instance.database;
       await database.demoDao.deleteDemo(model.id!);
       if (!context.mounted) {
         return;

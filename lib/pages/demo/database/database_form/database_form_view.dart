@@ -43,7 +43,6 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
   @override
   Widget build(BuildContext context) {
     final themeVars = getCurrentThemeVars(context);
-    final colorScheme = getCurrentThemeColorScheme(context);
 
     return ChangeNotifierProvider.value(
       value: viewModel,
