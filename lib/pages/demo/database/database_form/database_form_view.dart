@@ -123,12 +123,27 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
                                 ),
                                 side: BorderSide(color: themeVars.dangerColor),
                               ),
-                              child: Text(
-                                '删除',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: themeVars.dangerColor,
-                                ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                spacing: 8,
+                                children: [
+                                  if (viewModel.model.isSaving) ...[
+                                    const SizedBox(
+                                      width: 16,
+                                      height: 16,
+                                      child: CircularProgressIndicator(
+                                        strokeWidth: 2,
+                                      ),
+                                    ),
+                                  ],
+                                  Text(
+                                    '删除',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: themeVars.dangerColor,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),

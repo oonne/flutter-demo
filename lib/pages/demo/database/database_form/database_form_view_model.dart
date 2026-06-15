@@ -35,7 +35,9 @@ class DatabaseFormViewModel extends ChangeNotifier {
   }
 
   Future<bool> save(BuildContext context) async {
-    if (model.isSaving) return false;
+    if (model.isSaving) {
+      return false;
+    }
     model.isSaving = true;
     notifyListeners();
 
@@ -81,11 +83,21 @@ class DatabaseFormViewModel extends ChangeNotifier {
 
     model.isSaving = false;
     notifyListeners();
+      if (!context.mounted) {
+        return false;
+      }
     GoRouter.of(context).pop({'refresh': true});
     return true;
   }
 
   Future<void> delete(BuildContext context) async {
+    if (model.isSaving) {
+      return;
+    }
+    model.isSaving = true;
+    notifyListeners();
+
+    
     final confirm = await showDialog<bool>(
       context: context,
       builder: (context) => const AlertDialog(
@@ -98,6 +110,9 @@ class DatabaseFormViewModel extends ChangeNotifier {
     if (model.id != null) {
       final database = DemoDatabase();
       await database.demoDao.deleteDemo(model.id!);
+      if (!context.mounted) {
+        return;
+      }
       GoRouter.of(context).pop({'refresh': true});
     }
   }
