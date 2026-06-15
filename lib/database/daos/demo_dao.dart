@@ -18,14 +18,17 @@ class DemoDao extends DatabaseAccessor<DemoDatabase> with _$DemoDaoMixin {
   ///
   /// [demoTextField] 字符串字段，最大 200 字符
   /// [demoDoubleField] 浮点数字段
+  /// [demoBoolField] 布尔字段，默认为 false
   Future<int> insertDemo({
     required String demoTextField,
     required double demoDoubleField,
+    bool demoBoolField = false,
   }) {
     return into(demos).insert(
       DemosCompanion(
         demoTextField: Value(demoTextField),
         demoDoubleField: Value(demoDoubleField),
+        demoBoolField: Value(demoBoolField),
       ),
     );
   }
@@ -45,11 +48,12 @@ class DemoDao extends DatabaseAccessor<DemoDatabase> with _$DemoDaoMixin {
   /// 更新 Demo 记录
   ///
   /// 更新时会自动设置 updatedAt 为当前时间
-  Future<int> updateDemo(int id, {String? demoTextField, double? demoDoubleField}) {
+  Future<int> updateDemo(int id, {String? demoTextField, double? demoDoubleField, bool? demoBoolField}) {
     return (update(demos)..where((t) => t.id.equals(id))).write(
       DemosCompanion(
         demoTextField: demoTextField != null ? Value(demoTextField) : const Value.absent(),
         demoDoubleField: demoDoubleField != null ? Value(demoDoubleField) : const Value.absent(),
+        demoBoolField: demoBoolField != null ? Value(demoBoolField) : const Value.absent(),
         updatedAt: Value(DateTime.now()),
       ),
     );

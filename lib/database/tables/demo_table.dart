@@ -17,4 +17,10 @@ class Demos extends BaseTable {
   /// - 使用 real() 类型存储浮点数
   /// - 对应 Dart 的 double 类型
   RealColumn get demoDoubleField => real()();
+
+  /// 布尔类型字段示例
+  /// - 使用 boolean() 类型存储布尔值
+  /// - 对应 Dart 的 bool 类型
+  /// - 默认值为 false
+  BoolColumn get demoBoolField => boolean().withDefault(const Constant(false))();
 }

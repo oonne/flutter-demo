@@ -67,6 +67,21 @@ class $DemosTable extends Demos with TableInfo<$DemosTable, Demo> {
     type: DriftSqlType.double,
     requiredDuringInsert: true,
   );
+  static const VerificationMeta _demoBoolFieldMeta = const VerificationMeta(
+    'demoBoolField',
+  );
+  @override
+  late final GeneratedColumn<bool> demoBoolField = GeneratedColumn<bool>(
+    'demo_bool_field',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("demo_bool_field" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -74,6 +89,7 @@ class $DemosTable extends Demos with TableInfo<$DemosTable, Demo> {
     updatedAt,
     demoTextField,
     demoDoubleField,
+    demoBoolField,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -124,6 +140,15 @@ class $DemosTable extends Demos with TableInfo<$DemosTable, Demo> {
     } else if (isInserting) {
       context.missing(_demoDoubleFieldMeta);
     }
+    if (data.containsKey('demo_bool_field')) {
+      context.handle(
+        _demoBoolFieldMeta,
+        demoBoolField.isAcceptableOrUnknown(
+          data['demo_bool_field']!,
+          _demoBoolFieldMeta,
+        ),
+      );
+    }
     return context;
   }
 
@@ -152,6 +177,10 @@ class $DemosTable extends Demos with TableInfo<$DemosTable, Demo> {
       demoDoubleField: attachedDatabase.typeMapping.read(
         DriftSqlType.double,
         data['${effectivePrefix}demo_double_field'],
+      )!,
+      demoBoolField: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}demo_bool_field'],
       )!,
     );
   }
@@ -184,12 +213,19 @@ class Demo extends DataClass implements Insertable<Demo> {
   /// - 使用 real() 类型存储浮点数
   /// - 对应 Dart 的 double 类型
   final double demoDoubleField;
+
+  /// 布尔类型字段示例
+  /// - 使用 boolean() 类型存储布尔值
+  /// - 对应 Dart 的 bool 类型
+  /// - 默认值为 false
+  final bool demoBoolField;
   const Demo({
     required this.id,
     required this.createdAt,
     this.updatedAt,
     required this.demoTextField,
     required this.demoDoubleField,
+    required this.demoBoolField,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -201,6 +237,7 @@ class Demo extends DataClass implements Insertable<Demo> {
     }
     map['demo_text_field'] = Variable<String>(demoTextField);
     map['demo_double_field'] = Variable<double>(demoDoubleField);
+    map['demo_bool_field'] = Variable<bool>(demoBoolField);
     return map;
   }
 
@@ -213,6 +250,7 @@ class Demo extends DataClass implements Insertable<Demo> {
           : Value(updatedAt),
       demoTextField: Value(demoTextField),
       demoDoubleField: Value(demoDoubleField),
+      demoBoolField: Value(demoBoolField),
     );
   }
 
@@ -227,6 +265,7 @@ class Demo extends DataClass implements Insertable<Demo> {
       updatedAt: serializer.fromJson<DateTime?>(json['updatedAt']),
       demoTextField: serializer.fromJson<String>(json['demoTextField']),
       demoDoubleField: serializer.fromJson<double>(json['demoDoubleField']),
+      demoBoolField: serializer.fromJson<bool>(json['demoBoolField']),
     );
   }
   @override
@@ -238,6 +277,7 @@ class Demo extends DataClass implements Insertable<Demo> {
       'updatedAt': serializer.toJson<DateTime?>(updatedAt),
       'demoTextField': serializer.toJson<String>(demoTextField),
       'demoDoubleField': serializer.toJson<double>(demoDoubleField),
+      'demoBoolField': serializer.toJson<bool>(demoBoolField),
     };
   }
 
@@ -247,12 +287,14 @@ class Demo extends DataClass implements Insertable<Demo> {
     Value<DateTime?> updatedAt = const Value.absent(),
     String? demoTextField,
     double? demoDoubleField,
+    bool? demoBoolField,
   }) => Demo(
     id: id ?? this.id,
     createdAt: createdAt ?? this.createdAt,
     updatedAt: updatedAt.present ? updatedAt.value : this.updatedAt,
     demoTextField: demoTextField ?? this.demoTextField,
     demoDoubleField: demoDoubleField ?? this.demoDoubleField,
+    demoBoolField: demoBoolField ?? this.demoBoolField,
   );
   Demo copyWithCompanion(DemosCompanion data) {
     return Demo(
@@ -265,6 +307,9 @@ class Demo extends DataClass implements Insertable<Demo> {
       demoDoubleField: data.demoDoubleField.present
           ? data.demoDoubleField.value
           : this.demoDoubleField,
+      demoBoolField: data.demoBoolField.present
+          ? data.demoBoolField.value
+          : this.demoBoolField,
     );
   }
 
@@ -275,14 +320,21 @@ class Demo extends DataClass implements Insertable<Demo> {
           ..write('createdAt: $createdAt, ')
           ..write('updatedAt: $updatedAt, ')
           ..write('demoTextField: $demoTextField, ')
-          ..write('demoDoubleField: $demoDoubleField')
+          ..write('demoDoubleField: $demoDoubleField, ')
+          ..write('demoBoolField: $demoBoolField')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode =>
-      Object.hash(id, createdAt, updatedAt, demoTextField, demoDoubleField);
+  int get hashCode => Object.hash(
+    id,
+    createdAt,
+    updatedAt,
+    demoTextField,
+    demoDoubleField,
+    demoBoolField,
+  );
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -291,7 +343,8 @@ class Demo extends DataClass implements Insertable<Demo> {
           other.createdAt == this.createdAt &&
           other.updatedAt == this.updatedAt &&
           other.demoTextField == this.demoTextField &&
-          other.demoDoubleField == this.demoDoubleField);
+          other.demoDoubleField == this.demoDoubleField &&
+          other.demoBoolField == this.demoBoolField);
 }
 
 class DemosCompanion extends UpdateCompanion<Demo> {
@@ -300,12 +353,14 @@ class DemosCompanion extends UpdateCompanion<Demo> {
   final Value<DateTime?> updatedAt;
   final Value<String> demoTextField;
   final Value<double> demoDoubleField;
+  final Value<bool> demoBoolField;
   const DemosCompanion({
     this.id = const Value.absent(),
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
     this.demoTextField = const Value.absent(),
     this.demoDoubleField = const Value.absent(),
+    this.demoBoolField = const Value.absent(),
   });
   DemosCompanion.insert({
     this.id = const Value.absent(),
@@ -313,6 +368,7 @@ class DemosCompanion extends UpdateCompanion<Demo> {
     this.updatedAt = const Value.absent(),
     required String demoTextField,
     required double demoDoubleField,
+    this.demoBoolField = const Value.absent(),
   }) : demoTextField = Value(demoTextField),
        demoDoubleField = Value(demoDoubleField);
   static Insertable<Demo> custom({
@@ -321,6 +377,7 @@ class DemosCompanion extends UpdateCompanion<Demo> {
     Expression<DateTime>? updatedAt,
     Expression<String>? demoTextField,
     Expression<double>? demoDoubleField,
+    Expression<bool>? demoBoolField,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -328,6 +385,7 @@ class DemosCompanion extends UpdateCompanion<Demo> {
       if (updatedAt != null) 'updated_at': updatedAt,
       if (demoTextField != null) 'demo_text_field': demoTextField,
       if (demoDoubleField != null) 'demo_double_field': demoDoubleField,
+      if (demoBoolField != null) 'demo_bool_field': demoBoolField,
     });
   }
 
@@ -337,6 +395,7 @@ class DemosCompanion extends UpdateCompanion<Demo> {
     Value<DateTime?>? updatedAt,
     Value<String>? demoTextField,
     Value<double>? demoDoubleField,
+    Value<bool>? demoBoolField,
   }) {
     return DemosCompanion(
       id: id ?? this.id,
@@ -344,6 +403,7 @@ class DemosCompanion extends UpdateCompanion<Demo> {
       updatedAt: updatedAt ?? this.updatedAt,
       demoTextField: demoTextField ?? this.demoTextField,
       demoDoubleField: demoDoubleField ?? this.demoDoubleField,
+      demoBoolField: demoBoolField ?? this.demoBoolField,
     );
   }
 
@@ -365,6 +425,9 @@ class DemosCompanion extends UpdateCompanion<Demo> {
     if (demoDoubleField.present) {
       map['demo_double_field'] = Variable<double>(demoDoubleField.value);
     }
+    if (demoBoolField.present) {
+      map['demo_bool_field'] = Variable<bool>(demoBoolField.value);
+    }
     return map;
   }
 
@@ -375,7 +438,8 @@ class DemosCompanion extends UpdateCompanion<Demo> {
           ..write('createdAt: $createdAt, ')
           ..write('updatedAt: $updatedAt, ')
           ..write('demoTextField: $demoTextField, ')
-          ..write('demoDoubleField: $demoDoubleField')
+          ..write('demoDoubleField: $demoDoubleField, ')
+          ..write('demoBoolField: $demoBoolField')
           ..write(')'))
         .toString();
   }
@@ -399,6 +463,7 @@ typedef $$DemosTableCreateCompanionBuilder =
       Value<DateTime?> updatedAt,
       required String demoTextField,
       required double demoDoubleField,
+      Value<bool> demoBoolField,
     });
 typedef $$DemosTableUpdateCompanionBuilder =
     DemosCompanion Function({
@@ -407,6 +472,7 @@ typedef $$DemosTableUpdateCompanionBuilder =
       Value<DateTime?> updatedAt,
       Value<String> demoTextField,
       Value<double> demoDoubleField,
+      Value<bool> demoBoolField,
     });
 
 class $$DemosTableFilterComposer extends Composer<_$DemoDatabase, $DemosTable> {
@@ -439,6 +505,11 @@ class $$DemosTableFilterComposer extends Composer<_$DemoDatabase, $DemosTable> {
 
   ColumnFilters<double> get demoDoubleField => $composableBuilder(
     column: $table.demoDoubleField,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get demoBoolField => $composableBuilder(
+    column: $table.demoBoolField,
     builder: (column) => ColumnFilters(column),
   );
 }
@@ -476,6 +547,11 @@ class $$DemosTableOrderingComposer
     column: $table.demoDoubleField,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<bool> get demoBoolField => $composableBuilder(
+    column: $table.demoBoolField,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$DemosTableAnnotationComposer
@@ -503,6 +579,11 @@ class $$DemosTableAnnotationComposer
 
   GeneratedColumn<double> get demoDoubleField => $composableBuilder(
     column: $table.demoDoubleField,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get demoBoolField => $composableBuilder(
+    column: $table.demoBoolField,
     builder: (column) => column,
   );
 }
@@ -540,12 +621,14 @@ class $$DemosTableTableManager
                 Value<DateTime?> updatedAt = const Value.absent(),
                 Value<String> demoTextField = const Value.absent(),
                 Value<double> demoDoubleField = const Value.absent(),
+                Value<bool> demoBoolField = const Value.absent(),
               }) => DemosCompanion(
                 id: id,
                 createdAt: createdAt,
                 updatedAt: updatedAt,
                 demoTextField: demoTextField,
                 demoDoubleField: demoDoubleField,
+                demoBoolField: demoBoolField,
               ),
           createCompanionCallback:
               ({
@@ -554,12 +637,14 @@ class $$DemosTableTableManager
                 Value<DateTime?> updatedAt = const Value.absent(),
                 required String demoTextField,
                 required double demoDoubleField,
+                Value<bool> demoBoolField = const Value.absent(),
               }) => DemosCompanion.insert(
                 id: id,
                 createdAt: createdAt,
                 updatedAt: updatedAt,
                 demoTextField: demoTextField,
                 demoDoubleField: demoDoubleField,
+                demoBoolField: demoBoolField,
               ),
           withReferenceMapper: (p0) => p0
               .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
