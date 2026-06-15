@@ -28,11 +28,20 @@ class DemoDatabase extends _$DemoDatabase {
   /// 通过 DAO 访问特定表的操作方法
   late final DemoDao demoDao;
 
-  /// 数据库构造函数
-  DemoDatabase() : super(_openConnection()) {
+  /// 单例实例
+  static final DemoDatabase _instance = DemoDatabase._internal();
+
+  /// 获取单例实例
+  static DemoDatabase get instance => _instance;
+
+  /// 私有构造函数
+  DemoDatabase._internal() : super(_openConnection()) {
     // 初始化 DAO
     demoDao = DemoDao(this);
   }
+
+  /// 数据库构造函数（保持向后兼容）
+  factory DemoDatabase() => _instance;
 
   /// 数据库连接配置
   static LazyDatabase _openConnection() {

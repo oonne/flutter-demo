@@ -52,7 +52,7 @@ class $DemosTable extends Demos with TableInfo<$DemosTable, Demo> {
     'demo_text_field',
     aliasedName,
     false,
-    additionalChecks: GeneratedColumn.checkTextLength(maxTextLength: 200),
+    additionalChecks: GeneratedColumn.checkTextLength(maxTextLength: 256),
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );
@@ -176,7 +176,7 @@ class Demo extends DataClass implements Insertable<Demo> {
   final DateTime? updatedAt;
 
   /// 字符串字段示例
-  /// - 最大长度限制为 200 个字符
+  /// - 最大长度限制为 256 个字符
   /// - 不允许为空（必填字段）
   final String demoTextField;
 

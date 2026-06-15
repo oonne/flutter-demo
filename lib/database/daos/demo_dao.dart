@@ -93,8 +93,10 @@ class DemoDao extends DatabaseAccessor<DemoDatabase> with _$DemoDaoMixin {
 
   /// 统计搜索结果总数
   Future<int> countSearchDemos(String keyword) {
-    return (select(demos)..where((t) => t.demoTextField.like('%$keyword%')))
-        .get()
-        .then((list) => list.length);
+    return (selectOnly(demos)
+          ..addColumns([demos.id.count()])
+          ..where(demos.demoTextField.like('%$keyword%')))
+        .map((row) => row.read(demos.id.count())!)
+        .getSingle();
   }
 }

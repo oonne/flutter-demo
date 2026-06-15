@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'splash_model.dart';
+import 'package:flutter_demo/database/database.dart';
 
 class SplashViewModel extends ChangeNotifier {
   final SplashModel model = SplashModel();
@@ -13,7 +14,24 @@ class SplashViewModel extends ChangeNotifier {
    * 进入逻辑
    */
   Future<void> enter(BuildContext context) async {
-    // 开屏广告组件会处理广告展示，跳转逻辑在回调中处理。此处暂时没有其他业务逻辑。
+    // 后台预初始化数据库（不阻塞广告展示）
+    _preInitializeDatabase();
+    
+    // 开屏广告组件会处理广告展示，跳转逻辑在回调中处理
+  }
+
+  /* 
+   * 后台预初始化数据库
+   */
+  Future<void> _preInitializeDatabase() async {
+    try {
+      // 通过执行一个简单查询来触发数据库连接初始化
+      // 这会打开数据库文件并建立连接
+      final database = DemoDatabase.instance;
+      await database.demoDao.countDemos();
+    } catch (e) {
+      // 数据库初始化失败不影响应用启动
+    }
   }
 
   /* 
