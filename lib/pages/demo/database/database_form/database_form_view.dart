@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/theme/global.dart';
+import 'package:flutter_demo/widget/modal/modal_dialog.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/form_input.dart';
 
@@ -46,22 +47,9 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
   }
 
   Future<void> _handleDelete() async {
-    final confirm = await showDialog<bool>(
+    final confirm = await showModal<bool>(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('确认删除'),
-        content: const Text('确定要删除这条记录吗？'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text('取消'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: const Text('删除'),
-          ),
-        ],
-      ),
+      child: const Text('确定要删除这条记录吗？'),
     );
 
     if (confirm == true) {
