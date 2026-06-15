@@ -33,6 +33,8 @@ import 'package:flutter_demo/pages/demo/data_list/data_view.dart';
 import 'package:flutter_demo/pages/demo/form/form_view.dart';
 import 'package:flutter_demo/pages/demo/webview/webview_view.dart';
 import 'package:flutter_demo/pages/demo/banner_ad/banner_ad_view.dart';
+import 'package:flutter_demo/pages/demo/database/database_list/database_list_view.dart';
+import 'package:flutter_demo/pages/demo/database/database_form/database_form_view.dart';
 
 
 
@@ -219,6 +221,18 @@ final router = GoRouter(
       name: 'demo/banner_ad',
       path: '/demo/banner_ad',
       builder: (context, state) => const BannerAdView(),
+    ),
+    /* 数据库示例 */
+    GoRoute(
+      name: 'demo/database',
+      path: '/demo/database',
+      builder: (context, state) => const DatabaseListView(),
+    ),
+    /* 数据库表单 */
+    GoRoute(
+      name: 'demo/database_form',
+      path: '/demo/database_form',
+      builder: (context, state) => const DatabaseFormView(),
     ),
   ],
 );

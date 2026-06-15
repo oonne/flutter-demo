@@ -71,4 +71,30 @@ class DemoDao extends DatabaseAccessor<DemoDatabase> with _$DemoDaoMixin {
   Future<int> countDemos() {
     return (selectOnly(demos)..addColumns([demos.id.count()])).map((row) => row.read(demos.id.count())!).getSingle();
   }
+
+  /// 分页获取 Demo 记录
+  Future<List<Demo>> getDemosPaged(int pageNo, int pageSize) {
+    final offset = (pageNo - 1) * pageSize;
+    return (select(demos)
+          ..orderBy([(t) => OrderingTerm.desc(t.createdAt)])
+          ..limit(pageSize, offset: offset))
+        .get();
+  }
+
+  /// 搜索 Demo 记录（分页）
+  Future<List<Demo>> searchDemos(String keyword, int pageNo, int pageSize) {
+    final offset = (pageNo - 1) * pageSize;
+    return (select(demos)
+          ..where((t) => t.demoTextField.like('%$keyword%'))
+          ..orderBy([(t) => OrderingTerm.desc(t.createdAt)])
+          ..limit(pageSize, offset: offset))
+        .get();
+  }
+
+  /// 统计搜索结果总数
+  Future<int> countSearchDemos(String keyword) {
+    return (select(demos)..where((t) => t.demoTextField.like('%$keyword%')))
+        .get()
+        .then((list) => list.length);
+  }
 }
