@@ -8,6 +8,7 @@ import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/form_input.dart';
 import 'package:flutter_demo/widget/panel/form_number_input.dart';
+import 'package:flutter_demo/widget/panel/form_switch.dart';
 
 import 'database_form_view_model.dart';
 
@@ -67,6 +68,11 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
                         label: '数字字段',
                         controller: viewModel.doubleFieldController,
                         hintText: '请输入数字',
+                      ),
+                      FormSwitch(
+                        label: '布尔字段',
+                        switchValue: viewModel.model.boolField,
+                        onChanged: (value) => viewModel.updateBoolField(value),
                       ),
                     ],
                   ),

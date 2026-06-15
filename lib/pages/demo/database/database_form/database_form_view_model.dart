@@ -23,6 +23,7 @@ class DatabaseFormViewModel extends ChangeNotifier {
       if (demo != null) {
         model.textField = demo.demoTextField;
         model.doubleField = '${demo.demoDoubleField}';
+        model.boolField = demo.demoBoolField;
         textFieldController.text = demo.demoTextField;
         doubleFieldController.text = '${demo.demoDoubleField}';
       }
@@ -34,6 +35,11 @@ class DatabaseFormViewModel extends ChangeNotifier {
     _mounted = false;
     textFieldController.dispose();
     doubleFieldController.dispose();
+  }
+
+  void updateBoolField(bool value) {
+    model.boolField = value;
+    notifyListeners();
   }
 
   Future<bool> save(BuildContext context) async {
@@ -75,11 +81,13 @@ class DatabaseFormViewModel extends ChangeNotifier {
         model.id!,
         demoTextField: text,
         demoDoubleField: doubleValue,
+        demoBoolField: model.boolField,
       );
     } else {
       await database.demoDao.insertDemo(
         demoTextField: text,
         demoDoubleField: doubleValue ?? 0.0,
+        demoBoolField: model.boolField,
       );
     }
 

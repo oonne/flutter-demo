@@ -37,7 +37,10 @@ class _DatabaseListViewState extends State<DatabaseListView> {
   }
 
   void _handleItemTap(Demo? item) async {
-    final result = await context.pushNamed('demo/database_form', extra: {'id': item?.id});
+    final result = await context.pushNamed(
+      'demo/database_form',
+      extra: {'id': item?.id},
+    );
     if (result != null) {
       final Map<String, dynamic> resultMap = result as Map<String, dynamic>;
       if (resultMap['refresh'] == true && context.mounted) {
@@ -49,6 +52,7 @@ class _DatabaseListViewState extends State<DatabaseListView> {
   @override
   Widget build(BuildContext context) {
     final themeVars = getCurrentThemeVars(context);
+    final colorScheme = getCurrentThemeColorScheme(context);
 
     return ChangeNotifierProvider.value(
       value: viewModel,
@@ -124,6 +128,8 @@ class _DatabaseListViewState extends State<DatabaseListView> {
                                   color: themeVars.secondaryTextColor,
                                 ),
                               ),
+                              SizedBox(height: 8),
+                              Text(item?.demoBoolField == true ? 'true' : 'false'),
                             ],
                           ),
                         ),
