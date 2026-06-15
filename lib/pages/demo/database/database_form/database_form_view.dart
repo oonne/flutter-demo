@@ -7,6 +7,7 @@ import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
 import 'package:flutter_demo/widget/panel/form_input.dart';
+import 'package:flutter_demo/widget/panel/form_number_input.dart';
 
 import 'database_form_view_model.dart';
 
@@ -62,7 +63,7 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
                         controller: viewModel.textFieldController,
                         hintText: '请输入文本内容',
                       ),
-                      FormInput(
+                      FormNumberInput(
                         label: '数字字段',
                         controller: viewModel.doubleFieldController,
                         hintText: '请输入数字',
