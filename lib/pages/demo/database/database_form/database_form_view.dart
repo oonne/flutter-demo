@@ -108,6 +108,7 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
                             ),
                           ),
                         ),
+                        // 删除
                         if (_demoId != null) ...[
                           SizedBox(height: 12),
                           SizedBox(
@@ -128,11 +129,12 @@ class _DatabaseFormViewState extends State<DatabaseFormView> {
                                 spacing: 8,
                                 children: [
                                   if (viewModel.model.isSaving) ...[
-                                    const SizedBox(
+                                    SizedBox(
                                       width: 16,
                                       height: 16,
                                       child: CircularProgressIndicator(
                                         strokeWidth: 2,
+                                        color: themeVars.dangerColor,
                                       ),
                                     ),
                                   ],

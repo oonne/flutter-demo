@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/database/database.dart';
 import 'package:flutter_demo/database/database_service.dart';
+import 'package:flutter_demo/widget/modal/modal_dialog.dart';
 
 import 'database_form_model.dart';
 
@@ -48,9 +49,9 @@ class DatabaseFormViewModel extends ChangeNotifier {
     if (text.isEmpty) {
       model.isSaving = false;
       notifyListeners();
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('请输入文本内容')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('请输入文本内容')));
       return false;
     }
 
@@ -60,9 +61,9 @@ class DatabaseFormViewModel extends ChangeNotifier {
       if (doubleValue == null) {
         model.isSaving = false;
         notifyListeners();
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('请输入有效的数字')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('请输入有效的数字')));
         return false;
       }
     }
@@ -84,9 +85,9 @@ class DatabaseFormViewModel extends ChangeNotifier {
 
     model.isSaving = false;
     notifyListeners();
-      if (!context.mounted) {
-        return false;
-      }
+    if (!context.mounted) {
+      return false;
+    }
     GoRouter.of(context).pop({'refresh': true});
     return true;
   }
@@ -98,23 +99,28 @@ class DatabaseFormViewModel extends ChangeNotifier {
     model.isSaving = true;
     notifyListeners();
 
-    
-    final confirm = await showDialog<bool>(
+    final confirm = await showModal<bool>(
       context: context,
-      builder: (context) => const AlertDialog(
-        content: Text('确定要删除这条记录吗？'),
-      ),
+      showCancelButton: true,
+      barrierDismissible: true,
+      child: const Text('确定要删除这条记录吗？'),
     );
 
-    if (confirm != true) return;
+    if (confirm != true) {
+      model.isSaving = false;
+      notifyListeners();
+      return;
+    }
 
     if (model.id != null) {
       final database = DatabaseService.instance.database;
       await database.demoDao.deleteDemo(model.id!);
+      model.isSaving = false;
+      notifyListeners();
       if (!context.mounted) {
         return;
       }
       GoRouter.of(context).pop({'refresh': true});
     }
   }
-} 
+}
