@@ -10,7 +10,7 @@ class UserInfoViewModel extends ChangeNotifier {
   /* 
    * 初始化
    */
-  init(BuildContext context) {
+  void init(BuildContext context) {
     getUserInfo();
   }
 

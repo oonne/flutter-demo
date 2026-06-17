@@ -12,6 +12,7 @@ abstract class BaseTable extends Table {
   DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();
 
   /// 修改时间字段
-  /// 默认为空，需要在更新时手动设置
-  DateTimeColumn get updatedAt => dateTime().nullable()();
+  /// 使用 withDefault(currentDateAndTime) 在插入时自动设置为当前时间
+  /// 更新时需要手动设置为当前时间
+  DateTimeColumn get updatedAt => dateTime().nullable().withDefault(currentDateAndTime)();
 }
