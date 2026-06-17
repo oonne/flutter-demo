@@ -43,6 +43,7 @@ class $DemosTable extends Demos with TableInfo<$DemosTable, Demo> {
     true,
     type: DriftSqlType.dateTime,
     requiredDuringInsert: false,
+    defaultValue: currentDateAndTime,
   );
   static const VerificationMeta _demoTextFieldMeta = const VerificationMeta(
     'demoTextField',
@@ -201,7 +202,8 @@ class Demo extends DataClass implements Insertable<Demo> {
   final DateTime createdAt;
 
   /// 修改时间字段
-  /// 默认为空，需要在更新时手动设置
+  /// 使用 withDefault(currentDateAndTime) 在插入时自动设置为当前时间
+  /// 更新时需要手动设置为当前时间
   final DateTime? updatedAt;
 
   /// 字符串字段示例
