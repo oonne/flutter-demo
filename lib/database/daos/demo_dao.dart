@@ -29,6 +29,8 @@ class DemoDao extends DatabaseAccessor<DemoDatabase> with _$DemoDaoMixin {
         demoTextField: Value(demoTextField),
         demoDoubleField: Value(demoDoubleField),
         demoBoolField: Value(demoBoolField),
+        createdAt: Value(DateTime.now()),
+        updatedAt: Value(DateTime.now()),
       ),
     );
   }
