@@ -62,3 +62,18 @@ String createHash(String text, [int? maxLen]) {
   }
   return hashedText;
 }
+
+/*
+ * 生成ID
+ * 规则: 前缀 + 哈希值(时间戳 + 随机字符串)
+ */
+String generateId([String? prefix]) {
+  final time = DateTime.now().millisecondsSinceEpoch;
+  final randomStr = randomString(8);
+  final hash = createHash('$time$randomStr');
+
+  if (prefix == null || prefix.isEmpty) {
+    return hash;
+  }
+  return '$prefix-$hash';
+}
