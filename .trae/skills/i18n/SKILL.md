@@ -281,14 +281,15 @@ msg_new_messages: {
 ## 重要提示
 
 1. **注释不进行国际化** - 跳过注释块中的任何文本
-2. **key 区分大小写** - 使用 camelCase 格式
-3. **修改 ts 文件后运行 generate_arb.ts** - 生成 Flutter ARB 文件
-4. **生成 ARB 文件后运行 flutter gen-l10n** - 重新生成 Flutter AppLocalizations 类
-5. **验证 i18n key 存在** - 在最终替换前确保所有 key 都正确定义在模块中
-6. **插值参数** - 带参数的翻译需要在 `_params` 中定义参数类型，否则参数可能无法正确工作
-7. **专有名词和大写的缩写词 不需要国际化** - 专有名词（如NFC、WiFi等大写的缩写词）不需要进行国际化处理
-8. **替换key后，需要提供中文注释** - 为每个替换的中文文本添加中文注释，便于后续维护
-9. **选择正确的调用方式** - 根据使用场景选择 `AppLocalizations.of(context)!` 或 `localizations` 变量：
+2. **跳过标记为"不用翻译"的文案** - 如果中文文案前一行的注释中包含"不用翻译"，则跳过该条文案的翻译
+3. **key 区分大小写** - 使用 camelCase 格式
+4. **修改 ts 文件后运行 generate_arb.ts** - 生成 Flutter ARB 文件
+5. **生成 ARB 文件后运行 flutter gen-l10n** - 重新生成 Flutter AppLocalizations 类
+6. **验证 i18n key 存在** - 在最终替换前确保所有 key 都正确定义在模块中
+7. **插值参数** - 带参数的翻译需要在 `_params` 中定义参数类型，否则参数可能无法正确工作
+8. **专有名词和大写的缩写词 不需要国际化** - 专有名词（如NFC、WiFi等大写的缩写词）不需要进行国际化处理
+9. **替换key后，需要提供中文注释** - 为每个替换的中文文本添加中文注释，便于后续维护
+10. **选择正确的调用方式** - 根据使用场景选择 `AppLocalizations.of(context)!` 或 `localizations` 变量：
    - Widget 树中单次使用：直接使用 `AppLocalizations.of(context)!`
    - 函数中多次使用：先获取 `final localizations = AppLocalizations.of(context)!`
    - 工具函数：将 `AppLocalizations` 作为参数传递
