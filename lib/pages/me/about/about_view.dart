@@ -90,10 +90,16 @@ class _AboutViewState extends State<AboutView> {
                                 ),
                                 // 版权信息
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 24, bottom: 8),
+                                  padding: const EdgeInsets.only(
+                                    top: 24,
+                                    bottom: 8,
+                                  ),
                                   child: Text(
                                     'Copyright © JAY.',
-                                    style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey[500],
+                                    ),
                                   ),
                                 ),
                               ],
@@ -109,26 +115,50 @@ class _AboutViewState extends State<AboutView> {
 
                       // 用户协议
                       PanelItem(
-                        label: AppLocalizations.of(context)!.title_user_agreement, // 用户协议
+                        label: AppLocalizations.of(
+                          context,
+                        )!.title_user_agreement, // 用户协议
                         showArrow: true,
                         onTap: () {
-                          final userAgreementUrl = (globalState.locale.languageCode == 'zh') 
+                          final userAgreementUrl =
+                              (globalState.locale.languageCode == 'zh')
                               ? 'https://any-print.com/piconfc/user_agreement.html'
                               : 'https://any-print.com/piconfc/user_agreement_en.html';
-                          context.pushNamed('demo/webview', extra: {'url': userAgreementUrl});
+                          context.pushNamed(
+                            'demo/webview',
+                            extra: {'url': userAgreementUrl},
+                          );
                         },
                       ),
                       // 隐私政策
                       PanelItem(
-                        label: AppLocalizations.of(context)!.title_privacy_policy, // 隐私政策
+                        label: AppLocalizations.of(
+                          context,
+                        )!.title_privacy_policy, // 隐私政策
                         showArrow: true,
                         onTap: () {
-                          final privacyPolicyUrl = (globalState.locale.languageCode == 'zh') 
+                          final privacyPolicyUrl =
+                              (globalState.locale.languageCode == 'zh')
                               ? 'https://any-print.com/piconfc/privacy_policy.html'
                               : 'https://any-print.com/piconfc/privacy_policy_en.html';
-                          context.pushNamed('demo/webview', extra: {'url': privacyPolicyUrl});
+                          context.pushNamed(
+                            'demo/webview',
+                            extra: {'url': privacyPolicyUrl},
+                          );
                         },
                       ),
+
+                      // 备案号
+                      if (globalState.lang == 'zh_CN') ...[
+                        PanelItem(
+                          // 不用翻译
+                          label: '备案号',
+                          // 不用翻译
+                          value: '粤ICP备2025406378号-4A',
+                          labelFlex: 3,
+                          contentFlex: 7,
+                        ),
+                      ],
                     ],
                   ),
 
@@ -140,23 +170,28 @@ class _AboutViewState extends State<AboutView> {
                     Panel(
                       children: [
                         // Flavor
-                      PanelItem(label: AppLocalizations.of(context)!.title_channel, value: globalState.flavor),
+                        PanelItem(
+                          label: AppLocalizations.of(context)!.title_channel,
+                          value: globalState.flavor,
+                        ),
 
-                      // 环境
-                      PanelItem(
-                        label: AppLocalizations.of(context)!.title_environment,
-                        value: viewModel.getEnvText(context),
-                        onTap: () => viewModel.changeEnv(context),
-                      ),
+                        // 环境
+                        PanelItem(
+                          label: AppLocalizations.of(
+                            context,
+                          )!.title_environment,
+                          value: viewModel.getEnvText(context),
+                          onTap: () => viewModel.changeEnv(context),
+                        ),
 
-                      // 是否开启广告
-                      FormSwitch(
-                        label: AppLocalizations.of(context)!.title_show_ad,
-                        switchValue: viewModel.model.isShowAd,
-                        onChanged: (value) {
-                          viewModel.setIsShowAd(context, value);
-                        },
-                      ),
+                        // 是否开启广告
+                        FormSwitch(
+                          label: AppLocalizations.of(context)!.title_show_ad,
+                          switchValue: viewModel.model.isShowAd,
+                          onChanged: (value) {
+                            viewModel.setIsShowAd(context, value);
+                          },
+                        ),
 
                         // Demo
                         PanelItem(
