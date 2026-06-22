@@ -294,3 +294,7 @@ msg_new_messages: {
    - 函数中多次使用：先获取 `final localizations = AppLocalizations.of(context)!`
    - 工具函数：将 `AppLocalizations` 作为参数传递
    - 需要判空：使用 `final localizations = AppLocalizations.of(context)` 并检查 null
+11. **正确的 import 路径** - 必须引用项目内生成的文件，而不是 flutter_gen 包：
+   - ✅ 正确：`import 'package:{{package_name}}/generated/i18n/app_localizations.dart';`
+   - ❌ 错误：`import 'package:flutter_gen/gen_l10n/app_localizations.dart';`
+   - `{{package_name}}` 将自动从项目的 `pubspec.yaml` 中读取 `name` 字段。
