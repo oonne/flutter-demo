@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/modal/modal_dialog.dart';
+import 'package:flutter_demo/widget/alert/alert.dart';
 
 import 'mvvm_view_model.dart';
 
@@ -50,10 +51,34 @@ class _MvvmViewState extends State<MvvmView> {
            */
           return Scaffold(
             appBar: CustomAppBar(title: const Text('MVVM示例')),
-            body: Center(
+            body: SingleChildScrollView(
+              padding: const EdgeInsets.all(20),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  /* 
+                   * Alert组件示例
+                   */
+                  const Alert(
+                    text: 'Success Text',
+                    type: AlertType.success,
+                  ),
+                  const SizedBox(height: 12),
+                  const Alert(
+                    text: 'Info Text',
+                    type: AlertType.info,
+                  ),
+                  const SizedBox(height: 12),
+                  const Alert(
+                    text: 'Warning Text',
+                    type: AlertType.warning,
+                  ),
+                  const SizedBox(height: 12),
+                  const Alert(
+                    text: 'Error Text',
+                    type: AlertType.error,
+                  ),
+                  const SizedBox(height: 30),
+
                   /* 
                    * 页面数字
                    */
