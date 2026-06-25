@@ -72,6 +72,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get btn_logout => 'Sair';
 
   @override
+  String get btn_confirm => 'Confirmar';
+
+  @override
   String get title_home => 'Início';
 
   @override

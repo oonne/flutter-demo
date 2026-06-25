@@ -62,6 +62,9 @@
   "btn_logout": "Cerrar sesión",
   "@btn_logout": {},
 
+  "btn_confirm": "Confirmar",
+  "@btn_confirm": {},
+
   "title_home": "Inicio",
   "@title_home": {},
 

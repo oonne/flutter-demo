@@ -62,6 +62,9 @@
   "btn_logout": "로그아웃",
   "@btn_logout": {},
 
+  "btn_confirm": "확인",
+  "@btn_confirm": {},
+
   "title_home": "홈",
   "@title_home": {},
 

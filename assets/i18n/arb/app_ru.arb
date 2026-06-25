@@ -62,6 +62,9 @@
   "btn_logout": "Выйти",
   "@btn_logout": {},
 
+  "btn_confirm": "Подтвердить",
+  "@btn_confirm": {},
+
   "title_home": "Главная",
   "@title_home": {},
 

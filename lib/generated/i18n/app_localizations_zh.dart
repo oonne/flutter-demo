@@ -72,6 +72,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get btn_logout => '退出登录';
 
   @override
+  String get btn_confirm => '确认';
+
+  @override
   String get title_home => '首页';
 
   @override
@@ -294,6 +297,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get btn_logout => '退出登入';
+
+  @override
+  String get btn_confirm => '確認';
 
   @override
   String get title_home => '首頁';

@@ -72,6 +72,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get btn_logout => '로그아웃';
 
   @override
+  String get btn_confirm => '확인';
+
+  @override
   String get title_home => '홈';
 
   @override

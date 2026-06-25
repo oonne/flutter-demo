@@ -62,6 +62,9 @@
   "btn_logout": "Logout",
   "@btn_logout": {},
 
+  "btn_confirm": "Confirm",
+  "@btn_confirm": {},
+
   "title_home": "Home",
   "@title_home": {},
 

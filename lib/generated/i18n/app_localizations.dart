@@ -243,6 +243,12 @@ abstract class AppLocalizations {
   /// **'Logout'**
   String get btn_logout;
 
+  /// No description provided for @btn_confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get btn_confirm;
+
   /// No description provided for @title_home.
   ///
   /// In en, this message translates to:

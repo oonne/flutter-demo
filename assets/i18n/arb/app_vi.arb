@@ -62,6 +62,9 @@
   "btn_logout": "Đăng xuất",
   "@btn_logout": {},
 
+  "btn_confirm": "Xác nhận",
+  "@btn_confirm": {},
+
   "title_home": "Trang chủ",
   "@title_home": {},
 

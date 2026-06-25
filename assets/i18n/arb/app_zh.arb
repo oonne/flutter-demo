@@ -62,6 +62,9 @@
   "btn_logout": "退出登录",
   "@btn_logout": {},
 
+  "btn_confirm": "确认",
+  "@btn_confirm": {},
+
   "title_home": "首页",
   "@title_home": {},
 

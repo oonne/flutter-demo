@@ -62,6 +62,9 @@
   "btn_logout": "Sair",
   "@btn_logout": {},
 
+  "btn_confirm": "Confirmar",
+  "@btn_confirm": {},
+
   "title_home": "Início",
   "@title_home": {},
 

@@ -67,6 +67,22 @@ const msg: ILangMsgs = {
     ko_KR: "로그아웃",
     vi_VN: "Đăng xuất",
   },
+
+  /* 确认 */
+  btn_confirm: {
+    zh_CN: "确认",
+    zh_TW: "確認",
+    en_US: "Confirm",
+    ru_RU: "Подтвердить",
+    fr_FR: "Confirmer",
+    es_ES: "Confirmar",
+    it_IT: "Conferma",
+    pt_PT: "Confirmar",
+    de_DE: "Bestätigen",
+    ja_JP: "確認",
+    ko_KR: "확인",
+    vi_VN: "Xác nhận",
+  },
 };
 
 export default msg;

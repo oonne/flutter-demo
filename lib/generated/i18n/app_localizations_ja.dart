@@ -72,6 +72,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get btn_logout => 'ログアウト';
 
   @override
+  String get btn_confirm => '確認';
+
+  @override
   String get title_home => 'ホーム';
 
   @override

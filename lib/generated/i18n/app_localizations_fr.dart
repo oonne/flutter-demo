@@ -72,6 +72,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get btn_logout => 'Déconnexion';
 
   @override
+  String get btn_confirm => 'Confirmer';
+
+  @override
   String get title_home => 'Accueil';
 
   @override

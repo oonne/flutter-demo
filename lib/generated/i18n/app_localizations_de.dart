@@ -72,6 +72,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get btn_logout => 'Abmelden';
 
   @override
+  String get btn_confirm => 'Bestätigen';
+
+  @override
   String get title_home => 'Startseite';
 
   @override

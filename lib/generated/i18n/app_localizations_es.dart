@@ -72,6 +72,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get btn_logout => 'Cerrar sesión';
 
   @override
+  String get btn_confirm => 'Confirmar';
+
+  @override
   String get title_home => 'Inicio';
 
   @override

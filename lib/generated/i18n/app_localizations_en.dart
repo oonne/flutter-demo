@@ -72,6 +72,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get btn_logout => 'Logout';
 
   @override
+  String get btn_confirm => 'Confirm';
+
+  @override
   String get title_home => 'Home';
 
   @override

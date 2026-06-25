@@ -72,6 +72,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get btn_logout => 'Выйти';
 
   @override
+  String get btn_confirm => 'Подтвердить';
+
+  @override
   String get title_home => 'Главная';
 
   @override

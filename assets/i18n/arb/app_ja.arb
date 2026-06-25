@@ -62,6 +62,9 @@
   "btn_logout": "ログアウト",
   "@btn_logout": {},
 
+  "btn_confirm": "確認",
+  "@btn_confirm": {},
+
   "title_home": "ホーム",
   "@title_home": {},
 

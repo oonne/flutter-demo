@@ -72,6 +72,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get btn_logout => 'Đăng xuất';
 
   @override
+  String get btn_confirm => 'Xác nhận';
+
+  @override
   String get title_home => 'Trang chủ';
 
   @override
