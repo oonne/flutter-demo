@@ -5,6 +5,7 @@ import 'package:flutter_demo/theme/global.dart';
 
 import './number_keyboard_config.dart';
 
+// ==================== 数字键盘组件 ====================
 class NumberKeyboard extends StatefulWidget {
   final TextEditingController controller;
   final FocusNode focusNode;
@@ -23,13 +24,16 @@ class NumberKeyboard extends StatefulWidget {
   State<NumberKeyboard> createState() => _NumberKeyboardState();
 }
 
+// ==================== 状态管理类 ====================
 class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProviderStateMixin {
+  // 成员变量
   late NumberKeyboardConfig _config;
   late AnimationController _animationController;
   late Animation<Offset> _slideAnimation;
   OverlayEntry? _keyboardOverlay;
   bool _isKeyboardVisible = false;
 
+  // ==================== 生命周期方法 ====================
   @override
   void initState() {
     super.initState();
@@ -67,6 +71,7 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
     }
   }
 
+  // ==================== 键盘显示/隐藏控制 ====================
   void _showKeyboard() {
     if (_isKeyboardVisible || _keyboardOverlay != null) return;
 
@@ -98,6 +103,7 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
     });
   }
 
+  // ==================== 按键处理逻辑 ====================
   void _handleKeyPress(String key) {
     final text = widget.controller.text;
 
@@ -142,6 +148,7 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
     }
   }
 
+  // ==================== 辅助方法 ====================
   void _toggleNegative() {
     if (!_config.allowNegative) return;
 
@@ -176,6 +183,7 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
     widget.focusNode.unfocus();
   }
 
+  // ==================== UI 构建方法 ====================
   Widget _buildKeyboardUI() {
     final themeVars = getCurrentThemeVars(context);
     final colorScheme = getCurrentThemeColorScheme(context);
@@ -316,6 +324,7 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
     );
   }
 
+  // ==================== 主构建方法 ====================
   @override
   Widget build(BuildContext context) {
     return TextField(
