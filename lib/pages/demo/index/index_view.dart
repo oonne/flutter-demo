@@ -141,6 +141,13 @@ class _IndexViewState extends State<IndexView> {
                           context.pushNamed('demo/database');
                         },
                       ),
+                      PanelItem(
+                        label: '数字键盘',
+                        showArrow: true,
+                        onTap: () {
+                          context.pushNamed('demo/number_keyboard');
+                        },
+                      ),
                     ],
                   ),
                 ],

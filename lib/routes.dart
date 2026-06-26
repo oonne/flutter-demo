@@ -35,6 +35,7 @@ import 'package:flutter_demo/pages/demo/webview/webview_view.dart';
 import 'package:flutter_demo/pages/demo/banner_ad/banner_ad_view.dart';
 import 'package:flutter_demo/pages/demo/database/database_list/database_list_view.dart';
 import 'package:flutter_demo/pages/demo/database/database_form/database_form_view.dart';
+import 'package:flutter_demo/pages/demo/number_keyboard/number_keyboard_view.dart';
 
 
 
@@ -233,6 +234,12 @@ final router = GoRouter(
       name: 'demo/database_form',
       path: '/demo/database_form',
       builder: (context, state) => const DatabaseFormView(),
+    ),
+    /* 数字键盘 */
+    GoRoute(
+      name: 'demo/number_keyboard',
+      path: '/demo/number_keyboard',
+      builder: (context, state) => const NumberKeyboardView(),
     ),
   ],
 );
