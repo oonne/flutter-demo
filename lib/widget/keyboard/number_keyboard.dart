@@ -198,50 +198,69 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         height: 300,
-        child: Column(
+        child: Row(
           children: [
             Expanded(
-              flex: 1,
-              child: Row(
+              flex: 3,
+              child: Column(
                 children: [
-                  _buildKey('7', themeVars, colorScheme),
-                  _buildKey('8', themeVars, colorScheme),
-                  _buildKey('9', themeVars, colorScheme),
-                  _buildKey('backspace', themeVars, colorScheme, icon: Icons.backspace),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        _buildKey('7', themeVars, colorScheme),
+                        _buildKey('8', themeVars, colorScheme),
+                        _buildKey('9', themeVars, colorScheme),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        _buildKey('4', themeVars, colorScheme),
+                        _buildKey('5', themeVars, colorScheme),
+                        _buildKey('6', themeVars, colorScheme),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        _buildKey('1', themeVars, colorScheme),
+                        _buildKey('2', themeVars, colorScheme),
+                        _buildKey('3', themeVars, colorScheme),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        if (_config.allowNegative)
+                          _buildKey('negative', themeVars, colorScheme),
+                        _buildKey('0', themeVars, colorScheme, flex: _getZeroFlex()),
+                        if (_config.allowDecimal)
+                          _buildKey('.', themeVars, colorScheme),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
             Expanded(
               flex: 1,
-              child: Row(
+              child: Column(
                 children: [
-                  _buildKey('4', themeVars, colorScheme),
-                  _buildKey('5', themeVars, colorScheme),
-                  _buildKey('6', themeVars, colorScheme),
-                  _buildKey('clear', themeVars, colorScheme, textColor: themeVars.dangerColor),
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Row(
-                children: [
-                  _buildKey('1', themeVars, colorScheme),
-                  _buildKey('2', themeVars, colorScheme),
-                  _buildKey('3', themeVars, colorScheme),
-                  _buildConfirmKey(themeVars, colorScheme),
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Row(
-                children: [
-                  if (_config.allowNegative)
-                    _buildKey('negative', themeVars, colorScheme),
-                  _buildKey('0', themeVars, colorScheme, flex: _getZeroFlex()),
-                  if (_config.allowDecimal)
-                    _buildKey('.', themeVars, colorScheme),
+                  Expanded(
+                    flex: 1,
+                    child: _buildKey('backspace', themeVars, colorScheme, icon: Icons.backspace),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: _buildKey('clear', themeVars, colorScheme, textColor: themeVars.dangerColor),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: _buildConfirmKey(themeVars, colorScheme),
+                  ),
                 ],
               ),
             ),
