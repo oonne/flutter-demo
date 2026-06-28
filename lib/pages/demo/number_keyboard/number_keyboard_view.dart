@@ -6,6 +6,7 @@ import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/keyboard/number_keyboard.dart';
 import 'package:flutter_demo/widget/keyboard/number_keyboard_config.dart';
 import 'package:flutter_demo/utils/message.dart';
+import 'package:flutter_demo/theme/global.dart';
 
 import 'number_keyboard_view_model.dart';
 
@@ -39,6 +40,9 @@ class _NumberKeyboardViewState extends State<NumberKeyboardView> {
 
   @override
   Widget build(BuildContext context) {
+    final themeVars = getCurrentThemeVars(context);
+    final colorScheme = getCurrentThemeColorScheme(context);
+
     return ChangeNotifierProvider.value(
       value: viewModel,
       child: Consumer<NumberKeyboardViewModel>(
@@ -48,105 +52,118 @@ class _NumberKeyboardViewState extends State<NumberKeyboardView> {
             body: SingleChildScrollView(
               padding: const EdgeInsets.all(20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextField(
-                    controller: viewModel.integerController,
+                  Text(
+                    '正整数',
+                    style: TextStyle(
+                      color: themeVars.textColor,
+                      fontSize: 16,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  _buildKeyboardContainer(
+                    themeVars: themeVars,
+                    colorScheme: colorScheme,
                     focusNode: viewModel.integerFocusNode,
-                    keyboardType: TextInputType.none,
-                    decoration: const InputDecoration(
-                      labelText: '正整数',
-                      border: OutlineInputBorder(),
+                    child: NumberKeyboard(
+                      controller: viewModel.integerController,
+                      focusNode: viewModel.integerFocusNode,
+                      config: const NumberKeyboardConfig(
+                        allowDecimal: false,
+                        allowNegative: false,
+                      ),
+                      onConfirm: () {
+                        showTextSnackBar(
+                          context,
+                          msg: '正整数输入: ${viewModel.integerController.text}',
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  Text(
+                    '带小数点',
+                    style: TextStyle(
+                      color: themeVars.textColor,
+                      fontSize: 16,
                     ),
                   ),
                   const SizedBox(height: 10),
-                  NumberKeyboard(
-                    controller: viewModel.integerController,
-                    focusNode: viewModel.integerFocusNode,
-                    config: const NumberKeyboardConfig(
-                      allowDecimal: false,
-                      allowNegative: false,
-                    ),
-                    onConfirm: () {
-                      showTextSnackBar(
-                        context,
-                        msg: '正整数输入: ${viewModel.integerController.text}',
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 30),
-                  TextField(
-                    controller: viewModel.decimalController,
+                  _buildKeyboardContainer(
+                    themeVars: themeVars,
+                    colorScheme: colorScheme,
                     focusNode: viewModel.decimalFocusNode,
-                    keyboardType: TextInputType.none,
-                    decoration: const InputDecoration(
-                      labelText: '带小数点',
-                      border: OutlineInputBorder(),
+                    child: NumberKeyboard(
+                      controller: viewModel.decimalController,
+                      focusNode: viewModel.decimalFocusNode,
+                      config: const NumberKeyboardConfig(
+                        allowDecimal: true,
+                        allowNegative: false,
+                      ),
+                      onConfirm: () {
+                        showTextSnackBar(
+                          context,
+                          msg: '小数输入: ${viewModel.decimalController.text}',
+                        );
+                      },
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  NumberKeyboard(
-                    controller: viewModel.decimalController,
-                    focusNode: viewModel.decimalFocusNode,
-                    config: const NumberKeyboardConfig(
-                      allowDecimal: true,
-                      allowNegative: false,
-                    ),
-                    onConfirm: () {
-                      showTextSnackBar(
-                        context,
-                        msg: '小数输入: ${viewModel.decimalController.text}',
-                      );
-                    },
                   ),
                   const SizedBox(height: 30),
-                  TextField(
-                    controller: viewModel.negativeController,
-                    focusNode: viewModel.negativeFocusNode,
-                    keyboardType: TextInputType.none,
-                    decoration: const InputDecoration(
-                      labelText: '带负数',
-                      border: OutlineInputBorder(),
+                  Text(
+                    '带负数',
+                    style: TextStyle(
+                      color: themeVars.textColor,
+                      fontSize: 16,
                     ),
                   ),
                   const SizedBox(height: 10),
-                  NumberKeyboard(
-                    controller: viewModel.negativeController,
+                  _buildKeyboardContainer(
+                    themeVars: themeVars,
+                    colorScheme: colorScheme,
                     focusNode: viewModel.negativeFocusNode,
-                    config: const NumberKeyboardConfig(
-                      allowDecimal: false,
-                      allowNegative: true,
+                    child: NumberKeyboard(
+                      controller: viewModel.negativeController,
+                      focusNode: viewModel.negativeFocusNode,
+                      config: const NumberKeyboardConfig(
+                        allowDecimal: false,
+                        allowNegative: true,
+                      ),
+                      onConfirm: () {
+                        showTextSnackBar(
+                          context,
+                          msg: '负数输入: ${viewModel.negativeController.text}',
+                        );
+                      },
                     ),
-                    onConfirm: () {
-                      showTextSnackBar(
-                        context,
-                        msg: '负数输入: ${viewModel.negativeController.text}',
-                      );
-                    },
                   ),
                   const SizedBox(height: 30),
-                  TextField(
-                    controller: viewModel.decimalNegativeController,
-                    focusNode: viewModel.decimalNegativeFocusNode,
-                    keyboardType: TextInputType.none,
-                    decoration: const InputDecoration(
-                      labelText: '带小数点和负号',
-                      border: OutlineInputBorder(),
+                  Text(
+                    '带小数点和负号',
+                    style: TextStyle(
+                      color: themeVars.textColor,
+                      fontSize: 16,
                     ),
                   ),
                   const SizedBox(height: 10),
-                  NumberKeyboard(
-                    controller: viewModel.decimalNegativeController,
+                  _buildKeyboardContainer(
+                    themeVars: themeVars,
+                    colorScheme: colorScheme,
                     focusNode: viewModel.decimalNegativeFocusNode,
-                    config: const NumberKeyboardConfig(
-                      allowDecimal: true,
-                      allowNegative: true,
+                    child: NumberKeyboard(
+                      controller: viewModel.decimalNegativeController,
+                      focusNode: viewModel.decimalNegativeFocusNode,
+                      config: const NumberKeyboardConfig(
+                        allowDecimal: true,
+                        allowNegative: true,
+                      ),
+                      onConfirm: () {
+                        showTextSnackBar(
+                          context,
+                          msg: '小数负数输入: ${viewModel.decimalNegativeController.text}',
+                        );
+                      },
                     ),
-                    onConfirm: () {
-                      showTextSnackBar(
-                        context,
-                        msg: '小数负数输入: ${viewModel.decimalNegativeController.text}',
-                      );
-                    },
                   ),
                   const SizedBox(height: 30),
                   ElevatedButton(
@@ -159,6 +176,34 @@ class _NumberKeyboardViewState extends State<NumberKeyboardView> {
           );
         },
       ),
+    );
+  }
+
+  Widget _buildKeyboardContainer({
+    required ThemeVars themeVars,
+    required ColorScheme colorScheme,
+    required FocusNode focusNode,
+    required Widget child,
+  }) {
+    return ListenableBuilder(
+      listenable: focusNode,
+      builder: (context, child) {
+        return Container(
+          padding: EdgeInsets.all(themeVars.panelMargin),
+          decoration: BoxDecoration(
+            color: themeVars.contentBackground,
+            borderRadius: BorderRadius.circular(themeVars.radius),
+            border: Border.all(
+              color: focusNode.hasFocus
+                  ? colorScheme.primary
+                  : colorScheme.outline,
+              width: focusNode.hasFocus ? 2 : 1,
+            ),
+          ),
+          child: child,
+        );
+      },
+      child: child,
     );
   }
 }
