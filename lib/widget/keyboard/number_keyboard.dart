@@ -25,7 +25,8 @@ class NumberKeyboard extends StatefulWidget {
 }
 
 // ==================== 状态管理类 ====================
-class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProviderStateMixin {
+class _NumberKeyboardState extends State<NumberKeyboard>
+    with SingleTickerProviderStateMixin {
   // 成员变量
   late NumberKeyboardConfig _config;
   late AnimationController _animationController;
@@ -44,13 +45,10 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
       vsync: this,
     );
 
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, 1),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _animationController,
-      curve: Curves.easeOut,
-    ));
+    _slideAnimation = Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
+        .animate(
+          CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
+        );
 
     widget.focusNode.addListener(_onFocusChanged);
   }
@@ -191,10 +189,6 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
     return Material(
       color: themeVars.contentBackground,
       elevation: 8,
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(16),
-        topRight: Radius.circular(16),
-      ),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         height: 300,
@@ -236,7 +230,12 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
                       children: [
                         if (_config.allowNegative)
                           _buildKey('negative', themeVars, colorScheme),
-                        _buildKey('0', themeVars, colorScheme, flex: _getZeroFlex()),
+                        _buildKey(
+                          '0',
+                          themeVars,
+                          colorScheme,
+                          flex: _getZeroFlex(),
+                        ),
                         if (_config.allowDecimal)
                           _buildKey('.', themeVars, colorScheme),
                       ],
@@ -251,11 +250,21 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
                 children: [
                   Expanded(
                     flex: 1,
-                    child: _buildKey('backspace', themeVars, colorScheme, icon: Icons.backspace),
+                    child: _buildKey(
+                      'backspace',
+                      themeVars,
+                      colorScheme,
+                      icon: Icons.backspace,
+                    ),
                   ),
                   Expanded(
                     flex: 1,
-                    child: _buildKey('clear', themeVars, colorScheme, textColor: themeVars.dangerColor),
+                    child: _buildKey(
+                      'clear',
+                      themeVars,
+                      colorScheme,
+                      textColor: themeVars.dangerColor,
+                    ),
                   ),
                   Expanded(
                     flex: 2,
@@ -298,13 +307,13 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
             borderRadius: BorderRadius.circular(themeVars.radius),
           ),
           child: icon != null
-              ? Icon(
-                  icon,
-                  color: textColor ?? themeVars.textColor,
-                  size: 24,
-                )
+              ? Icon(icon, color: textColor ?? themeVars.textColor, size: 24)
               : Text(
-                  key == 'negative' ? '-' : key == 'clear' ? 'C' : key,
+                  key == 'negative'
+                      ? '-'
+                      : key == 'clear'
+                      ? 'C'
+                      : key,
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
@@ -317,26 +326,23 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
   }
 
   Widget _buildConfirmKey(ThemeVars themeVars, ColorScheme colorScheme) {
-    return Expanded(
-      flex: 1,
-      child: InkWell(
-        onTap: () => _handleKeyPress('confirm'),
-        borderRadius: BorderRadius.circular(themeVars.radius),
-        child: Container(
-          alignment: Alignment.center,
-          margin: const EdgeInsets.all(4),
-          height: double.infinity,
-          decoration: BoxDecoration(
-            color: colorScheme.primary,
-            borderRadius: BorderRadius.circular(themeVars.radius),
-          ),
-          child: Text(
-            AppLocalizations.of(context)!.btn_confirm,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-              color: Colors.white,
-            ),
+    return InkWell(
+      onTap: () => _handleKeyPress('confirm'),
+      borderRadius: BorderRadius.circular(themeVars.radius),
+      child: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(4),
+        height: double.infinity,
+        decoration: BoxDecoration(
+          color: colorScheme.primary,
+          borderRadius: BorderRadius.circular(themeVars.radius),
+        ),
+        child: Text(
+          AppLocalizations.of(context)!.btn_confirm,
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
           ),
         ),
       ),
@@ -350,13 +356,8 @@ class _NumberKeyboardState extends State<NumberKeyboard> with SingleTickerProvid
       controller: widget.controller,
       focusNode: widget.focusNode,
       keyboardType: TextInputType.none,
-      decoration: InputDecoration(
-        border: InputBorder.none,
-        isDense: true,
-      ),
-      style: TextStyle(
-        color: getCurrentThemeVars(context).textColor,
-      ),
+      decoration: InputDecoration(border: InputBorder.none, isDense: true),
+      style: TextStyle(color: getCurrentThemeVars(context).textColor),
     );
   }
 }
