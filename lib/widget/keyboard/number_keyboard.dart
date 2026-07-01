@@ -5,12 +5,53 @@ import 'package:flutter_demo/theme/global.dart';
 
 import './number_keyboard_config.dart';
 
-// ==================== 数字键盘组件 ====================
+
+/*
+ * 自定义数字键盘组件
+ *
+ * 一个功能完整的数字输入键盘，支持以下特性：
+ * - 替代系统键盘，通过 Overlay 浮层显示
+ * - 支持小数点、负数输入
+ * - 支持退格、清除操作
+ * - 平滑的滑入/滑出动画
+ * - 响应式聚焦状态自动显示/隐藏
+ *
+ * 使用方式：
+ * // 创建控制器和焦点节点
+ * final TextEditingController _controller = TextEditingController();
+ * final FocusNode _focusNode = FocusNode();
+ *
+ * // 在 build 方法中使用
+ * NumberKeyboard(
+ *   controller: _controller,
+ *   focusNode: _focusNode,
+ *   config: NumberKeyboardConfig(
+ *     allowDecimal: true,
+ *     allowNegative: false,
+ *     maxLength: 10,
+ *   ),
+ *   onConfirm: () {
+ *     // 确认输入后的回调
+ *     print('输入值: ${_controller.text}');
+ *   },
+ * )
+ *
+ * 布局说明：
+ * - 左侧3列：数字键 1-9、0、小数点（可选）、负号（可选）
+ * - 右侧1列：退格键、清除键、确认键
+ *
+ * 参数说明：
+ * - controller：必填，文本控制器，用于获取和设置输入内容
+ * - focusNode：必填，焦点节点，用于控制键盘的显示与隐藏
+ * - config：可选，键盘配置，控制是否允许小数、负数及最大输入长度
+ * - onConfirm：可选，确认按钮点击回调
+ */
 class NumberKeyboard extends StatefulWidget {
   final TextEditingController controller;
   final FocusNode focusNode;
   final NumberKeyboardConfig? config;
   final VoidCallback? onConfirm;
+  final String? confirmText;
 
   const NumberKeyboard({
     super.key,
@@ -18,6 +59,7 @@ class NumberKeyboard extends StatefulWidget {
     required this.focusNode,
     this.config,
     this.onConfirm,
+    this.confirmText,
   });
 
   @override
@@ -338,7 +380,7 @@ class _NumberKeyboardState extends State<NumberKeyboard>
           borderRadius: BorderRadius.circular(themeVars.radius),
         ),
         child: Text(
-          AppLocalizations.of(context)!.btn_confirm,
+          widget.confirmText ?? AppLocalizations.of(context)!.btn_confirm,
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
