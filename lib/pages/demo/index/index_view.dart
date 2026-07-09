@@ -148,8 +148,18 @@ class _IndexViewState extends State<IndexView> {
                           context.pushNamed('demo/number_keyboard');
                         },
                       ),
+                      PanelItem(
+                        label: 'Tabs组件',
+                        showArrow: true,
+                        onTap: () {
+                          context.pushNamed('demo/tabs');
+                        },
+                      ),
                     ],
                   ),
+
+                  // 底部占位
+                  const SizedBox(height: 100),
                 ],
               ),
             ),
