@@ -32,7 +32,7 @@ class IUser {
   final UserRole? role; // 角色
 
 
-  factory IUser.fromJson(json) => _$IUserFromJson(json);
+  factory IUser.fromJson(Map<String, dynamic> json) => _$IUserFromJson(json);
 
   Map<String, dynamic> toJson() => _$IUserToJson(this);
 }
