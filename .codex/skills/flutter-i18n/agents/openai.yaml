@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flutter 国际化"
+  short_description: "将 Dart 代码中的中文替换为 i18n key 并生成多语言资源"
+  default_prompt: "使用 $flutter-i18n 对 lib/pages/home_page.dart 进行国际化处理"

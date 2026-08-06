@@ -1,0 +1,4 @@
+interface:
+  display_name: "图标搜索"
+  short_description: "搜索或绘制符合项目风格的 SVG 图标并保存到 assets/icon/"
+  default_prompt: "使用 $icon-search 帮我找一个购物车 SVG 图标并保存到 assets/icon/"
