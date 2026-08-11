@@ -9,8 +9,13 @@ import 'package:flutter_demo/theme/global.dart';
  */
 class CustomSearchBar extends StatefulWidget {
   final Function(String) onSearch;
+  final String? placeholder;
 
-  const CustomSearchBar({super.key, required this.onSearch});
+  const CustomSearchBar({
+    super.key,
+    required this.onSearch,
+    this.placeholder,
+  });
 
   @override
   State<CustomSearchBar> createState() => _CustomSearchBarState();
@@ -67,7 +72,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                 controller: _controller,
                 style: TextStyle(fontSize: 16, height: 1.5),
                 decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.info_search,
+                  hintText: widget.placeholder ?? AppLocalizations.of(context)!.info_search,
                   hintStyle: TextStyle(color: themeVars.placeholderTextColor),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.only(

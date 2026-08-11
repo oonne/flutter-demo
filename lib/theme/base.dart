@@ -62,6 +62,8 @@ ThemeData createBaseTheme({
      */
     appBarTheme: AppBarTheme(
       centerTitle: true,
+      surfaceTintColor: Colors.transparent,
+      scrolledUnderElevation: 0,
     ),
 
     /* 
