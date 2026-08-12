@@ -148,16 +148,34 @@ class _NumberKeyboardState extends State<NumberKeyboard>
   // ==================== 按键处理逻辑 ====================
   void _handleKeyPress(String key) {
     final text = widget.controller.text;
+    final selection = _getSelection();
 
     switch (key) {
       case 'backspace':
         if (text.isNotEmpty) {
-          widget.controller.text = text.substring(0, text.length - 1);
+          if (selection.isCollapsed) {
+            if (selection.start > 0) {
+              final newText = text.substring(0, selection.start - 1) + text.substring(selection.start);
+              widget.controller.text = newText;
+              widget.controller.selection = TextSelection(
+                baseOffset: selection.start - 1,
+                extentOffset: selection.start - 1,
+              );
+            }
+          } else {
+            final newText = text.substring(0, selection.start) + text.substring(selection.end);
+            widget.controller.text = newText;
+            widget.controller.selection = TextSelection(
+              baseOffset: selection.start,
+              extentOffset: selection.start,
+            );
+          }
         }
         break;
 
       case 'clear':
         widget.controller.text = '';
+        widget.controller.selection = const TextSelection(baseOffset: 0, extentOffset: 0);
         break;
 
       case 'negative':
@@ -167,9 +185,20 @@ class _NumberKeyboardState extends State<NumberKeyboard>
       case '.':
         if (_config.allowDecimal && !text.contains('.')) {
           if (text.isEmpty || text == '-') {
-            widget.controller.text = '${text}0.';
+            final newText = '${text}0.';
+            widget.controller.text = newText;
+            widget.controller.selection = TextSelection(
+              baseOffset: newText.length,
+              extentOffset: newText.length,
+            );
           } else {
-            widget.controller.text = '$text.';
+            final newText = '${text.substring(0, selection.start)}.${text.substring(selection.end)}';
+            final newCursor = selection.start + 1;
+            widget.controller.text = newText;
+            widget.controller.selection = TextSelection(
+              baseOffset: newCursor,
+              extentOffset: newCursor,
+            );
           }
         }
         break;
@@ -179,15 +208,34 @@ class _NumberKeyboardState extends State<NumberKeyboard>
         break;
 
       default:
-        if (text.length < _config.maxLength) {
-          if (text == '0') {
+        final selectedLen = selection.end - selection.start;
+        if (text.length - selectedLen + 1 <= _config.maxLength) {
+          if (text == '0' && selection.isCollapsed && selection.start == 1) {
             widget.controller.text = key;
+            widget.controller.selection = const TextSelection(baseOffset: 1, extentOffset: 1);
           } else {
-            widget.controller.text = text + key;
+            final newText = '${text.substring(0, selection.start)}$key${text.substring(selection.end)}';
+            final newCursor = selection.start + 1;
+            widget.controller.text = newText;
+            widget.controller.selection = TextSelection(
+              baseOffset: newCursor,
+              extentOffset: newCursor,
+            );
           }
         }
         break;
     }
+  }
+
+  TextSelection _getSelection() {
+    final selection = widget.controller.selection;
+    if (selection.start >= 0 && selection.end >= 0) {
+      final base = selection.start < selection.end ? selection.start : selection.end;
+      final extent = selection.start < selection.end ? selection.end : selection.start;
+      return TextSelection(baseOffset: base, extentOffset: extent);
+    }
+    final pos = widget.controller.text.length;
+    return TextSelection(baseOffset: pos, extentOffset: pos);
   }
 
   // ==================== 辅助方法 ====================
@@ -195,13 +243,21 @@ class _NumberKeyboardState extends State<NumberKeyboard>
     if (!_config.allowNegative) return;
 
     final text = widget.controller.text;
+    final selection = _getSelection();
 
     if (text.isEmpty) {
       widget.controller.text = '-';
+      widget.controller.selection = const TextSelection(baseOffset: 1, extentOffset: 1);
     } else if (text.startsWith('-')) {
       widget.controller.text = text.substring(1);
+      final newPos = selection.start > 0 ? selection.start - 1 : 0;
+      widget.controller.selection = TextSelection(baseOffset: newPos, extentOffset: newPos);
     } else {
       widget.controller.text = '-$text';
+      widget.controller.selection = TextSelection(
+        baseOffset: selection.start + 1,
+        extentOffset: selection.start + 1,
+      );
     }
   }
 
@@ -217,6 +273,10 @@ class _NumberKeyboardState extends State<NumberKeyboard>
     }
 
     widget.controller.text = value;
+    widget.controller.selection = TextSelection(
+      baseOffset: value.length,
+      extentOffset: value.length,
+    );
 
     if (widget.onConfirm != null) {
       widget.onConfirm!();
