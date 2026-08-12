@@ -52,6 +52,7 @@ class NumberKeyboard extends StatefulWidget {
   final NumberKeyboardConfig? config;
   final VoidCallback? onConfirm;
   final String? confirmText;
+  final TextAlign textAlign;
 
   const NumberKeyboard({
     super.key,
@@ -60,6 +61,7 @@ class NumberKeyboard extends StatefulWidget {
     this.config,
     this.onConfirm,
     this.confirmText,
+    this.textAlign = TextAlign.right,
   });
 
   @override
@@ -399,6 +401,7 @@ class _NumberKeyboardState extends State<NumberKeyboard>
       focusNode: widget.focusNode,
       keyboardType: TextInputType.none,
       decoration: InputDecoration(border: InputBorder.none, isDense: true),
+      textAlign: widget.textAlign,
       style: TextStyle(color: getCurrentThemeVars(context).textColor),
     );
   }
