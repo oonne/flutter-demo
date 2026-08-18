@@ -21,7 +21,6 @@ flutter 基础项目
 * 播放声音(audioplayers)
 * 数据库(drift)
 * 广告(flutter_unionad)
-* 图片裁剪(image_cropper)
 * 自定义字体
 * 深浅主题切换
 * 全局样式
