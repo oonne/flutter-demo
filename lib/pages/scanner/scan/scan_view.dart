@@ -75,7 +75,7 @@ class _ScanViewState extends State<ScanView> {
     }
 
     final barcodes = await viewModel.controller.analyzeImage(image.path);
-    if (barcodes == null) {
+    if (barcodes == null && context.mounted) {
       showTextSnackBar(
         context,
         msg: AppLocalizations.of(context)!.msg_no_barcode_detected,
@@ -83,7 +83,9 @@ class _ScanViewState extends State<ScanView> {
       return;
     }
 
-    viewModel.onDetect(context, barcodes);
+    if (context.mounted && barcodes != null) {
+      viewModel.onDetect(context, barcodes);
+    }
   }
 
   /* 
