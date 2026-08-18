@@ -37,6 +37,7 @@ import 'package:flutter_demo/pages/demo/database/database_list/database_list_vie
 import 'package:flutter_demo/pages/demo/database/database_form/database_form_view.dart';
 import 'package:flutter_demo/pages/demo/number_keyboard/number_keyboard_view.dart';
 import 'package:flutter_demo/pages/demo/tabs/tabs_view.dart';
+import 'package:flutter_demo/pages/demo/image_crop/image_crop_view.dart';
 
 /*
  * 路由表
@@ -245,6 +246,12 @@ final router = GoRouter(
       name: 'demo/tabs',
       path: '/demo/tabs',
       builder: (context, state) => const TabsView(),
+    ),
+    /* 图片裁剪 */
+    GoRoute(
+      name: 'demo/image_crop',
+      path: '/demo/image_crop',
+      builder: (context, state) => const ImageCropView(),
     ),
   ],
 );
