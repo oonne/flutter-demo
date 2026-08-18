@@ -38,7 +38,7 @@ class SplashAdRequestManager {
     }
     
     if (elapsed < _minRequestInterval) {
-      log.warning('开屏广告请求过于频繁，距离上次请求仅${elapsed}秒，需要等待${_minRequestInterval - elapsed}秒');
+      log.warning('开屏广告请求过于频繁，距离上次请求仅$elapsed秒，需要等待${_minRequestInterval - elapsed}秒');
       return false;
     }
     

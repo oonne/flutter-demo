@@ -43,7 +43,7 @@ class _DatabaseListViewState extends State<DatabaseListView> {
     );
     if (result != null) {
       final Map<String, dynamic> resultMap = result as Map<String, dynamic>;
-      if (resultMap['refresh'] == true && context.mounted) {
+      if (resultMap['refresh'] == true && mounted) {
         viewModel.refresh(context);
       }
     }
