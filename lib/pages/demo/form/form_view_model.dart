@@ -29,6 +29,14 @@ class FormViewModel extends ChangeNotifier {
   }
 
   /* 
+   * 设置多选框选中值
+   */
+  void setCheckValue(bool value) {
+    model.checkValue = value;
+    notifyListeners();
+  }
+
+  /* 
    * 设置日期字符串
    */
   void setDateStr(String value) {

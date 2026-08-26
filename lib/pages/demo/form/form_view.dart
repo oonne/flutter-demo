@@ -10,6 +10,7 @@ import 'package:flutter_demo/widget/panel/form_switch.dart';
 import 'package:flutter_demo/widget/panel/form_date_picker.dart';
 import 'package:flutter_demo/widget/panel/form_radio.dart';
 import 'package:flutter_demo/widget/panel/form_textarea.dart';
+import 'package:flutter_demo/widget/panel/form_checkbox.dart';
 
 import 'form_view_model.dart';
 
@@ -84,6 +85,13 @@ class _FormViewState extends State<FormView> {
                         switchValue: viewModel.model.switchValue,
                         onChanged: (value) {
                           viewModel.setSwitchValue(value);
+                        },
+                      ),
+                      FormCheckbox(
+                        label: '多选框: ${viewModel.model.checkValue ? '已勾选' : '未勾选'}',
+                        checked: viewModel.model.checkValue,
+                        onChanged: (value) {
+                          viewModel.setCheckValue(value);
                         },
                       ),
                       FormDatePicker(
