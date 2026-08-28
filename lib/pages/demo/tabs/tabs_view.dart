@@ -53,6 +53,15 @@ class _TabsViewState extends State<TabsView> {
                   selectedIndex: viewModel.model.selectedIndex,
                   onTabChanged: viewModel.setSelectedIndex,
                 ),
+                SizedBox(
+                  height: 200,
+                  child: Center(
+                    child: Text(
+                      viewModel.model.tabContents[viewModel.model.selectedIndex],
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                  ),
+                ),
                 /* 分段控制器示例 */
                 Padding(
                   padding: EdgeInsets.symmetric(
@@ -82,14 +91,6 @@ class _TabsViewState extends State<TabsView> {
                         style: TextStyle(color: themeVars.secondaryTextColor),
                       ),
                     ],
-                  ),
-                ),
-                Expanded(
-                  child: Center(
-                    child: Text(
-                      viewModel.model.tabContents[viewModel.model.selectedIndex],
-                      style: const TextStyle(fontSize: 18),
-                    ),
                   ),
                 ),
               ],
