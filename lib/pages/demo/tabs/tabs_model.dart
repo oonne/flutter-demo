@@ -24,4 +24,9 @@ class TabsModel {
     '房产内容区域',
     '健康内容区域',
   ];
+
+  /* 分段控制器 */
+  int segmentSelectedIndex = 0;
+  List<String> segmentTabs = ['首页', '推荐', '热点', '科技'];
+  List<String> segmentContents = ['首页内容区域', '推荐内容区域', '热点内容区域', '科技内容区域'];
 }

@@ -13,4 +13,9 @@ class TabsViewModel extends ChangeNotifier {
     model.selectedIndex = index;
     notifyListeners();
   }
+
+  void setSegmentSelectedIndex(int index) {
+    model.segmentSelectedIndex = index;
+    notifyListeners();
+  }
 }
