@@ -23,6 +23,11 @@ class EasyRefreshDataList<T> extends StatelessWidget {
   // 上拉加载更多回调
   final Future<void> Function() onLoad;
 
+  // 首次进入是否自动触发刷新（对应 EasyRefresh.refreshOnStart）。
+  // 页面进入即自动下拉刷新存在已知时序缺陷（内容在刷新中变化时可能不回弹），
+  // 需要进入后自行加载数据的页面可关闭它，保留手动下拉刷新
+  final bool refreshOnStart;
+
   const EasyRefreshDataList({
     super.key,
     required this.dataList,
@@ -30,6 +35,7 @@ class EasyRefreshDataList<T> extends StatelessWidget {
     required this.isEmpty,
     required this.onRefresh,
     required this.onLoad,
+    this.refreshOnStart = true,
   });
 
   @override
@@ -37,7 +43,7 @@ class EasyRefreshDataList<T> extends StatelessWidget {
     return EasyRefresh(
       header: CustomRefreshHeader(context),
       footer: CustomRefreshFooter(context),
-      refreshOnStart: true,
+      refreshOnStart: refreshOnStart,
       onRefresh: onRefresh,
       onLoad: onLoad,
       child: isEmpty
