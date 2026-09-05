@@ -12,6 +12,7 @@ import 'package:flutter_demo/utils/log.dart';
 import 'package:flutter_demo/utils/flavor_utils.dart';
 import 'package:flutter_demo/routes.dart';
 import 'package:flutter_demo/widget/ad/ad_manager.dart';
+import 'package:flutter_demo/widget/keyboard/number_keyboard.dart';
 
 /* 
  * 主函数
@@ -67,6 +68,10 @@ class MainApp extends StatelessWidget {
         builder: (context, state, _) {
           return MaterialApp.router(
             routerConfig: router,
+            // 自定义数字键盘弹出时注入占位 viewInsets，使页面内容随键盘上移
+            builder: (context, child) => child == null
+                ? const SizedBox.shrink()
+                : NumberKeyboardInsetsScope(child: child),
             debugShowCheckedModeBanner: false,
             locale: globalState.locale,
             localizationsDelegates: [

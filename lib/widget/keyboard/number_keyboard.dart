@@ -1,3 +1,4 @@
+import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
@@ -5,6 +6,55 @@ import 'package:flutter_demo/theme/global.dart';
 
 import './number_keyboard_config.dart';
 
+/*
+ * 数字键盘高度：键盘 UI 占位高度与驱动内容上移的占位高度共用此值
+ */
+const double kNumberKeyboardHeight = 300;
+
+/*
+ * 全局键盘占位高度（0 表示无键盘弹出）
+ *
+ * 自定义数字键盘通过 Overlay 悬浮在窗口底部弹出，不会触发系统键盘的
+ * viewInsets，因此弹出时页面内容不会自动上移，可能遮挡底部输入框。
+ * 键盘弹出/收起期间由 NumberKeyboard 驱动该值（0 <-> 键盘高度），
+ * 应用根部通过 [NumberKeyboardInsetsScope] 把它合入
+ * MediaQuery.viewInsets.bottom，让 Scaffold 内容/底部弹窗等随键盘一起上移
+ */
+final ValueNotifier<double> numberKeyboardBottomInset = ValueNotifier(0);
+
+/*
+ * 应用根级组件：把数字键盘占位高度合入 MediaQuery.viewInsets.bottom。
+ * 挂在 MaterialApp.builder 的 Navigator 之上，使键盘弹出期间整棵应用子树
+ * 获得与系统键盘一致的底部避让行为；收起后恢复原状
+ */
+class NumberKeyboardInsetsScope extends StatelessWidget {
+  const NumberKeyboardInsetsScope({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<double>(
+      valueListenable: numberKeyboardBottomInset,
+      builder: (context, keyboardInset, child) {
+        final mediaQuery = MediaQuery.of(context);
+        final viewInsets = mediaQuery.viewInsets;
+        return MediaQuery(
+          data: mediaQuery.copyWith(
+            viewInsets: EdgeInsets.fromLTRB(
+              viewInsets.left,
+              viewInsets.top,
+              viewInsets.right,
+              viewInsets.bottom + keyboardInset,
+            ),
+          ),
+          child: child!,
+        );
+      },
+      child: child,
+    );
+  }
+}
 
 /*
  * 自定义数字键盘组件
@@ -14,6 +64,7 @@ import './number_keyboard_config.dart';
  * - 支持小数点、负数输入
  * - 支持退格、清除操作
  * - 平滑的滑入/滑出动画
+ * - 弹出时把占位高度合入 viewInsets，页面内容随键盘上移，避免遮挡输入框
  * - 响应式聚焦状态自动显示/隐藏
  *
  * 使用方式：
@@ -78,16 +129,27 @@ class _NumberKeyboardState extends State<NumberKeyboard>
   OverlayEntry? _keyboardOverlay;
   bool _isKeyboardVisible = false;
 
+  // 全局键盘占位高度驱动：实例序号 + 当前持有者序号
+  static int _insetsSeq = 0;
+  static int? _insetsOwnerId;
+  late final int _insetsId;
+
   // ==================== 生命周期方法 ====================
   @override
   void initState() {
     super.initState();
     _config = widget.config ?? const NumberKeyboardConfig();
 
+    // 全局键盘占位高度的驱动者序号：避免多个键盘实例动画互相覆盖
+    _insetsId = ++_NumberKeyboardState._insetsSeq;
+
     _animationController = AnimationController(
       duration: const Duration(milliseconds: 200),
       vsync: this,
     );
+    // 跟随滑入/滑出动画驱动全局占位高度，使内容上移与键盘动画同步
+    _animationController.addListener(_onInsetsTick);
+    _animationController.addStatusListener(_onAnimationStatusChanged);
 
     _slideAnimation = Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
         .animate(
@@ -99,9 +161,18 @@ class _NumberKeyboardState extends State<NumberKeyboard>
 
   @override
   void dispose() {
-    _animationController.dispose();
     widget.focusNode.removeListener(_onFocusChanged);
-    _hideKeyboard();
+    _animationController.removeListener(_onInsetsTick);
+    _animationController.removeStatusListener(_onAnimationStatusChanged);
+    // 页面销毁时直接移除键盘浮层并复位全局占位，不再播放收起动画
+    _keyboardOverlay?.remove();
+    _keyboardOverlay = null;
+    _isKeyboardVisible = false;
+    if (_insetsOwnerId == _insetsId) {
+      _insetsOwnerId = null;
+      numberKeyboardBottomInset.value = 0;
+    }
+    _animationController.dispose();
     super.dispose();
   }
 
@@ -114,15 +185,56 @@ class _NumberKeyboardState extends State<NumberKeyboard>
   }
 
   // ==================== 键盘显示/隐藏控制 ====================
+
+  /*
+   * 键盘滑入动画期间同步驱动全局键盘占位高度（0 -> 键盘高度）
+   */
+  void _onInsetsTick() {
+    if (_insetsOwnerId != _insetsId) {
+      return;
+    }
+    numberKeyboardBottomInset.value =
+        kNumberKeyboardHeight * _animationController.value;
+  }
+
+  /*
+   * 键盘完全弹出后，若聚焦输入框仍被键盘遮挡，
+   * 滚动其所在滚动区使其可见（内容已在占位高度驱动下上移一帧）
+   */
+  void _onAnimationStatusChanged(AnimationStatus status) {
+    if (status != AnimationStatus.completed) {
+      return;
+    }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || !_isKeyboardVisible || !widget.focusNode.hasFocus) {
+        return;
+      }
+      final scrollable = context.findAncestorStateOfType<ScrollableState>();
+      if (scrollable == null) {
+        return;
+      }
+      Scrollable.ensureVisible(
+        context,
+        // 仅当输入框底部超出可视区（即被键盘遮挡）时才滚动，使其刚好露出在键盘上方
+        alignmentPolicy: ScrollPositionAlignmentPolicy.keepVisibleAtEnd,
+        duration: const Duration(milliseconds: 150),
+        curve: Curves.easeOut,
+      );
+    });
+  }
+
   void _showKeyboard() {
     if (_isKeyboardVisible || _keyboardOverlay != null) return;
 
     _isKeyboardVisible = true;
+    // 认领键盘占位驱动：旧的收键盘实例即使仍在播放反向动画也不再写占位值
+    _insetsOwnerId = _insetsId;
+    numberKeyboardBottomInset.value = 0;
     _animationController.forward();
 
     _keyboardOverlay = OverlayEntry(
       builder: (context) => Positioned(
-        bottom: MediaQuery.of(context).viewInsets.bottom,
+        bottom: 0,
         left: 0,
         right: 0,
         child: SlideTransition(
@@ -132,13 +244,20 @@ class _NumberKeyboardState extends State<NumberKeyboard>
       ),
     );
 
-    Overlay.of(context).insert(_keyboardOverlay!);
+    // 固定挂到根级 Overlay：键盘始终悬浮在窗口底部，与注入的
+    // viewInsets（0 -> 键盘高度）位置一致；挂在最近 Overlay 在底部导航
+    // 等嵌套场景下位置会与占位高度错位
+    Overlay.of(context, rootOverlay: true).insert(_keyboardOverlay!);
   }
 
   void _hideKeyboard() {
     if (!_isKeyboardVisible || _keyboardOverlay == null) return;
 
     _animationController.reverse().then((_) {
+      if (_insetsOwnerId == _insetsId) {
+        _insetsOwnerId = null;
+        numberKeyboardBottomInset.value = 0;
+      }
       _keyboardOverlay?.remove();
       _keyboardOverlay = null;
       _isKeyboardVisible = false;
@@ -267,7 +386,8 @@ class _NumberKeyboardState extends State<NumberKeyboard>
     if (value == '-' || value == '.') {
       value = '';
     } else if (value.isNotEmpty) {
-      if (double.tryParse(value) == null) {
+      // 使用 Decimal 校验，保证输入是合法的十进制数
+      if (Decimal.tryParse(value) == null) {
         value = '';
       }
     }
@@ -295,7 +415,7 @@ class _NumberKeyboardState extends State<NumberKeyboard>
       elevation: 8,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-        height: 300,
+        height: kNumberKeyboardHeight,
         child: Row(
           children: [
             Expanded(
