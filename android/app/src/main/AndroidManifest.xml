@@ -2,10 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools">
     <!-- 相机权限 -->
     <uses-permission android:name="android.permission.CAMERA"/>
-    <!-- 读取存储权限 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <!-- 写入存储权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 网络状态权限 -->
