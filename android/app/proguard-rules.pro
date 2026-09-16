@@ -7,6 +7,7 @@
 -keep class io.flutter.plugins.**  { *; }
 
 # 字节跳动 SDK 相关规则
+-dontwarn com.bytedance.JProtect
 -dontwarn com.bytedance.component.sdk.annotation.AnyThread
 -dontwarn com.bytedance.component.sdk.annotation.CallSuper
 -dontwarn com.bytedance.component.sdk.annotation.ColorInt

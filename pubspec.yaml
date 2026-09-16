@@ -32,7 +32,7 @@ dependencies:
   crypto: ^3.0.6
   json_annotation: ^4.9.0
   date_format: ^2.0.9
-  flutter_unionad: ^2.2.8
+  flutter_unionad: ^2.2.9
   webview_flutter: ^4.13.1
   drift: ^2.33.0
   drift_flutter: ^0.3.0
