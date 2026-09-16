@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- 强制移除穿山甲广告 SDK AAR 声明、本项目实际未使用的存储权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" tools:node="remove"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:node="remove"/>
     <!-- 相机权限 -->
     <uses-permission android:name="android.permission.CAMERA"/>
     <!-- 网络权限 -->
