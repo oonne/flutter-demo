@@ -194,6 +194,10 @@ class AppLocalizationsDe extends AppLocalizations {
       'Scannen-Berechtigung wurde abgelehnt';
 
   @override
+  String get msg_camera_permission_permanently_denied =>
+      'Die Kameraberechtigung ist erforderlich, um QR-Codes und Strichcodes zu scannen. Da die Berechtigung abgelehnt wurde, aktivieren Sie die Kameraberechtigung in den Systemeinstellungen und versuchen Sie es erneut.';
+
+  @override
   String get msg_device_scan_unsupported =>
       'Scannen ist auf diesem Gerät nicht möglich';
 

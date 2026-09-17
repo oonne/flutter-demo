@@ -182,6 +182,9 @@
   "msg_scan_permission_denied": "申請掃碼權限被拒絕",
   "@msg_scan_permission_denied": {},
 
+  "msg_camera_permission_permanently_denied": "需要使用相機權限以掃描二維碼和條碼。由於權限已被拒絕,請在系統設置中開啟相機權限後重試。",
+  "@msg_camera_permission_permanently_denied": {},
+
   "msg_device_scan_unsupported": "當前設備不支持掃碼",
   "@msg_device_scan_unsupported": {},
 

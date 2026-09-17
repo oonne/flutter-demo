@@ -483,6 +483,12 @@ abstract class AppLocalizations {
   /// **'Scan permission denied'**
   String get msg_scan_permission_denied;
 
+  /// No description provided for @msg_camera_permission_permanently_denied.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera permission is required to scan QR codes and barcodes. Since the permission has been denied, please enable camera permission in system settings and try again.'**
+  String get msg_camera_permission_permanently_denied;
+
   /// No description provided for @msg_device_scan_unsupported.
   ///
   /// In en, this message translates to:

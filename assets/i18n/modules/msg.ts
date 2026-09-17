@@ -113,6 +113,21 @@ const msg: ILangMsgs = {
     ko_KR: "스캔 권한이 거부되었습니다",
     vi_VN: "Quyền truy cập quét đã bị từ chối",
   },
+  // 相机权限被永久拒绝时的引导说明
+  msg_camera_permission_permanently_denied: {
+    zh_CN: "需要使用相机权限以扫描二维码和条形码。由于权限已被拒绝,请在系统设置中开启相机权限后重试。",
+    zh_TW: "需要使用相機權限以掃描二維碼和條碼。由於權限已被拒絕,請在系統設置中開啟相機權限後重試。",
+    en_US: "Camera permission is required to scan QR codes and barcodes. Since the permission has been denied, please enable camera permission in system settings and try again.",
+    ru_RU: "Для сканирования QR-кодов и штрих-кодов требуется разрешение на использование камеры. Поскольку разрешение было отклонено, включите разрешение на камеру в настройках системы и повторите попытку.",
+    fr_FR: "L'autorisation de la caméra est requise pour scanner les codes QR et les codes-barres. Étant donné que l'autorisation a été refusée, veuillez activer l'autorisation de la caméra dans les paramètres système et réessayer.",
+    es_ES: "Se requiere permiso de cámara para escanear códigos QR y códigos de barras. Dado que el permiso ha sido denegado, active el permiso de cámara en la configuración del sistema e inténtelo de nuevo.",
+    it_IT: "È necessaria l'autorizzazione della fotocamera per scansionare codici QR e codici a barre. Poiché l'autorizzazione è stata negata, abilitare l'autorizzazione della fotocamera nelle impostazioni di sistema e riprovare.",
+    pt_PT: "É necessária permissão de câmera para escanear códigos QR e códigos de barras. Como a permissão foi negada, ative a permissão de câmera nas configurações do sistema e tente novamente.",
+    de_DE: "Die Kameraberechtigung ist erforderlich, um QR-Codes und Strichcodes zu scannen. Da die Berechtigung abgelehnt wurde, aktivieren Sie die Kameraberechtigung in den Systemeinstellungen und versuchen Sie es erneut.",
+    ja_JP: "QRコードとバーコードをスキャンするにはカメラの権限が必要です。権限が拒否されているため、システム設定でカメラの権限を有効にしてから再試行してください。",
+    ko_KR: "QR 코드 및 바코드를 스캔하려면 카메라 권한이 필요합니다. 권한이 거부되었으므로 시스템 설정에서 카메라 권한을 활성화한 후 다시 시도해 주세요.",
+    vi_VN: "Cần quyền máy ảnh để quét mã QR và mã vạch. Vì quyền đã bị từ chối, vui lòng bật quyền máy ảnh trong cài đặt hệ thống và thử lại.",
+  },
   // 当前设备不支持扫码
   msg_device_scan_unsupported: {
     zh_CN: "当前设备不支持扫码",

@@ -182,6 +182,9 @@
   "msg_scan_permission_denied": "Разрешение сканирования отклонено",
   "@msg_scan_permission_denied": {},
 
+  "msg_camera_permission_permanently_denied": "Для сканирования QR-кодов и штрих-кодов требуется разрешение на использование камеры. Поскольку разрешение было отклонено, включите разрешение на камеру в настройках системы и повторите попытку.",
+  "@msg_camera_permission_permanently_denied": {},
+
   "msg_device_scan_unsupported": "Сканирование не поддерживается на этом устройстве",
   "@msg_device_scan_unsupported": {},
 

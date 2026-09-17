@@ -182,6 +182,9 @@
   "msg_scan_permission_denied": "スキャン許可が拒否されました",
   "@msg_scan_permission_denied": {},
 
+  "msg_camera_permission_permanently_denied": "QRコードとバーコードをスキャンするにはカメラの権限が必要です。権限が拒否されているため、システム設定でカメラの権限を有効にしてから再試行してください。",
+  "@msg_camera_permission_permanently_denied": {},
+
   "msg_device_scan_unsupported": "このデバイスではスキャンできません",
   "@msg_device_scan_unsupported": {},
 

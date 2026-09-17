@@ -11,7 +11,7 @@ import 'package:flutter_demo/global/state.dart';
 import 'scan_model.dart';
 
 // 权限状态回调类型
-typedef PermissionCallback = void Function(bool granted);
+typedef PermissionCallback = void Function(bool granted, bool permanentlyDenied);
 
 class ScanViewModel extends ChangeNotifier {
   final ScanModel model = ScanModel();
@@ -42,15 +42,13 @@ class ScanViewModel extends ChangeNotifier {
     if (status.isGranted) {
       log.info('相机权限已授予');
       await controller.start();
-      permissionCallback?.call(true);
+      permissionCallback?.call(true, false);
     } else if (status.isDenied) {
       log.warning('相机权限被拒绝');
-      permissionCallback?.call(false);
+      permissionCallback?.call(false, false);
     } else if (status.isPermanentlyDenied) {
       log.warning('相机权限被永久拒绝');
-      permissionCallback?.call(false);
-      // 引导用户去设置页面开启权限
-      await openAppSettings();
+      permissionCallback?.call(false, true);
     }
   }
 

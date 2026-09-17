@@ -192,6 +192,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get msg_scan_permission_denied => 'Scan permission denied';
 
   @override
+  String get msg_camera_permission_permanently_denied =>
+      'Camera permission is required to scan QR codes and barcodes. Since the permission has been denied, please enable camera permission in system settings and try again.';
+
+  @override
   String get msg_device_scan_unsupported =>
       'Scanning is unsupported on this device';
 

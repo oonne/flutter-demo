@@ -182,6 +182,9 @@
   "msg_scan_permission_denied": "Quyền truy cập quét đã bị từ chối",
   "@msg_scan_permission_denied": {},
 
+  "msg_camera_permission_permanently_denied": "Cần quyền máy ảnh để quét mã QR và mã vạch. Vì quyền đã bị từ chối, vui lòng bật quyền máy ảnh trong cài đặt hệ thống và thử lại.",
+  "@msg_camera_permission_permanently_denied": {},
+
   "msg_device_scan_unsupported": "Quét không thành công trên thiết bị này",
   "@msg_device_scan_unsupported": {},
 

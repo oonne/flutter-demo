@@ -182,6 +182,9 @@
   "msg_scan_permission_denied": "Permiso de escaneo denegado",
   "@msg_scan_permission_denied": {},
 
+  "msg_camera_permission_permanently_denied": "Se requiere permiso de cámara para escanear códigos QR y códigos de barras. Dado que el permiso ha sido denegado, active el permiso de cámara en la configuración del sistema e inténtelo de nuevo.",
+  "@msg_camera_permission_permanently_denied": {},
+
   "msg_device_scan_unsupported": "El escaneo no es compatible con este dispositivo",
   "@msg_device_scan_unsupported": {},
 

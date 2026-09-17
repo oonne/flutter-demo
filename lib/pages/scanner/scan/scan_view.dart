@@ -5,11 +5,13 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/utils/message.dart';
+import 'package:flutter_demo/widget/modal/modal_dialog.dart';
 
 import 'scan_view_model.dart';
 import 'widget/scanner_error_widget.dart';
@@ -37,13 +39,32 @@ class _ScanViewState extends State<ScanView> {
     viewModel = ScanViewModel();
 
     // 设置权限回调
-    viewModel.permissionCallback = (granted) {
-      if (!granted && mounted) {
-        showTextSnackBar(
-          context,
-          msg: AppLocalizations.of(context)!.msg_scan_permission_denied,
-        );
+    viewModel.permissionCallback = (granted, permanentlyDenied) async {
+      if (granted || !mounted) {
+        return;
       }
+
+      if (permanentlyDenied) {
+        // 永久拒绝:先弹窗说明权限用途,用户确认后再引导去系统设置
+        final confirmed = await showModal<bool>(
+          context: context,
+          showCancelButton: true,
+          child: Text(
+            // 需要使用相机权限以扫描二维码和条形码。由于权限已被拒绝,请在系统设置中开启相机权限后重试。
+            AppLocalizations.of(context)!.msg_camera_permission_permanently_denied,
+          ),
+        );
+        if (confirmed == true && mounted) {
+          await openAppSettings();
+        }
+        return;
+      }
+
+      // 普通拒绝:仅提示
+      showTextSnackBar(
+        context,
+        msg: AppLocalizations.of(context)!.msg_scan_permission_denied, // 申请扫码权限被拒绝
+      );
     };
 
     // 在下一帧初始化 viewModel

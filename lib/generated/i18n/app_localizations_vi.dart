@@ -192,6 +192,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get msg_scan_permission_denied => 'Quyền truy cập quét đã bị từ chối';
 
   @override
+  String get msg_camera_permission_permanently_denied =>
+      'Cần quyền máy ảnh để quét mã QR và mã vạch. Vì quyền đã bị từ chối, vui lòng bật quyền máy ảnh trong cài đặt hệ thống và thử lại.';
+
+  @override
   String get msg_device_scan_unsupported =>
       'Quét không thành công trên thiết bị này';
 

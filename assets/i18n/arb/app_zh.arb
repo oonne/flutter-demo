@@ -182,6 +182,9 @@
   "msg_scan_permission_denied": "申请扫码权限被拒绝",
   "@msg_scan_permission_denied": {},
 
+  "msg_camera_permission_permanently_denied": "需要使用相机权限以扫描二维码和条形码。由于权限已被拒绝,请在系统设置中开启相机权限后重试。",
+  "@msg_camera_permission_permanently_denied": {},
+
   "msg_device_scan_unsupported": "当前设备不支持扫码",
   "@msg_device_scan_unsupported": {},
 

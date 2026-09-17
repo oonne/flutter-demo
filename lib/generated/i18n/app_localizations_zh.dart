@@ -192,6 +192,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get msg_scan_permission_denied => '申请扫码权限被拒绝';
 
   @override
+  String get msg_camera_permission_permanently_denied =>
+      '需要使用相机权限以扫描二维码和条形码。由于权限已被拒绝,请在系统设置中开启相机权限后重试。';
+
+  @override
   String get msg_device_scan_unsupported => '当前设备不支持扫码';
 
   @override
@@ -420,6 +424,10 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get msg_scan_permission_denied => '申請掃碼權限被拒絕';
+
+  @override
+  String get msg_camera_permission_permanently_denied =>
+      '需要使用相機權限以掃描二維碼和條碼。由於權限已被拒絕,請在系統設置中開啟相機權限後重試。';
 
   @override
   String get msg_device_scan_unsupported => '當前設備不支持掃碼';

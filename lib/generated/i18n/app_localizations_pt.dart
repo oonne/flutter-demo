@@ -192,6 +192,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get msg_scan_permission_denied => 'Permissão de escaneamento negada';
 
   @override
+  String get msg_camera_permission_permanently_denied =>
+      'É necessária permissão de câmera para escanear códigos QR e códigos de barras. Como a permissão foi negada, ative a permissão de câmera nas configurações do sistema e tente novamente.';
+
+  @override
   String get msg_device_scan_unsupported =>
       'O escaneamento não é compatível com este dispositivo';
 

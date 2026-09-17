@@ -182,6 +182,9 @@
   "msg_scan_permission_denied": "Scannen-Berechtigung wurde abgelehnt",
   "@msg_scan_permission_denied": {},
 
+  "msg_camera_permission_permanently_denied": "Die Kameraberechtigung ist erforderlich, um QR-Codes und Strichcodes zu scannen. Da die Berechtigung abgelehnt wurde, aktivieren Sie die Kameraberechtigung in den Systemeinstellungen und versuchen Sie es erneut.",
+  "@msg_camera_permission_permanently_denied": {},
+
   "msg_device_scan_unsupported": "Scannen ist auf diesem Gerät nicht möglich",
   "@msg_device_scan_unsupported": {},
 

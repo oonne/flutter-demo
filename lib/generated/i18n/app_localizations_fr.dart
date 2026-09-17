@@ -192,6 +192,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get msg_scan_permission_denied => 'Permission de scan refusée';
 
   @override
+  String get msg_camera_permission_permanently_denied =>
+      'L\'autorisation de la caméra est requise pour scanner les codes QR et les codes-barres. Étant donné que l\'autorisation a été refusée, veuillez activer l\'autorisation de la caméra dans les paramètres système et réessayer.';
+
+  @override
   String get msg_device_scan_unsupported =>
       'Le scan n\'est pas pris en charge sur cet appareil';
 

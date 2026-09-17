@@ -192,6 +192,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get msg_scan_permission_denied => 'スキャン許可が拒否されました';
 
   @override
+  String get msg_camera_permission_permanently_denied =>
+      'QRコードとバーコードをスキャンするにはカメラの権限が必要です。権限が拒否されているため、システム設定でカメラの権限を有効にしてから再試行してください。';
+
+  @override
   String get msg_device_scan_unsupported => 'このデバイスではスキャンできません';
 
   @override

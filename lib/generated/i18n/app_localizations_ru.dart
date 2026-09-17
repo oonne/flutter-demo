@@ -192,6 +192,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get msg_scan_permission_denied => 'Разрешение сканирования отклонено';
 
   @override
+  String get msg_camera_permission_permanently_denied =>
+      'Для сканирования QR-кодов и штрих-кодов требуется разрешение на использование камеры. Поскольку разрешение было отклонено, включите разрешение на камеру в настройках системы и повторите попытку.';
+
+  @override
   String get msg_device_scan_unsupported =>
       'Сканирование не поддерживается на этом устройстве';
 
