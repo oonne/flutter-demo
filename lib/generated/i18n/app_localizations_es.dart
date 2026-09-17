@@ -114,6 +114,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get title_privacy_policy => 'Política de privacidad';
 
   @override
+  String get title_changelog => 'Registro de cambios';
+
+  @override
   String get info_please_input => 'Por favor, ingrese';
 
   @override

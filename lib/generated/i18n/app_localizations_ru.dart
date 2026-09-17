@@ -114,6 +114,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get title_privacy_policy => 'Политика конфиденциальности';
 
   @override
+  String get title_changelog => 'Журнал изменений';
+
+  @override
   String get info_please_input => 'Пожалуйста, введите';
 
   @override

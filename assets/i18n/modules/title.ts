@@ -210,6 +210,21 @@ const msg: ILangMsgs = {
     ko_KR: "개인정보 보호 정책",
     vi_VN: "Chính sách riêng tư",
   },
+  // 更新日志
+  title_changelog: {
+    zh_CN: "更新日志",
+    zh_TW: "更新日誌",
+    en_US: "Changelog",
+    ru_RU: "Журнал изменений",
+    fr_FR: "Journal des modifications",
+    es_ES: "Registro de cambios",
+    it_IT: "Registro delle modifiche",
+    pt_PT: "Registo de alterações",
+    de_DE: "Änderungsprotokoll",
+    ja_JP: "更新履歴",
+    ko_KR: "업데이트 로그",
+    vi_VN: "Nhật ký thay đổi",
+  },
 };
 
 export default msg;

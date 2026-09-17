@@ -114,6 +114,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get title_privacy_policy => 'プライバシーポリシー';
 
   @override
+  String get title_changelog => '更新履歴';
+
+  @override
   String get info_please_input => '入力してください';
 
   @override

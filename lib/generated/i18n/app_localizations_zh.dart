@@ -114,6 +114,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get title_privacy_policy => '隐私政策';
 
   @override
+  String get title_changelog => '更新日志';
+
+  @override
   String get info_please_input => '请输入';
 
   @override
@@ -339,6 +342,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get title_privacy_policy => '隱私政策';
+
+  @override
+  String get title_changelog => '更新日誌';
 
   @override
   String get info_please_input => '請輸入';

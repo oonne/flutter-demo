@@ -114,6 +114,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get title_privacy_policy => '개인정보 보호 정책';
 
   @override
+  String get title_changelog => '업데이트 로그';
+
+  @override
   String get info_please_input => '입력해주세요';
 
   @override

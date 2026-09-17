@@ -327,6 +327,12 @@ abstract class AppLocalizations {
   /// **'Privacy Policy'**
   String get title_privacy_policy;
 
+  /// No description provided for @title_changelog.
+  ///
+  /// In en, this message translates to:
+  /// **'Changelog'**
+  String get title_changelog;
+
   /// No description provided for @info_please_input.
   ///
   /// In en, this message translates to:

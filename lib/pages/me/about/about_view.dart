@@ -147,6 +147,23 @@ class _AboutViewState extends State<AboutView> {
                           );
                         },
                       ),
+                      // 更新日志
+                      PanelItem(
+                        label: AppLocalizations.of(
+                          context,
+                        )!.title_changelog, // 更新日志
+                        showArrow: true,
+                        onTap: () {
+                          final privacyPolicyUrl =
+                              (globalState.locale.languageCode == 'zh')
+                              ? 'https://any-print.com/piconfc/app/changelog.html'
+                              : 'https://any-print.com/piconfc/app/changelog_en.html';
+                          context.pushNamed(
+                            'demo/webview',
+                            extra: {'url': privacyPolicyUrl},
+                          );
+                        },
+                      ),
 
                       // 备案号
                       if (globalState.lang == 'zh_CN') ...[

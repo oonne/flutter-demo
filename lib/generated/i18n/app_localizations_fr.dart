@@ -114,6 +114,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get title_privacy_policy => 'Politique de confidentialité';
 
   @override
+  String get title_changelog => 'Journal des modifications';
+
+  @override
   String get info_please_input => 'Veuillez entrer';
 
   @override

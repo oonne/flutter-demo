@@ -15,6 +15,14 @@ const int loginPowLength = 4;
 /// 默认分页大小
 const int pageSize = 10;
 
+// 用户协议
+const String userAgreementUrl = '';
+// 隐私政策
+const String privacyPolicyUrl = '';
+// 更新日志
+const String updateLogUrl = '';
+
+
 /* 
  * 广告配置
  */

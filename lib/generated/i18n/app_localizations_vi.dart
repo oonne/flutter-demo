@@ -114,6 +114,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get title_privacy_policy => 'Chính sách riêng tư';
 
   @override
+  String get title_changelog => 'Nhật ký thay đổi';
+
+  @override
   String get info_please_input => 'Vui lòng nhập';
 
   @override
