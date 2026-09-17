@@ -1,11 +1,17 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import 'splash_view_model.dart';
+import 'package:flutter_demo/config/config.dart';
+import 'package:flutter_demo/theme/global.dart';
+import 'package:flutter_demo/widget/modal/modal_dialog.dart';
 import 'package:flutter_demo/widget/ad/widgets/splash_ad_widget.dart';
-import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 
-/* 
+import 'splash_view_model.dart';
+
+/*
  * Splash页面
  */
 class SplashView extends StatefulWidget {
@@ -18,7 +24,10 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   late final SplashViewModel _viewModel;
 
-  /* 
+  // 隐私协议弹框是否已展示（避免重建时重复弹出）
+  bool _privacyDialogShown = false;
+
+  /*
    * 初始化
    */
   @override
@@ -32,7 +41,59 @@ class _SplashViewState extends State<SplashView> {
     });
   }
 
-  /* 
+  /*
+   * 弹出用户协议和隐私政策同意弹框
+   */
+  Future<void> _showPrivacyDialog() async {
+    final agreed = await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (dialogContext) {
+        return PrivacyAgreementDialog(
+          onAgree: () => Navigator.of(dialogContext).pop(true),
+          onDisagree: () => Navigator.of(dialogContext).pop(false),
+        );
+      },
+    );
+
+    if (!mounted) {
+      return;
+    }
+
+    // 同意：保存标识并进入首页
+    if (agreed == true) {
+      await _viewModel.agreePrivacyPolicy(context);
+      return;
+    }
+
+    // 不同意：二次确认
+    final shouldExit = await showModal<bool>(
+      context: context,
+      barrierDismissible: false,
+      child: const Padding(
+        padding: EdgeInsets.symmetric(vertical: 8),
+        child: Text(
+          '您需要同意用户协议和隐私政策后才能使用 Demo应用，确定要退出吗？',
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+
+    if (!mounted) {
+      return;
+    }
+
+    if (shouldExit == true) {
+      // 退出应用
+      await SystemNavigator.pop();
+      return;
+    }
+
+    // 返回：重新展示协议弹框
+    _showPrivacyDialog();
+  }
+
+  /*
    * 页面构建
    */
   @override
@@ -41,20 +102,51 @@ class _SplashViewState extends State<SplashView> {
       value: _viewModel,
       child: Consumer<SplashViewModel>(
         builder: (context, viewModel, child) {
+          // 读取到未同意隐私协议时，弹出同意弹框
+          if (viewModel.privacyChecked &&
+              !viewModel.acceptedPrivacyPolicy &&
+              !_privacyDialogShown) {
+            _privacyDialogShown = true;
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _showPrivacyDialog();
+            });
+          }
+
           return Scaffold(
             body: Column(
               children: [
-                // 开屏广告 - 占屏幕85%
+                // 上半部分（占屏幕85%）：已同意协议时加载开屏广告，否则展示品牌占位
                 Expanded(
                   flex: 85,
-                  child: SplashAdWidget(
-                    heightFraction: 0.85,
-                    onShow: viewModel.onAdShow,
-                    onSkip: () => viewModel.onAdSkip(context),
-                    onFinish: () => viewModel.onAdFinish(context),
-                    onTimeOut: () => viewModel.onAdTimeOut(context),
-                    onFail: (error) => viewModel.onAdFail(context, error),
-                  ),
+                  child: viewModel.acceptedPrivacyPolicy
+                      ? SplashAdWidget(
+                          heightFraction: 0.85,
+                          onShow: viewModel.onAdShow,
+                          onSkip: () => viewModel.onAdSkip(context),
+                          onFinish: () => viewModel.onAdFinish(context),
+                          onTimeOut: () => viewModel.onAdTimeOut(context),
+                          onFail: (error) => viewModel.onAdFail(context, error),
+                        )
+                      : Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                'assets/img/logo.png',
+                                width: 80,
+                                height: 80,
+                              ),
+                              const SizedBox(height: 12),
+                              const Text(
+                                'Demo应用',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                 ),
                 // 底部Logo和App名称 - 占屏幕15%
                 Expanded(
@@ -67,9 +159,9 @@ class _SplashViewState extends State<SplashView> {
                           children: [
                             Image.asset('assets/img/logo.png', width: 24, height: 24),
                             const SizedBox(width: 8),
-                            Text(
-                              AppLocalizations.of(context)!.app_name,
-                              style: const TextStyle(
+                            const Text(
+                              'Demo应用',
+                              style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.normal,
                               ),
@@ -85,6 +177,157 @@ class _SplashViewState extends State<SplashView> {
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+/*
+ * 用户协议和隐私政策同意弹框
+ */
+class PrivacyAgreementDialog extends StatefulWidget {
+  // 点击同意
+  final VoidCallback onAgree;
+
+  // 点击不同意
+  final VoidCallback onDisagree;
+
+  const PrivacyAgreementDialog({
+    super.key,
+    required this.onAgree,
+    required this.onDisagree,
+  });
+
+  @override
+  State<PrivacyAgreementDialog> createState() => _PrivacyAgreementDialogState();
+}
+
+class _PrivacyAgreementDialogState extends State<PrivacyAgreementDialog> {
+  late final TapGestureRecognizer _userAgreementRecognizer;
+  late final TapGestureRecognizer _privacyPolicyRecognizer;
+
+  @override
+  void initState() {
+    super.initState();
+    _userAgreementRecognizer =
+        TapGestureRecognizer()
+          ..onTap = () => _openWebview('用户协议', userAgreementUrls['zh']!);
+    _privacyPolicyRecognizer =
+        TapGestureRecognizer()
+          ..onTap = () => _openWebview('隐私政策', privacyPolicyUrls['zh']!);
+  }
+
+  @override
+  void dispose() {
+    _userAgreementRecognizer.dispose();
+    _privacyPolicyRecognizer.dispose();
+    super.dispose();
+  }
+
+  /*
+   * 打开协议页面
+   */
+  void _openWebview(String title, String url) {
+    context.pushNamed('webview', extra: {'title': title, 'url': url});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final themeVars = getCurrentThemeVars(context);
+    final colorScheme = getCurrentThemeColorScheme(context);
+
+    return PopScope(
+      canPop: false,
+      child: Dialog(
+        backgroundColor: Colors.transparent,
+        insetPadding: const EdgeInsets.symmetric(horizontal: 40),
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.fromLTRB(20, 24, 20, 16),
+          decoration: BoxDecoration(
+            color: themeVars.contentBackground,
+            borderRadius: BorderRadius.circular(themeVars.radius),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // 标题
+              Text(
+                '用户协议与隐私政策',
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                  color: themeVars.textColor,
+                ),
+              ),
+              const SizedBox(height: 16),
+              // 内容
+              Text.rich(
+                TextSpan(
+                  style: TextStyle(
+                    fontSize: 14,
+                    height: 1.7,
+                    color: themeVars.textColor,
+                  ),
+                  children: [
+                    const TextSpan(text: '欢迎使用 Demo应用！\n\n在使用本应用前，请您认真阅读并充分理解'),
+                    TextSpan(
+                      text: '《用户协议》',
+                      style: TextStyle(color: colorScheme.primary),
+                      recognizer: _userAgreementRecognizer,
+                    ),
+                    const TextSpan(text: '和'),
+                    TextSpan(
+                      text: '《隐私政策》',
+                      style: TextStyle(color: colorScheme.primary),
+                      recognizer: _privacyPolicyRecognizer,
+                    ),
+                    const TextSpan(
+                      text: '。我们将严格按照协议内容保护您的个人信息。点击“同意并继续”即表示您已阅读并同意上述全部内容。',
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              // 操作按钮
+              Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: 42,
+                      child: TextButton(
+                        onPressed: widget.onDisagree,
+                        style: TextButton.styleFrom(
+                          foregroundColor: themeVars.secondaryTextColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(21),
+                          ),
+                        ),
+                        child: const Text('不同意', style: TextStyle(fontSize: 15)),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: SizedBox(
+                      height: 42,
+                      child: FilledButton(
+                        onPressed: widget.onAgree,
+                        style: FilledButton.styleFrom(
+                          backgroundColor: colorScheme.primary,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(21),
+                          ),
+                        ),
+                        child: const Text('同意并继续', style: TextStyle(fontSize: 15)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
