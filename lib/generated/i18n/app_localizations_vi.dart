@@ -81,6 +81,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get btn_confirm => 'Xác nhận';
 
   @override
+  String get btn_enable_camera_scan => 'Bật quét bằng camera';
+
+  @override
   String get title_home => 'Trang chủ';
 
   @override
@@ -198,6 +201,9 @@ class AppLocalizationsVi extends AppLocalizations {
       '. Chúng tôi sẽ bảo vệ thông tin cá nhân của bạn theo đúng các thỏa thuận. Khi nhấn “Đồng ý và tiếp tục”, bạn xác nhận đã đọc và đồng ý với toàn bộ nội dung trên.';
 
   @override
+  String get info_scan_camera_hint => 'Bật camera để quét mã QR và mã vạch';
+
+  @override
   String get msg_query_failed => 'Truy vấn không thành công';
 
   @override
@@ -231,6 +237,10 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get msg_no_barcode_detected => 'Không tìm thấy mã vạch hoặc mã QR';
+
+  @override
+  String get msg_scan_camera_permission_request =>
+      'Chức năng quét yêu cầu quyền camera để quét mã QR và mã vạch. Cho phép?';
 
   @override
   String get msg_read_agreement => 'Vui lòng đọc thỏa thuận trước';

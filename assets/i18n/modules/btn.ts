@@ -114,6 +114,21 @@ const msg: ILangMsgs = {
     ko_KR: "확인",
     vi_VN: "Xác nhận",
   },
+  // 开启相机扫码
+  btn_enable_camera_scan: {
+    zh_CN: "开启相机扫码",
+    zh_TW: "開啟相機掃碼",
+    en_US: "Enable camera scan",
+    ru_RU: "Включить сканирование камерой",
+    fr_FR: "Activer le scan par caméra",
+    es_ES: "Habilitar escaneo con cámara",
+    it_IT: "Abilita scansione fotocamera",
+    pt_PT: "Ativar escaneamento por câmera",
+    de_DE: "Kamera-Scan aktivieren",
+    ja_JP: "カメラスキャンを有効にする",
+    ko_KR: "카메라 스캔 활성화",
+    vi_VN: "Bật quét bằng camera",
+  },
 };
 
 export default msg;

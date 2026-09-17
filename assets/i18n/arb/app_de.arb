@@ -71,6 +71,9 @@
   "btn_confirm": "Bestätigen",
   "@btn_confirm": {},
 
+  "btn_enable_camera_scan": "Kamera-Scan aktivieren",
+  "@btn_enable_camera_scan": {},
+
   "title_home": "Startseite",
   "@title_home": {},
 
@@ -185,6 +188,9 @@
   "info_privacy_outro": ". Wir werden Ihre persönlichen Daten gemäß den Vereinbarungen streng schützen. Durch Tippen auf „Zustimmen und fortfahren“ bestätigen Sie, dass Sie das oben Genannte gelesen haben und ihm zustimmen.",
   "@info_privacy_outro": {},
 
+  "info_scan_camera_hint": "Aktivieren Sie die Kamera, um QR-Codes und Barcodes zu scannen",
+  "@info_scan_camera_hint": {},
+
   "msg_query_failed": "Die Abfrage ist fehlgeschlagen",
   "@msg_query_failed": {},
 
@@ -217,6 +223,9 @@
 
   "msg_no_barcode_detected": "Kein Strichcode oder QR-Code wurde erkannt",
   "@msg_no_barcode_detected": {},
+
+  "msg_scan_camera_permission_request": "Die Scan-Funktion benötigt die Kameraberechtigung zum Scannen von QR-Codes und Barcodes. Erlauben?",
+  "@msg_scan_camera_permission_request": {},
 
   "msg_read_agreement": "Bitte lesen Sie zuerst die Vereinbarung",
   "@msg_read_agreement": {},

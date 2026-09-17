@@ -71,6 +71,9 @@
   "btn_confirm": "Xác nhận",
   "@btn_confirm": {},
 
+  "btn_enable_camera_scan": "Bật quét bằng camera",
+  "@btn_enable_camera_scan": {},
+
   "title_home": "Trang chủ",
   "@title_home": {},
 
@@ -185,6 +188,9 @@
   "info_privacy_outro": ". Chúng tôi sẽ bảo vệ thông tin cá nhân của bạn theo đúng các thỏa thuận. Khi nhấn “Đồng ý và tiếp tục”, bạn xác nhận đã đọc và đồng ý với toàn bộ nội dung trên.",
   "@info_privacy_outro": {},
 
+  "info_scan_camera_hint": "Bật camera để quét mã QR và mã vạch",
+  "@info_scan_camera_hint": {},
+
   "msg_query_failed": "Truy vấn không thành công",
   "@msg_query_failed": {},
 
@@ -217,6 +223,9 @@
 
   "msg_no_barcode_detected": "Không tìm thấy mã vạch hoặc mã QR",
   "@msg_no_barcode_detected": {},
+
+  "msg_scan_camera_permission_request": "Chức năng quét yêu cầu quyền camera để quét mã QR và mã vạch. Cho phép?",
+  "@msg_scan_camera_permission_request": {},
 
   "msg_read_agreement": "Vui lòng đọc thỏa thuận trước",
   "@msg_read_agreement": {},

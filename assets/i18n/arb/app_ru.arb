@@ -71,6 +71,9 @@
   "btn_confirm": "Подтвердить",
   "@btn_confirm": {},
 
+  "btn_enable_camera_scan": "Включить сканирование камерой",
+  "@btn_enable_camera_scan": {},
+
   "title_home": "Главная",
   "@title_home": {},
 
@@ -185,6 +188,9 @@
   "info_privacy_outro": ". Мы будем строго защищать вашу личную информацию в соответствии с соглашениями. Нажимая «Согласиться и продолжить», вы подтверждаете, что прочитали и согласны со всем вышеизложенным.",
   "@info_privacy_outro": {},
 
+  "info_scan_camera_hint": "Включите камеру, чтобы сканировать QR-коды и штрих-коды",
+  "@info_scan_camera_hint": {},
+
   "msg_query_failed": "Не удалось выполнить запрос",
   "@msg_query_failed": {},
 
@@ -217,6 +223,9 @@
 
   "msg_no_barcode_detected": "Ни один штрих-код или QR-код не обнаружен",
   "@msg_no_barcode_detected": {},
+
+  "msg_scan_camera_permission_request": "Функция сканирования требует разрешения на камеру для сканирования QR-кодов и штрих-кодов. Разрешить?",
+  "@msg_scan_camera_permission_request": {},
 
   "msg_read_agreement": "Пожалуйста, прочитайте соглашение",
   "@msg_read_agreement": {},

@@ -71,6 +71,9 @@
   "btn_confirm": "确认",
   "@btn_confirm": {},
 
+  "btn_enable_camera_scan": "开启相机扫码",
+  "@btn_enable_camera_scan": {},
+
   "title_home": "首页",
   "@title_home": {},
 
@@ -185,6 +188,9 @@
   "info_privacy_outro": "。我们将严格按照协议内容保护您的个人信息。点击“同意并继续”即表示您已阅读并同意上述全部内容。",
   "@info_privacy_outro": {},
 
+  "info_scan_camera_hint": "开启相机后即可扫描二维码和条形码",
+  "@info_scan_camera_hint": {},
+
   "msg_query_failed": "查询失败",
   "@msg_query_failed": {},
 
@@ -217,6 +223,9 @@
 
   "msg_no_barcode_detected": "未检测到条码或二维码",
   "@msg_no_barcode_detected": {},
+
+  "msg_scan_camera_permission_request": "扫码功能需要使用相机权限，用于扫描二维码和条形码，是否允许开启？",
+  "@msg_scan_camera_permission_request": {},
 
   "msg_read_agreement": "请先阅读协议",
   "@msg_read_agreement": {},

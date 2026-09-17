@@ -81,6 +81,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get btn_confirm => 'Confirm';
 
   @override
+  String get btn_enable_camera_scan => 'Enable camera scan';
+
+  @override
   String get title_home => 'Home';
 
   @override
@@ -197,6 +200,10 @@ class AppLocalizationsEn extends AppLocalizations {
       '. We will protect your personal information in strict accordance with the agreements. By tapping “Agree and Continue”, you acknowledge that you have read and agree to all of the above.';
 
   @override
+  String get info_scan_camera_hint =>
+      'Enable the camera to scan QR codes and barcodes';
+
+  @override
   String get msg_query_failed => 'Query failed';
 
   @override
@@ -230,6 +237,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get msg_no_barcode_detected => 'No barcode or QR code detected';
+
+  @override
+  String get msg_scan_camera_permission_request =>
+      'The scanning function requires camera permission to scan QR codes and barcodes. Allow it?';
 
   @override
   String get msg_read_agreement => 'Please read the agreement first';

@@ -71,6 +71,9 @@
   "btn_confirm": "確認",
   "@btn_confirm": {},
 
+  "btn_enable_camera_scan": "開啟相機掃碼",
+  "@btn_enable_camera_scan": {},
+
   "title_home": "首頁",
   "@title_home": {},
 
@@ -185,6 +188,9 @@
   "info_privacy_outro": "。我們將嚴格按照協議內容保護您的個人資訊。點擊「同意並繼續」即表示您已閱讀並同意上述全部內容。",
   "@info_privacy_outro": {},
 
+  "info_scan_camera_hint": "開啟相機後即可掃描二維碼和條碼",
+  "@info_scan_camera_hint": {},
+
   "msg_query_failed": "查詢失敗",
   "@msg_query_failed": {},
 
@@ -217,6 +223,9 @@
 
   "msg_no_barcode_detected": "未檢測到條碼或二維碼",
   "@msg_no_barcode_detected": {},
+
+  "msg_scan_camera_permission_request": "掃碼功能需要使用相機權限，用於掃描二維碼和條碼，是否允許開啟？",
+  "@msg_scan_camera_permission_request": {},
 
   "msg_read_agreement": "請先閱讀協議",
   "@msg_read_agreement": {},

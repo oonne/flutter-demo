@@ -261,6 +261,12 @@ abstract class AppLocalizations {
   /// **'Confirm'**
   String get btn_confirm;
 
+  /// No description provided for @btn_enable_camera_scan.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable camera scan'**
+  String get btn_enable_camera_scan;
+
   /// No description provided for @title_home.
   ///
   /// In en, this message translates to:
@@ -489,6 +495,12 @@ abstract class AppLocalizations {
   /// **'. We will protect your personal information in strict accordance with the agreements. By tapping “Agree and Continue”, you acknowledge that you have read and agree to all of the above.'**
   String get info_privacy_outro;
 
+  /// No description provided for @info_scan_camera_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable the camera to scan QR codes and barcodes'**
+  String get info_scan_camera_hint;
+
   /// No description provided for @msg_query_failed.
   ///
   /// In en, this message translates to:
@@ -554,6 +566,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No barcode or QR code detected'**
   String get msg_no_barcode_detected;
+
+  /// No description provided for @msg_scan_camera_permission_request.
+  ///
+  /// In en, this message translates to:
+  /// **'The scanning function requires camera permission to scan QR codes and barcodes. Allow it?'**
+  String get msg_scan_camera_permission_request;
 
   /// No description provided for @msg_read_agreement.
   ///

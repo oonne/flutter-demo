@@ -173,6 +173,21 @@ const msg: ILangMsgs = {
     ko_KR: "바코드 또는 QR 코드가 감지되지 않았습니다",
     vi_VN: "Không tìm thấy mã vạch hoặc mã QR",
   },
+  // 扫码功能申请相机权限时的用途说明
+  msg_scan_camera_permission_request: {
+    zh_CN: "扫码功能需要使用相机权限，用于扫描二维码和条形码，是否允许开启？",
+    zh_TW: "掃碼功能需要使用相機權限，用於掃描二維碼和條碼，是否允許開啟？",
+    en_US: "The scanning function requires camera permission to scan QR codes and barcodes. Allow it?",
+    ru_RU: "Функция сканирования требует разрешения на камеру для сканирования QR-кодов и штрих-кодов. Разрешить?",
+    fr_FR: "La fonction de scan nécessite l'autorisation de la caméra pour scanner les codes QR et les codes-barres. L'autoriser ?",
+    es_ES: "La función de escaneo requiere permiso de cámara para escanear códigos QR y códigos de barras. ¿Permitirlo?",
+    it_IT: "La funzione di scansione richiede l'autorizzazione della fotocamera per scansionare codici QR e codici a barre. Consentire?",
+    pt_PT: "A função de escaneamento requer permissão de câmera para escanear códigos QR e códigos de barras. Permitir?",
+    de_DE: "Die Scan-Funktion benötigt die Kameraberechtigung zum Scannen von QR-Codes und Barcodes. Erlauben?",
+    ja_JP: "スキャン機能にはQRコードとバーコードをスキャンするためのカメラ権限が必要です。許可しますか？",
+    ko_KR: "스캔 기능은 QR 코드와 바코드를 스캔하기 위해 카메라 권한이 필요합니다. 허용하시겠습니까?",
+    vi_VN: "Chức năng quét yêu cầu quyền camera để quét mã QR và mã vạch. Cho phép?",
+  },
 
   /*
    * 登录

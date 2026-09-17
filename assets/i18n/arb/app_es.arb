@@ -71,6 +71,9 @@
   "btn_confirm": "Confirmar",
   "@btn_confirm": {},
 
+  "btn_enable_camera_scan": "Habilitar escaneo con cámara",
+  "@btn_enable_camera_scan": {},
+
   "title_home": "Inicio",
   "@title_home": {},
 
@@ -185,6 +188,9 @@
   "info_privacy_outro": ". Protegaremos su información personal de conformidad con los acuerdos. Al pulsar “Aceptar y continuar”, usted reconoce haber leído y aceptado todo lo anterior.",
   "@info_privacy_outro": {},
 
+  "info_scan_camera_hint": "Habilite la cámara para escanear códigos QR y códigos de barras",
+  "@info_scan_camera_hint": {},
+
   "msg_query_failed": "La consulta falló",
   "@msg_query_failed": {},
 
@@ -217,6 +223,9 @@
 
   "msg_no_barcode_detected": "No se ha detectado ningún código de barras o código QR",
   "@msg_no_barcode_detected": {},
+
+  "msg_scan_camera_permission_request": "La función de escaneo requiere permiso de cámara para escanear códigos QR y códigos de barras. ¿Permitirlo?",
+  "@msg_scan_camera_permission_request": {},
 
   "msg_read_agreement": "Por favor lea el acuerdo primero",
   "@msg_read_agreement": {},

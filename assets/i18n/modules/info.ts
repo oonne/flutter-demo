@@ -359,6 +359,21 @@ const msg: ILangMsgs = {
     ko_KR: " 내용을 충분히 숙지하시기 바랍니다. 당사는 약관에 따라 귀하의 개인정보를 엄격히 보호합니다. “동의하고 계속”을 탭하면 위 내용을 모두 읽고 동의한 것으로 간주됩니다.",
     vi_VN: ". Chúng tôi sẽ bảo vệ thông tin cá nhân của bạn theo đúng các thỏa thuận. Khi nhấn “Đồng ý và tiếp tục”, bạn xác nhận đã đọc và đồng ý với toàn bộ nội dung trên.",
   },
+  // 未授权占位视图：开启相机后即可扫描二维码和条形码
+  info_scan_camera_hint: {
+    zh_CN: "开启相机后即可扫描二维码和条形码",
+    zh_TW: "開啟相機後即可掃描二維碼和條碼",
+    en_US: "Enable the camera to scan QR codes and barcodes",
+    ru_RU: "Включите камеру, чтобы сканировать QR-коды и штрих-коды",
+    fr_FR: "Activez la caméra pour scanner les codes QR et les codes-barres",
+    es_ES: "Habilite la cámara para escanear códigos QR y códigos de barras",
+    it_IT: "Abilita la fotocamera per scansionare codici QR e codici a barre",
+    pt_PT: "Ative a câmera para escanear códigos QR e códigos de barras",
+    de_DE: "Aktivieren Sie die Kamera, um QR-Codes und Barcodes zu scannen",
+    ja_JP: "カメラを有効にしてQRコードとバーコードをスキャンできます",
+    ko_KR: "카메를 활성화하면 QR 코드와 바코드를 스캔할 수 있습니다",
+    vi_VN: "Bật camera để quét mã QR và mã vạch",
+  },
 };
 
 export default msg;

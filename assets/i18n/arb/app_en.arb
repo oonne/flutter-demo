@@ -71,6 +71,9 @@
   "btn_confirm": "Confirm",
   "@btn_confirm": {},
 
+  "btn_enable_camera_scan": "Enable camera scan",
+  "@btn_enable_camera_scan": {},
+
   "title_home": "Home",
   "@title_home": {},
 
@@ -185,6 +188,9 @@
   "info_privacy_outro": ". We will protect your personal information in strict accordance with the agreements. By tapping “Agree and Continue”, you acknowledge that you have read and agree to all of the above.",
   "@info_privacy_outro": {},
 
+  "info_scan_camera_hint": "Enable the camera to scan QR codes and barcodes",
+  "@info_scan_camera_hint": {},
+
   "msg_query_failed": "Query failed",
   "@msg_query_failed": {},
 
@@ -217,6 +223,9 @@
 
   "msg_no_barcode_detected": "No barcode or QR code detected",
   "@msg_no_barcode_detected": {},
+
+  "msg_scan_camera_permission_request": "The scanning function requires camera permission to scan QR codes and barcodes. Allow it?",
+  "@msg_scan_camera_permission_request": {},
 
   "msg_read_agreement": "Please read the agreement first",
   "@msg_read_agreement": {},

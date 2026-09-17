@@ -81,6 +81,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get btn_confirm => 'Bestätigen';
 
   @override
+  String get btn_enable_camera_scan => 'Kamera-Scan aktivieren';
+
+  @override
   String get title_home => 'Startseite';
 
   @override
@@ -199,6 +202,10 @@ class AppLocalizationsDe extends AppLocalizations {
       '. Wir werden Ihre persönlichen Daten gemäß den Vereinbarungen streng schützen. Durch Tippen auf „Zustimmen und fortfahren“ bestätigen Sie, dass Sie das oben Genannte gelesen haben und ihm zustimmen.';
 
   @override
+  String get info_scan_camera_hint =>
+      'Aktivieren Sie die Kamera, um QR-Codes und Barcodes zu scannen';
+
+  @override
   String get msg_query_failed => 'Die Abfrage ist fehlgeschlagen';
 
   @override
@@ -234,6 +241,10 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get msg_no_barcode_detected =>
       'Kein Strichcode oder QR-Code wurde erkannt';
+
+  @override
+  String get msg_scan_camera_permission_request =>
+      'Die Scan-Funktion benötigt die Kameraberechtigung zum Scannen von QR-Codes und Barcodes. Erlauben?';
 
   @override
   String get msg_read_agreement => 'Bitte lesen Sie zuerst die Vereinbarung';

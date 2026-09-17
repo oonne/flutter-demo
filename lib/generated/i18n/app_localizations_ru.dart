@@ -81,6 +81,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get btn_confirm => 'Подтвердить';
 
   @override
+  String get btn_enable_camera_scan => 'Включить сканирование камерой';
+
+  @override
   String get title_home => 'Главная';
 
   @override
@@ -198,6 +201,10 @@ class AppLocalizationsRu extends AppLocalizations {
       '. Мы будем строго защищать вашу личную информацию в соответствии с соглашениями. Нажимая «Согласиться и продолжить», вы подтверждаете, что прочитали и согласны со всем вышеизложенным.';
 
   @override
+  String get info_scan_camera_hint =>
+      'Включите камеру, чтобы сканировать QR-коды и штрих-коды';
+
+  @override
   String get msg_query_failed => 'Не удалось выполнить запрос';
 
   @override
@@ -232,6 +239,10 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get msg_no_barcode_detected =>
       'Ни один штрих-код или QR-код не обнаружен';
+
+  @override
+  String get msg_scan_camera_permission_request =>
+      'Функция сканирования требует разрешения на камеру для сканирования QR-кодов и штрих-кодов. Разрешить?';
 
   @override
   String get msg_read_agreement => 'Пожалуйста, прочитайте соглашение';

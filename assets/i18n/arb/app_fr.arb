@@ -71,6 +71,9 @@
   "btn_confirm": "Confirmer",
   "@btn_confirm": {},
 
+  "btn_enable_camera_scan": "Activer le scan par caméra",
+  "@btn_enable_camera_scan": {},
+
   "title_home": "Accueil",
   "@title_home": {},
 
@@ -185,6 +188,9 @@
   "info_privacy_outro": ". Nous protégerons vos informations personnelles conformément aux accords. En appuyant sur « Accepter et continuer », vous confirmez avoir lu et accepté tout ce qui précède.",
   "@info_privacy_outro": {},
 
+  "info_scan_camera_hint": "Activez la caméra pour scanner les codes QR et les codes-barres",
+  "@info_scan_camera_hint": {},
+
   "msg_query_failed": "La requête a échoué",
   "@msg_query_failed": {},
 
@@ -217,6 +223,9 @@
 
   "msg_no_barcode_detected": "Aucun code-barres ou QR-code n'a été détecté",
   "@msg_no_barcode_detected": {},
+
+  "msg_scan_camera_permission_request": "La fonction de scan nécessite l'autorisation de la caméra pour scanner les codes QR et les codes-barres. L'autoriser ?",
+  "@msg_scan_camera_permission_request": {},
 
   "msg_read_agreement": "Veuillez d'abord lire l'accord",
   "@msg_read_agreement": {},

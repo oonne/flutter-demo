@@ -81,6 +81,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get btn_confirm => '确认';
 
   @override
+  String get btn_enable_camera_scan => '开启相机扫码';
+
+  @override
   String get title_home => '首页';
 
   @override
@@ -196,6 +199,9 @@ class AppLocalizationsZh extends AppLocalizations {
       '。我们将严格按照协议内容保护您的个人信息。点击“同意并继续”即表示您已阅读并同意上述全部内容。';
 
   @override
+  String get info_scan_camera_hint => '开启相机后即可扫描二维码和条形码';
+
+  @override
   String get msg_query_failed => '查询失败';
 
   @override
@@ -228,6 +234,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get msg_no_barcode_detected => '未检测到条码或二维码';
+
+  @override
+  String get msg_scan_camera_permission_request =>
+      '扫码功能需要使用相机权限，用于扫描二维码和条形码，是否允许开启？';
 
   @override
   String get msg_read_agreement => '请先阅读协议';
@@ -341,6 +351,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get btn_confirm => '確認';
+
+  @override
+  String get btn_enable_camera_scan => '開啟相機掃碼';
 
   @override
   String get title_home => '首頁';
@@ -458,6 +471,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
       '。我們將嚴格按照協議內容保護您的個人資訊。點擊「同意並繼續」即表示您已閱讀並同意上述全部內容。';
 
   @override
+  String get info_scan_camera_hint => '開啟相機後即可掃描二維碼和條碼';
+
+  @override
   String get msg_query_failed => '查詢失敗';
 
   @override
@@ -490,6 +506,10 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get msg_no_barcode_detected => '未檢測到條碼或二維碼';
+
+  @override
+  String get msg_scan_camera_permission_request =>
+      '掃碼功能需要使用相機權限，用於掃描二維碼和條碼，是否允許開啟？';
 
   @override
   String get msg_read_agreement => '請先閱讀協議';
