@@ -1,6 +1,7 @@
 class WebViewModel {
   String? url;
-  WebViewModel({this.url});
+  String? title;
+  WebViewModel({this.url, this.title});
 
   bool get hasUrl => url != null && url!.isNotEmpty;
 }

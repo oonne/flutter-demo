@@ -150,7 +150,7 @@ final router = GoRouter(
     GoRoute(
       name: 'webview',
       path: '/webview',
-      builder: (context, state) => const WebViewDemoView(),
+      builder: (context, state) => const WebViewView(),
     ),
 
     /* 

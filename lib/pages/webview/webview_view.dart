@@ -8,33 +8,26 @@ import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'webview_model.dart';
 import 'webview_view_model.dart';
 
-class WebViewDemoView extends StatefulWidget {
-  const WebViewDemoView({super.key});
+class WebViewView extends StatefulWidget {
+  const WebViewView({super.key});
 
   @override
-  State<WebViewDemoView> createState() => _WebViewDemoViewState();
+  State<WebViewView> createState() => _WebViewViewState();
 }
 
-class _WebViewDemoViewState extends State<WebViewDemoView> {
+class _WebViewViewState extends State<WebViewView> {
   late final WebViewViewModel viewModel;
-  WebViewController? controller;
 
   @override
   void initState() {
     super.initState();
     viewModel = WebViewViewModel(model: WebViewModel());
 
+    // 在下一帧初始化 viewModel
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final queryParameters =
           GoRouterState.of(context).extra as Map<String, dynamic>?;
-      final url = queryParameters?['url'] as String?;
-      if (url != null) {
-        viewModel.model.url = url;
-        controller = WebViewController()
-          ..setJavaScriptMode(JavaScriptMode.unrestricted)
-          ..loadRequest(Uri.parse(url));
-        setState(() {});
-      }
+      viewModel.init(queryParameters);
     });
   }
 
@@ -45,9 +38,9 @@ class _WebViewDemoViewState extends State<WebViewDemoView> {
       child: Consumer<WebViewViewModel>(
         builder: (context, viewModel, child) {
           return Scaffold(
-            appBar: CustomAppBar(title: const Text('WebView')),
+            appBar: CustomAppBar(title: Text(viewModel.title ?? 'WebView')),
             body: viewModel.hasUrl
-                ? WebViewWidget(controller: controller!)
+                ? WebViewWidget(controller: viewModel.controller!)
                 : const Center(
                     child: Text('请传入URL参数'),
                   ),
