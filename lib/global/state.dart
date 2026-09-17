@@ -69,7 +69,7 @@ class GlobalState extends ChangeNotifier {
   /* 
    * 主题管理 （深色/浅色）
    */
-  ThemeMode themeMode = ThemeMode.system;
+  ThemeMode themeMode = ThemeMode.light;
 
   // 设置主题模式
   Future<void> setThemeMode(ThemeMode mode) async {
