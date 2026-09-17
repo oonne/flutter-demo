@@ -237,6 +237,21 @@ const msg: ILangMsgs = {
     ko_KR: "로그인에 성공했습니다",
     vi_VN: "Đăng nhập thành công",
   },
+  // 需同意隐私协议才能使用，确认退出
+  msg_privacy_exit_confirm: {
+    zh_CN: "您需要同意用户协议和隐私政策后才能使用 Demo应用，确定要退出吗？",
+    zh_TW: "您需要同意用戶協議和隱私政策後才能使用 Demo應用，確定要退出嗎？",
+    en_US: "You need to agree to the User Agreement and Privacy Policy before using Demo App. Are you sure you want to exit?",
+    ru_RU: "Чтобы использовать Demo приложение, вам необходимо согласиться с Пользовательским соглашением и Политикой конфиденциальности. Вы уверены, что хотите выйти?",
+    fr_FR: "Vous devez accepter l'Accord utilisateur et la Politique de confidentialité avant d'utiliser Demo Application. Voulez-vous vraiment quitter ?",
+    es_ES: "Debe aceptar el Acuerdo de usuario y la Política de privacidad antes de usar Demo Aplicación. ¿Está seguro de que desea salir?",
+    it_IT: "Devi accettare l'Accordo utente e l'Informativa sulla privacy prima di utilizzare Demo Applicazione. Sei sicuro di voler uscire?",
+    pt_PT: "Tem de concordar com o Acordo de utilizador e a Política de privacidade antes de utilizar Demo Aplicação. Tem a certeza de que pretende sair?",
+    de_DE: "Sie müssen den Nutzungsbedingungen und der Datenschutzpolitik zustimmen, bevor Sie Demo Anwendung verwenden. Möchten Sie die App wirklich beenden?",
+    ja_JP: "Demoアプリケーションを使用するには、利用規約とプライバシーポリシーに同意する必要があります。終了しますか？",
+    ko_KR: "Demo 애플리케이션을 사용하려면 사용자 계약 및 개인정보 보호 정책에 동의해야 합니다. 종료하시겠습니까?",
+    vi_VN: "Bạn cần đồng ý với Thỏa thuận người dùng và Chính sách riêng tư trước khi sử dụng Demo ứng dụng. Bạn có chắc muốn thoát không?",
+  },
 };
 
 export default msg;

@@ -62,6 +62,12 @@
   "btn_logout": "退出登录",
   "@btn_logout": {},
 
+  "btn_disagree": "不同意",
+  "@btn_disagree": {},
+
+  "btn_agree_and_continue": "同意并继续",
+  "@btn_agree_and_continue": {},
+
   "btn_confirm": "确认",
   "@btn_confirm": {},
 
@@ -106,6 +112,9 @@
 
   "title_changelog": "更新日志",
   "@title_changelog": {},
+
+  "title_privacy_agreement": "用户协议与隐私政策",
+  "@title_privacy_agreement": {},
 
   "info_please_input": "请输入",
   "@info_please_input": {},
@@ -161,6 +170,21 @@
   "info_data_empty": "数据为空",
   "@info_data_empty": {},
 
+  "info_privacy_intro": "欢迎使用 Demo应用！\n\n在使用本应用前，请您认真阅读并充分理解",
+  "@info_privacy_intro": {},
+
+  "info_privacy_user_agreement": "《用户协议》",
+  "@info_privacy_user_agreement": {},
+
+  "info_privacy_and": "和",
+  "@info_privacy_and": {},
+
+  "info_privacy_privacy_policy": "《隐私政策》",
+  "@info_privacy_privacy_policy": {},
+
+  "info_privacy_outro": "。我们将严格按照协议内容保护您的个人信息。点击“同意并继续”即表示您已阅读并同意上述全部内容。",
+  "@info_privacy_outro": {},
+
   "msg_query_failed": "查询失败",
   "@msg_query_failed": {},
 
@@ -205,6 +229,9 @@
 
   "msg_login_success": "登录成功",
   "@msg_login_success": {},
+
+  "msg_privacy_exit_confirm": "您需要同意用户协议和隐私政策后才能使用 Demo应用，确定要退出吗？",
+  "@msg_privacy_exit_confirm": {},
 
   "unknown_error": "未知错误",
   "@unknown_error": {},

@@ -62,6 +62,12 @@
   "btn_logout": "Esci",
   "@btn_logout": {},
 
+  "btn_disagree": "Non accetto",
+  "@btn_disagree": {},
+
+  "btn_agree_and_continue": "Accetta e continua",
+  "@btn_agree_and_continue": {},
+
   "btn_confirm": "Conferma",
   "@btn_confirm": {},
 
@@ -106,6 +112,9 @@
 
   "title_changelog": "Registro delle modifiche",
   "@title_changelog": {},
+
+  "title_privacy_agreement": "Accordo utente e informativa sulla privacy",
+  "@title_privacy_agreement": {},
 
   "info_please_input": "Per favore, inserisci",
   "@info_please_input": {},
@@ -161,6 +170,21 @@
   "info_data_empty": "I dati sono vuoti",
   "@info_data_empty": {},
 
+  "info_privacy_intro": "Benvenuto in Demo Applicazione!\n\nPrima di utilizzare questa app, leggi attentamente e comprendi ",
+  "@info_privacy_intro": {},
+
+  "info_privacy_user_agreement": "Accordo utente",
+  "@info_privacy_user_agreement": {},
+
+  "info_privacy_and": " e ",
+  "@info_privacy_and": {},
+
+  "info_privacy_privacy_policy": "Informativa sulla privacy",
+  "@info_privacy_privacy_policy": {},
+
+  "info_privacy_outro": ". Proteggeremo le tue informazioni personali in stretta conformità con gli accordi. Toccando “Accetta e continua”, confermi di aver letto e accettato tutto quanto sopra.",
+  "@info_privacy_outro": {},
+
   "msg_query_failed": "La query non è riuscita",
   "@msg_query_failed": {},
 
@@ -205,6 +229,9 @@
 
   "msg_login_success": "Accesso riuscito",
   "@msg_login_success": {},
+
+  "msg_privacy_exit_confirm": "Devi accettare l'Accordo utente e l'Informativa sulla privacy prima di utilizzare Demo Applicazione. Sei sicuro di voler uscire?",
+  "@msg_privacy_exit_confirm": {},
 
   "unknown_error": "Errore sconosciuto",
   "@unknown_error": {},

@@ -68,6 +68,37 @@ const msg: ILangMsgs = {
     vi_VN: "Đăng xuất",
   },
 
+  /* 不同意 */
+  btn_disagree: {
+    zh_CN: "不同意",
+    zh_TW: "不同意",
+    en_US: "Disagree",
+    ru_RU: "Не согласен",
+    fr_FR: "Refuser",
+    es_ES: "No estoy de acuerdo",
+    it_IT: "Non accetto",
+    pt_PT: "Discordo",
+    de_DE: "Nicht zustimmen",
+    ja_JP: "同意しない",
+    ko_KR: "동의하지 않음",
+    vi_VN: "Không đồng ý",
+  },
+  /* 同意并继续 */
+  btn_agree_and_continue: {
+    zh_CN: "同意并继续",
+    zh_TW: "同意並繼續",
+    en_US: "Agree and Continue",
+    ru_RU: "Согласиться и продолжить",
+    fr_FR: "Accepter et continuer",
+    es_ES: "Aceptar y continuar",
+    it_IT: "Accetta e continua",
+    pt_PT: "Concordar e continuar",
+    de_DE: "Zustimmen und fortfahren",
+    ja_JP: "同意して続行",
+    ko_KR: "동의하고 계속",
+    vi_VN: "Đồng ý và tiếp tục",
+  },
+
   /* 确认 */
   btn_confirm: {
     zh_CN: "确认",

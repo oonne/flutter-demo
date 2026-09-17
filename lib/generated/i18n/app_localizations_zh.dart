@@ -72,6 +72,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get btn_logout => '退出登录';
 
   @override
+  String get btn_disagree => '不同意';
+
+  @override
+  String get btn_agree_and_continue => '同意并继续';
+
+  @override
   String get btn_confirm => '确认';
 
   @override
@@ -115,6 +121,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get title_changelog => '更新日志';
+
+  @override
+  String get title_privacy_agreement => '用户协议与隐私政策';
 
   @override
   String get info_please_input => '请输入';
@@ -171,6 +180,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String get info_data_empty => '数据为空';
 
   @override
+  String get info_privacy_intro => '欢迎使用 Demo应用！\n\n在使用本应用前，请您认真阅读并充分理解';
+
+  @override
+  String get info_privacy_user_agreement => '《用户协议》';
+
+  @override
+  String get info_privacy_and => '和';
+
+  @override
+  String get info_privacy_privacy_policy => '《隐私政策》';
+
+  @override
+  String get info_privacy_outro =>
+      '。我们将严格按照协议内容保护您的个人信息。点击“同意并继续”即表示您已阅读并同意上述全部内容。';
+
+  @override
   String get msg_query_failed => '查询失败';
 
   @override
@@ -215,6 +240,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get msg_login_success => '登录成功';
+
+  @override
+  String get msg_privacy_exit_confirm => '您需要同意用户协议和隐私政策后才能使用 Demo应用，确定要退出吗？';
 
   @override
   String get unknown_error => '未知错误';
@@ -306,6 +334,12 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get btn_logout => '退出登入';
 
   @override
+  String get btn_disagree => '不同意';
+
+  @override
+  String get btn_agree_and_continue => '同意並繼續';
+
+  @override
   String get btn_confirm => '確認';
 
   @override
@@ -349,6 +383,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get title_changelog => '更新日誌';
+
+  @override
+  String get title_privacy_agreement => '用戶協議與隱私政策';
 
   @override
   String get info_please_input => '請輸入';
@@ -405,6 +442,22 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get info_data_empty => '數據為空';
 
   @override
+  String get info_privacy_intro => '歡迎使用 Demo應用！\n\n在使用本應用前，請您認真閱讀並充分理解';
+
+  @override
+  String get info_privacy_user_agreement => '《用戶協議》';
+
+  @override
+  String get info_privacy_and => '和';
+
+  @override
+  String get info_privacy_privacy_policy => '《隱私政策》';
+
+  @override
+  String get info_privacy_outro =>
+      '。我們將嚴格按照協議內容保護您的個人資訊。點擊「同意並繼續」即表示您已閱讀並同意上述全部內容。';
+
+  @override
   String get msg_query_failed => '查詢失敗';
 
   @override
@@ -449,6 +502,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get msg_login_success => '登入成功';
+
+  @override
+  String get msg_privacy_exit_confirm => '您需要同意用戶協議和隱私政策後才能使用 Demo應用，確定要退出嗎？';
 
   @override
   String get unknown_error => '未知錯誤';

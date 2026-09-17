@@ -279,6 +279,86 @@ const msg: ILangMsgs = {
     ko_KR: "데이터가 없습니다",
     vi_VN: "Dữ liệu trống",
   },
+
+  /*
+   * 隐私协议同意弹框正文
+   * 由 intro + 《用户协议》链接 + and + 《隐私政策》链接 + outro 拼接而成
+   */
+  // 欢迎语及正文前半段（英文等语种末尾保留空格以衔接链接）
+  info_privacy_intro: {
+    zh_CN: "欢迎使用 Demo应用！\\n\\n在使用本应用前，请您认真阅读并充分理解",
+    zh_TW: "歡迎使用 Demo應用！\\n\\n在使用本應用前，請您認真閱讀並充分理解",
+    en_US: "Welcome to Demo App!\\n\\nBefore using this app, please carefully read and understand the ",
+    ru_RU: "Добро пожаловать в Demo приложение!\\n\\nПеред использованием приложения, пожалуйста, внимательно прочитайте и полностью поймите ",
+    fr_FR: "Bienvenue sur Demo Application !\\n\\nAvant d'utiliser cette application, veuillez lire attentivement et comprendre ",
+    es_ES: "¡Bienvenido a Demo Aplicación!\\n\\nAntes de usar esta aplicación, lea atentamente y comprenda ",
+    it_IT: "Benvenuto in Demo Applicazione!\\n\\nPrima di utilizzare questa app, leggi attentamente e comprendi ",
+    pt_PT: "Bem-vindo ao Demo Aplicação!\\n\\nAntes de utilizar esta aplicação, leia atentamente e compreenda ",
+    de_DE: "Willkommen bei Demo Anwendung!\\n\\nBevor Sie diese App verwenden, lesen und verstehen Sie bitte sorgfältig ",
+    ja_JP: "Demoアプリケーションへようこそ！\\n\\n本アプリを使用する前に、次の",
+    ko_KR: "Demo 애플리케이션에 오신 것을 환영합니다!\\n\\n본 앱을 사용하기 전에 다음의 ",
+    vi_VN: "Chào mừng bạn đến với Demo ứng dụng!\\n\\nTrước khi sử dụng ứng dụng, vui lòng đọc kỹ và hiểu rõ ",
+  },
+  // 正文中的《用户协议》链接
+  info_privacy_user_agreement: {
+    zh_CN: "《用户协议》",
+    zh_TW: "《用戶協議》",
+    en_US: "User Agreement",
+    ru_RU: "«Пользовательское соглашение»",
+    fr_FR: "l'Accord utilisateur",
+    es_ES: "Acuerdo de usuario",
+    it_IT: "Accordo utente",
+    pt_PT: "Acordo de utilizador",
+    de_DE: "Nutzungsbedingungen",
+    ja_JP: "《利用規約》",
+    ko_KR: "사용자 계약",
+    vi_VN: "Thỏa thuận người dùng",
+  },
+  // 连接两个协议链接的连词（英文等语种两侧保留空格）
+  info_privacy_and: {
+    zh_CN: "和",
+    zh_TW: "和",
+    en_US: " and ",
+    ru_RU: " и ",
+    fr_FR: " et ",
+    es_ES: " y ",
+    it_IT: " e ",
+    pt_PT: " e ",
+    de_DE: " und ",
+    ja_JP: "と",
+    ko_KR: " 및 ",
+    vi_VN: " và ",
+  },
+  // 正文中的《隐私政策》链接
+  info_privacy_privacy_policy: {
+    zh_CN: "《隐私政策》",
+    zh_TW: "《隱私政策》",
+    en_US: "Privacy Policy",
+    ru_RU: "«Политику конфиденциальности»",
+    fr_FR: "Politique de confidentialité",
+    es_ES: "Política de privacidad",
+    it_IT: "Informativa sulla privacy",
+    pt_PT: "Política de privacidade",
+    de_DE: "Datenschutzpolitik",
+    ja_JP: "《プライバシーポリシー》",
+    ko_KR: "개인정보 보호 정책",
+    vi_VN: "Chính sách riêng tư",
+  },
+  // 正文后半段
+  info_privacy_outro: {
+    zh_CN: "。我们将严格按照协议内容保护您的个人信息。点击“同意并继续”即表示您已阅读并同意上述全部内容。",
+    zh_TW: "。我們將嚴格按照協議內容保護您的個人資訊。點擊「同意並繼續」即表示您已閱讀並同意上述全部內容。",
+    en_US: ". We will protect your personal information in strict accordance with the agreements. By tapping “Agree and Continue”, you acknowledge that you have read and agree to all of the above.",
+    ru_RU: ". Мы будем строго защищать вашу личную информацию в соответствии с соглашениями. Нажимая «Согласиться и продолжить», вы подтверждаете, что прочитали и согласны со всем вышеизложенным.",
+    fr_FR: ". Nous protégerons vos informations personnelles conformément aux accords. En appuyant sur « Accepter et continuer », vous confirmez avoir lu et accepté tout ce qui précède.",
+    es_ES: ". Protegaremos su información personal de conformidad con los acuerdos. Al pulsar “Aceptar y continuar”, usted reconoce haber leído y aceptado todo lo anterior.",
+    it_IT: ". Proteggeremo le tue informazioni personali in stretta conformità con gli accordi. Toccando “Accetta e continua”, confermi di aver letto e accettato tutto quanto sopra.",
+    pt_PT: ". Iremos proteger as suas informações pessoais em estrita conformidade com os acordos. Ao tocar em “Concordar e continuar”, confirma que leu e concorda com tudo o que foi apresentado acima.",
+    de_DE: ". Wir werden Ihre persönlichen Daten gemäß den Vereinbarungen streng schützen. Durch Tippen auf „Zustimmen und fortfahren“ bestätigen Sie, dass Sie das oben Genannte gelesen haben und ihm zustimmen.",
+    ja_JP: "を十分にご理解ください。私たちは規約の内容に従ってお客様の個人情報を厳格に保護します。「同意して続行」をタップすることで、上記のすべての内容を読み、同意したものとみなされます。",
+    ko_KR: " 내용을 충분히 숙지하시기 바랍니다. 당사는 약관에 따라 귀하의 개인정보를 엄격히 보호합니다. “동의하고 계속”을 탭하면 위 내용을 모두 읽고 동의한 것으로 간주됩니다.",
+    vi_VN: ". Chúng tôi sẽ bảo vệ thông tin cá nhân của bạn theo đúng các thỏa thuận. Khi nhấn “Đồng ý và tiếp tục”, bạn xác nhận đã đọc và đồng ý với toàn bộ nội dung trên.",
+  },
 };
 
 export default msg;

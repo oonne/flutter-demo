@@ -72,6 +72,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get btn_logout => 'Выйти';
 
   @override
+  String get btn_disagree => 'Не согласен';
+
+  @override
+  String get btn_agree_and_continue => 'Согласиться и продолжить';
+
+  @override
   String get btn_confirm => 'Подтвердить';
 
   @override
@@ -115,6 +121,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get title_changelog => 'Журнал изменений';
+
+  @override
+  String get title_privacy_agreement =>
+      'Пользовательское соглашение и политика конфиденциальности';
 
   @override
   String get info_please_input => 'Пожалуйста, введите';
@@ -171,6 +181,23 @@ class AppLocalizationsRu extends AppLocalizations {
   String get info_data_empty => 'Данные пусты';
 
   @override
+  String get info_privacy_intro =>
+      'Добро пожаловать в Demo приложение!\n\nПеред использованием приложения, пожалуйста, внимательно прочитайте и полностью поймите ';
+
+  @override
+  String get info_privacy_user_agreement => '«Пользовательское соглашение»';
+
+  @override
+  String get info_privacy_and => ' и ';
+
+  @override
+  String get info_privacy_privacy_policy => '«Политику конфиденциальности»';
+
+  @override
+  String get info_privacy_outro =>
+      '. Мы будем строго защищать вашу личную информацию в соответствии с соглашениями. Нажимая «Согласиться и продолжить», вы подтверждаете, что прочитали и согласны со всем вышеизложенным.';
+
+  @override
   String get msg_query_failed => 'Не удалось выполнить запрос';
 
   @override
@@ -217,6 +244,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get msg_login_success => 'Вход выполнен успешно';
+
+  @override
+  String get msg_privacy_exit_confirm =>
+      'Чтобы использовать Demo приложение, вам необходимо согласиться с Пользовательским соглашением и Политикой конфиденциальности. Вы уверены, что хотите выйти?';
 
   @override
   String get unknown_error => 'Неизвестная ошибка';

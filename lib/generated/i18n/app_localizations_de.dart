@@ -72,6 +72,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get btn_logout => 'Abmelden';
 
   @override
+  String get btn_disagree => 'Nicht zustimmen';
+
+  @override
+  String get btn_agree_and_continue => 'Zustimmen und fortfahren';
+
+  @override
   String get btn_confirm => 'Bestätigen';
 
   @override
@@ -115,6 +121,10 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get title_changelog => 'Änderungsprotokoll';
+
+  @override
+  String get title_privacy_agreement =>
+      'Nutzungsbedingungen und Datenschutzpolitik';
 
   @override
   String get info_please_input => 'Bitte geben Sie ein';
@@ -172,6 +182,23 @@ class AppLocalizationsDe extends AppLocalizations {
   String get info_data_empty => 'Die Daten sind leer';
 
   @override
+  String get info_privacy_intro =>
+      'Willkommen bei Demo Anwendung!\n\nBevor Sie diese App verwenden, lesen und verstehen Sie bitte sorgfältig ';
+
+  @override
+  String get info_privacy_user_agreement => 'Nutzungsbedingungen';
+
+  @override
+  String get info_privacy_and => ' und ';
+
+  @override
+  String get info_privacy_privacy_policy => 'Datenschutzpolitik';
+
+  @override
+  String get info_privacy_outro =>
+      '. Wir werden Ihre persönlichen Daten gemäß den Vereinbarungen streng schützen. Durch Tippen auf „Zustimmen und fortfahren“ bestätigen Sie, dass Sie das oben Genannte gelesen haben und ihm zustimmen.';
+
+  @override
   String get msg_query_failed => 'Die Abfrage ist fehlgeschlagen';
 
   @override
@@ -219,6 +246,10 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get msg_login_success => 'Anmeldung erfolgreich';
+
+  @override
+  String get msg_privacy_exit_confirm =>
+      'Sie müssen den Nutzungsbedingungen und der Datenschutzpolitik zustimmen, bevor Sie Demo Anwendung verwenden. Möchten Sie die App wirklich beenden?';
 
   @override
   String get unknown_error => 'Unbekannter Fehler';

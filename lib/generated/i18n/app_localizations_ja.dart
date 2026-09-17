@@ -72,6 +72,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get btn_logout => 'ログアウト';
 
   @override
+  String get btn_disagree => '同意しない';
+
+  @override
+  String get btn_agree_and_continue => '同意して続行';
+
+  @override
   String get btn_confirm => '確認';
 
   @override
@@ -115,6 +121,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get title_changelog => '更新履歴';
+
+  @override
+  String get title_privacy_agreement => '利用規約とプライバシーポリシー';
 
   @override
   String get info_please_input => '入力してください';
@@ -171,6 +180,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String get info_data_empty => 'データが空です';
 
   @override
+  String get info_privacy_intro => 'Demoアプリケーションへようこそ！\n\n本アプリを使用する前に、次の';
+
+  @override
+  String get info_privacy_user_agreement => '《利用規約》';
+
+  @override
+  String get info_privacy_and => 'と';
+
+  @override
+  String get info_privacy_privacy_policy => '《プライバシーポリシー》';
+
+  @override
+  String get info_privacy_outro =>
+      'を十分にご理解ください。私たちは規約の内容に従ってお客様の個人情報を厳格に保護します。「同意して続行」をタップすることで、上記のすべての内容を読み、同意したものとみなされます。';
+
+  @override
   String get msg_query_failed => 'クエリに失敗しました';
 
   @override
@@ -215,6 +240,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get msg_login_success => 'ログインに成功しました';
+
+  @override
+  String get msg_privacy_exit_confirm =>
+      'Demoアプリケーションを使用するには、利用規約とプライバシーポリシーに同意する必要があります。終了しますか？';
 
   @override
   String get unknown_error => '未知のエラー';

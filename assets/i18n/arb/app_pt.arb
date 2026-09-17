@@ -62,6 +62,12 @@
   "btn_logout": "Sair",
   "@btn_logout": {},
 
+  "btn_disagree": "Discordo",
+  "@btn_disagree": {},
+
+  "btn_agree_and_continue": "Concordar e continuar",
+  "@btn_agree_and_continue": {},
+
   "btn_confirm": "Confirmar",
   "@btn_confirm": {},
 
@@ -106,6 +112,9 @@
 
   "title_changelog": "Registo de alterações",
   "@title_changelog": {},
+
+  "title_privacy_agreement": "Acordo de utilizador e política de privacidade",
+  "@title_privacy_agreement": {},
 
   "info_please_input": "Por favor, insira",
   "@info_please_input": {},
@@ -161,6 +170,21 @@
   "info_data_empty": "Os dados estão vazios",
   "@info_data_empty": {},
 
+  "info_privacy_intro": "Bem-vindo ao Demo Aplicação!\n\nAntes de utilizar esta aplicação, leia atentamente e compreenda ",
+  "@info_privacy_intro": {},
+
+  "info_privacy_user_agreement": "Acordo de utilizador",
+  "@info_privacy_user_agreement": {},
+
+  "info_privacy_and": " e ",
+  "@info_privacy_and": {},
+
+  "info_privacy_privacy_policy": "Política de privacidade",
+  "@info_privacy_privacy_policy": {},
+
+  "info_privacy_outro": ". Iremos proteger as suas informações pessoais em estrita conformidade com os acordos. Ao tocar em “Concordar e continuar”, confirma que leu e concorda com tudo o que foi apresentado acima.",
+  "@info_privacy_outro": {},
+
   "msg_query_failed": "A consulta falhou",
   "@msg_query_failed": {},
 
@@ -205,6 +229,9 @@
 
   "msg_login_success": "Login bem-sucedido",
   "@msg_login_success": {},
+
+  "msg_privacy_exit_confirm": "Tem de concordar com o Acordo de utilizador e a Política de privacidade antes de utilizar Demo Aplicação. Tem a certeza de que pretende sair?",
+  "@msg_privacy_exit_confirm": {},
 
   "unknown_error": "Erro desconhecido",
   "@unknown_error": {},

@@ -62,6 +62,12 @@
   "btn_logout": "Выйти",
   "@btn_logout": {},
 
+  "btn_disagree": "Не согласен",
+  "@btn_disagree": {},
+
+  "btn_agree_and_continue": "Согласиться и продолжить",
+  "@btn_agree_and_continue": {},
+
   "btn_confirm": "Подтвердить",
   "@btn_confirm": {},
 
@@ -106,6 +112,9 @@
 
   "title_changelog": "Журнал изменений",
   "@title_changelog": {},
+
+  "title_privacy_agreement": "Пользовательское соглашение и политика конфиденциальности",
+  "@title_privacy_agreement": {},
 
   "info_please_input": "Пожалуйста, введите",
   "@info_please_input": {},
@@ -161,6 +170,21 @@
   "info_data_empty": "Данные пусты",
   "@info_data_empty": {},
 
+  "info_privacy_intro": "Добро пожаловать в Demo приложение!\n\nПеред использованием приложения, пожалуйста, внимательно прочитайте и полностью поймите ",
+  "@info_privacy_intro": {},
+
+  "info_privacy_user_agreement": "«Пользовательское соглашение»",
+  "@info_privacy_user_agreement": {},
+
+  "info_privacy_and": " и ",
+  "@info_privacy_and": {},
+
+  "info_privacy_privacy_policy": "«Политику конфиденциальности»",
+  "@info_privacy_privacy_policy": {},
+
+  "info_privacy_outro": ". Мы будем строго защищать вашу личную информацию в соответствии с соглашениями. Нажимая «Согласиться и продолжить», вы подтверждаете, что прочитали и согласны со всем вышеизложенным.",
+  "@info_privacy_outro": {},
+
   "msg_query_failed": "Не удалось выполнить запрос",
   "@msg_query_failed": {},
 
@@ -205,6 +229,9 @@
 
   "msg_login_success": "Вход выполнен успешно",
   "@msg_login_success": {},
+
+  "msg_privacy_exit_confirm": "Чтобы использовать Demo приложение, вам необходимо согласиться с Пользовательским соглашением и Политикой конфиденциальности. Вы уверены, что хотите выйти?",
+  "@msg_privacy_exit_confirm": {},
 
   "unknown_error": "Неизвестная ошибка",
   "@unknown_error": {},

@@ -72,6 +72,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get btn_logout => 'Logout';
 
   @override
+  String get btn_disagree => 'Disagree';
+
+  @override
+  String get btn_agree_and_continue => 'Agree and Continue';
+
+  @override
   String get btn_confirm => 'Confirm';
 
   @override
@@ -115,6 +121,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get title_changelog => 'Changelog';
+
+  @override
+  String get title_privacy_agreement => 'User Agreement and Privacy Policy';
 
   @override
   String get info_please_input => 'Please input';
@@ -171,6 +180,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get info_data_empty => 'Data is empty';
 
   @override
+  String get info_privacy_intro =>
+      'Welcome to Demo App!\n\nBefore using this app, please carefully read and understand the ';
+
+  @override
+  String get info_privacy_user_agreement => 'User Agreement';
+
+  @override
+  String get info_privacy_and => ' and ';
+
+  @override
+  String get info_privacy_privacy_policy => 'Privacy Policy';
+
+  @override
+  String get info_privacy_outro =>
+      '. We will protect your personal information in strict accordance with the agreements. By tapping “Agree and Continue”, you acknowledge that you have read and agree to all of the above.';
+
+  @override
   String get msg_query_failed => 'Query failed';
 
   @override
@@ -216,6 +242,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get msg_login_success => 'Login successful';
+
+  @override
+  String get msg_privacy_exit_confirm =>
+      'You need to agree to the User Agreement and Privacy Policy before using Demo App. Are you sure you want to exit?';
 
   @override
   String get unknown_error => 'Unknown error';

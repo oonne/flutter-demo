@@ -62,6 +62,12 @@
   "btn_logout": "退出登入",
   "@btn_logout": {},
 
+  "btn_disagree": "不同意",
+  "@btn_disagree": {},
+
+  "btn_agree_and_continue": "同意並繼續",
+  "@btn_agree_and_continue": {},
+
   "btn_confirm": "確認",
   "@btn_confirm": {},
 
@@ -106,6 +112,9 @@
 
   "title_changelog": "更新日誌",
   "@title_changelog": {},
+
+  "title_privacy_agreement": "用戶協議與隱私政策",
+  "@title_privacy_agreement": {},
 
   "info_please_input": "請輸入",
   "@info_please_input": {},
@@ -161,6 +170,21 @@
   "info_data_empty": "數據為空",
   "@info_data_empty": {},
 
+  "info_privacy_intro": "歡迎使用 Demo應用！\n\n在使用本應用前，請您認真閱讀並充分理解",
+  "@info_privacy_intro": {},
+
+  "info_privacy_user_agreement": "《用戶協議》",
+  "@info_privacy_user_agreement": {},
+
+  "info_privacy_and": "和",
+  "@info_privacy_and": {},
+
+  "info_privacy_privacy_policy": "《隱私政策》",
+  "@info_privacy_privacy_policy": {},
+
+  "info_privacy_outro": "。我們將嚴格按照協議內容保護您的個人資訊。點擊「同意並繼續」即表示您已閱讀並同意上述全部內容。",
+  "@info_privacy_outro": {},
+
   "msg_query_failed": "查詢失敗",
   "@msg_query_failed": {},
 
@@ -205,6 +229,9 @@
 
   "msg_login_success": "登入成功",
   "@msg_login_success": {},
+
+  "msg_privacy_exit_confirm": "您需要同意用戶協議和隱私政策後才能使用 Demo應用，確定要退出嗎？",
+  "@msg_privacy_exit_confirm": {},
 
   "unknown_error": "未知錯誤",
   "@unknown_error": {},

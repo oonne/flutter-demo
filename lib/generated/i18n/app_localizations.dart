@@ -243,6 +243,18 @@ abstract class AppLocalizations {
   /// **'Logout'**
   String get btn_logout;
 
+  /// No description provided for @btn_disagree.
+  ///
+  /// In en, this message translates to:
+  /// **'Disagree'**
+  String get btn_disagree;
+
+  /// No description provided for @btn_agree_and_continue.
+  ///
+  /// In en, this message translates to:
+  /// **'Agree and Continue'**
+  String get btn_agree_and_continue;
+
   /// No description provided for @btn_confirm.
   ///
   /// In en, this message translates to:
@@ -332,6 +344,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Changelog'**
   String get title_changelog;
+
+  /// No description provided for @title_privacy_agreement.
+  ///
+  /// In en, this message translates to:
+  /// **'User Agreement and Privacy Policy'**
+  String get title_privacy_agreement;
 
   /// No description provided for @info_please_input.
   ///
@@ -441,6 +459,36 @@ abstract class AppLocalizations {
   /// **'Data is empty'**
   String get info_data_empty;
 
+  /// No description provided for @info_privacy_intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Demo App!\n\nBefore using this app, please carefully read and understand the '**
+  String get info_privacy_intro;
+
+  /// No description provided for @info_privacy_user_agreement.
+  ///
+  /// In en, this message translates to:
+  /// **'User Agreement'**
+  String get info_privacy_user_agreement;
+
+  /// No description provided for @info_privacy_and.
+  ///
+  /// In en, this message translates to:
+  /// **' and '**
+  String get info_privacy_and;
+
+  /// No description provided for @info_privacy_privacy_policy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get info_privacy_privacy_policy;
+
+  /// No description provided for @info_privacy_outro.
+  ///
+  /// In en, this message translates to:
+  /// **'. We will protect your personal information in strict accordance with the agreements. By tapping “Agree and Continue”, you acknowledge that you have read and agree to all of the above.'**
+  String get info_privacy_outro;
+
   /// No description provided for @msg_query_failed.
   ///
   /// In en, this message translates to:
@@ -530,6 +578,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Login successful'**
   String get msg_login_success;
+
+  /// No description provided for @msg_privacy_exit_confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'You need to agree to the User Agreement and Privacy Policy before using Demo App. Are you sure you want to exit?'**
+  String get msg_privacy_exit_confirm;
 
   /// No description provided for @unknown_error.
   ///

@@ -225,6 +225,21 @@ const msg: ILangMsgs = {
     ko_KR: "업데이트 로그",
     vi_VN: "Nhật ký thay đổi",
   },
+  // 用户协议与隐私政策
+  title_privacy_agreement: {
+    zh_CN: "用户协议与隐私政策",
+    zh_TW: "用戶協議與隱私政策",
+    en_US: "User Agreement and Privacy Policy",
+    ru_RU: "Пользовательское соглашение и политика конфиденциальности",
+    fr_FR: "Accord utilisateur et politique de confidentialité",
+    es_ES: "Acuerdo de usuario y política de privacidad",
+    it_IT: "Accordo utente e informativa sulla privacy",
+    pt_PT: "Acordo de utilizador e política de privacidade",
+    de_DE: "Nutzungsbedingungen und Datenschutzpolitik",
+    ja_JP: "利用規約とプライバシーポリシー",
+    ko_KR: "사용자 계약 및 개인정보 보호 정책",
+    vi_VN: "Thỏa thuận người dùng và chính sách riêng tư",
+  },
 };
 
 export default msg;

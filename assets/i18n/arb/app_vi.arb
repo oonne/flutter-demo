@@ -62,6 +62,12 @@
   "btn_logout": "Đăng xuất",
   "@btn_logout": {},
 
+  "btn_disagree": "Không đồng ý",
+  "@btn_disagree": {},
+
+  "btn_agree_and_continue": "Đồng ý và tiếp tục",
+  "@btn_agree_and_continue": {},
+
   "btn_confirm": "Xác nhận",
   "@btn_confirm": {},
 
@@ -106,6 +112,9 @@
 
   "title_changelog": "Nhật ký thay đổi",
   "@title_changelog": {},
+
+  "title_privacy_agreement": "Thỏa thuận người dùng và chính sách riêng tư",
+  "@title_privacy_agreement": {},
 
   "info_please_input": "Vui lòng nhập",
   "@info_please_input": {},
@@ -161,6 +170,21 @@
   "info_data_empty": "Dữ liệu trống",
   "@info_data_empty": {},
 
+  "info_privacy_intro": "Chào mừng bạn đến với Demo ứng dụng!\n\nTrước khi sử dụng ứng dụng, vui lòng đọc kỹ và hiểu rõ ",
+  "@info_privacy_intro": {},
+
+  "info_privacy_user_agreement": "Thỏa thuận người dùng",
+  "@info_privacy_user_agreement": {},
+
+  "info_privacy_and": " và ",
+  "@info_privacy_and": {},
+
+  "info_privacy_privacy_policy": "Chính sách riêng tư",
+  "@info_privacy_privacy_policy": {},
+
+  "info_privacy_outro": ". Chúng tôi sẽ bảo vệ thông tin cá nhân của bạn theo đúng các thỏa thuận. Khi nhấn “Đồng ý và tiếp tục”, bạn xác nhận đã đọc và đồng ý với toàn bộ nội dung trên.",
+  "@info_privacy_outro": {},
+
   "msg_query_failed": "Truy vấn không thành công",
   "@msg_query_failed": {},
 
@@ -205,6 +229,9 @@
 
   "msg_login_success": "Đăng nhập thành công",
   "@msg_login_success": {},
+
+  "msg_privacy_exit_confirm": "Bạn cần đồng ý với Thỏa thuận người dùng và Chính sách riêng tư trước khi sử dụng Demo ứng dụng. Bạn có chắc muốn thoát không?",
+  "@msg_privacy_exit_confirm": {},
 
   "unknown_error": "Lỗi không xác định",
   "@unknown_error": {},

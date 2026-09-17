@@ -62,6 +62,12 @@
   "btn_logout": "Logout",
   "@btn_logout": {},
 
+  "btn_disagree": "Disagree",
+  "@btn_disagree": {},
+
+  "btn_agree_and_continue": "Agree and Continue",
+  "@btn_agree_and_continue": {},
+
   "btn_confirm": "Confirm",
   "@btn_confirm": {},
 
@@ -106,6 +112,9 @@
 
   "title_changelog": "Changelog",
   "@title_changelog": {},
+
+  "title_privacy_agreement": "User Agreement and Privacy Policy",
+  "@title_privacy_agreement": {},
 
   "info_please_input": "Please input",
   "@info_please_input": {},
@@ -161,6 +170,21 @@
   "info_data_empty": "Data is empty",
   "@info_data_empty": {},
 
+  "info_privacy_intro": "Welcome to Demo App!\n\nBefore using this app, please carefully read and understand the ",
+  "@info_privacy_intro": {},
+
+  "info_privacy_user_agreement": "User Agreement",
+  "@info_privacy_user_agreement": {},
+
+  "info_privacy_and": " and ",
+  "@info_privacy_and": {},
+
+  "info_privacy_privacy_policy": "Privacy Policy",
+  "@info_privacy_privacy_policy": {},
+
+  "info_privacy_outro": ". We will protect your personal information in strict accordance with the agreements. By tapping “Agree and Continue”, you acknowledge that you have read and agree to all of the above.",
+  "@info_privacy_outro": {},
+
   "msg_query_failed": "Query failed",
   "@msg_query_failed": {},
 
@@ -205,6 +229,9 @@
 
   "msg_login_success": "Login successful",
   "@msg_login_success": {},
+
+  "msg_privacy_exit_confirm": "You need to agree to the User Agreement and Privacy Policy before using Demo App. Are you sure you want to exit?",
+  "@msg_privacy_exit_confirm": {},
 
   "unknown_error": "Unknown error",
   "@unknown_error": {},

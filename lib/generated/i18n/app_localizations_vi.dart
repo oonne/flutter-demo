@@ -72,6 +72,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get btn_logout => 'Đăng xuất';
 
   @override
+  String get btn_disagree => 'Không đồng ý';
+
+  @override
+  String get btn_agree_and_continue => 'Đồng ý và tiếp tục';
+
+  @override
   String get btn_confirm => 'Xác nhận';
 
   @override
@@ -115,6 +121,10 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get title_changelog => 'Nhật ký thay đổi';
+
+  @override
+  String get title_privacy_agreement =>
+      'Thỏa thuận người dùng và chính sách riêng tư';
 
   @override
   String get info_please_input => 'Vui lòng nhập';
@@ -171,6 +181,23 @@ class AppLocalizationsVi extends AppLocalizations {
   String get info_data_empty => 'Dữ liệu trống';
 
   @override
+  String get info_privacy_intro =>
+      'Chào mừng bạn đến với Demo ứng dụng!\n\nTrước khi sử dụng ứng dụng, vui lòng đọc kỹ và hiểu rõ ';
+
+  @override
+  String get info_privacy_user_agreement => 'Thỏa thuận người dùng';
+
+  @override
+  String get info_privacy_and => ' và ';
+
+  @override
+  String get info_privacy_privacy_policy => 'Chính sách riêng tư';
+
+  @override
+  String get info_privacy_outro =>
+      '. Chúng tôi sẽ bảo vệ thông tin cá nhân của bạn theo đúng các thỏa thuận. Khi nhấn “Đồng ý và tiếp tục”, bạn xác nhận đã đọc và đồng ý với toàn bộ nội dung trên.';
+
+  @override
   String get msg_query_failed => 'Truy vấn không thành công';
 
   @override
@@ -216,6 +243,10 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get msg_login_success => 'Đăng nhập thành công';
+
+  @override
+  String get msg_privacy_exit_confirm =>
+      'Bạn cần đồng ý với Thỏa thuận người dùng và Chính sách riêng tư trước khi sử dụng Demo ứng dụng. Bạn có chắc muốn thoát không?';
 
   @override
   String get unknown_error => 'Lỗi không xác định';

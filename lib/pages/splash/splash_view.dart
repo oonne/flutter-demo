@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/config/config.dart';
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/theme/global.dart';
 import 'package:flutter_demo/widget/modal/modal_dialog.dart';
 import 'package:flutter_demo/widget/ad/widgets/splash_ad_widget.dart';
@@ -45,6 +46,8 @@ class _SplashViewState extends State<SplashView> {
    * 弹出用户协议和隐私政策同意弹框
    */
   Future<void> _showPrivacyDialog() async {
+    final localizations = AppLocalizations.of(context)!;
+
     final agreed = await showDialog<bool>(
       context: context,
       barrierDismissible: false,
@@ -70,10 +73,10 @@ class _SplashViewState extends State<SplashView> {
     final shouldExit = await showModal<bool>(
       context: context,
       barrierDismissible: false,
-      child: const Padding(
-        padding: EdgeInsets.symmetric(vertical: 8),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: Text(
-          '您需要同意用户协议和隐私政策后才能使用 Demo应用，确定要退出吗？',
+          localizations.msg_privacy_exit_confirm, // 您需要同意用户协议和隐私政策后才能使用 Demo应用，确定要退出吗？
           textAlign: TextAlign.center,
         ),
       ),
@@ -102,6 +105,8 @@ class _SplashViewState extends State<SplashView> {
       value: _viewModel,
       child: Consumer<SplashViewModel>(
         builder: (context, viewModel, child) {
+          final localizations = AppLocalizations.of(context)!;
+
           // 读取到未同意隐私协议时，弹出同意弹框
           if (viewModel.privacyChecked &&
               !viewModel.acceptedPrivacyPolicy &&
@@ -137,9 +142,9 @@ class _SplashViewState extends State<SplashView> {
                                 height: 80,
                               ),
                               const SizedBox(height: 12),
-                              const Text(
-                                'Demo应用',
-                                style: TextStyle(
+                              Text(
+                                localizations.app_name, // Demo应用
+                                style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -159,9 +164,9 @@ class _SplashViewState extends State<SplashView> {
                           children: [
                             Image.asset('assets/img/logo.png', width: 24, height: 24),
                             const SizedBox(width: 8),
-                            const Text(
-                              'Demo应用',
-                              style: TextStyle(
+                            Text(
+                              localizations.app_name, // Demo应用
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.normal,
                               ),
@@ -210,11 +215,9 @@ class _PrivacyAgreementDialogState extends State<PrivacyAgreementDialog> {
   void initState() {
     super.initState();
     _userAgreementRecognizer =
-        TapGestureRecognizer()
-          ..onTap = () => _openWebview('用户协议', userAgreementUrls['zh']!);
+        TapGestureRecognizer()..onTap = _openUserAgreement;
     _privacyPolicyRecognizer =
-        TapGestureRecognizer()
-          ..onTap = () => _openWebview('隐私政策', privacyPolicyUrls['zh']!);
+        TapGestureRecognizer()..onTap = _openPrivacyPolicy;
   }
 
   @override
@@ -225,14 +228,40 @@ class _PrivacyAgreementDialogState extends State<PrivacyAgreementDialog> {
   }
 
   /*
-   * 打开协议页面
+   * 协议链接默认英文，仅中文使用中文版链接
    */
-  void _openWebview(String title, String url) {
-    context.pushNamed('webview', extra: {'title': title, 'url': url});
+  String get _lang =>
+      Localizations.localeOf(context).languageCode == 'zh' ? 'zh' : 'en';
+
+  /*
+   * 打开用户协议
+   */
+  void _openUserAgreement() {
+    context.pushNamed(
+      'webview',
+      extra: {
+        'title': AppLocalizations.of(context)!.title_user_agreement, // 用户协议
+        'url': userAgreementUrls[_lang],
+      },
+    );
+  }
+
+  /*
+   * 打开隐私政策
+   */
+  void _openPrivacyPolicy() {
+    context.pushNamed(
+      'webview',
+      extra: {
+        'title': AppLocalizations.of(context)!.title_privacy_policy, // 隐私政策
+        'url': privacyPolicyUrls[_lang],
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     final themeVars = getCurrentThemeVars(context);
     final colorScheme = getCurrentThemeColorScheme(context);
 
@@ -253,7 +282,7 @@ class _PrivacyAgreementDialogState extends State<PrivacyAgreementDialog> {
             children: [
               // 标题
               Text(
-                '用户协议与隐私政策',
+                localizations.title_privacy_agreement, // 用户协议与隐私政策
                 style: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.w600,
@@ -270,21 +299,24 @@ class _PrivacyAgreementDialogState extends State<PrivacyAgreementDialog> {
                     color: themeVars.textColor,
                   ),
                   children: [
-                    const TextSpan(text: '欢迎使用 Demo应用！\n\n在使用本应用前，请您认真阅读并充分理解'),
+                    // 欢迎使用 Demo应用！在使用本应用前，请您认真阅读并充分理解
+                    TextSpan(text: localizations.info_privacy_intro),
+                    // 《用户协议》
                     TextSpan(
-                      text: '《用户协议》',
+                      text: localizations.info_privacy_user_agreement,
                       style: TextStyle(color: colorScheme.primary),
                       recognizer: _userAgreementRecognizer,
                     ),
-                    const TextSpan(text: '和'),
+                    // 和
+                    TextSpan(text: localizations.info_privacy_and),
+                    // 《隐私政策》
                     TextSpan(
-                      text: '《隐私政策》',
+                      text: localizations.info_privacy_privacy_policy,
                       style: TextStyle(color: colorScheme.primary),
                       recognizer: _privacyPolicyRecognizer,
                     ),
-                    const TextSpan(
-                      text: '。我们将严格按照协议内容保护您的个人信息。点击“同意并继续”即表示您已阅读并同意上述全部内容。',
-                    ),
+                    // 我们将严格按照协议内容保护您的个人信息...
+                    TextSpan(text: localizations.info_privacy_outro),
                   ],
                 ),
               ),
@@ -303,7 +335,10 @@ class _PrivacyAgreementDialogState extends State<PrivacyAgreementDialog> {
                             borderRadius: BorderRadius.circular(21),
                           ),
                         ),
-                        child: const Text('不同意', style: TextStyle(fontSize: 15)),
+                        child: Text(
+                          localizations.btn_disagree, // 不同意
+                          style: const TextStyle(fontSize: 15),
+                        ),
                       ),
                     ),
                   ),
@@ -319,7 +354,10 @@ class _PrivacyAgreementDialogState extends State<PrivacyAgreementDialog> {
                             borderRadius: BorderRadius.circular(21),
                           ),
                         ),
-                        child: const Text('同意并继续', style: TextStyle(fontSize: 15)),
+                        child: Text(
+                          localizations.btn_agree_and_continue, // 同意并继续
+                          style: const TextStyle(fontSize: 15),
+                        ),
                       ),
                     ),
                   ),

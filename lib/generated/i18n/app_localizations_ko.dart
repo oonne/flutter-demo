@@ -72,6 +72,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get btn_logout => '로그아웃';
 
   @override
+  String get btn_disagree => '동의하지 않음';
+
+  @override
+  String get btn_agree_and_continue => '동의하고 계속';
+
+  @override
   String get btn_confirm => '확인';
 
   @override
@@ -115,6 +121,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get title_changelog => '업데이트 로그';
+
+  @override
+  String get title_privacy_agreement => '사용자 계약 및 개인정보 보호 정책';
 
   @override
   String get info_please_input => '입력해주세요';
@@ -171,6 +180,23 @@ class AppLocalizationsKo extends AppLocalizations {
   String get info_data_empty => '데이터가 없습니다';
 
   @override
+  String get info_privacy_intro =>
+      'Demo 애플리케이션에 오신 것을 환영합니다!\n\n본 앱을 사용하기 전에 다음의 ';
+
+  @override
+  String get info_privacy_user_agreement => '사용자 계약';
+
+  @override
+  String get info_privacy_and => ' 및 ';
+
+  @override
+  String get info_privacy_privacy_policy => '개인정보 보호 정책';
+
+  @override
+  String get info_privacy_outro =>
+      ' 내용을 충분히 숙지하시기 바랍니다. 당사는 약관에 따라 귀하의 개인정보를 엄격히 보호합니다. “동의하고 계속”을 탭하면 위 내용을 모두 읽고 동의한 것으로 간주됩니다.';
+
+  @override
   String get msg_query_failed => '쿼리에 실패했습니다';
 
   @override
@@ -215,6 +241,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get msg_login_success => '로그인에 성공했습니다';
+
+  @override
+  String get msg_privacy_exit_confirm =>
+      'Demo 애플리케이션을 사용하려면 사용자 계약 및 개인정보 보호 정책에 동의해야 합니다. 종료하시겠습니까?';
 
   @override
   String get unknown_error => '알 수 없는 오류';

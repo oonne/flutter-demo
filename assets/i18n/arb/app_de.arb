@@ -62,6 +62,12 @@
   "btn_logout": "Abmelden",
   "@btn_logout": {},
 
+  "btn_disagree": "Nicht zustimmen",
+  "@btn_disagree": {},
+
+  "btn_agree_and_continue": "Zustimmen und fortfahren",
+  "@btn_agree_and_continue": {},
+
   "btn_confirm": "Bestätigen",
   "@btn_confirm": {},
 
@@ -106,6 +112,9 @@
 
   "title_changelog": "Änderungsprotokoll",
   "@title_changelog": {},
+
+  "title_privacy_agreement": "Nutzungsbedingungen und Datenschutzpolitik",
+  "@title_privacy_agreement": {},
 
   "info_please_input": "Bitte geben Sie ein",
   "@info_please_input": {},
@@ -161,6 +170,21 @@
   "info_data_empty": "Die Daten sind leer",
   "@info_data_empty": {},
 
+  "info_privacy_intro": "Willkommen bei Demo Anwendung!\n\nBevor Sie diese App verwenden, lesen und verstehen Sie bitte sorgfältig ",
+  "@info_privacy_intro": {},
+
+  "info_privacy_user_agreement": "Nutzungsbedingungen",
+  "@info_privacy_user_agreement": {},
+
+  "info_privacy_and": " und ",
+  "@info_privacy_and": {},
+
+  "info_privacy_privacy_policy": "Datenschutzpolitik",
+  "@info_privacy_privacy_policy": {},
+
+  "info_privacy_outro": ". Wir werden Ihre persönlichen Daten gemäß den Vereinbarungen streng schützen. Durch Tippen auf „Zustimmen und fortfahren“ bestätigen Sie, dass Sie das oben Genannte gelesen haben und ihm zustimmen.",
+  "@info_privacy_outro": {},
+
   "msg_query_failed": "Die Abfrage ist fehlgeschlagen",
   "@msg_query_failed": {},
 
@@ -205,6 +229,9 @@
 
   "msg_login_success": "Anmeldung erfolgreich",
   "@msg_login_success": {},
+
+  "msg_privacy_exit_confirm": "Sie müssen den Nutzungsbedingungen und der Datenschutzpolitik zustimmen, bevor Sie Demo Anwendung verwenden. Möchten Sie die App wirklich beenden?",
+  "@msg_privacy_exit_confirm": {},
 
   "unknown_error": "Unbekannter Fehler",
   "@unknown_error": {},

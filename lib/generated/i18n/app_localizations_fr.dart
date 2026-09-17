@@ -72,6 +72,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get btn_logout => 'Déconnexion';
 
   @override
+  String get btn_disagree => 'Refuser';
+
+  @override
+  String get btn_agree_and_continue => 'Accepter et continuer';
+
+  @override
   String get btn_confirm => 'Confirmer';
 
   @override
@@ -115,6 +121,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get title_changelog => 'Journal des modifications';
+
+  @override
+  String get title_privacy_agreement =>
+      'Accord utilisateur et politique de confidentialité';
 
   @override
   String get info_please_input => 'Veuillez entrer';
@@ -171,6 +181,23 @@ class AppLocalizationsFr extends AppLocalizations {
   String get info_data_empty => 'Les données sont vides';
 
   @override
+  String get info_privacy_intro =>
+      'Bienvenue sur Demo Application !\n\nAvant d\'utiliser cette application, veuillez lire attentivement et comprendre ';
+
+  @override
+  String get info_privacy_user_agreement => 'l\'Accord utilisateur';
+
+  @override
+  String get info_privacy_and => ' et ';
+
+  @override
+  String get info_privacy_privacy_policy => 'Politique de confidentialité';
+
+  @override
+  String get info_privacy_outro =>
+      '. Nous protégerons vos informations personnelles conformément aux accords. En appuyant sur « Accepter et continuer », vous confirmez avoir lu et accepté tout ce qui précède.';
+
+  @override
   String get msg_query_failed => 'La requête a échoué';
 
   @override
@@ -217,6 +244,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get msg_login_success => 'Connexion réussie';
+
+  @override
+  String get msg_privacy_exit_confirm =>
+      'Vous devez accepter l\'Accord utilisateur et la Politique de confidentialité avant d\'utiliser Demo Application. Voulez-vous vraiment quitter ?';
 
   @override
   String get unknown_error => 'Erreur inconnue';
