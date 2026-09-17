@@ -3,8 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 
+import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 import 'package:flutter_demo/global/periodic_tasks.dart';
 import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/theme/global.dart';
@@ -43,10 +43,14 @@ Future<void> main() async {
   // 定时token刷新任务
   RefreshTokenManager().start();
 
-  // 初始化广告SDK
-  await AdManager.init();
-  // 请求广告权限
-  await AdManager.requestPermission();
+  // 是否已经同意了隐私协议
+  final accepted = prefs.getBool('ACCEPTED_PRIVACY_POLICY') ?? false;
+  if (accepted) {
+    // 初始化广告SDK
+    await AdManager.init();
+    // 请求广告权限
+    await AdManager.requestPermission();
+  }
 
   // 启动应用
   runApp(MainApp(globalState: globalState));

@@ -125,7 +125,7 @@ class _AboutViewState extends State<AboutView> {
                         onTap: () {
                           context.pushNamed(
                             'webview',
-                            extra: {'url': userAgreementUrls[lang]},
+                            extra: {'title': AppLocalizations.of(context)!.title_user_agreement, 'url': userAgreementUrls[lang]},
                           );
                         },
                       ),
@@ -138,7 +138,7 @@ class _AboutViewState extends State<AboutView> {
                         onTap: () {
                           context.pushNamed(
                             'webview',
-                            extra: {'url': privacyPolicyUrls[lang]},
+                            extra: {'title': AppLocalizations.of(context)!.title_privacy_policy, 'url': privacyPolicyUrls[lang]},
                           );
                         },
                       ),
@@ -151,7 +151,7 @@ class _AboutViewState extends State<AboutView> {
                         onTap: () {
                           context.pushNamed(
                             'webview',
-                            extra: {'url': updateLogUrls[lang]},
+                            extra: {'title': AppLocalizations.of(context)!.title_changelog, 'url': updateLogUrls[lang]},
                           );
                         },
                       ),
