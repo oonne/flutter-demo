@@ -15,12 +15,21 @@ const int loginPowLength = 4;
 /// 默认分页大小
 const int pageSize = 10;
 
-// 用户协议
-const String userAgreementUrl = '';
-// 隐私政策
-const String privacyPolicyUrl = '';
-// 更新日志
-const String updateLogUrl = '';
+// 用户协议（默认英文，中文使用 zh）
+const Map<String, String> userAgreementUrls = {
+  'zh': 'https://any-print.com/piconfc/user_agreement.html',
+  'en': 'https://any-print.com/piconfc/user_agreement_en.html',
+};
+// 隐私政策（默认英文，中文使用 zh）
+const Map<String, String> privacyPolicyUrls = {
+  'zh': 'https://any-print.com/piconfc/privacy_policy.html',
+  'en': 'https://any-print.com/piconfc/privacy_policy_en.html',
+};
+// 更新日志（默认英文，中文使用 zh）
+const Map<String, String> updateLogUrls = {
+  'zh': 'https://any-print.com/piconfc/app/changelog.html',
+  'en': 'https://any-print.com/piconfc/app/changelog_en.html',
+};
 
 
 /* 

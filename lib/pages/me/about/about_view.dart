@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_demo/generated/i18n/app_localizations.dart';
 
+import 'package:flutter_demo/config/config.dart';
 import 'package:flutter_demo/global/state.dart';
 import 'package:flutter_demo/layout/custom_app_bar.dart';
 import 'package:flutter_demo/widget/panel/panel.dart';
@@ -44,6 +45,8 @@ class _AboutViewState extends State<AboutView> {
   @override
   Widget build(BuildContext context) {
     final globalState = Provider.of<GlobalState>(context, listen: true);
+    // 协议链接默认英文，仅中文使用中文版链接
+    final lang = globalState.locale.languageCode == 'zh' ? 'zh' : 'en';
 
     return ChangeNotifierProvider.value(
       value: viewModel,
@@ -120,13 +123,9 @@ class _AboutViewState extends State<AboutView> {
                         )!.title_user_agreement, // 用户协议
                         showArrow: true,
                         onTap: () {
-                          final userAgreementUrl =
-                              (globalState.locale.languageCode == 'zh')
-                              ? 'https://any-print.com/piconfc/user_agreement.html'
-                              : 'https://any-print.com/piconfc/user_agreement_en.html';
                           context.pushNamed(
                             'demo/webview',
-                            extra: {'url': userAgreementUrl},
+                            extra: {'url': userAgreementUrls[lang]},
                           );
                         },
                       ),
@@ -137,13 +136,9 @@ class _AboutViewState extends State<AboutView> {
                         )!.title_privacy_policy, // 隐私政策
                         showArrow: true,
                         onTap: () {
-                          final privacyPolicyUrl =
-                              (globalState.locale.languageCode == 'zh')
-                              ? 'https://any-print.com/piconfc/privacy_policy.html'
-                              : 'https://any-print.com/piconfc/privacy_policy_en.html';
                           context.pushNamed(
                             'demo/webview',
-                            extra: {'url': privacyPolicyUrl},
+                            extra: {'url': privacyPolicyUrls[lang]},
                           );
                         },
                       ),
@@ -154,13 +149,9 @@ class _AboutViewState extends State<AboutView> {
                         )!.title_changelog, // 更新日志
                         showArrow: true,
                         onTap: () {
-                          final privacyPolicyUrl =
-                              (globalState.locale.languageCode == 'zh')
-                              ? 'https://any-print.com/piconfc/app/changelog.html'
-                              : 'https://any-print.com/piconfc/app/changelog_en.html';
                           context.pushNamed(
                             'demo/webview',
-                            extra: {'url': privacyPolicyUrl},
+                            extra: {'url': updateLogUrls[lang]},
                           );
                         },
                       ),
