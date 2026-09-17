@@ -124,7 +124,7 @@ class _AboutViewState extends State<AboutView> {
                         showArrow: true,
                         onTap: () {
                           context.pushNamed(
-                            'demo/webview',
+                            'webview',
                             extra: {'url': userAgreementUrls[lang]},
                           );
                         },
@@ -137,7 +137,7 @@ class _AboutViewState extends State<AboutView> {
                         showArrow: true,
                         onTap: () {
                           context.pushNamed(
-                            'demo/webview',
+                            'webview',
                             extra: {'url': privacyPolicyUrls[lang]},
                           );
                         },
@@ -150,7 +150,7 @@ class _AboutViewState extends State<AboutView> {
                         showArrow: true,
                         onTap: () {
                           context.pushNamed(
-                            'demo/webview',
+                            'webview',
                             extra: {'url': updateLogUrls[lang]},
                           );
                         },

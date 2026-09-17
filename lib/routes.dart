@@ -19,6 +19,9 @@ import 'package:flutter_demo/pages/login/login_view.dart';
 import 'package:flutter_demo/pages/scanner/scan/scan_view.dart';
 import 'package:flutter_demo/pages/scanner/scan_result/scan_result_view.dart';
 
+/* Webview */
+import 'package:flutter_demo/pages/webview/webview_view.dart';
+
 /* Demo */
 import 'package:flutter_demo/pages/demo/index/index_view.dart';
 import 'package:flutter_demo/pages/demo/mvvm/mvvm_view.dart';
@@ -31,7 +34,6 @@ import 'package:flutter_demo/pages/demo/calc_sha/calc_sha_view.dart';
 import 'package:flutter_demo/pages/demo/user_info/user_info_view.dart';
 import 'package:flutter_demo/pages/demo/data_list/data_view.dart';
 import 'package:flutter_demo/pages/demo/form/form_view.dart';
-import 'package:flutter_demo/pages/demo/webview/webview_view.dart';
 import 'package:flutter_demo/pages/demo/banner_ad/banner_ad_view.dart';
 import 'package:flutter_demo/pages/demo/database/database_list/database_list_view.dart';
 import 'package:flutter_demo/pages/demo/database/database_form/database_form_view.dart';
@@ -141,6 +143,15 @@ final router = GoRouter(
       path: '/scan/result',
       builder: (context, state) => const ScanResultView(),
     ),
+    
+    /* 
+     * Demo
+     */
+    GoRoute(
+      name: 'webview',
+      path: '/webview',
+      builder: (context, state) => const WebViewDemoView(),
+    ),
 
     /* 
      * Demo
@@ -209,12 +220,6 @@ final router = GoRouter(
       name: 'demo/form',
       path: '/demo/form',
       builder: (context, state) => const FormView(),
-    ),
-    /* Webview */
-    GoRoute(
-      name: 'demo/webview',
-      path: '/demo/webview',
-      builder: (context, state) => const WebViewDemoView(),
     ),
     /* Banner广告 */
     GoRoute(
