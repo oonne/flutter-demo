@@ -11,8 +11,7 @@ import { randomBytes } from 'crypto';
  *   android/release-key.jks   keystore 文件
  *   android/key.properties    供 build.gradle.kts 读取的签名配置
  *
- * 两个文件均已被 android/.gitignore 忽略，不会进入版本库。
- * 若 release-key.jks 已存在则直接退出，避免覆盖线上签名。
+ * 若 release-key.jks 已存在则直接覆盖。
  */
 
 const KEYSTORE_PATH = resolve(__dirname, '../android/release-key.jks');
@@ -28,9 +27,10 @@ const generatePassword = (length = 32): string => {
 };
 
 const main = (): void => {
+  // keytool -genkeypair 遇到已有同名 alias 会报错，先删除旧 keystore 以直接覆盖
   if (fs.existsSync(KEYSTORE_PATH)) {
-    console.log(`release-key.jks 已存在，跳过生成: ${KEYSTORE_PATH}`);
-    return;
+    fs.rmSync(KEYSTORE_PATH);
+    console.log(`已删除旧 keystore: ${KEYSTORE_PATH}`);
   }
 
   const password = generatePassword();
