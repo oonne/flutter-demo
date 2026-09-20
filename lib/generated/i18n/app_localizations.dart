@@ -141,6 +141,12 @@ abstract class AppLocalizations {
   /// **'Language Setting'**
   String get language_setting;
 
+  /// No description provided for @developer_company.
+  ///
+  /// In en, this message translates to:
+  /// **'Guangzhou RunawayStar Technology Co., Ltd.'**
+  String get developer_company;
+
   /// No description provided for @theme.
   ///
   /// In en, this message translates to:

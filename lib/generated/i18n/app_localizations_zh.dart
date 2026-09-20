@@ -21,6 +21,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get language_setting => '语言设置';
 
   @override
+  String get developer_company => '广州市速逃星科技有限公司';
+
+  @override
   String get theme => '主题';
 
   @override
@@ -291,6 +294,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get language_setting => '語言設定';
+
+  @override
+  String get developer_company => '廣州市速逃星科技有限公司';
 
   @override
   String get theme => '主題';

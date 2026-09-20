@@ -21,6 +21,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get language_setting => '언어 설정';
 
   @override
+  String get developer_company => 'Guangzhou RunawayStar Technology Co., Ltd.';
+
+  @override
   String get theme => '테마';
 
   @override

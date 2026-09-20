@@ -21,6 +21,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get language_setting => 'Cài đặt ngôn ngữ';
 
   @override
+  String get developer_company => 'Guangzhou RunawayStar Technology Co., Ltd.';
+
+  @override
   String get theme => 'Chủ đề';
 
   @override

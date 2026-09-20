@@ -21,6 +21,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get language_setting => 'Настройки языка';
 
   @override
+  String get developer_company => 'Guangzhou RunawayStar Technology Co., Ltd.';
+
+  @override
   String get theme => 'Тема';
 
   @override

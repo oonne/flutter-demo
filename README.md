@@ -54,7 +54,7 @@ sh ./scripts/update_env_ip.sh
 tsx ./scripts/generate_arb.ts && flutter gen-l10n
 
 如果是开发中，直接使用纯中文开发，页面完成后再调用skill去做国际化处理即可: 
-使用i18n技能 处理xxxx
+使用flutter-i18n技能 处理xxxx
 
 ## 生成类型定义
 一次性生成

@@ -63,6 +63,21 @@ const msg: ILangMsgs = {
     ko_KR: "언어 설정",
     vi_VN: "Cài đặt ngôn ngữ",
   },
+  // 开发公司名称
+  developer_company: {
+    zh_CN: "广州市速逃星科技有限公司",
+    zh_TW: "廣州市速逃星科技有限公司",
+    en_US: "Guangzhou RunawayStar Technology Co., Ltd.",
+    ru_RU: "Guangzhou RunawayStar Technology Co., Ltd.",
+    fr_FR: "Guangzhou RunawayStar Technology Co., Ltd.",
+    es_ES: "Guangzhou RunawayStar Technology Co., Ltd.",
+    it_IT: "Guangzhou RunawayStar Technology Co., Ltd.",
+    pt_PT: "Guangzhou RunawayStar Technology Co., Ltd.",
+    de_DE: "Guangzhou RunawayStar Technology Co., Ltd.",
+    ja_JP: "Guangzhou RunawayStar Technology Co., Ltd.",
+    ko_KR: "Guangzhou RunawayStar Technology Co., Ltd.",
+    vi_VN: "Guangzhou RunawayStar Technology Co., Ltd.",
+  },
 
   /* 
    * 主题

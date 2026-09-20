@@ -98,7 +98,7 @@ class _AboutViewState extends State<AboutView> {
                                     bottom: 8,
                                   ),
                                   child: Text(
-                                    'Copyright © JAY.',
+                                    'Copyright © ${AppLocalizations.of(context)!.developer_company}.',
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: Colors.grey[500],

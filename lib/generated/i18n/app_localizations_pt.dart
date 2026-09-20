@@ -21,6 +21,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get language_setting => 'Configuração de idioma';
 
   @override
+  String get developer_company => 'Guangzhou RunawayStar Technology Co., Ltd.';
+
+  @override
   String get theme => 'Tema';
 
   @override
