@@ -36,6 +36,9 @@ flutter 基础项目
 * 定时换票
 
 # 开发
+## 新项目需要重新生成签名文件
+tsx ./scripts/generate_keystore.ts
+
 ## 安装依赖
 flutter pub get
 
