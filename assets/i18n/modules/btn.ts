@@ -114,6 +114,21 @@ const msg: ILangMsgs = {
     ko_KR: "확인",
     vi_VN: "Xác nhận",
   },
+  /* 提交 */
+  btn_submit: {
+    zh_CN: "提交",
+    zh_TW: "提交",
+    en_US: "Submit",
+    ru_RU: "Отправить",
+    fr_FR: "Soumettre",
+    es_ES: "Enviar",
+    it_IT: "Invia",
+    pt_PT: "Enviar",
+    de_DE: "Absenden",
+    ja_JP: "送信",
+    ko_KR: "제출",
+    vi_VN: "Gửi",
+  },
   // 开启相机扫码
   btn_enable_camera_scan: {
     zh_CN: "开启相机扫码",

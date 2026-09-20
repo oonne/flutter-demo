@@ -74,6 +74,9 @@
   "btn_confirm": "Подтвердить",
   "@btn_confirm": {},
 
+  "btn_submit": "Отправить",
+  "@btn_submit": {},
+
   "btn_enable_camera_scan": "Включить сканирование камерой",
   "@btn_enable_camera_scan": {},
 
@@ -121,6 +124,9 @@
 
   "title_privacy_agreement": "Пользовательское соглашение и политика конфиденциальности",
   "@title_privacy_agreement": {},
+
+  "title_contact_us": "Связаться с нами",
+  "@title_contact_us": {},
 
   "info_please_input": "Пожалуйста, введите",
   "@info_please_input": {},
@@ -194,6 +200,55 @@
   "info_scan_camera_hint": "Включите камеру, чтобы сканировать QR-коды и штрих-коды",
   "@info_scan_camera_hint": {},
 
+  "info_contact_type_feature": "Предложение по функции",
+  "@info_contact_type_feature": {},
+
+  "info_contact_type_bug": "Сообщить об ошибке",
+  "@info_contact_type_bug": {},
+
+  "info_contact_type_custom": "Индивидуальная разработка",
+  "@info_contact_type_custom": {},
+
+  "info_contact_type_other": "Другое",
+  "@info_contact_type_other": {},
+
+  "info_contact_hint_feature": "Мой бизнес-сценарий: xxxx. Мне нужно добавить функцию xxxx",
+  "@info_contact_hint_feature": {},
+
+  "info_contact_hint_bug": "При использовании функции xxxx возникла проблема xxxx. Шаги для воспроизведения: xxxx. Ожидаемый результат: xxxx. Фактический результат: xxxx.",
+  "@info_contact_hint_bug": {},
+
+  "info_contact_hint_custom": "Мне нужно приватное развёртывание / индивидуальная разработка функции xxxx. Мой бюджет: xxxx",
+  "@info_contact_hint_custom": {},
+
+  "info_contact_hint_other": "Пожалуйста, введите подробности",
+  "@info_contact_hint_other": {},
+
+  "info_contact_label_type": "Тип запроса",
+  "@info_contact_label_type": {},
+
+  "info_contact_select_type": "Пожалуйста, выберите тип",
+  "@info_contact_select_type": {},
+
+  "info_contact_label_details": "Подробное описание",
+  "@info_contact_label_details": {},
+
+  "info_contact_label_contact": "Контактная информация",
+  "@info_contact_label_contact": {},
+
+  "info_contact_contact_placeholder": "Номер телефона / email",
+  "@info_contact_contact_placeholder": {},
+
+  "info_none": "Нет",
+  "@info_none": {},
+
+  "info_contact_email_alert": "Вы также можете связаться с нами напрямую по электронной почте: {email}",
+  "@info_contact_email_alert": {
+    "placeholders": {
+      "email": {"type": "String"}
+    }
+  },
+
   "msg_query_failed": "Не удалось выполнить запрос",
   "@msg_query_failed": {},
 
@@ -244,6 +299,15 @@
 
   "msg_privacy_exit_confirm": "Чтобы использовать Demo приложение, вам необходимо согласиться с Пользовательским соглашением и Политикой конфиденциальности. Вы уверены, что хотите выйти?",
   "@msg_privacy_exit_confirm": {},
+
+  "msg_contact_input_contact": "Пожалуйста, введите контактную информацию",
+  "@msg_contact_input_contact": {},
+
+  "msg_contact_feedback_received": "Мы получили ваш отзыв и свяжемся с вами в ближайшее время",
+  "@msg_contact_feedback_received": {},
+
+  "msg_contact_submit_failed": "Не удалось отправить. Вы можете связаться с нами по электронной почте",
+  "@msg_contact_submit_failed": {},
 
   "unknown_error": "Неизвестная ошибка",
   "@unknown_error": {},

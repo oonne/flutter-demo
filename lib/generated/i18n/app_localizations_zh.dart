@@ -84,6 +84,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get btn_confirm => '确认';
 
   @override
+  String get btn_submit => '提交';
+
+  @override
   String get btn_enable_camera_scan => '开启相机扫码';
 
   @override
@@ -130,6 +133,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get title_privacy_agreement => '用户协议与隐私政策';
+
+  @override
+  String get title_contact_us => '联系我们';
 
   @override
   String get info_please_input => '请输入';
@@ -205,6 +211,54 @@ class AppLocalizationsZh extends AppLocalizations {
   String get info_scan_camera_hint => '开启相机后即可扫描二维码和条形码';
 
   @override
+  String get info_contact_type_feature => '功能建议';
+
+  @override
+  String get info_contact_type_bug => 'bug反馈';
+
+  @override
+  String get info_contact_type_custom => '定制开发';
+
+  @override
+  String get info_contact_type_other => '其他';
+
+  @override
+  String get info_contact_hint_feature => '我的业务场景是xxxx，我需要增加xxxx功能';
+
+  @override
+  String get info_contact_hint_bug =>
+      '我在使用xxxx功能的时候，遇到了xxxx问题。具体操作步骤是：xxxx。预期结果应该是xxxx，实际结果是xxxx。';
+
+  @override
+  String get info_contact_hint_custom => '我需要 私有化部署/定制开发xxxx功能，我的预算是xxxx';
+
+  @override
+  String get info_contact_hint_other => '请输入详情说明';
+
+  @override
+  String get info_contact_label_type => '需求类型';
+
+  @override
+  String get info_contact_select_type => '请选择类型';
+
+  @override
+  String get info_contact_label_details => '详细说明';
+
+  @override
+  String get info_contact_label_contact => '联系方式';
+
+  @override
+  String get info_contact_contact_placeholder => '微信号/手机号/邮箱';
+
+  @override
+  String get info_none => '无';
+
+  @override
+  String info_contact_email_alert(String email) {
+    return '您也可以直接发邮件与我们联系: $email';
+  }
+
+  @override
   String get msg_query_failed => '查询失败';
 
   @override
@@ -256,6 +310,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get msg_privacy_exit_confirm => '您需要同意用户协议和隐私政策后才能使用 Demo应用，确定要退出吗？';
+
+  @override
+  String get msg_contact_input_contact => '请输入联系方式';
+
+  @override
+  String get msg_contact_feedback_received => '已收到您的反馈，我们会尽快与您联系';
+
+  @override
+  String get msg_contact_submit_failed => '提交失败，您可以尝试通过邮箱与我们联系';
 
   @override
   String get unknown_error => '未知错误';
@@ -359,6 +422,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get btn_confirm => '確認';
 
   @override
+  String get btn_submit => '提交';
+
+  @override
   String get btn_enable_camera_scan => '開啟相機掃碼';
 
   @override
@@ -405,6 +471,9 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get title_privacy_agreement => '用戶協議與隱私政策';
+
+  @override
+  String get title_contact_us => '聯繫我們';
 
   @override
   String get info_please_input => '請輸入';
@@ -480,6 +549,54 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get info_scan_camera_hint => '開啟相機後即可掃描二維碼和條碼';
 
   @override
+  String get info_contact_type_feature => '功能建議';
+
+  @override
+  String get info_contact_type_bug => 'bug反饋';
+
+  @override
+  String get info_contact_type_custom => '定制開發';
+
+  @override
+  String get info_contact_type_other => '其他';
+
+  @override
+  String get info_contact_hint_feature => '我的業務場景是xxxx，我需要增加xxxx功能';
+
+  @override
+  String get info_contact_hint_bug =>
+      '我在使用xxxx功能的時候，遇到了xxxx問題。具體操作步驟是：xxxx。預期結果應該是xxxx，實際結果是xxxx。';
+
+  @override
+  String get info_contact_hint_custom => '我需要 私有化部署/定制開發xxxx功能，我的預算是xxxx';
+
+  @override
+  String get info_contact_hint_other => '請輸入詳情說明';
+
+  @override
+  String get info_contact_label_type => '需求類型';
+
+  @override
+  String get info_contact_select_type => '請選擇類型';
+
+  @override
+  String get info_contact_label_details => '詳細說明';
+
+  @override
+  String get info_contact_label_contact => '聯繫方式';
+
+  @override
+  String get info_contact_contact_placeholder => '手機號/郵箱';
+
+  @override
+  String get info_none => '無';
+
+  @override
+  String info_contact_email_alert(String email) {
+    return '您也可以直接發郵件與我們聯繫: $email';
+  }
+
+  @override
   String get msg_query_failed => '查詢失敗';
 
   @override
@@ -531,6 +648,15 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get msg_privacy_exit_confirm => '您需要同意用戶協議和隱私政策後才能使用 Demo應用，確定要退出嗎？';
+
+  @override
+  String get msg_contact_input_contact => '請輸入聯繫方式';
+
+  @override
+  String get msg_contact_feedback_received => '已收到您的反饋，我們會盡快與您聯繫';
+
+  @override
+  String get msg_contact_submit_failed => '提交失敗，您可以嘗試通過郵箱與我們聯繫';
 
   @override
   String get unknown_error => '未知錯誤';

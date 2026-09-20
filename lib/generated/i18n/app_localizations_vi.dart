@@ -84,6 +84,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get btn_confirm => 'Xác nhận';
 
   @override
+  String get btn_submit => 'Gửi';
+
+  @override
   String get btn_enable_camera_scan => 'Bật quét bằng camera';
 
   @override
@@ -131,6 +134,9 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get title_privacy_agreement =>
       'Thỏa thuận người dùng và chính sách riêng tư';
+
+  @override
+  String get title_contact_us => 'Liên hệ chúng tôi';
 
   @override
   String get info_please_input => 'Vui lòng nhập';
@@ -207,6 +213,56 @@ class AppLocalizationsVi extends AppLocalizations {
   String get info_scan_camera_hint => 'Bật camera để quét mã QR và mã vạch';
 
   @override
+  String get info_contact_type_feature => 'Đề xuất tính năng';
+
+  @override
+  String get info_contact_type_bug => 'Báo cáo lỗi';
+
+  @override
+  String get info_contact_type_custom => 'Phát triển tùy chỉnh';
+
+  @override
+  String get info_contact_type_other => 'Khác';
+
+  @override
+  String get info_contact_hint_feature =>
+      'Kịch bản kinh doanh của tôi là xxxx, tôi cần thêm tính năng xxxx';
+
+  @override
+  String get info_contact_hint_bug =>
+      'Khi sử dụng tính năng xxxx, tôi gặp sự cố xxxx. Các bước thực hiện: xxxx. Kết quả mong đợi: xxxx. Kết quả thực tế: xxxx.';
+
+  @override
+  String get info_contact_hint_custom =>
+      'Tôi cần triển khai riêng tư / phát triển tùy chỉnh tính năng xxxx. Ngân sách của tôi là xxxx';
+
+  @override
+  String get info_contact_hint_other => 'Vui lòng nhập chi tiết';
+
+  @override
+  String get info_contact_label_type => 'Loại yêu cầu';
+
+  @override
+  String get info_contact_select_type => 'Vui lòng chọn loại';
+
+  @override
+  String get info_contact_label_details => 'Mô tả chi tiết';
+
+  @override
+  String get info_contact_label_contact => 'Thông tin liên hệ';
+
+  @override
+  String get info_contact_contact_placeholder => 'Số điện thoại/Email';
+
+  @override
+  String get info_none => 'Không có';
+
+  @override
+  String info_contact_email_alert(String email) {
+    return 'Bạn cũng có thể liên hệ trực tiếp với chúng tôi qua email: $email';
+  }
+
+  @override
   String get msg_query_failed => 'Truy vấn không thành công';
 
   @override
@@ -260,6 +316,17 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get msg_privacy_exit_confirm =>
       'Bạn cần đồng ý với Thỏa thuận người dùng và Chính sách riêng tư trước khi sử dụng Demo ứng dụng. Bạn có chắc muốn thoát không?';
+
+  @override
+  String get msg_contact_input_contact => 'Vui lòng nhập thông tin liên hệ';
+
+  @override
+  String get msg_contact_feedback_received =>
+      'Chúng tôi đã nhận được phản hồi của bạn và sẽ sớm liên hệ với bạn';
+
+  @override
+  String get msg_contact_submit_failed =>
+      'Gửi thất bại. Bạn có thể thử liên hệ với chúng tôi qua email';
 
   @override
   String get unknown_error => 'Lỗi không xác định';

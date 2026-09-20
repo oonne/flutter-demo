@@ -240,6 +240,21 @@ const msg: ILangMsgs = {
     ko_KR: "사용자 계약 및 개인정보 보호 정책",
     vi_VN: "Thỏa thuận người dùng và chính sách riêng tư",
   },
+  // 联系我们
+  title_contact_us: {
+    zh_CN: "联系我们",
+    zh_TW: "聯繫我們",
+    en_US: "Contact Us",
+    ru_RU: "Связаться с нами",
+    fr_FR: "Contactez-nous",
+    es_ES: "Contáctenos",
+    it_IT: "Contattaci",
+    pt_PT: "Contate-nos",
+    de_DE: "Kontaktieren Sie uns",
+    ja_JP: "お問い合わせ",
+    ko_KR: "문의하기",
+    vi_VN: "Liên hệ chúng tôi",
+  },
 };
 
 export default msg;

@@ -84,6 +84,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get btn_confirm => '확인';
 
   @override
+  String get btn_submit => '제출';
+
+  @override
   String get btn_enable_camera_scan => '카메라 스캔 활성화';
 
   @override
@@ -130,6 +133,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get title_privacy_agreement => '사용자 계약 및 개인정보 보호 정책';
+
+  @override
+  String get title_contact_us => '문의하기';
 
   @override
   String get info_please_input => '입력해주세요';
@@ -206,6 +212,56 @@ class AppLocalizationsKo extends AppLocalizations {
   String get info_scan_camera_hint => '카메를 활성화하면 QR 코드와 바코드를 스캔할 수 있습니다';
 
   @override
+  String get info_contact_type_feature => '기능 제안';
+
+  @override
+  String get info_contact_type_bug => '버그 신고';
+
+  @override
+  String get info_contact_type_custom => '맞춤 개발';
+
+  @override
+  String get info_contact_type_other => '기타';
+
+  @override
+  String get info_contact_hint_feature =>
+      '제 업무 시나리오는 xxxx이고, xxxx 기능 추가가 필요합니다';
+
+  @override
+  String get info_contact_hint_bug =>
+      'xxxx 기능을 사용하는 중 xxxx 문제가 발생했습니다. 재현 절차: xxxx. 예상 결과: xxxx. 실제 결과: xxxx.';
+
+  @override
+  String get info_contact_hint_custom =>
+      'xxxx 기능의 프라이빗 배포/맞춤 개발이 필요합니다. 제 예산은 xxxx입니다';
+
+  @override
+  String get info_contact_hint_other => '자세한 내용을 입력해주세요';
+
+  @override
+  String get info_contact_label_type => '요청 유형';
+
+  @override
+  String get info_contact_select_type => '유형을 선택해주세요';
+
+  @override
+  String get info_contact_label_details => '상세 설명';
+
+  @override
+  String get info_contact_label_contact => '연락처';
+
+  @override
+  String get info_contact_contact_placeholder => '휴대폰 번호/이메일';
+
+  @override
+  String get info_none => '없음';
+
+  @override
+  String info_contact_email_alert(String email) {
+    return '이메일로 직접 문의하실 수도 있습니다: $email';
+  }
+
+  @override
   String get msg_query_failed => '쿼리에 실패했습니다';
 
   @override
@@ -258,6 +314,15 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get msg_privacy_exit_confirm =>
       'Demo 애플리케이션을 사용하려면 사용자 계약 및 개인정보 보호 정책에 동의해야 합니다. 종료하시겠습니까?';
+
+  @override
+  String get msg_contact_input_contact => '연락처를 입력해주세요';
+
+  @override
+  String get msg_contact_feedback_received => '피드백을 받았으며 곧 연락드리겠습니다';
+
+  @override
+  String get msg_contact_submit_failed => '제출에 실패했습니다. 이메일로 문의해 주세요';
 
   @override
   String get unknown_error => '알 수 없는 오류';

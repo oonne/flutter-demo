@@ -84,6 +84,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get btn_confirm => 'Confirm';
 
   @override
+  String get btn_submit => 'Submit';
+
+  @override
   String get btn_enable_camera_scan => 'Enable camera scan';
 
   @override
@@ -130,6 +133,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get title_privacy_agreement => 'User Agreement and Privacy Policy';
+
+  @override
+  String get title_contact_us => 'Contact Us';
 
   @override
   String get info_please_input => 'Please input';
@@ -207,6 +213,56 @@ class AppLocalizationsEn extends AppLocalizations {
       'Enable the camera to scan QR codes and barcodes';
 
   @override
+  String get info_contact_type_feature => 'Feature request';
+
+  @override
+  String get info_contact_type_bug => 'Bug report';
+
+  @override
+  String get info_contact_type_custom => 'Custom development';
+
+  @override
+  String get info_contact_type_other => 'Other';
+
+  @override
+  String get info_contact_hint_feature =>
+      'My business scenario is xxxx, and I need the xxxx feature added';
+
+  @override
+  String get info_contact_hint_bug =>
+      'When using the xxxx feature, I encountered the xxxx problem. Steps to reproduce: xxxx. Expected result: xxxx. Actual result: xxxx.';
+
+  @override
+  String get info_contact_hint_custom =>
+      'I need private deployment / custom development of the xxxx feature. My budget is xxxx';
+
+  @override
+  String get info_contact_hint_other => 'Please enter details';
+
+  @override
+  String get info_contact_label_type => 'Request type';
+
+  @override
+  String get info_contact_select_type => 'Please select a type';
+
+  @override
+  String get info_contact_label_details => 'Details';
+
+  @override
+  String get info_contact_label_contact => 'Contact information';
+
+  @override
+  String get info_contact_contact_placeholder => 'Phone number / email';
+
+  @override
+  String get info_none => 'None';
+
+  @override
+  String info_contact_email_alert(String email) {
+    return 'You can also contact us directly by email: $email';
+  }
+
+  @override
   String get msg_query_failed => 'Query failed';
 
   @override
@@ -260,6 +316,18 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get msg_privacy_exit_confirm =>
       'You need to agree to the User Agreement and Privacy Policy before using Demo App. Are you sure you want to exit?';
+
+  @override
+  String get msg_contact_input_contact =>
+      'Please enter your contact information';
+
+  @override
+  String get msg_contact_feedback_received =>
+      'We have received your feedback and will contact you soon';
+
+  @override
+  String get msg_contact_submit_failed =>
+      'Submission failed. You can try contacting us by email';
 
   @override
   String get unknown_error => 'Unknown error';

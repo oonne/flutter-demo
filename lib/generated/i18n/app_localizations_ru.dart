@@ -84,6 +84,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get btn_confirm => 'Подтвердить';
 
   @override
+  String get btn_submit => 'Отправить';
+
+  @override
   String get btn_enable_camera_scan => 'Включить сканирование камерой';
 
   @override
@@ -131,6 +134,9 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get title_privacy_agreement =>
       'Пользовательское соглашение и политика конфиденциальности';
+
+  @override
+  String get title_contact_us => 'Связаться с нами';
 
   @override
   String get info_please_input => 'Пожалуйста, введите';
@@ -208,6 +214,56 @@ class AppLocalizationsRu extends AppLocalizations {
       'Включите камеру, чтобы сканировать QR-коды и штрих-коды';
 
   @override
+  String get info_contact_type_feature => 'Предложение по функции';
+
+  @override
+  String get info_contact_type_bug => 'Сообщить об ошибке';
+
+  @override
+  String get info_contact_type_custom => 'Индивидуальная разработка';
+
+  @override
+  String get info_contact_type_other => 'Другое';
+
+  @override
+  String get info_contact_hint_feature =>
+      'Мой бизнес-сценарий: xxxx. Мне нужно добавить функцию xxxx';
+
+  @override
+  String get info_contact_hint_bug =>
+      'При использовании функции xxxx возникла проблема xxxx. Шаги для воспроизведения: xxxx. Ожидаемый результат: xxxx. Фактический результат: xxxx.';
+
+  @override
+  String get info_contact_hint_custom =>
+      'Мне нужно приватное развёртывание / индивидуальная разработка функции xxxx. Мой бюджет: xxxx';
+
+  @override
+  String get info_contact_hint_other => 'Пожалуйста, введите подробности';
+
+  @override
+  String get info_contact_label_type => 'Тип запроса';
+
+  @override
+  String get info_contact_select_type => 'Пожалуйста, выберите тип';
+
+  @override
+  String get info_contact_label_details => 'Подробное описание';
+
+  @override
+  String get info_contact_label_contact => 'Контактная информация';
+
+  @override
+  String get info_contact_contact_placeholder => 'Номер телефона / email';
+
+  @override
+  String get info_none => 'Нет';
+
+  @override
+  String info_contact_email_alert(String email) {
+    return 'Вы также можете связаться с нами напрямую по электронной почте: $email';
+  }
+
+  @override
   String get msg_query_failed => 'Не удалось выполнить запрос';
 
   @override
@@ -262,6 +318,18 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get msg_privacy_exit_confirm =>
       'Чтобы использовать Demo приложение, вам необходимо согласиться с Пользовательским соглашением и Политикой конфиденциальности. Вы уверены, что хотите выйти?';
+
+  @override
+  String get msg_contact_input_contact =>
+      'Пожалуйста, введите контактную информацию';
+
+  @override
+  String get msg_contact_feedback_received =>
+      'Мы получили ваш отзыв и свяжемся с вами в ближайшее время';
+
+  @override
+  String get msg_contact_submit_failed =>
+      'Не удалось отправить. Вы можете связаться с нами по электронной почте';
 
   @override
   String get unknown_error => 'Неизвестная ошибка';

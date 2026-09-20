@@ -66,6 +66,15 @@ class _MeViewState extends State<MeView> {
                             GoRouter.of(context).pushNamed('me/about');
                           },
                         ),
+
+                        // 联系我们
+                        PanelItem(
+                          label: AppLocalizations.of(context)!.title_contact_us, // 联系我们
+                          showArrow: true,
+                          onTap: () {
+                            GoRouter.of(context).pushNamed('me/contact');
+                          },
+                        ),
                       ],
                     ),
                   ],

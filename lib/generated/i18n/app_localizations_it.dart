@@ -84,6 +84,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get btn_confirm => 'Conferma';
 
   @override
+  String get btn_submit => 'Invia';
+
+  @override
   String get btn_enable_camera_scan => 'Abilita scansione fotocamera';
 
   @override
@@ -131,6 +134,9 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get title_privacy_agreement =>
       'Accordo utente e informativa sulla privacy';
+
+  @override
+  String get title_contact_us => 'Contattaci';
 
   @override
   String get info_please_input => 'Per favore, inserisci';
@@ -208,6 +214,56 @@ class AppLocalizationsIt extends AppLocalizations {
       'Abilita la fotocamera per scansionare codici QR e codici a barre';
 
   @override
+  String get info_contact_type_feature => 'Suggerimento funzionale';
+
+  @override
+  String get info_contact_type_bug => 'Segnala un bug';
+
+  @override
+  String get info_contact_type_custom => 'Sviluppo personalizzato';
+
+  @override
+  String get info_contact_type_other => 'Altro';
+
+  @override
+  String get info_contact_hint_feature =>
+      'Il mio scenario aziendale è xxxx, ho bisogno di aggiungere la funzionalità xxxx';
+
+  @override
+  String get info_contact_hint_bug =>
+      'Utilizzando la funzionalità xxxx, ho riscontrato il problema xxxx. Passaggi per riprodurlo: xxxx. Risultato atteso: xxxx. Risultato effettivo: xxxx.';
+
+  @override
+  String get info_contact_hint_custom =>
+      'Ho bisogno del deployment privato / dello sviluppo personalizzato della funzionalità xxxx. Il mio budget è xxxx';
+
+  @override
+  String get info_contact_hint_other => 'Inserisci i dettagli';
+
+  @override
+  String get info_contact_label_type => 'Tipo di richiesta';
+
+  @override
+  String get info_contact_select_type => 'Seleziona un tipo';
+
+  @override
+  String get info_contact_label_details => 'Descrizione dettagliata';
+
+  @override
+  String get info_contact_label_contact => 'Informazioni di contatto';
+
+  @override
+  String get info_contact_contact_placeholder => 'Numero di telefono / email';
+
+  @override
+  String get info_none => 'Nessuno';
+
+  @override
+  String info_contact_email_alert(String email) {
+    return 'Puoi anche contattarci direttamente via email: $email';
+  }
+
+  @override
   String get msg_query_failed => 'La query non è riuscita';
 
   @override
@@ -263,6 +319,18 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get msg_privacy_exit_confirm =>
       'Devi accettare l\'Accordo utente e l\'Informativa sulla privacy prima di utilizzare Demo Applicazione. Sei sicuro di voler uscire?';
+
+  @override
+  String get msg_contact_input_contact =>
+      'Inserisci le tue informazioni di contatto';
+
+  @override
+  String get msg_contact_feedback_received =>
+      'Abbiamo ricevuto il tuo feedback e ti contatteremo al più presto';
+
+  @override
+  String get msg_contact_submit_failed =>
+      'Invio fallito. Puoi provare a contattarci via email';
 
   @override
   String get unknown_error => 'Errore sconosciuto';

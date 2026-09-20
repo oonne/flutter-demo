@@ -74,6 +74,9 @@
   "btn_confirm": "Confirmer",
   "@btn_confirm": {},
 
+  "btn_submit": "Soumettre",
+  "@btn_submit": {},
+
   "btn_enable_camera_scan": "Activer le scan par caméra",
   "@btn_enable_camera_scan": {},
 
@@ -121,6 +124,9 @@
 
   "title_privacy_agreement": "Accord utilisateur et politique de confidentialité",
   "@title_privacy_agreement": {},
+
+  "title_contact_us": "Contactez-nous",
+  "@title_contact_us": {},
 
   "info_please_input": "Veuillez entrer",
   "@info_please_input": {},
@@ -194,6 +200,55 @@
   "info_scan_camera_hint": "Activez la caméra pour scanner les codes QR et les codes-barres",
   "@info_scan_camera_hint": {},
 
+  "info_contact_type_feature": "Suggestion de fonctionnalité",
+  "@info_contact_type_feature": {},
+
+  "info_contact_type_bug": "Signaler un bug",
+  "@info_contact_type_bug": {},
+
+  "info_contact_type_custom": "Développement personnalisé",
+  "@info_contact_type_custom": {},
+
+  "info_contact_type_other": "Autre",
+  "@info_contact_type_other": {},
+
+  "info_contact_hint_feature": "Mon cas d'usage est xxxx, j'ai besoin d'ajouter la fonctionnalité xxxx",
+  "@info_contact_hint_feature": {},
+
+  "info_contact_hint_bug": "En utilisant la fonctionnalité xxxx, j'ai rencontré le problème xxxx. Étapes de reproduction : xxxx. Résultat attendu : xxxx. Résultat réel : xxxx.",
+  "@info_contact_hint_bug": {},
+
+  "info_contact_hint_custom": "J'ai besoin d'un déploiement privé / du développement personnalisé de la fonctionnalité xxxx. Mon budget est xxxx",
+  "@info_contact_hint_custom": {},
+
+  "info_contact_hint_other": "Veuillez saisir les détails",
+  "@info_contact_hint_other": {},
+
+  "info_contact_label_type": "Type de demande",
+  "@info_contact_label_type": {},
+
+  "info_contact_select_type": "Veuillez sélectionner un type",
+  "@info_contact_select_type": {},
+
+  "info_contact_label_details": "Description détaillée",
+  "@info_contact_label_details": {},
+
+  "info_contact_label_contact": "Coordonnées",
+  "@info_contact_label_contact": {},
+
+  "info_contact_contact_placeholder": "Numéro de téléphone / e-mail",
+  "@info_contact_contact_placeholder": {},
+
+  "info_none": "Aucun",
+  "@info_none": {},
+
+  "info_contact_email_alert": "Vous pouvez également nous contacter directement par e-mail : {email}",
+  "@info_contact_email_alert": {
+    "placeholders": {
+      "email": {"type": "String"}
+    }
+  },
+
   "msg_query_failed": "La requête a échoué",
   "@msg_query_failed": {},
 
@@ -244,6 +299,15 @@
 
   "msg_privacy_exit_confirm": "Vous devez accepter l'Accord utilisateur et la Politique de confidentialité avant d'utiliser Demo Application. Voulez-vous vraiment quitter ?",
   "@msg_privacy_exit_confirm": {},
+
+  "msg_contact_input_contact": "Veuillez saisir vos coordonnées",
+  "@msg_contact_input_contact": {},
+
+  "msg_contact_feedback_received": "Nous avons reçu vos commentaires et vous contacterons bientôt",
+  "@msg_contact_feedback_received": {},
+
+  "msg_contact_submit_failed": "Échec de l'envoi. Vous pouvez essayer de nous contacter par e-mail",
+  "@msg_contact_submit_failed": {},
 
   "unknown_error": "Erreur inconnue",
   "@unknown_error": {},

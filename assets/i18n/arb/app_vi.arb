@@ -74,6 +74,9 @@
   "btn_confirm": "Xác nhận",
   "@btn_confirm": {},
 
+  "btn_submit": "Gửi",
+  "@btn_submit": {},
+
   "btn_enable_camera_scan": "Bật quét bằng camera",
   "@btn_enable_camera_scan": {},
 
@@ -121,6 +124,9 @@
 
   "title_privacy_agreement": "Thỏa thuận người dùng và chính sách riêng tư",
   "@title_privacy_agreement": {},
+
+  "title_contact_us": "Liên hệ chúng tôi",
+  "@title_contact_us": {},
 
   "info_please_input": "Vui lòng nhập",
   "@info_please_input": {},
@@ -194,6 +200,55 @@
   "info_scan_camera_hint": "Bật camera để quét mã QR và mã vạch",
   "@info_scan_camera_hint": {},
 
+  "info_contact_type_feature": "Đề xuất tính năng",
+  "@info_contact_type_feature": {},
+
+  "info_contact_type_bug": "Báo cáo lỗi",
+  "@info_contact_type_bug": {},
+
+  "info_contact_type_custom": "Phát triển tùy chỉnh",
+  "@info_contact_type_custom": {},
+
+  "info_contact_type_other": "Khác",
+  "@info_contact_type_other": {},
+
+  "info_contact_hint_feature": "Kịch bản kinh doanh của tôi là xxxx, tôi cần thêm tính năng xxxx",
+  "@info_contact_hint_feature": {},
+
+  "info_contact_hint_bug": "Khi sử dụng tính năng xxxx, tôi gặp sự cố xxxx. Các bước thực hiện: xxxx. Kết quả mong đợi: xxxx. Kết quả thực tế: xxxx.",
+  "@info_contact_hint_bug": {},
+
+  "info_contact_hint_custom": "Tôi cần triển khai riêng tư / phát triển tùy chỉnh tính năng xxxx. Ngân sách của tôi là xxxx",
+  "@info_contact_hint_custom": {},
+
+  "info_contact_hint_other": "Vui lòng nhập chi tiết",
+  "@info_contact_hint_other": {},
+
+  "info_contact_label_type": "Loại yêu cầu",
+  "@info_contact_label_type": {},
+
+  "info_contact_select_type": "Vui lòng chọn loại",
+  "@info_contact_select_type": {},
+
+  "info_contact_label_details": "Mô tả chi tiết",
+  "@info_contact_label_details": {},
+
+  "info_contact_label_contact": "Thông tin liên hệ",
+  "@info_contact_label_contact": {},
+
+  "info_contact_contact_placeholder": "Số điện thoại/Email",
+  "@info_contact_contact_placeholder": {},
+
+  "info_none": "Không có",
+  "@info_none": {},
+
+  "info_contact_email_alert": "Bạn cũng có thể liên hệ trực tiếp với chúng tôi qua email: {email}",
+  "@info_contact_email_alert": {
+    "placeholders": {
+      "email": {"type": "String"}
+    }
+  },
+
   "msg_query_failed": "Truy vấn không thành công",
   "@msg_query_failed": {},
 
@@ -244,6 +299,15 @@
 
   "msg_privacy_exit_confirm": "Bạn cần đồng ý với Thỏa thuận người dùng và Chính sách riêng tư trước khi sử dụng Demo ứng dụng. Bạn có chắc muốn thoát không?",
   "@msg_privacy_exit_confirm": {},
+
+  "msg_contact_input_contact": "Vui lòng nhập thông tin liên hệ",
+  "@msg_contact_input_contact": {},
+
+  "msg_contact_feedback_received": "Chúng tôi đã nhận được phản hồi của bạn và sẽ sớm liên hệ với bạn",
+  "@msg_contact_feedback_received": {},
+
+  "msg_contact_submit_failed": "Gửi thất bại. Bạn có thể thử liên hệ với chúng tôi qua email",
+  "@msg_contact_submit_failed": {},
 
   "unknown_error": "Lỗi không xác định",
   "@unknown_error": {},

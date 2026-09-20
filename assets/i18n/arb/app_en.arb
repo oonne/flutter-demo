@@ -74,6 +74,9 @@
   "btn_confirm": "Confirm",
   "@btn_confirm": {},
 
+  "btn_submit": "Submit",
+  "@btn_submit": {},
+
   "btn_enable_camera_scan": "Enable camera scan",
   "@btn_enable_camera_scan": {},
 
@@ -121,6 +124,9 @@
 
   "title_privacy_agreement": "User Agreement and Privacy Policy",
   "@title_privacy_agreement": {},
+
+  "title_contact_us": "Contact Us",
+  "@title_contact_us": {},
 
   "info_please_input": "Please input",
   "@info_please_input": {},
@@ -194,6 +200,55 @@
   "info_scan_camera_hint": "Enable the camera to scan QR codes and barcodes",
   "@info_scan_camera_hint": {},
 
+  "info_contact_type_feature": "Feature request",
+  "@info_contact_type_feature": {},
+
+  "info_contact_type_bug": "Bug report",
+  "@info_contact_type_bug": {},
+
+  "info_contact_type_custom": "Custom development",
+  "@info_contact_type_custom": {},
+
+  "info_contact_type_other": "Other",
+  "@info_contact_type_other": {},
+
+  "info_contact_hint_feature": "My business scenario is xxxx, and I need the xxxx feature added",
+  "@info_contact_hint_feature": {},
+
+  "info_contact_hint_bug": "When using the xxxx feature, I encountered the xxxx problem. Steps to reproduce: xxxx. Expected result: xxxx. Actual result: xxxx.",
+  "@info_contact_hint_bug": {},
+
+  "info_contact_hint_custom": "I need private deployment / custom development of the xxxx feature. My budget is xxxx",
+  "@info_contact_hint_custom": {},
+
+  "info_contact_hint_other": "Please enter details",
+  "@info_contact_hint_other": {},
+
+  "info_contact_label_type": "Request type",
+  "@info_contact_label_type": {},
+
+  "info_contact_select_type": "Please select a type",
+  "@info_contact_select_type": {},
+
+  "info_contact_label_details": "Details",
+  "@info_contact_label_details": {},
+
+  "info_contact_label_contact": "Contact information",
+  "@info_contact_label_contact": {},
+
+  "info_contact_contact_placeholder": "Phone number / email",
+  "@info_contact_contact_placeholder": {},
+
+  "info_none": "None",
+  "@info_none": {},
+
+  "info_contact_email_alert": "You can also contact us directly by email: {email}",
+  "@info_contact_email_alert": {
+    "placeholders": {
+      "email": {"type": "String"}
+    }
+  },
+
   "msg_query_failed": "Query failed",
   "@msg_query_failed": {},
 
@@ -244,6 +299,15 @@
 
   "msg_privacy_exit_confirm": "You need to agree to the User Agreement and Privacy Policy before using Demo App. Are you sure you want to exit?",
   "@msg_privacy_exit_confirm": {},
+
+  "msg_contact_input_contact": "Please enter your contact information",
+  "@msg_contact_input_contact": {},
+
+  "msg_contact_feedback_received": "We have received your feedback and will contact you soon",
+  "@msg_contact_feedback_received": {},
+
+  "msg_contact_submit_failed": "Submission failed. You can try contacting us by email",
+  "@msg_contact_submit_failed": {},
 
   "unknown_error": "Unknown error",
   "@unknown_error": {},

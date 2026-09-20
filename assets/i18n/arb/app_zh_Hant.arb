@@ -74,6 +74,9 @@
   "btn_confirm": "確認",
   "@btn_confirm": {},
 
+  "btn_submit": "提交",
+  "@btn_submit": {},
+
   "btn_enable_camera_scan": "開啟相機掃碼",
   "@btn_enable_camera_scan": {},
 
@@ -121,6 +124,9 @@
 
   "title_privacy_agreement": "用戶協議與隱私政策",
   "@title_privacy_agreement": {},
+
+  "title_contact_us": "聯繫我們",
+  "@title_contact_us": {},
 
   "info_please_input": "請輸入",
   "@info_please_input": {},
@@ -194,6 +200,55 @@
   "info_scan_camera_hint": "開啟相機後即可掃描二維碼和條碼",
   "@info_scan_camera_hint": {},
 
+  "info_contact_type_feature": "功能建議",
+  "@info_contact_type_feature": {},
+
+  "info_contact_type_bug": "bug反饋",
+  "@info_contact_type_bug": {},
+
+  "info_contact_type_custom": "定制開發",
+  "@info_contact_type_custom": {},
+
+  "info_contact_type_other": "其他",
+  "@info_contact_type_other": {},
+
+  "info_contact_hint_feature": "我的業務場景是xxxx，我需要增加xxxx功能",
+  "@info_contact_hint_feature": {},
+
+  "info_contact_hint_bug": "我在使用xxxx功能的時候，遇到了xxxx問題。具體操作步驟是：xxxx。預期結果應該是xxxx，實際結果是xxxx。",
+  "@info_contact_hint_bug": {},
+
+  "info_contact_hint_custom": "我需要 私有化部署/定制開發xxxx功能，我的預算是xxxx",
+  "@info_contact_hint_custom": {},
+
+  "info_contact_hint_other": "請輸入詳情說明",
+  "@info_contact_hint_other": {},
+
+  "info_contact_label_type": "需求類型",
+  "@info_contact_label_type": {},
+
+  "info_contact_select_type": "請選擇類型",
+  "@info_contact_select_type": {},
+
+  "info_contact_label_details": "詳細說明",
+  "@info_contact_label_details": {},
+
+  "info_contact_label_contact": "聯繫方式",
+  "@info_contact_label_contact": {},
+
+  "info_contact_contact_placeholder": "手機號/郵箱",
+  "@info_contact_contact_placeholder": {},
+
+  "info_none": "無",
+  "@info_none": {},
+
+  "info_contact_email_alert": "您也可以直接發郵件與我們聯繫: {email}",
+  "@info_contact_email_alert": {
+    "placeholders": {
+      "email": {"type": "String"}
+    }
+  },
+
   "msg_query_failed": "查詢失敗",
   "@msg_query_failed": {},
 
@@ -244,6 +299,15 @@
 
   "msg_privacy_exit_confirm": "您需要同意用戶協議和隱私政策後才能使用 Demo應用，確定要退出嗎？",
   "@msg_privacy_exit_confirm": {},
+
+  "msg_contact_input_contact": "請輸入聯繫方式",
+  "@msg_contact_input_contact": {},
+
+  "msg_contact_feedback_received": "已收到您的反饋，我們會盡快與您聯繫",
+  "@msg_contact_feedback_received": {},
+
+  "msg_contact_submit_failed": "提交失敗，您可以嘗試通過郵箱與我們聯繫",
+  "@msg_contact_submit_failed": {},
 
   "unknown_error": "未知錯誤",
   "@unknown_error": {},

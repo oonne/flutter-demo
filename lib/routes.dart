@@ -11,6 +11,7 @@ import 'package:flutter_demo/pages/home/home_view.dart';
 import 'package:flutter_demo/pages/me/me/me_view.dart';
 import 'package:flutter_demo/pages/me/setting/setting_view.dart';
 import 'package:flutter_demo/pages/me/about/about_view.dart';
+import 'package:flutter_demo/pages/me/contact/contact_view.dart';
 
 /* 登录 */
 import 'package:flutter_demo/pages/login/login_view.dart';
@@ -118,6 +119,12 @@ final router = GoRouter(
       name: 'me/about',
       path: '/me/about',
       builder: (context, state) => const AboutView(),
+    ),
+    /* 联系我们 */
+    GoRoute(
+      name: 'me/contact',
+      path: '/me/contact',
+      builder: (context, state) => const ContactView(),
     ),
 
     /* 

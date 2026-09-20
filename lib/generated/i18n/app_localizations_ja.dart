@@ -84,6 +84,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get btn_confirm => '確認';
 
   @override
+  String get btn_submit => '送信';
+
+  @override
   String get btn_enable_camera_scan => 'カメラスキャンを有効にする';
 
   @override
@@ -130,6 +133,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get title_privacy_agreement => '利用規約とプライバシーポリシー';
+
+  @override
+  String get title_contact_us => 'お問い合わせ';
 
   @override
   String get info_please_input => '入力してください';
@@ -205,6 +211,55 @@ class AppLocalizationsJa extends AppLocalizations {
   String get info_scan_camera_hint => 'カメラを有効にしてQRコードとバーコードをスキャンできます';
 
   @override
+  String get info_contact_type_feature => '機能の提案';
+
+  @override
+  String get info_contact_type_bug => 'バグ報告';
+
+  @override
+  String get info_contact_type_custom => 'カスタム開発';
+
+  @override
+  String get info_contact_type_other => 'その他';
+
+  @override
+  String get info_contact_hint_feature => '私の業務シナリオはxxxxで、xxxx機能の追加が必要です';
+
+  @override
+  String get info_contact_hint_bug =>
+      'xxxx機能を使用しているときにxxxxの問題が発生しました。再現手順：xxxx。期待される結果：xxxx。実際の結果：xxxx。';
+
+  @override
+  String get info_contact_hint_custom =>
+      'xxxx機能のプライベート展開/カスタム開発が必要です。予算はxxxxです';
+
+  @override
+  String get info_contact_hint_other => '詳細を入力してください';
+
+  @override
+  String get info_contact_label_type => 'リクエストタイプ';
+
+  @override
+  String get info_contact_select_type => 'タイプを選択してください';
+
+  @override
+  String get info_contact_label_details => '詳細説明';
+
+  @override
+  String get info_contact_label_contact => '連絡先';
+
+  @override
+  String get info_contact_contact_placeholder => '電話番号/メールアドレス';
+
+  @override
+  String get info_none => 'なし';
+
+  @override
+  String info_contact_email_alert(String email) {
+    return 'メールで直接お問い合わせいただくこともできます: $email';
+  }
+
+  @override
   String get msg_query_failed => 'クエリに失敗しました';
 
   @override
@@ -257,6 +312,15 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get msg_privacy_exit_confirm =>
       'Demoアプリケーションを使用するには、利用規約とプライバシーポリシーに同意する必要があります。終了しますか？';
+
+  @override
+  String get msg_contact_input_contact => '連絡先を入力してください';
+
+  @override
+  String get msg_contact_feedback_received => 'フィードバックを受け付けました。まもなくご連絡いたします';
+
+  @override
+  String get msg_contact_submit_failed => '送信に失敗しました。メールでお問い合わせいただくこともできます';
 
   @override
   String get unknown_error => '未知のエラー';

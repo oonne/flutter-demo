@@ -267,6 +267,12 @@ abstract class AppLocalizations {
   /// **'Confirm'**
   String get btn_confirm;
 
+  /// No description provided for @btn_submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get btn_submit;
+
   /// No description provided for @btn_enable_camera_scan.
   ///
   /// In en, this message translates to:
@@ -362,6 +368,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'User Agreement and Privacy Policy'**
   String get title_privacy_agreement;
+
+  /// No description provided for @title_contact_us.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Us'**
+  String get title_contact_us;
 
   /// No description provided for @info_please_input.
   ///
@@ -507,6 +519,96 @@ abstract class AppLocalizations {
   /// **'Enable the camera to scan QR codes and barcodes'**
   String get info_scan_camera_hint;
 
+  /// No description provided for @info_contact_type_feature.
+  ///
+  /// In en, this message translates to:
+  /// **'Feature request'**
+  String get info_contact_type_feature;
+
+  /// No description provided for @info_contact_type_bug.
+  ///
+  /// In en, this message translates to:
+  /// **'Bug report'**
+  String get info_contact_type_bug;
+
+  /// No description provided for @info_contact_type_custom.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom development'**
+  String get info_contact_type_custom;
+
+  /// No description provided for @info_contact_type_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get info_contact_type_other;
+
+  /// No description provided for @info_contact_hint_feature.
+  ///
+  /// In en, this message translates to:
+  /// **'My business scenario is xxxx, and I need the xxxx feature added'**
+  String get info_contact_hint_feature;
+
+  /// No description provided for @info_contact_hint_bug.
+  ///
+  /// In en, this message translates to:
+  /// **'When using the xxxx feature, I encountered the xxxx problem. Steps to reproduce: xxxx. Expected result: xxxx. Actual result: xxxx.'**
+  String get info_contact_hint_bug;
+
+  /// No description provided for @info_contact_hint_custom.
+  ///
+  /// In en, this message translates to:
+  /// **'I need private deployment / custom development of the xxxx feature. My budget is xxxx'**
+  String get info_contact_hint_custom;
+
+  /// No description provided for @info_contact_hint_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter details'**
+  String get info_contact_hint_other;
+
+  /// No description provided for @info_contact_label_type.
+  ///
+  /// In en, this message translates to:
+  /// **'Request type'**
+  String get info_contact_label_type;
+
+  /// No description provided for @info_contact_select_type.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a type'**
+  String get info_contact_select_type;
+
+  /// No description provided for @info_contact_label_details.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get info_contact_label_details;
+
+  /// No description provided for @info_contact_label_contact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact information'**
+  String get info_contact_label_contact;
+
+  /// No description provided for @info_contact_contact_placeholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number / email'**
+  String get info_contact_contact_placeholder;
+
+  /// No description provided for @info_none.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get info_none;
+
+  /// No description provided for @info_contact_email_alert.
+  ///
+  /// In en, this message translates to:
+  /// **'You can also contact us directly by email: {email}'**
+  String info_contact_email_alert(String email);
+
   /// No description provided for @msg_query_failed.
   ///
   /// In en, this message translates to:
@@ -608,6 +710,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You need to agree to the User Agreement and Privacy Policy before using Demo App. Are you sure you want to exit?'**
   String get msg_privacy_exit_confirm;
+
+  /// No description provided for @msg_contact_input_contact.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your contact information'**
+  String get msg_contact_input_contact;
+
+  /// No description provided for @msg_contact_feedback_received.
+  ///
+  /// In en, this message translates to:
+  /// **'We have received your feedback and will contact you soon'**
+  String get msg_contact_feedback_received;
+
+  /// No description provided for @msg_contact_submit_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Submission failed. You can try contacting us by email'**
+  String get msg_contact_submit_failed;
 
   /// No description provided for @unknown_error.
   ///

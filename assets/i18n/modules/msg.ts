@@ -267,6 +267,55 @@ const msg: ILangMsgs = {
     ko_KR: "Demo 애플리케이션을 사용하려면 사용자 계약 및 개인정보 보호 정책에 동의해야 합니다. 종료하시겠습니까?",
     vi_VN: "Bạn cần đồng ý với Thỏa thuận người dùng và Chính sách riêng tư trước khi sử dụng Demo ứng dụng. Bạn có chắc muốn thoát không?",
   },
+
+  /*
+   * 联系我们
+   */
+  // 请输入联系方式
+  msg_contact_input_contact: {
+    zh_CN: "请输入联系方式",
+    zh_TW: "請輸入聯繫方式",
+    en_US: "Please enter your contact information",
+    ru_RU: "Пожалуйста, введите контактную информацию",
+    fr_FR: "Veuillez saisir vos coordonnées",
+    es_ES: "Por favor, ingrese su información de contacto",
+    it_IT: "Inserisci le tue informazioni di contatto",
+    pt_PT: "Por favor, insira as suas informações de contato",
+    de_DE: "Bitte geben Sie Ihre Kontaktinformationen ein",
+    ja_JP: "連絡先を入力してください",
+    ko_KR: "연락처를 입력해주세요",
+    vi_VN: "Vui lòng nhập thông tin liên hệ",
+  },
+  // 反馈提交成功
+  msg_contact_feedback_received: {
+    zh_CN: "已收到您的反馈，我们会尽快与您联系",
+    zh_TW: "已收到您的反饋，我們會盡快與您聯繫",
+    en_US: "We have received your feedback and will contact you soon",
+    ru_RU: "Мы получили ваш отзыв и свяжемся с вами в ближайшее время",
+    fr_FR: "Nous avons reçu vos commentaires et vous contacterons bientôt",
+    es_ES: "Hemos recibido sus comentarios y nos pondremos en contacto con usted pronto",
+    it_IT: "Abbiamo ricevuto il tuo feedback e ti contatteremo al più presto",
+    pt_PT: "Recebemos os seus comentários e entraremos em contato em breve",
+    de_DE: "Wir haben Ihre Rückmeldung erhalten und werden uns bald mit Ihnen in Verbindung setzen",
+    ja_JP: "フィードバックを受け付けました。まもなくご連絡いたします",
+    ko_KR: "피드백을 받았으며 곧 연락드리겠습니다",
+    vi_VN: "Chúng tôi đã nhận được phản hồi của bạn và sẽ sớm liên hệ với bạn",
+  },
+  // 反馈提交失败
+  msg_contact_submit_failed: {
+    zh_CN: "提交失败，您可以尝试通过邮箱与我们联系",
+    zh_TW: "提交失敗，您可以嘗試通過郵箱與我們聯繫",
+    en_US: "Submission failed. You can try contacting us by email",
+    ru_RU: "Не удалось отправить. Вы можете связаться с нами по электронной почте",
+    fr_FR: "Échec de l'envoi. Vous pouvez essayer de nous contacter par e-mail",
+    es_ES: "Error al enviar. Puede intentar contactarnos por correo electrónico",
+    it_IT: "Invio fallito. Puoi provare a contattarci via email",
+    pt_PT: "Falha no envio. Você pode tentar entrar em contato conosco por e-mail",
+    de_DE: "Senden fehlgeschlagen. Sie können versuchen, uns per E-Mail zu kontaktieren",
+    ja_JP: "送信に失敗しました。メールでお問い合わせいただくこともできます",
+    ko_KR: "제출에 실패했습니다. 이메일로 문의해 주세요",
+    vi_VN: "Gửi thất bại. Bạn có thể thử liên hệ với chúng tôi qua email",
+  },
 };
 
 export default msg;
