@@ -59,7 +59,7 @@ const main = (): void => {
     `storePassword=${password}`,
     `keyPassword=${password}`,
     `keyAlias=${ALIAS}`,
-    'storeFile=release-key.jks',
+    'storeFile=../release-key.jks',
     '',
   ].join('\n');
 
