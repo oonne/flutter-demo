@@ -18,7 +18,7 @@ const int pageSize = 10;
 /// 客服邮箱
 const String supportEmail = 'support@runawaystar.com';
 // 联系我们webhook地址
-const String contactWebhookUrl = 'https://open.feishu.cn/open-apis/bot/v2/hook/9e71b79e-5f37-42ae-bc99-3f374744a61f';
+const String contactWebhookUrl = '';
 
 // 用户协议（默认英文，中文使用 zh）
 const Map<String, String> userAgreementUrls = {

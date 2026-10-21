@@ -111,7 +111,7 @@ class ContactViewModel extends ChangeNotifier {
             'title': '联系我们',
             'content': [
               [
-                {'tag': 'text', 'text': '需求类型: $model.type'},
+                {'tag': 'text', 'text': '需求类型: ${model.type}'},
               ],
               [
                 {
